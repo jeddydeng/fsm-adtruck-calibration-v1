@@ -1,0 +1,9 @@
+[Unit]
+Description=FSM-Pi aggregate resource budget
+
+[Slice]
+CPUAccounting=true
+CPUQuota=350%
+CPUQuotaPeriodSec=100ms
+MemoryAccounting=true
+MemoryMax=3G

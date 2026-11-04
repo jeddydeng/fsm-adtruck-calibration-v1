@@ -1,0 +1,279 @@
+{
+  "schema_version": 1,
+  "method": "directed_nearest_roof_lidar_surface_distance",
+  "note": "Only distances <=0.30 m are treated as overlapping static surfaces; boards are a negligible fraction of the garage cloud.",
+  "captures": [
+    {
+      "part": 1,
+      "capture_id": "20260903_145123_121"
+    },
+    {
+      "part": 1,
+      "capture_id": "20260903_145339_302"
+    },
+    {
+      "part": 1,
+      "capture_id": "20260903_145413_739"
+    },
+    {
+      "part": 1,
+      "capture_id": "20260903_145603_244"
+    },
+    {
+      "part": 1,
+      "capture_id": "20260903_145646_769"
+    },
+    {
+      "part": 1,
+      "capture_id": "20260903_145800_652"
+    },
+    {
+      "part": 1,
+      "capture_id": "20260903_145919_521"
+    },
+    {
+      "part": 1,
+      "capture_id": "20260903_150017_402"
+    },
+    {
+      "part": 1,
+      "capture_id": "20260903_150122_965"
+    },
+    {
+      "part": 1,
+      "capture_id": "20260903_150308_315"
+    },
+    {
+      "part": 1,
+      "capture_id": "20260903_150340_400"
+    },
+    {
+      "part": 1,
+      "capture_id": "20260903_150410_448"
+    },
+    {
+      "part": 2,
+      "capture_id": "20260903_150539_520"
+    },
+    {
+      "part": 2,
+      "capture_id": "20260903_150618_402"
+    },
+    {
+      "part": 2,
+      "capture_id": "20260903_150718_292"
+    },
+    {
+      "part": 2,
+      "capture_id": "20260903_150837_807"
+    },
+    {
+      "part": 2,
+      "capture_id": "20260903_150909_490"
+    },
+    {
+      "part": 2,
+      "capture_id": "20260903_151006_991"
+    },
+    {
+      "part": 2,
+      "capture_id": "20260903_151234_129"
+    },
+    {
+      "part": 2,
+      "capture_id": "20260903_151303_425"
+    },
+    {
+      "part": 2,
+      "capture_id": "20260903_151341_798"
+    },
+    {
+      "part": 2,
+      "capture_id": "20260903_151434_497"
+    },
+    {
+      "part": 2,
+      "capture_id": "20260903_151519_165"
+    },
+    {
+      "part": 2,
+      "capture_id": "20260903_151558_973"
+    }
+  ],
+  "per_part": {
+    "part1": {
+      "lidar_front_left": {
+        "previous": {
+          "sample_points": 54553,
+          "overlap_points_le_0p30m": 45914,
+          "overlap_fraction": 0.8416402397668322,
+          "fraction_le_0p10m": 0.7682803878796767,
+          "overlap_median_m": 0.04037149550808063,
+          "overlap_p95_m": 0.1504799636158972
+        },
+        "candidate": {
+          "sample_points": 54553,
+          "overlap_points_le_0p30m": 45664,
+          "overlap_fraction": 0.8370575403735817,
+          "fraction_le_0p10m": 0.7671805400252965,
+          "overlap_median_m": 0.04065931377849611,
+          "overlap_p95_m": 0.1526241026251505
+        }
+      },
+      "lidar_front_right": {
+        "previous": {
+          "sample_points": 61873,
+          "overlap_points_le_0p30m": 43680,
+          "overlap_fraction": 0.7059622129200136,
+          "fraction_le_0p10m": 0.628464758456839,
+          "overlap_median_m": 0.042794223206386484,
+          "overlap_p95_m": 0.18859320835483304
+        },
+        "candidate": {
+          "sample_points": 61873,
+          "overlap_points_le_0p30m": 43669,
+          "overlap_fraction": 0.7057844293956976,
+          "fraction_le_0p10m": 0.6268647067379955,
+          "overlap_median_m": 0.042159827978859504,
+          "overlap_p95_m": 0.18617408381766784
+        }
+      },
+      "lidar_rear": {
+        "previous": {
+          "sample_points": 39695,
+          "overlap_points_le_0p30m": 20895,
+          "overlap_fraction": 0.5263887139438216,
+          "fraction_le_0p10m": 0.4310618465801738,
+          "overlap_median_m": 0.050446898566918356,
+          "overlap_p95_m": 0.2323995044106624
+        },
+        "candidate": {
+          "sample_points": 39695,
+          "overlap_points_le_0p30m": 20771,
+          "overlap_fraction": 0.5232648948230255,
+          "fraction_le_0p10m": 0.4255195868497292,
+          "overlap_median_m": 0.050923923039070285,
+          "overlap_p95_m": 0.23270789766366307
+        }
+      }
+    },
+    "part2": {
+      "lidar_front_left": {
+        "previous": {
+          "sample_points": 52965,
+          "overlap_points_le_0p30m": 39880,
+          "overlap_fraction": 0.7529500613612763,
+          "fraction_le_0p10m": 0.6342301519871614,
+          "overlap_median_m": 0.0464187658224871,
+          "overlap_p95_m": 0.22091619290920106
+        },
+        "candidate": {
+          "sample_points": 52965,
+          "overlap_points_le_0p30m": 39200,
+          "overlap_fraction": 0.7401113943170018,
+          "fraction_le_0p10m": 0.6331728499952799,
+          "overlap_median_m": 0.0467923044716782,
+          "overlap_p95_m": 0.20864808671701288
+        }
+      },
+      "lidar_front_right": {
+        "previous": {
+          "sample_points": 56480,
+          "overlap_points_le_0p30m": 34799,
+          "overlap_fraction": 0.6161296033994335,
+          "fraction_le_0p10m": 0.5006373937677053,
+          "overlap_median_m": 0.047300233427638214,
+          "overlap_p95_m": 0.2341526525608862
+        },
+        "candidate": {
+          "sample_points": 56480,
+          "overlap_points_le_0p30m": 34889,
+          "overlap_fraction": 0.6177230878186969,
+          "fraction_le_0p10m": 0.5037712464589235,
+          "overlap_median_m": 0.046615286776751225,
+          "overlap_p95_m": 0.23314308053764185
+        }
+      },
+      "lidar_rear": {
+        "previous": {
+          "sample_points": 64599,
+          "overlap_points_le_0p30m": 22191,
+          "overlap_fraction": 0.34351924952398644,
+          "fraction_le_0p10m": 0.26529822443071877,
+          "overlap_median_m": 0.050101465484320665,
+          "overlap_p95_m": 0.25456490655367386
+        },
+        "candidate": {
+          "sample_points": 64599,
+          "overlap_points_le_0p30m": 22011,
+          "overlap_fraction": 0.3407328286815585,
+          "fraction_le_0p10m": 0.2617997182618926,
+          "overlap_median_m": 0.049117608646598664,
+          "overlap_p95_m": 0.26139315550011366
+        }
+      }
+    }
+  },
+  "combined": {
+    "lidar_front_left": {
+      "previous": {
+        "sample_points": 107518,
+        "overlap_points_le_0p30m": 85794,
+        "overlap_fraction": 0.7979501106791421,
+        "fraction_le_0p10m": 0.7022452054539705,
+        "overlap_median_m": 0.042884310351832725,
+        "overlap_p95_m": 0.19179334478998003
+      },
+      "candidate": {
+        "sample_points": 107518,
+        "overlap_points_le_0p30m": 84864,
+        "overlap_fraction": 0.7893003962127272,
+        "fraction_le_0p10m": 0.7011663163377295,
+        "overlap_median_m": 0.04293413083061593,
+        "overlap_p95_m": 0.1862210049435216
+      },
+      "candidate_improves_median": false,
+      "candidate_improves_fraction_le_0p10m": false
+    },
+    "lidar_front_right": {
+      "previous": {
+        "sample_points": 118353,
+        "overlap_points_le_0p30m": 78479,
+        "overlap_fraction": 0.6630926127770315,
+        "fraction_le_0p10m": 0.5674634356543561,
+        "overlap_median_m": 0.044482862857373094,
+        "overlap_p95_m": 0.21274614428500613
+      },
+      "candidate": {
+        "sample_points": 118353,
+        "overlap_points_le_0p30m": 78558,
+        "overlap_fraction": 0.6637601074750957,
+        "fraction_le_0p10m": 0.5681224810524448,
+        "overlap_median_m": 0.043764516015451685,
+        "overlap_p95_m": 0.2120577957562882
+      },
+      "candidate_improves_median": true,
+      "candidate_improves_fraction_le_0p10m": true
+    },
+    "lidar_rear": {
+      "previous": {
+        "sample_points": 104294,
+        "overlap_points_le_0p30m": 43086,
+        "overlap_fraction": 0.4131206013768769,
+        "fraction_le_0p10m": 0.3283889773141312,
+        "overlap_median_m": 0.05030176911321056,
+        "overlap_p95_m": 0.24746752732379107
+      },
+      "candidate": {
+        "sample_points": 104294,
+        "overlap_points_le_0p30m": 42782,
+        "overlap_fraction": 0.4102057644735076,
+        "fraction_le_0p10m": 0.3241126047519512,
+        "overlap_median_m": 0.05003348783968646,
+        "overlap_p95_m": 0.25225277513989874
+      },
+      "candidate_improves_median": true,
+      "candidate_improves_fraction_le_0p10m": false
+    }
+  }
+}

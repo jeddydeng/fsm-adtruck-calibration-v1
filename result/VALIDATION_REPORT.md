@@ -1,0 +1,46 @@
+# 最终标定文件自动校验
+
+结果：**PASS**（42/42）
+
+- PASS `intrinsic_files:video_front_left`：YAML and source report present
+- PASS `intrinsic_numeric:video_front_left`：model=plumb_bob, rms=0.5036px, max=0.7871px
+- PASS `intrinsic_files:video_front_mid`：YAML and source report present
+- PASS `intrinsic_numeric:video_front_mid`：model=plumb_bob, rms=0.3392px, max=0.6245px
+- PASS `intrinsic_files:video_front_right`：YAML and source report present
+- PASS `intrinsic_numeric:video_front_right`：model=plumb_bob, rms=0.4031px, max=0.7986px
+- PASS `intrinsic_files:video_rear_left`：YAML and source report present
+- PASS `intrinsic_numeric:video_rear_left`：model=plumb_bob, rms=0.3745px, max=0.7956px
+- PASS `intrinsic_files:video_rear_mid`：YAML and source report present
+- PASS `intrinsic_numeric:video_rear_mid`：model=plumb_bob, rms=0.4139px, max=0.6342px
+- PASS `intrinsic_files:video_rear_right`：YAML and source report present
+- PASS `intrinsic_numeric:video_rear_right`：model=plumb_bob, rms=0.3657px, max=0.7845px
+- PASS `intrinsic_files:fisheye_front`：YAML and source report present
+- PASS `intrinsic_numeric:fisheye_front`：model=equidistant, rms=0.3595px, max=0.7528px
+- PASS `intrinsic_files:fisheye_left`：YAML and source report present
+- PASS `intrinsic_numeric:fisheye_left`：model=plumb_bob, rms=0.3865px, max=0.7410px
+- PASS `intrinsic_files:fisheye_right`：YAML and source report present
+- PASS `intrinsic_numeric:fisheye_right`：model=equidistant, rms=0.2845px, max=0.5779px
+- PASS `intrinsic_files:fisheye_rear`：YAML and source report present
+- PASS `intrinsic_numeric:fisheye_rear`：model=equidistant, rms=0.4390px, max=0.7754px
+- PASS `intrinsic_files:traffic_light_front`：YAML and source report present
+- PASS `intrinsic_numeric:traffic_light_front`：model=plumb_bob, rms=0.4560px, max=0.7444px
+- PASS `lidar_frame_set`：found 3/3 lower lidar frames
+- PASS `camera_frame_set`：found 11/11 camera frames
+- PASS `combined_frame_set`：found 14/14 non-reference sensor frames
+- PASS `extrinsic_numeric:velodyne_front_left_base_link`：status=fallback_1cm_1deg, det=1.000000000000, orthogonality=5.434e-16, representations=2.062e-10
+- PASS `extrinsic_numeric:velodyne_front_right_base_link`：status=fallback_1cm_1deg, det=1.000000000000, orthogonality=4.106e-16, representations=1.253e-10
+- PASS `extrinsic_numeric:velodyne_rear_base_link`：status=fallback_1cm_1deg, det=1.000000000000, orthogonality=3.151e-16, representations=1.176e-10
+- PASS `extrinsic_numeric:video_front_left/camera_link`：status=fallback_1cm_1deg, det=1.000000000000, orthogonality=5.770e-16, representations=1.115e-10
+- PASS `extrinsic_numeric:video_front_mid/camera_link`：status=requires_recapture, det=1.000000000000, orthogonality=2.222e-16, representations=9.705e-11
+- PASS `extrinsic_numeric:video_front_right/camera_link`：status=fallback_1cm_1deg, det=1.000000000000, orthogonality=6.485e-16, representations=1.121e-10
+- PASS `extrinsic_numeric:video_rear_left/camera_link`：status=fallback_1cm_1deg, det=1.000000000000, orthogonality=7.119e-16, representations=7.497e-11
+- PASS `extrinsic_numeric:video_rear_mid/camera_link`：status=requires_recapture, det=1.000000000000, orthogonality=6.662e-16, representations=1.829e-10
+- PASS `extrinsic_numeric:video_rear_right/camera_link`：status=fallback_1cm_1deg, det=1.000000000000, orthogonality=3.169e-16, representations=1.137e-10
+- PASS `extrinsic_numeric:fisheye_front/camera_link`：status=requires_recapture, det=1.000000000000, orthogonality=6.117e-16, representations=1.386e-10
+- PASS `extrinsic_numeric:fisheye_left/camera_link`：status=fallback_1cm_1deg, det=1.000000000000, orthogonality=5.519e-16, representations=1.745e-10
+- PASS `extrinsic_numeric:fisheye_right/camera_link`：status=fallback_1cm_1deg, det=1.000000000000, orthogonality=1.222e-15, representations=1.942e-10
+- PASS `extrinsic_numeric:fisheye_rear/camera_link`：status=requires_recapture, det=1.000000000000, orthogonality=5.449e-16, representations=1.936e-10
+- PASS `extrinsic_numeric:traffic_light_front/camera_link`：status=requires_recapture, det=1.000000000000, orthogonality=5.439e-16, representations=1.670e-10
+- PASS `deployment_block_list`：blocked=fisheye_front/camera_link,fisheye_rear/camera_link,traffic_light_front/camera_link,video_front_mid/camera_link,video_rear_mid/camera_link
+- PASS `autoware_frame_count`：found 15/15 including roof lidar
+- PASS `manifest_hashes`：all tracked files match

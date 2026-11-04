@@ -1,0 +1,10 @@
+{
+  "camera": "traffic_light_front",
+  "available_frames": 341,
+  "near_same_transitions": 0,
+  "longest_near_same_frame_run": 1,
+  "longest_run_start": "20260902_200659_745",
+  "longest_run_end": "20260902_200659_745",
+  "mae_threshold": 0.8,
+  "changed_fraction_threshold": 0.01
+}

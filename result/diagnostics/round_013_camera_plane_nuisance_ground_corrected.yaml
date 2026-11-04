@@ -1,0 +1,252 @@
+schema_version: 1
+reference_frame: velodyne_top_base_link
+method: ground_anchored_plane_bundle_with_horizontal_board_nuisance
+ground_z_top_m: -1.72817
+excluded:
+  traffic_light_front: frozen during extrinsic session
+  rear_board: elevated board has no surveyed vertical anchor
+transforms:
+  video_front_left/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.106385716
+    - 0.498518746
+    - -0.336285977
+    rpy_deg:
+    - 0.67907287
+    - -0.09593528
+    - 56.81572588
+    source: grounded_lidar_plane_aprilgrid_bundle
+  video_front_mid/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.22017954
+    - -0.013858952
+    - -0.307315818
+    rpy_deg:
+    - -0.79213629
+    - 2.06568098
+    - -0.06657466
+    source: grounded_lidar_plane_aprilgrid_bundle
+  video_rear_left/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - -0.0101374
+    - 0.550320815
+    - -0.341522739
+    rpy_deg:
+    - 0.91851827
+    - -1.34240827
+    - 108.48950838
+    source: grounded_lidar_plane_aprilgrid_bundle
+  video_rear_right/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.003109197
+    - -0.524681898
+    - -0.319686882
+    rpy_deg:
+    - -1.53732034
+    - 3.99851185
+    - -109.14547909
+    source: grounded_lidar_plane_aprilgrid_bundle
+  fisheye_left/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - -0.062149629
+    - 0.572284512
+    - -0.685
+    rpy_deg:
+    - 1.6698783
+    - 23.94496533
+    - 90.61499048
+    source: grounded_lidar_plane_aprilgrid_bundle
+  fisheye_right/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - -0.013801176
+    - -0.559784115
+    - -0.678755811
+    rpy_deg:
+    - -0.45377308
+    - 24.89824303
+    - -90.99949031
+    source: grounded_lidar_plane_aprilgrid_bundle
+quality:
+  video_front_left/camera_link:
+    raw_observations: 9
+    unique_board_poses: 9
+    difference_from_rough_position_m: 0.15893511108572528
+    difference_from_rough_angle_deg: 3.256716666701825
+    stability:
+      achieved_tier: coarse_only
+      dominant_count: 5
+      dominant_fraction: 1.0
+      position_p95_m: 0.05882818590296031
+      angle_p95_deg: 0.6627644283119442
+      full_fit:
+        raw_grounded_pose_count: 9
+        accepted_pose_count: 9
+        discarded_pose_count: 0
+        normalized_reprojection_rms: 0.0019244076284451502
+        normalized_reprojection_p95: 0.0035633315060479695
+        board_horizontal_shift_median_m: 0.010393204599253476
+        board_horizontal_shift_p95_m: 0.035801738776392644
+        rejection_history:
+        - iteration: 1
+          input: 9
+          output: 9
+          normalized_reprojection_rms_cut: 0.006
+  video_front_mid/camera_link:
+    raw_observations: 72
+    unique_board_poses: 66
+    difference_from_rough_position_m: 0.24533198939472015
+    difference_from_rough_angle_deg: 2.2129121503952054
+    stability:
+      achieved_tier: coarse_only
+      dominant_count: 5
+      dominant_fraction: 1.0
+      position_p95_m: 0.027886369675515894
+      angle_p95_deg: 0.15442844084615417
+      full_fit:
+        raw_grounded_pose_count: 66
+        accepted_pose_count: 65
+        discarded_pose_count: 1
+        normalized_reprojection_rms: 0.0021675927458687854
+        normalized_reprojection_p95: 0.003945378480168714
+        board_horizontal_shift_median_m: 0.014782226569357884
+        board_horizontal_shift_p95_m: 0.04625174126116776
+        rejection_history:
+        - iteration: 1
+          input: 66
+          output: 65
+          normalized_reprojection_rms_cut: 0.006
+        - iteration: 2
+          input: 65
+          output: 65
+          normalized_reprojection_rms_cut: 0.006
+  video_rear_left/camera_link:
+    raw_observations: 32
+    unique_board_poses: 31
+    difference_from_rough_position_m: 0.23314831502545563
+    difference_from_rough_angle_deg: 11.61380646478613
+    stability:
+      achieved_tier: fallback_1cm_1deg
+      dominant_count: 5
+      dominant_fraction: 1.0
+      position_p95_m: 0.006296856818117961
+      angle_p95_deg: 0.11679537400983553
+      full_fit:
+        raw_grounded_pose_count: 31
+        accepted_pose_count: 31
+        discarded_pose_count: 0
+        normalized_reprojection_rms: 0.0023998263682115267
+        normalized_reprojection_p95: 0.00443256687279526
+        board_horizontal_shift_median_m: 0.01897598715816316
+        board_horizontal_shift_p95_m: 0.11226690598270458
+        rejection_history:
+        - iteration: 1
+          input: 31
+          output: 31
+          normalized_reprojection_rms_cut: 0.006
+  video_rear_right/camera_link:
+    raw_observations: 15
+    unique_board_poses: 15
+    difference_from_rough_position_m: 0.21025449051701064
+    difference_from_rough_angle_deg: 11.716686069846457
+    stability:
+      achieved_tier: coarse_only
+      dominant_count: 5
+      dominant_fraction: 1.0
+      position_p95_m: 0.014706073819024253
+      angle_p95_deg: 0.3667262917522593
+      full_fit:
+        raw_grounded_pose_count: 15
+        accepted_pose_count: 13
+        discarded_pose_count: 2
+        normalized_reprojection_rms: 0.002313342894388177
+        normalized_reprojection_p95: 0.004001704327237122
+        board_horizontal_shift_median_m: 0.027022176369239332
+        board_horizontal_shift_p95_m: 0.07931858507008391
+        rejection_history:
+        - iteration: 1
+          input: 15
+          output: 13
+          normalized_reprojection_rms_cut: 0.006
+        - iteration: 2
+          input: 13
+          output: 13
+          normalized_reprojection_rms_cut: 0.006
+  fisheye_left/camera_link:
+    raw_observations: 21
+    unique_board_poses: 20
+    difference_from_rough_position_m: 0.40596521012930914
+    difference_from_rough_angle_deg: 1.8517107984211145
+    stability:
+      achieved_tier: coarse_only
+      dominant_count: 5
+      dominant_fraction: 1.0
+      position_p95_m: 0.018295414515602466
+      angle_p95_deg: 0.1228958228920882
+      full_fit:
+        raw_grounded_pose_count: 20
+        accepted_pose_count: 19
+        discarded_pose_count: 1
+        normalized_reprojection_rms: 0.0031172164019065154
+        normalized_reprojection_p95: 0.005597314003113808
+        board_horizontal_shift_median_m: 0.013722704106689505
+        board_horizontal_shift_p95_m: 0.07071129081973032
+        rejection_history:
+        - iteration: 1
+          input: 20
+          output: 19
+          normalized_reprojection_rms_cut: 0.006
+        - iteration: 2
+          input: 19
+          output: 19
+          normalized_reprojection_rms_cut: 0.006
+  fisheye_right/camera_link:
+    raw_observations: 8
+    unique_board_poses: 8
+    difference_from_rough_position_m: 0.4095003339160135
+    difference_from_rough_angle_deg: 0.9124805699211784
+    stability:
+      achieved_tier: coarse_only
+      dominant_count: 5
+      dominant_fraction: 1.0
+      position_p95_m: 0.03527196179229562
+      angle_p95_deg: 0.7450508036124972
+      full_fit:
+        raw_grounded_pose_count: 8
+        accepted_pose_count: 7
+        discarded_pose_count: 1
+        normalized_reprojection_rms: 0.002433616034505621
+        normalized_reprojection_p95: 0.003972939502888048
+        board_horizontal_shift_median_m: 0.015542128576786864
+        board_horizontal_shift_p95_m: 0.06498693199768796
+        rejection_history:
+        - iteration: 1
+          input: 8
+          output: 7
+          normalized_reprojection_rms_cut: 0.006
+        - iteration: 2
+          input: 7
+          output: 7
+          normalized_reprojection_rms_cut: 0.006
+rejected:
+  video_front_right/camera_link:
+    raw_observations: 11
+    unique_board_poses: 11
+    error: only 2 grounded bundle poses after robust gate
+  video_rear_mid/camera_link:
+    raw_observations: 5
+    unique_board_poses: 5
+    error: need >=5 grounded board poses, got 0
+  fisheye_front/camera_link:
+    raw_observations: 12
+    unique_board_poses: 11
+    error: only 4 grounded bundle poses after robust gate
+  fisheye_rear/camera_link:
+    raw_observations: 3
+    unique_board_poses: 3
+    error: need >=5 grounded board poses, got 0

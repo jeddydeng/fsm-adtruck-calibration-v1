@@ -1,0 +1,429 @@
+schema_version: 1
+reference_frame: velodyne_top_base_link
+coordinate_convention: camera_link_x_forward_y_left_z_up_fixed_xyz_rpy
+status_note:
+  target_repeatability_only: numerical repeatability target met; not surveyed truth
+  fallback_1cm_1deg: user fallback repeatability threshold met
+  coarse_candidate: usable only as a seed
+  requires_recapture: candidate retained but blocked from precision deployment
+transforms:
+  video_front_left/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.118230741
+    - 0.506711478
+    - -0.338181941
+    rpy_deg:
+    - 0.6514393
+    - -0.04031056
+    - 56.55075926
+    source: nuisance_variant_consensus
+    quaternion_xyzw:
+    - 0.0051731758
+    - 0.0023831715
+    - 0.4737038957
+    - 0.8806657584
+    matrix_row_major:
+    - - 0.5511978794
+      - -0.8343249439
+      - 0.0090986622
+      - 0.118230741
+    - - 0.8343742582
+      - 0.5511557149
+      - -0.0068538423
+      - 0.506711478
+    - - 0.0007035519
+      - 0.0113695129
+      - 0.9999351175
+      - -0.338181941
+    - - 0.0
+      - 0.0
+      - 0.0
+      - 1.0
+    calibration_status: fallback_1cm_1deg
+    repeatability_position_p95_m: 0.007474880079533767
+    repeatability_angle_p95_deg: 0.10786149643745882
+    evidence: round_044_camera_graph_variant_consensus
+    quality_note: three graph variants; estimator sensitivity
+  video_front_mid/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.228659984
+    - -0.034349264
+    - -0.316141721
+    rpy_deg:
+    - -0.72649805
+    - 1.96882241
+    - 0.13892947
+    source: nuisance_variant_consensus
+    quaternion_xyzw:
+    - -0.0063597375
+    - 0.0171723283
+    - 0.0013211056
+    - 0.9998314456
+    matrix_row_major:
+    - - 0.9994067316
+      - -0.0028601889
+      - 0.0343220639
+      - 0.228659984
+    - - 0.0024233429
+      - 0.9999156168
+      - 0.012762704
+      - -0.034349264
+    - - -0.0343556714
+      - -0.0126719582
+      - 0.9993293298
+      - -0.316141721
+    - - 0.0
+      - 0.0
+      - 0.0
+      - 1.0
+    calibration_status: requires_recapture
+    repeatability_position_p95_m: 0.026130478272469067
+    repeatability_angle_p95_deg: 0.06318290888015013
+    evidence: round_044_camera_graph_variant_consensus
+    quality_note: three graph variants; estimator sensitivity; common translation
+      mode relative to roof lidar
+  video_front_right/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.166392474
+    - -0.499559184
+    - -0.315773192
+    rpy_deg:
+    - -1.42480186
+    - 5.15769607
+    - -57.07532993
+    source: nuisance_variant_consensus
+    quaternion_xyzw:
+    - 0.0105819622
+    - 0.0454583719
+    - -0.4767241903
+    - 0.8778129669
+    matrix_row_major:
+    - - 0.5413351656
+      - 0.8379114293
+      - 0.0697185419
+      - 0.166392474
+    - - -0.8359872742
+      - 0.5452441369
+      - -0.0619201784
+      - -0.499559184
+    - - -0.0898972514
+      - -0.0247642438
+      - 0.995643117
+      - -0.315773192
+    - - 0.0
+      - 0.0
+      - 0.0
+      - 1.0
+    calibration_status: fallback_1cm_1deg
+    repeatability_position_p95_m: 0.007445023725607001
+    repeatability_angle_p95_deg: 0.054246563147063366
+    evidence: round_044_camera_graph_variant_consensus
+    quality_note: three graph variants; estimator sensitivity
+  video_rear_left/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.002837772
+    - 0.568133322
+    - -0.349837758
+    rpy_deg:
+    - 0.93077657
+    - -1.40234437
+    - 108.76216219
+    source: nuisance_variant_consensus
+    quaternion_xyzw:
+    - 0.0146777071
+    - -0.000524426
+    - 0.8128787051
+    - 0.5822478001
+    matrix_row_major:
+    - - -0.3215441284
+      - -0.9466090703
+      - 0.0232516993
+      - 0.002837772
+    - - 0.9465782808
+      - -0.3219744485
+      - -0.0179447148
+      - 0.568133322
+    - - 0.0244730829
+      - 0.0162395359
+      - 0.9995685798
+      - -0.349837758
+    - - 0.0
+      - 0.0
+      - 0.0
+      - 1.0
+    calibration_status: fallback_1cm_1deg
+    repeatability_position_p95_m: 0.0053359176779574375
+    repeatability_angle_p95_deg: 0.08444442807331969
+    evidence: round_044_camera_graph_variant_consensus
+    quality_note: three graph variants; estimator sensitivity
+  video_rear_mid/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - -2.156480752
+    - 0.038297691
+    - -1.123811293
+    rpy_deg:
+    - -1.97647362
+    - 1.49668133
+    - -179.27906351
+    source: multilidar_dynamic_board_graph
+    quaternion_xyzw:
+    - -0.0129499382
+    - -0.0173274749
+    - 0.999744773
+    - -0.006515098
+    matrix_row_major:
+    - - -0.9995797052
+      - 0.0134756497
+      - -0.0256674856
+      - -2.156480752
+    - - -0.0125780908
+      - -0.9993146242
+      - -0.0348148452
+      - 0.038297691
+    - - -0.0261190464
+      - -0.0344773648
+      - 0.9990641154
+      - -1.123811293
+    - - 0.0
+      - 0.0
+      - 0.0
+      - 1.0
+    calibration_status: requires_recapture
+    repeatability_position_p95_m: 0.023270043597330366
+    repeatability_angle_p95_deg: 0.521740484807396
+    evidence: round_037_seven_rear_board_poses
+    quality_note: translation not observable; mechanical prior plus low support
+  video_rear_right/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.048985151
+    - -0.532959923
+    - -0.319505907
+    rpy_deg:
+    - -1.9012114
+    - 3.9232547
+    - -109.97635625
+    source: nuisance_variant_consensus
+    quaternion_xyzw:
+    - -0.0185186917
+    - -0.0332168644
+    - 0.8181152227
+    - -0.5737954169
+    matrix_row_major:
+    - - -0.3408317552
+      - 0.9400917962
+      - 0.007818522
+      - 0.048985151
+    - - -0.9376312647
+      - -0.3393109189
+      - -0.0756023257
+      - -0.532959923
+    - - -0.0684202162
+      - -0.033098564
+      - 0.997107396
+      - -0.319505907
+    - - 0.0
+      - 0.0
+      - 0.0
+      - 1.0
+    calibration_status: fallback_1cm_1deg
+    repeatability_position_p95_m: 0.008322562963501073
+    repeatability_angle_p95_deg: 0.09073476266495643
+    evidence: round_044_camera_graph_variant_consensus
+    quality_note: three graph variants; estimator sensitivity
+  fisheye_front/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.372153818
+    - 0.009871027
+    - -1.064021044
+    rpy_deg:
+    - -0.023233
+    - 19.24096069
+    - -0.17692048
+    source: nuisance_variant_consensus
+    quaternion_xyzw:
+    - 5.81274e-05
+    - 0.1671212858
+    - -0.0014883255
+    - 0.9859352196
+    matrix_row_major:
+    - - 0.9441365214
+      - 0.0029542137
+      - 0.3295413502
+      - 0.372153818
+    - - -0.0029153564
+      - 0.999995563
+      - -0.0006120815
+      - 0.009871027
+    - - -0.3295416963
+      - -0.0003828419
+      - 0.9441409449
+      - -1.064021044
+    - - 0.0
+      - 0.0
+      - 0.0
+      - 1.0
+    calibration_status: requires_recapture
+    repeatability_position_p95_m: 0.023011993079796143
+    repeatability_angle_p95_deg: 0.06409878372009395
+    evidence: round_044_camera_graph_variant_consensus
+    quality_note: three graph variants; estimator sensitivity; common translation
+      mode relative to roof lidar
+  fisheye_left/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - -0.04411791
+    - 0.5954799
+    - -0.717122159
+    rpy_deg:
+    - 1.77051729
+    - 23.39957594
+    - 90.82920437
+    source: nuisance_variant_consensus
+    quaternion_xyzw:
+    - -0.1337861265
+    - 0.153106377
+    - 0.6951253543
+    - 0.6895364033
+    matrix_row_major:
+    - - -0.0132816418
+      - -0.9995954915
+      - 0.0251485839
+      - -0.04411791
+    - - 0.9176614551
+      - -0.0021959717
+      - 0.397357058
+      - 0.5954799
+    - - -0.3971410981
+      - 0.0283554402
+      - 0.9173194194
+      - -0.717122159
+    - - 0.0
+      - 0.0
+      - 0.0
+      - 1.0
+    calibration_status: fallback_1cm_1deg
+    repeatability_position_p95_m: 0.002952692889049509
+    repeatability_angle_p95_deg: 0.04947507590252573
+    evidence: round_044_camera_graph_variant_consensus
+    quality_note: three graph variants; estimator sensitivity
+  fisheye_right/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - -0.004243929
+    - -0.583885067
+    - -0.698150046
+    rpy_deg:
+    - -0.47499114
+    - 24.62113584
+    - -90.8100531
+    source: nuisance_variant_consensus
+    quaternion_xyzw:
+    - -0.1489800285
+    - -0.1525756465
+    - 0.6950876238
+    - -0.6865703303
+    matrix_row_major:
+    - - -0.0128522652
+      - 0.9999145272
+      - 0.002399476
+      - -0.004243929
+    - - -0.9089916306
+      - -0.0106837072
+      - -0.4166774219
+      - -0.583885067
+    - - -0.416616172
+      - -0.0075363523
+      - 0.9090512464
+      - -0.698150046
+    - - 0.0
+      - 0.0
+      - 0.0
+      - 1.0
+    calibration_status: fallback_1cm_1deg
+    repeatability_position_p95_m: 0.005139028583443458
+    repeatability_angle_p95_deg: 0.06347083239519731
+    evidence: round_044_camera_graph_variant_consensus
+    quality_note: three graph variants; estimator sensitivity
+  fisheye_rear/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - -2.180840351
+    - 0.403634805
+    - -0.983444457
+    rpy_deg:
+    - 0.1269893
+    - 11.65208465
+    - 179.04498701
+    source: multilidar_dynamic_board_graph
+    quaternion_xyzw:
+    - -0.1014957088
+    - 0.0019483956
+    - 0.9947985765
+    - 0.0084033982
+    matrix_row_major:
+    - - -0.979256008
+      - -0.0171148846
+      - -0.2019028269
+      - -2.180840351
+    - - 0.0163238695
+      - -0.9998511733
+      - 0.00558234
+      - 0.403634805
+    - - -0.2019683195
+      - 0.0021707046
+      - 0.9793896497
+      - -0.983444457
+    - - 0.0
+      - 0.0
+      - 0.0
+      - 1.0
+    calibration_status: requires_recapture
+    repeatability_position_p95_m: null
+    repeatability_angle_p95_deg: null
+    evidence: round_036_six_of_seven_rear_board_poses
+    quality_note: no valid bootstrap; translation not observable
+  traffic_light_front/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.006450265
+    - -0.159797807
+    - -0.167912391
+    rpy_deg:
+    - 0.7044189
+    - 1.93352098
+    - 0.01530058
+    source: grounded_lidar_plane_aprilgrid_bundle
+    quaternion_xyzw:
+    - 0.0061440479
+    - 0.0168728547
+    - 2.97839e-05
+    - 0.9998387653
+    matrix_row_major:
+    - - 0.9994306118
+      - 0.0001477771
+      - 0.0337406345
+      - 0.006450265
+    - - 0.0002668935
+      - 0.9999244996
+      - -0.0122851096
+      - -0.159797807
+    - - -0.0337399025
+      - 0.0122871197
+      - 0.9993551149
+      - -0.167912391
+    - - 0.0
+      - 0.0
+      - 0.0
+      - 1.0
+    calibration_status: requires_recapture
+    repeatability_position_p95_m: 0.0718208967409994
+    repeatability_angle_p95_deg: 0.698371171962256
+    evidence: round_030_fresh_pixel_direct_lidar_bundle
+    quality_note: 5 Hz cross-camera association failed the physical gate

@@ -1,0 +1,183 @@
+schema_version: 1
+
+station:
+  bind_host: 127.0.0.1
+  port: 8765
+  data_root: data/raw_extrinsic_data
+  status_hz: 2.0
+  camera_detection_hz: 0.5
+  lidar_detection_hz: 0.25
+  log_warning_period_sec: 5.0
+
+tag_board:
+  dictionary: DICT_APRILTAG_16h5
+  outer_width_m: 0.900
+  outer_height_m: 0.900
+  layout: aprilgrid
+  active_width_m: 0.800
+  active_height_m: 0.800
+  margin_m: 0.050
+  columns: 6
+  rows: 5
+  id_order: row_major
+  id_origin: bottom_left
+  first_id: 0
+  # The physical print was mounted after a 180-degree page rotation.  ArUco's
+  # decoded corner zero is therefore two quarters away from the board model.
+  tag_corner_rotation_quarters: 2
+  minimum_tags_for_pose: 5
+  # Exact dimensions used to generate the four printed boards. The user has
+  # confirmed that the printed dimensions match the design.
+  tag_size_m: 0.108
+  horizontal_gap_m: 0.0304
+  vertical_gap_m: 0.065
+
+usb_capture:
+  width: 640
+  height: 480
+  fps: 10
+  pixel_format: MJPG
+  online_timeout_sec: 2.0
+  reconnect_delay_sec: 1.0
+  cameras:
+    - name: video_rear_left
+      device: /dev/v4l/by-path/pci-0000:00:14.0-usb-0:1:1.0-video-index0
+      identity_globs: []
+      expected_usb_id: "1689:2304"
+    - name: video_front_left
+      device: /dev/v4l/by-path/pci-0000:00:14.0-usb-0:2:1.0-video-index0
+      identity_globs: []
+      expected_usb_id: "1689:2304"
+    - name: video_front_right
+      device: /dev/v4l/by-path/pci-0000:00:14.0-usb-0:3:1.0-video-index0
+      identity_globs: []
+      expected_usb_id: "1689:2304"
+    - name: video_rear_right
+      device: /dev/v4l/by-path/pci-0000:00:14.0-usb-0:4:1.0-video-index0
+      identity_globs: []
+      expected_usb_id: "1689:2304"
+    - name: video_rear_mid
+      device: /dev/v4l/by-path/pci-0000:00:14.0-usb-0:7:1.0-video-index0
+      identity_globs: []
+      expected_usb_id: "1689:2304"
+    - name: video_front_mid
+      device: /dev/v4l/by-path/pci-0000:00:14.0-usb-0:8:1.0-video-index0
+      identity_globs:
+        - /dev/v4l/by-id/usb-LuoKe_Technology_Co.__Ltd._LRCP_G720P*-video-index0
+      expected_usb_id: "0c45:1915"
+
+fisheye:
+  sdk_path: drivers/pi_capture
+  base_url: http://127.0.0.1:8086
+  fps: 10
+  online_timeout_sec: 3.0
+  reconnect_delay_sec: 2.0
+  sources:
+    front: fisheye_front
+    rear: fisheye_rear
+    left: fisheye_left
+    right: fisheye_right
+
+traffic_camera:
+  name: traffic_light_front
+  topic: /sensing/camera/traffic_light_front/image_raw/compressed
+  online_timeout_sec: 2.0
+
+lidars:
+  launch_package: white_calibration_bringup
+  launch_file: calibration_lidars.launch.py
+  auto_start: true
+  online_timeout_sec: 2.0
+  sensors:
+    - name: lidar_top
+      topic: /sensing/lidar/top/pointcloud_raw
+      frame_id: velodyne_top_base_link
+      msop_port: 6699
+      difop_port: 7788
+      required_directions: [front, rear, left, right]
+    - name: lidar_front_left
+      topic: /sensing/lidar/front_left/pointcloud_raw
+      frame_id: velodyne_front_left_base_link
+      msop_port: 6702
+      difop_port: 7791
+      minimum_targets: 2
+      required_directions: [front, left]
+      expected_directions: [front, left]
+    - name: lidar_front_right
+      topic: /sensing/lidar/front_right/pointcloud_raw
+      frame_id: velodyne_front_right_base_link
+      msop_port: 6700
+      difop_port: 7789
+      minimum_targets: 2
+      required_directions: [front, right]
+      expected_directions: [front, right]
+    - name: lidar_rear
+      topic: /sensing/lidar/rear/pointcloud_raw
+      frame_id: velodyne_rear_base_link
+      msop_port: 6701
+      difop_port: 7790
+      minimum_targets: 1
+      required_directions: [rear]
+      expected_directions: [rear]
+
+lidar_target_detection:
+  range_min_m: 0.6
+  range_max_m: 12.0
+  z_min_m: -3.0
+  z_max_m: 3.5
+  # All lidar points are transformed to the roof-lidar frame before detection.
+  ground_z_top_m: -1.742
+  # Only remove a narrow floor-noise band.  The front/left/right boards stand
+  # directly on the ground, so a larger cutoff removes useful BPearl returns.
+  ground_clearance_m: 0.02
+  voxel_m: 0.055
+  cluster_radius_m: 0.18
+  min_cluster_points: 14
+  # Preserve sparse hits on the tilted/front and elevated/rear boards in a
+  # feature-rich garage.  max_input_points is applied before TF/voxelisation;
+  # max_points caps clustering cost afterwards.
+  max_input_points: 24000
+  max_points: 7000
+  plane_rms_max_m: 0.060
+  vertical_normal_abs_z_max: 0.72
+  view_normal_cos_min: 0.35
+  target_center_z_min_m: -1.60
+  target_center_z_max_m: 0.75
+  # A 32-line lidar often sees the full 900 mm board width but only a few
+  # vertical rings.  Score width and visible height separately instead of
+  # rejecting a valid partial-height observation.
+  target_horizontal_extent_min_m: 0.70
+  target_horizontal_extent_max_m: 1.16
+  target_vertical_extent_min_m: 0.14
+  target_vertical_extent_max_m: 1.25
+  target_nominal_m: 0.90
+  direction_center_z_m:
+    front: [-1.65, -0.40]
+    left: [-1.65, -0.40]
+    right: [-1.65, -0.40]
+    # The rear board is intentionally suspended about 1 m above the other
+    # three boards so the roof lidar can see it past the vehicle's rear blind
+    # area.
+    rear: [-1.20, 0.75]
+  stability_history_frames: 3
+  stability_min_hits: 2
+  stability_center_tolerance_m: 0.45
+  # A side BPearl is accepted only when its returns occupy the physical board
+  # window already detected by the roof lidar.  This rejects 1--1.2 m columns,
+  # the front wall, ceiling pipes and wheel stops without discarding board feet.
+  side_match_plane_tolerance_m: 0.07
+  side_match_border_margin_m: 0.08
+  side_match_min_points: 12
+  side_match_min_span_m: 0.20
+  side_match_ground_clearance_m: 0.015
+
+camera_gate:
+  required_single: [video_front_mid, video_rear_mid]
+  required_any_groups:
+    left_side: [video_front_left, video_rear_left]
+    right_side: [video_front_right, video_rear_right]
+  display_only:
+    [fisheye_front, fisheye_rear, fisheye_left, fisheye_right,
+     traffic_light_front]
+
+intrinsics_dir: config/intrinsics

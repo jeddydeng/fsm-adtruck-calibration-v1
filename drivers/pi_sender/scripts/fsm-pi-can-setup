@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+bitrate="${FSM_PI_CAN_BITRATE:-500000}"
+tx_queue_len="${FSM_PI_CAN_TX_QUEUE_LEN:-1024}"
+restart_ms="${FSM_PI_CAN_RESTART_MS:-100}"
+
+modprobe can || true
+modprobe can_raw || true
+modprobe mcp251xfd || true
+
+for _attempt in {1..40}; do
+    [[ -e /sys/class/net/can10 || -e /sys/class/net/can11 ]] && break
+    sleep 0.25
+done
+
+configured=0
+for iface in can10 can11; do
+    if [[ ! -e "/sys/class/net/${iface}" ]]; then
+        echo "${iface}: controller not present; leaving it offline"
+        continue
+    fi
+    ip link set "${iface}" down 2>/dev/null || true
+    ip link set "${iface}" txqueuelen "${tx_queue_len}"
+    ip link set "${iface}" type can bitrate "${bitrate}" \
+        restart-ms "${restart_ms}" loopback off listen-only on fd off
+    ip link set "${iface}" up
+    ip -details -statistics link show "${iface}"
+    configured=$((configured + 1))
+done
+
+echo "configured_can_interfaces=${configured} listen_only=on bitrate=${bitrate}"
+[[ "${configured}" -gt 0 ]]

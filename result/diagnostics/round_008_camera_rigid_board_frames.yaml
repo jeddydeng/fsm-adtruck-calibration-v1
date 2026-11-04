@@ -1,0 +1,48 @@
+schema_version: 1
+reference_frame: velodyne_top_base_link
+method: rigid_aprilgrid_frame_with_gravity_and_multilidar_board_center
+excluded:
+  traffic_light_front: frozen during extrinsic session
+transforms: {}
+quality: {}
+rejected:
+  video_front_left/camera_link:
+    raw_observations: 9
+    unique_board_poses: 9
+    error: rotation dominant cluster 4/7
+  video_front_mid/camera_link:
+    raw_observations: 72
+    unique_board_poses: 66
+    error: rotation dominant cluster 34/66
+  video_front_right/camera_link:
+    raw_observations: 11
+    unique_board_poses: 11
+    error: rotation dominant cluster 5/9
+  video_rear_left/camera_link:
+    raw_observations: 32
+    unique_board_poses: 31
+    error: rotation dominant cluster 14/25
+  video_rear_mid/camera_link:
+    raw_observations: 5
+    unique_board_poses: 5
+    error: only 0 rigid observations after 10 cm gate
+  video_rear_right/camera_link:
+    raw_observations: 15
+    unique_board_poses: 15
+    error: rotation dominant cluster 7/12
+  fisheye_front/camera_link:
+    raw_observations: 12
+    unique_board_poses: 11
+    error: rotation dominant cluster 4/11
+  fisheye_left/camera_link:
+    raw_observations: 21
+    unique_board_poses: 20
+    error: rotation dominant cluster 9/20
+  fisheye_right/camera_link:
+    raw_observations: 8
+    unique_board_poses: 8
+    error: rotation dominant cluster 3/8
+  fisheye_rear/camera_link:
+    raw_observations: 3
+    unique_board_poses: 3
+    error: only 0 rigid observations after 10 cm gate

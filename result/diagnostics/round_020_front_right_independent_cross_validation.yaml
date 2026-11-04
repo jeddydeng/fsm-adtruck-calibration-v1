@@ -1,0 +1,51 @@
+schema_version: 1
+reference_frame: velodyne_top_base_link
+method: independent_direct_and_stereo_path_cross_validation
+transform:
+  frame: video_front_right/camera_link
+  parent: velodyne_top_base_link
+  xyz_m:
+  - 0.121248872
+  - -0.490775798
+  - -0.310288042
+  rpy_deg:
+  - -1.23469742
+  - 5.08790426
+  - -56.36305971
+  source: equal_weight_direct_lidar_and_camera_pair_fusion
+independent_paths:
+  direct_camera_lidar_consensus:
+    xyz_m:
+    - 0.120140848
+    - -0.489315584
+    - -0.306609917
+    rpy_deg:
+    - -1.41909632
+    - 5.26453649
+    - -56.46661186
+    input_variants:
+    - round_014_camera_plane_nuisance_tightened.yaml
+    - round_017_camera_plane_nuisance_35mm.yaml
+    variant_position_p95_m: 0.0083431697146018
+    variant_angle_p95_deg: 0.06881581161306714
+  rear_right_plus_simultaneous_camera_pair:
+    xyz_m:
+    - 0.122356897
+    - -0.492236013
+    - -0.313966167
+    rpy_deg:
+    - -1.05066899
+    - 4.91094138
+    - -56.2601066
+    rear_absolute_source: round_019_camera_variant_consensus.yaml
+    pair_edge_source: round_003_camera_pair_constraints_v4.yaml
+    pair_edge_position_p95_m: 0.007206659189128639
+    pair_edge_angle_p95_deg: 0.12092820047591826
+    pair_view_count: 5
+independent_cross_check:
+  position_difference_m: 0.00821913632503513
+  angle_difference_deg: 0.5384401391402405
+  evidence_position_p95_m: 0.0083431697146018
+  evidence_angle_p95_deg: 0.5384401391402405
+  achieved_tier: fallback_1cm_1deg
+  note: Tier uses pre-fusion path disagreement, not post-fit closure.

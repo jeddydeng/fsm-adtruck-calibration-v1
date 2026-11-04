@@ -1,0 +1,5670 @@
+{
+  "summary": {
+    "capture_count": 45,
+    "decoded_320x240_count": 45,
+    "exact_duplicate_frames": 0,
+    "unique_frame_hashes": 45,
+    "near_same_consecutive_transitions": 0,
+    "consecutive_mae_min": 3.62765625,
+    "consecutive_mae_median": 37.223498263888885,
+    "freshness_capture_source_ms": {
+      "count": 45,
+      "min": 208.0591,
+      "median": 333.946613,
+      "p95": 399.3361882,
+      "max": 498.26226
+    },
+    "transport_receive_source_ms": {
+      "count": 45,
+      "min": 200.942977,
+      "median": 210.343873,
+      "p95": 221.4602336,
+      "max": 222.028274
+    },
+    "camera_top_source_gap_ms": {
+      "count": 45,
+      "min": 167.536731,
+      "median": 273.395689,
+      "p95": 378.5828638,
+      "max": 474.371106
+    },
+    "source_stamp_strictly_increasing": true,
+    "sample_sequence_strictly_increasing": true,
+    "fresh_pixel_tag_detection_count": 37,
+    "fresh_pixel_pnp_count": 29,
+    "camera_lidar_plane_count": 19,
+    "camera_lidar_capture_count": 19,
+    "plane_count_by_lidar": {
+      "lidar_top": 20,
+      "lidar_front_left": 20,
+      "lidar_front_right": 21
+    },
+    "status_counts": {
+      "accepted_camera_lidar_plane": 22,
+      "no_lidar_board_accepted": 7,
+      "too_few_tags": 4,
+      "no_tags": 4,
+      "pnp_rejected": 8
+    },
+    "fresh_pixel_pnp_reprojection_px": {
+      "count": 29,
+      "min": 0.3794641683095484,
+      "median": 0.6382412979740284,
+      "p95": 3.1173421139645034,
+      "max": 4.05172892211449
+    }
+  },
+  "frames": [
+    {
+      "capture_id": "20260903_160042_050",
+      "index": 0,
+      "image_file": "cameras/20260903_160041_927_traffic_light_front.png",
+      "image_sha256": "6e7bfba8806c98571bb9a8322459caeed315e725767e5b3970c96819e4a4ea23",
+      "width": 320,
+      "height": 240,
+      "capture_minus_camera_source_ms": 327.370952,
+      "receive_minus_camera_source_ms": 204.400838,
+      "camera_top_source_gap_ms": 280.403268,
+      "camera_source_stamp_ns": 1788422441723162043,
+      "camera_receive_stamp_ns": 1788422441927562881,
+      "top_source_stamp_ns": 1788422442003565311,
+      "sample_sequence": 1718,
+      "status": "accepted_camera_lidar_plane",
+      "tag_count": 15,
+      "tag_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "reprojection_rms_px": 0.3905534332157246,
+      "predicted_center_top": [
+        1.6119685886811883,
+        -0.044923189609105636,
+        -0.37538099107015493
+      ],
+      "predicted_normal_top": [
+        -0.9949625871065187,
+        -0.014597582228431561,
+        -0.09917842936539858
+      ],
+      "camera_center": [
+        0.044923189609105636,
+        0.17538099107015498,
+        1.6119685886811883
+      ],
+      "camera_normal": [
+        0.014597582228431561,
+        0.09917842936539858,
+        -0.9949625871065187
+      ],
+      "raw_lidar_observations": [
+        {
+          "lidar": "lidar_top",
+          "camera_lidar_source_gap_ms": 280.403268,
+          "lidar_center": [
+            1.5282911554973528,
+            -0.022502301102727874,
+            -0.25943718049805115
+          ],
+          "lidar_normal": [
+            -0.9973221936662544,
+            0.004924903988644814,
+            -0.0729670291394192
+          ],
+          "lidar_points": 827,
+          "lidar_rms_m": 0.006977762697072577,
+          "lidar_extent_m": [
+            0.8813956524048769,
+            0.36261416374853306
+          ],
+          "seed_center_gap_m": 0.1447327754022238,
+          "seed_normal_gap_deg": 1.8775441432429776,
+          "search": {
+            "roi_points": 827,
+            "orientation_candidates": 155,
+            "shape_candidates": 154,
+            "maximum_inliers": 827
+          },
+          "sparse_plane_equation_only": false,
+          "seed_plane_gap_m": 0.07510370654194823
+        },
+        {
+          "lidar": "lidar_front_left",
+          "camera_lidar_source_gap_ms": 319.495809,
+          "lidar_center": [
+            1.5466408040634547,
+            -0.016520762091620702,
+            -0.5276097051491072
+          ],
+          "lidar_normal": [
+            -0.997382599100372,
+            0.003346952431424008,
+            -0.07222706501865035
+          ],
+          "lidar_points": 647,
+          "lidar_rms_m": 0.0068241067393816955,
+          "lidar_extent_m": [
+            0.8631361018824454,
+            0.8880130227387223
+          ],
+          "seed_center_gap_m": 0.16807140959151373,
+          "seed_normal_gap_deg": 1.8604209177318127,
+          "search": {
+            "roi_points": 675,
+            "orientation_candidates": 158,
+            "shape_candidates": 157,
+            "maximum_inliers": 657
+          },
+          "sparse_plane_equation_only": false,
+          "seed_plane_gap_m": 0.07624689041882843
+        },
+        {
+          "lidar": "lidar_front_right",
+          "camera_lidar_source_gap_ms": 241.936576,
+          "lidar_center": [
+            1.5439351101963226,
+            -0.02706016667725765,
+            -0.5215713237065334
+          ],
+          "lidar_normal": [
+            -0.9977180182380923,
+            0.001596760060539798,
+            -0.06749967733525115
+          ],
+          "lidar_points": 696,
+          "lidar_rms_m": 0.006063810380452951,
+          "lidar_extent_m": [
+            0.8684806552065829,
+            0.8945982505012948
+          ],
+          "seed_center_gap_m": 0.16223210267807475,
+          "seed_normal_gap_deg": 2.0446868961585603,
+          "search": {
+            "roi_points": 757,
+            "orientation_candidates": 162,
+            "shape_candidates": 162,
+            "maximum_inliers": 728
+          },
+          "sparse_plane_equation_only": false,
+          "seed_plane_gap_m": 0.0777745505718308
+        }
+      ],
+      "lidar_observations": [
+        {
+          "lidar": "lidar_consensus",
+          "supporting_lidars": [
+            "lidar_front_left",
+            "lidar_front_right",
+            "lidar_top"
+          ],
+          "camera_lidar_source_gap_ms": 319.495809,
+          "lidar_center": [
+            1.5359725578468693,
+            -0.044672564704231116,
+            -0.3807825948666609
+          ],
+          "lidar_normal": [
+            -0.997478132253825,
+            0.0032895515629697146,
+            -0.07089819832644123
+          ],
+          "lidar_points": 2170,
+          "lidar_rms_m": 0.006977762697072577,
+          "lidar_extent_m": [
+            null,
+            null
+          ],
+          "seed_center_gap_m": 0.07618816731611375,
+          "seed_plane_gap_m": 0.07618816731611373,
+          "sparse_plane_equation_only": false
+        }
+      ],
+      "lidar_status": {
+        "lidar_top": "accepted",
+        "lidar_front_left": "accepted",
+        "lidar_front_right": "accepted",
+        "lidar_rear": "board_not_found"
+      },
+      "lidar_diagnostics": {
+        "lidar_top": {
+          "roi_points": 827,
+          "orientation_candidates": 155,
+          "shape_candidates": 154,
+          "maximum_inliers": 827
+        },
+        "lidar_front_left": {
+          "roi_points": 675,
+          "orientation_candidates": 158,
+          "shape_candidates": 157,
+          "maximum_inliers": 657
+        },
+        "lidar_front_right": {
+          "roi_points": 757,
+          "orientation_candidates": 162,
+          "shape_candidates": 162,
+          "maximum_inliers": 728
+        },
+        "lidar_rear": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        }
+      }
+    },
+    {
+      "capture_id": "20260903_160048_468",
+      "index": 1,
+      "image_file": "cameras/20260903_160048_328_traffic_light_front.png",
+      "image_sha256": "7176509dcdd51514504159c42c7f4e537826e26f715f3e9914f11c605d87653a",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 72.15758680555555,
+      "previous_frame_changed_fraction": 0.7075520833333333,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 344.514966,
+      "receive_minus_camera_source_ms": 204.294573,
+      "camera_top_source_gap_ms": 280.556257,
+      "camera_source_stamp_ns": 1788422448123800223,
+      "camera_receive_stamp_ns": 1788422448328094796,
+      "top_source_stamp_ns": 1788422448404356480,
+      "sample_sequence": 1750,
+      "status": "accepted_camera_lidar_plane",
+      "tag_count": 18,
+      "tag_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "reprojection_rms_px": 0.4696057816035805,
+      "predicted_center_top": [
+        1.8407395877708685,
+        -0.04141477678583566,
+        -0.37674294903812006
+      ],
+      "predicted_normal_top": [
+        -0.9953209789301842,
+        -0.014255309842677564,
+        -0.09556639075924742
+      ],
+      "camera_center": [
+        0.04141477678583566,
+        0.1767429490381201,
+        1.8407395877708685
+      ],
+      "camera_normal": [
+        0.014255309842677562,
+        0.0955663907592474,
+        -0.9953209789301841
+      ],
+      "raw_lidar_observations": [
+        {
+          "lidar": "lidar_top",
+          "camera_lidar_source_gap_ms": 280.556257,
+          "lidar_center": [
+            1.719189263286509,
+            -0.023522163586648367,
+            -0.29056527898900614
+          ],
+          "lidar_normal": [
+            -0.9983678117678639,
+            0.00410908535040004,
+            -0.056963390378647914
+          ],
+          "lidar_points": 829,
+          "lidar_rms_m": 0.005494233046204763,
+          "lidar_extent_m": [
+            0.8808790985541086,
+            0.40526117667410466
+          ],
+          "seed_center_gap_m": 0.15007070934876932,
+          "seed_normal_gap_deg": 2.455715449960131,
+          "search": {
+            "roi_points": 830,
+            "orientation_candidates": 162,
+            "shape_candidates": 162,
+            "maximum_inliers": 830
+          },
+          "sparse_plane_equation_only": false,
+          "seed_plane_gap_m": 0.11651648148897112
+        },
+        {
+          "lidar": "lidar_front_left",
+          "camera_lidar_source_gap_ms": 318.910653,
+          "lidar_center": [
+            1.7349563166218773,
+            -0.010267152967542213,
+            -0.5277079600484913
+          ],
+          "lidar_normal": [
+            -0.9977043157905835,
+            0.0049346393451019654,
+            -0.06754071059277868
+          ],
+          "lidar_points": 603,
+          "lidar_rms_m": 0.006677263815801801,
+          "lidar_extent_m": [
+            0.867080912039601,
+            0.8871108028750821
+          ],
+          "seed_center_gap_m": 0.18695108845328617,
+          "seed_normal_gap_deg": 1.9509908897460408,
+          "search": {
+            "roi_points": 632,
+            "orientation_candidates": 153,
+            "shape_candidates": 153,
+            "maximum_inliers": 610
+          },
+          "sparse_plane_equation_only": false,
+          "seed_plane_gap_m": 0.11589041257208137
+        },
+        {
+          "lidar": "lidar_front_right",
+          "camera_lidar_source_gap_ms": 241.319473,
+          "lidar_center": [
+            1.7326149697559696,
+            -0.027108022071702768,
+            -0.5307198694489256
+          ],
+          "lidar_normal": [
+            -0.9978494231350308,
+            0.0006057215431072156,
+            -0.06554511309394918
+          ],
+          "lidar_points": 610,
+          "lidar_rms_m": 0.005151329307801877,
+          "lidar_extent_m": [
+            0.8684339963473878,
+            0.8788925607638143
+          ],
+          "seed_center_gap_m": 0.18869156915589447,
+          "seed_normal_gap_deg": 1.9248538594626916,
+          "search": {
+            "roi_points": 656,
+            "orientation_candidates": 152,
+            "shape_candidates": 152,
+            "maximum_inliers": 634
+          },
+          "sparse_plane_equation_only": false,
+          "seed_plane_gap_m": 0.11799318828458902
+        }
+      ],
+      "lidar_observations": [
+        {
+          "lidar": "lidar_consensus",
+          "supporting_lidars": [
+            "lidar_front_left",
+            "lidar_front_right",
+            "lidar_top"
+          ],
+          "camera_lidar_source_gap_ms": 318.910653,
+          "lidar_center": [
+            1.723060378735208,
+            -0.04103549523761719,
+            -0.38421303160721143
+          ],
+          "lidar_normal": [
+            -0.9979861550723229,
+            0.0032165217381918765,
+            -0.06335051911286353
+          ],
+          "lidar_points": 2042,
+          "lidar_rms_m": 0.006677263815801801,
+          "lidar_extent_m": [
+            null,
+            null
+          ],
+          "seed_center_gap_m": 0.11791667493336376,
+          "seed_plane_gap_m": 0.11791667493336377,
+          "sparse_plane_equation_only": false
+        }
+      ],
+      "lidar_status": {
+        "lidar_top": "accepted",
+        "lidar_front_left": "accepted",
+        "lidar_front_right": "accepted",
+        "lidar_rear": "board_not_found"
+      },
+      "lidar_diagnostics": {
+        "lidar_top": {
+          "roi_points": 830,
+          "orientation_candidates": 162,
+          "shape_candidates": 162,
+          "maximum_inliers": 830
+        },
+        "lidar_front_left": {
+          "roi_points": 632,
+          "orientation_candidates": 153,
+          "shape_candidates": 153,
+          "maximum_inliers": 610
+        },
+        "lidar_front_right": {
+          "roi_points": 656,
+          "orientation_candidates": 152,
+          "shape_candidates": 152,
+          "maximum_inliers": 634
+        },
+        "lidar_rear": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        }
+      }
+    },
+    {
+      "capture_id": "20260903_160051_732",
+      "index": 2,
+      "image_file": "cameras/20260903_160051_728_traffic_light_front.png",
+      "image_sha256": "73d2a2ef4e1b0897d6b8681443cef8900785815e8a492e961ad6500d32ec8de2",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 72.25572916666667,
+      "previous_frame_changed_fraction": 0.7927604166666666,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 208.0591,
+      "receive_minus_camera_source_ms": 204.228341,
+      "camera_top_source_gap_ms": 179.634075,
+      "camera_source_stamp_ns": 1788422451524244328,
+      "camera_receive_stamp_ns": 1788422451728472669,
+      "top_source_stamp_ns": 1788422451703878403,
+      "sample_sequence": 1766,
+      "status": "accepted_camera_lidar_plane",
+      "tag_count": 18,
+      "tag_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "reprojection_rms_px": 0.41516180623671567,
+      "predicted_center_top": [
+        2.175833949902229,
+        -0.04149971951898713,
+        -0.38791255464836183
+      ],
+      "predicted_normal_top": [
+        -0.9954384552155857,
+        -0.020746641734422734,
+        -0.09312281532874737
+      ],
+      "camera_center": [
+        0.04149971951898713,
+        0.1879125546483619,
+        2.175833949902229
+      ],
+      "camera_normal": [
+        0.020746641734422734,
+        0.09312281532874737,
+        -0.9954384552155857
+      ],
+      "raw_lidar_observations": [
+        {
+          "lidar": "lidar_top",
+          "camera_lidar_source_gap_ms": 179.634075,
+          "lidar_center": [
+            1.9941261760018067,
+            -0.02477753818952412,
+            -0.33710382977637615
+          ],
+          "lidar_normal": [
+            -0.9986315496681099,
+            0.005709839854782858,
+            -0.051984860645213515
+          ],
+          "lidar_points": 786,
+          "lidar_rms_m": 0.005563787876793655,
+          "lidar_extent_m": [
+            0.883297962741711,
+            0.4698727393367381
+          ],
+          "seed_center_gap_m": 0.18941719290333564,
+          "seed_normal_gap_deg": 2.808635213398152,
+          "search": {
+            "roi_points": 786,
+            "orientation_candidates": 172,
+            "shape_candidates": 171,
+            "maximum_inliers": 786
+          },
+          "sparse_plane_equation_only": false,
+          "seed_plane_gap_m": 0.1789133123323037
+        },
+        {
+          "lidar": "lidar_front_left",
+          "camera_lidar_source_gap_ms": 118.47661,
+          "lidar_center": [
+            2.0080095468483146,
+            -0.013084275263730245,
+            -0.5440694582156947
+          ],
+          "lidar_normal": [
+            -0.997503890726001,
+            0.012452789009458898,
+            -0.06950479143466486
+          ],
+          "lidar_points": 547,
+          "lidar_rms_m": 0.006780624569106869,
+          "lidar_extent_m": [
+            0.8562846112315861,
+            0.8879591912568694
+          ],
+          "seed_center_gap_m": 0.23099230780344954,
+          "seed_normal_gap_deg": 2.3375766264113107,
+          "search": {
+            "roi_points": 567,
+            "orientation_candidates": 162,
+            "shape_candidates": 162,
+            "maximum_inliers": 557
+          },
+          "sparse_plane_equation_only": false,
+          "seed_plane_gap_m": 0.1786129995504993
+        },
+        {
+          "lidar": "lidar_front_right",
+          "camera_lidar_source_gap_ms": 140.891294,
+          "lidar_center": [
+            2.005311366424442,
+            -0.032826625648203586,
+            -0.5374602320114139
+          ],
+          "lidar_normal": [
+            -0.9982555416162231,
+            -0.0008829503484573814,
+            -0.059034684984198206
+          ],
+          "lidar_points": 573,
+          "lidar_rms_m": 0.006176972737651928,
+          "lidar_extent_m": [
+            0.8561008305267975,
+            0.8741683072268318
+          ],
+          "seed_center_gap_m": 0.2269750687584732,
+          "seed_normal_gap_deg": 2.2664133790826972,
+          "search": {
+            "roi_points": 619,
+            "orientation_candidates": 152,
+            "shape_candidates": 151,
+            "maximum_inliers": 598
+          },
+          "sparse_plane_equation_only": false,
+          "seed_plane_gap_m": 0.17904595603940635
+        }
+      ],
+      "lidar_observations": [
+        {
+          "lidar": "lidar_consensus",
+          "supporting_lidars": [
+            "lidar_front_left",
+            "lidar_front_right",
+            "lidar_top"
+          ],
+          "camera_lidar_source_gap_ms": 179.634075,
+          "lidar_center": [
+            1.9974660916193931,
+            -0.04047041530748194,
+            -0.3986659063527643
+          ],
+          "lidar_normal": [
+            -0.9981710881134827,
+            0.00576012805608033,
+            -0.06017723638655835
+          ],
+          "lidar_points": 1906,
+          "lidar_rms_m": 0.006780624569106869,
+          "lidar_extent_m": [
+            null,
+            null
+          ],
+          "seed_center_gap_m": 0.17869467509818007,
+          "seed_plane_gap_m": 0.17869467509818004,
+          "sparse_plane_equation_only": false
+        }
+      ],
+      "lidar_status": {
+        "lidar_top": "accepted",
+        "lidar_front_left": "accepted",
+        "lidar_front_right": "accepted",
+        "lidar_rear": "board_not_found"
+      },
+      "lidar_diagnostics": {
+        "lidar_top": {
+          "roi_points": 786,
+          "orientation_candidates": 172,
+          "shape_candidates": 171,
+          "maximum_inliers": 786
+        },
+        "lidar_front_left": {
+          "roi_points": 567,
+          "orientation_candidates": 162,
+          "shape_candidates": 162,
+          "maximum_inliers": 557
+        },
+        "lidar_front_right": {
+          "roi_points": 619,
+          "orientation_candidates": 152,
+          "shape_candidates": 151,
+          "maximum_inliers": 598
+        },
+        "lidar_rear": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        }
+      }
+    },
+    {
+      "capture_id": "20260903_160056_516",
+      "index": 3,
+      "image_file": "cameras/20260903_160056_328_traffic_light_front.png",
+      "image_sha256": "5d99930a6e997ab690c7f66fe3d2176c191fe4b8b1f52e29ea86837cf9bbfdf5",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 63.942083333333336,
+      "previous_frame_changed_fraction": 0.8811979166666667,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 392.280671,
+      "receive_minus_camera_source_ms": 203.559731,
+      "camera_top_source_gap_ms": 379.950299,
+      "camera_source_stamp_ns": 1788422456124510989,
+      "camera_receive_stamp_ns": 1788422456328070720,
+      "top_source_stamp_ns": 1788422456504461288,
+      "sample_sequence": 1790,
+      "status": "accepted_camera_lidar_plane",
+      "tag_count": 24,
+      "tag_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "reprojection_rms_px": 0.6477640246009173,
+      "predicted_center_top": [
+        2.830192001449299,
+        -0.04746970807153955,
+        -0.38898963700930095
+      ],
+      "predicted_normal_top": [
+        -0.9952414022789188,
+        -0.014814927478804498,
+        -0.09630716024101825
+      ],
+      "camera_center": [
+        0.04746970807153955,
+        0.188989637009301,
+        2.830192001449299
+      ],
+      "camera_normal": [
+        0.014814927478804498,
+        0.09630716024101825,
+        -0.9952414022789188
+      ],
+      "raw_lidar_observations": [
+        {
+          "lidar": "lidar_top",
+          "camera_lidar_source_gap_ms": 379.950299,
+          "lidar_center": [
+            2.534454510554448,
+            -0.040138166872056666,
+            -0.42950459776087163
+          ],
+          "lidar_normal": [
+            -0.9988050132034433,
+            0.005684551860017845,
+            -0.04854102872643111
+          ],
+          "lidar_points": 727,
+          "lidar_rms_m": 0.005443568187762236,
+          "lidar_extent_m": [
+            0.8612585749629813,
+            0.5971532053833357
+          ],
+          "seed_center_gap_m": 0.2985898140624414,
+          "seed_normal_gap_deg": 2.9855145510317707,
+          "search": {
+            "roi_points": 730,
+            "orientation_candidates": 160,
+            "shape_candidates": 160,
+            "maximum_inliers": 728
+          },
+          "sparse_plane_equation_only": false,
+          "seed_plane_gap_m": 0.29739240289783975
+        },
+        {
+          "lidar": "lidar_front_left",
+          "camera_lidar_source_gap_ms": 318.255916,
+          "lidar_center": [
+            2.5427323036475666,
+            -0.02690663104810967,
+            -0.5647208414970813
+          ],
+          "lidar_normal": [
+            -0.9975413179848777,
+            0.009553956837093022,
+            -0.06942651382395786
+          ],
+          "lidar_points": 420,
+          "lidar_rms_m": 0.007892357419426252,
+          "lidar_extent_m": [
+            0.871674944405442,
+            0.8781818755196755
+          ],
+          "seed_center_gap_m": 0.3375461068175146,
+          "seed_normal_gap_deg": 2.083114820290774,
+          "search": {
+            "roi_points": 451,
+            "orientation_candidates": 160,
+            "shape_candidates": 160,
+            "maximum_inliers": 441
+          },
+          "sparse_plane_equation_only": false,
+          "seed_plane_gap_m": 0.2991497894606662
+        },
+        {
+          "lidar": "lidar_front_right",
+          "camera_lidar_source_gap_ms": 340.682759,
+          "lidar_center": [
+            2.5366272900219804,
+            -0.049993179290023115,
+            -0.5431671063247256
+          ],
+          "lidar_normal": [
+            -0.998219332321545,
+            -0.007212174828840507,
+            -0.05921274452148908
+          ],
+          "lidar_points": 426,
+          "lidar_rms_m": 0.006327627155156404,
+          "lidar_extent_m": [
+            0.8505276743064784,
+            0.8735130428888558
+          ],
+          "seed_center_gap_m": 0.33159809973355425,
+          "seed_normal_gap_deg": 2.176364227205917,
+          "search": {
+            "roi_points": 449,
+            "orientation_candidates": 155,
+            "shape_candidates": 155,
+            "maximum_inliers": 432
+          },
+          "sparse_plane_equation_only": false,
+          "seed_plane_gap_m": 0.3021894410512924
+        }
+      ],
+      "lidar_observations": [
+        {
+          "lidar": "lidar_consensus",
+          "supporting_lidars": [
+            "lidar_front_left",
+            "lidar_front_right",
+            "lidar_top"
+          ],
+          "camera_lidar_source_gap_ms": 379.950299,
+          "lidar_center": [
+            2.527916392421747,
+            -0.046659518805078036,
+            -0.4068744607869018
+          ],
+          "lidar_normal": [
+            -0.9982506260357302,
+            0.002675610993075248,
+            -0.05906376829399251
+          ],
+          "lidar_points": 1573,
+          "lidar_rms_m": 0.007892357419426252,
+          "lidar_extent_m": [
+            null,
+            null
+          ],
+          "seed_center_gap_m": 0.30280532878597255,
+          "seed_plane_gap_m": 0.30280532878597255,
+          "sparse_plane_equation_only": false
+        }
+      ],
+      "lidar_status": {
+        "lidar_top": "accepted",
+        "lidar_front_left": "accepted",
+        "lidar_front_right": "accepted",
+        "lidar_rear": "board_not_found"
+      },
+      "lidar_diagnostics": {
+        "lidar_top": {
+          "roi_points": 730,
+          "orientation_candidates": 160,
+          "shape_candidates": 160,
+          "maximum_inliers": 728
+        },
+        "lidar_front_left": {
+          "roi_points": 451,
+          "orientation_candidates": 160,
+          "shape_candidates": 160,
+          "maximum_inliers": 441
+        },
+        "lidar_front_right": {
+          "roi_points": 449,
+          "orientation_candidates": 155,
+          "shape_candidates": 155,
+          "maximum_inliers": 432
+        },
+        "lidar_rear": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        }
+      }
+    },
+    {
+      "capture_id": "20260903_160056_763",
+      "index": 4,
+      "image_file": "cameras/20260903_160056_727_traffic_light_front.png",
+      "image_sha256": "68680e74068e8b60935b72ee704be1e58b2b40f473b435b684a7ad30aa086c8c",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 5.956788194444444,
+      "previous_frame_changed_fraction": 0.5791666666666667,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 238.951796,
+      "receive_minus_camera_source_ms": 203.281955,
+      "camera_top_source_gap_ms": 179.565309,
+      "camera_source_stamp_ns": 1788422456524551989,
+      "camera_receive_stamp_ns": 1788422456727833944,
+      "top_source_stamp_ns": 1788422456704117298,
+      "sample_sequence": 1791,
+      "status": "accepted_camera_lidar_plane",
+      "tag_count": 24,
+      "tag_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "reprojection_rms_px": 0.6382412979740284,
+      "predicted_center_top": [
+        2.8286288355818763,
+        -0.04698826204893659,
+        -0.3889289375706533
+      ],
+      "predicted_normal_top": [
+        -0.9950410023332901,
+        -0.007982360675245829,
+        -0.09914477088385402
+      ],
+      "camera_center": [
+        0.04698826204893659,
+        0.18892893757065332,
+        2.8286288355818763
+      ],
+      "camera_normal": [
+        0.007982360675245829,
+        0.09914477088385402,
+        -0.9950410023332901
+      ],
+      "raw_lidar_observations": [
+        {
+          "lidar": "lidar_top",
+          "camera_lidar_source_gap_ms": 179.565309,
+          "lidar_center": [
+            2.5342105131248776,
+            -0.03743568595130871,
+            -0.4292077866673273
+          ],
+          "lidar_normal": [
+            -0.9987213904244049,
+            0.006279567300440244,
+            -0.050161253406016806
+          ],
+          "lidar_points": 721,
+          "lidar_rms_m": 0.005390011204363302,
+          "lidar_extent_m": [
+            0.8660151686489285,
+            0.5966790831975108
+          ],
+          "seed_center_gap_m": 0.2973142882423361,
+          "seed_normal_gap_deg": 2.9310044873730723,
+          "search": {
+            "roi_points": 723,
+            "orientation_candidates": 166,
+            "shape_candidates": 165,
+            "maximum_inliers": 722
+          },
+          "sparse_plane_equation_only": false,
+          "seed_plane_gap_m": 0.2961222999716132
+        },
+        {
+          "lidar": "lidar_front_left",
+          "camera_lidar_source_gap_ms": 218.212961,
+          "lidar_center": [
+            2.5420119869136637,
+            -0.025233228806597462,
+            -0.5613983946624819
+          ],
+          "lidar_normal": [
+            -0.9975990221015465,
+            0.010846281894869832,
+            -0.06839992157228872
+          ],
+          "lidar_points": 421,
+          "lidar_rms_m": 0.00813977575967124,
+          "lidar_extent_m": [
+            0.8728632430454513,
+            0.8800960913885912
+          ],
+          "seed_center_gap_m": 0.3352136826584238,
+          "seed_normal_gap_deg": 2.0709466045842158,
+          "search": {
+            "roi_points": 451,
+            "orientation_candidates": 162,
+            "shape_candidates": 162,
+            "maximum_inliers": 444
+          },
+          "sparse_plane_equation_only": false,
+          "seed_plane_gap_m": 0.29796154651111073
+        },
+        {
+          "lidar": "lidar_front_right",
+          "camera_lidar_source_gap_ms": 140.641807,
+          "lidar_center": [
+            2.5371263557734536,
+            -0.04843464704374311,
+            -0.5420303779324274
+          ],
+          "lidar_normal": [
+            -0.9981618450601009,
+            -0.005645154379106559,
+            -0.06034122387101
+          ],
+          "lidar_points": 439,
+          "lidar_rms_m": 0.006771493419662716,
+          "lidar_extent_m": [
+            0.8500825349788643,
+            0.8686945514319037
+          ],
+          "seed_center_gap_m": 0.3292656052563993,
+          "seed_normal_gap_deg": 2.2346163910194465,
+          "search": {
+            "roi_points": 459,
+            "orientation_candidates": 152,
+            "shape_candidates": 152,
+            "maximum_inliers": 443
+          },
+          "sparse_plane_equation_only": false,
+          "seed_plane_gap_m": 0.3002131464396012
+        }
+      ],
+      "lidar_observations": [
+        {
+          "lidar": "lidar_consensus",
+          "supporting_lidars": [
+            "lidar_front_left",
+            "lidar_front_right",
+            "lidar_top"
+          ],
+          "camera_lidar_source_gap_ms": 218.212961,
+          "lidar_center": [
+            2.5280908206114034,
+            -0.045836014370125806,
+            -0.40688428584076536
+          ],
+          "lidar_normal": [
+            -0.9982127793112638,
+            0.0038270977401433483,
+            -0.0596372412387538
+          ],
+          "lidar_points": 1581,
+          "lidar_rms_m": 0.00813977575967124,
+          "lidar_extent_m": [
+            null,
+            null
+          ],
+          "seed_center_gap_m": 0.3010761044131641,
+          "seed_plane_gap_m": 0.30107610441316407,
+          "sparse_plane_equation_only": false
+        }
+      ],
+      "lidar_status": {
+        "lidar_top": "accepted",
+        "lidar_front_left": "accepted",
+        "lidar_front_right": "accepted",
+        "lidar_rear": "board_not_found"
+      },
+      "lidar_diagnostics": {
+        "lidar_top": {
+          "roi_points": 723,
+          "orientation_candidates": 166,
+          "shape_candidates": 165,
+          "maximum_inliers": 722
+        },
+        "lidar_front_left": {
+          "roi_points": 451,
+          "orientation_candidates": 162,
+          "shape_candidates": 162,
+          "maximum_inliers": 444
+        },
+        "lidar_front_right": {
+          "roi_points": 459,
+          "orientation_candidates": 152,
+          "shape_candidates": 152,
+          "maximum_inliers": 443
+        },
+        "lidar_rear": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        }
+      }
+    },
+    {
+      "capture_id": "20260903_160100_660",
+      "index": 5,
+      "image_file": "cameras/20260903_160100_527_traffic_light_front.png",
+      "image_sha256": "cdd2e6d325bd9ad96391ae63e5e175fcbd51f5ebbc82e9436bce344bf519016f",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 52.61909722222222,
+      "previous_frame_changed_fraction": 0.92625,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 334.058941,
+      "receive_minus_camera_source_ms": 201.56206,
+      "camera_top_source_gap_ms": 278.078006,
+      "camera_source_stamp_ns": 1788422460326415374,
+      "camera_receive_stamp_ns": 1788422460527977434,
+      "top_source_stamp_ns": 1788422460604493380,
+      "sample_sequence": 1811,
+      "status": "accepted_camera_lidar_plane",
+      "tag_count": 30,
+      "tag_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "reprojection_rms_px": 0.5414115670446272,
+      "predicted_center_top": [
+        3.4425738037994553,
+        -0.046494632923171644,
+        -0.3948379683819718
+      ],
+      "predicted_normal_top": [
+        -0.9959747284741054,
+        -0.009174069025700964,
+        -0.08916376337079925
+      ],
+      "camera_center": [
+        0.046494632923171644,
+        0.19483796838197184,
+        3.4425738037994553
+      ],
+      "camera_normal": [
+        0.009174069025700964,
+        0.08916376337079925,
+        -0.9959747284741054
+      ],
+      "raw_lidar_observations": [
+        {
+          "lidar": "lidar_top",
+          "camera_lidar_source_gap_ms": 278.078006,
+          "lidar_center": [
+            3.037236469380597,
+            -0.04277109020634336,
+            -0.5129818748809909
+          ],
+          "lidar_normal": [
+            -0.9986957163210467,
+            0.009480986903072587,
+            -0.050169483646289564
+          ],
+          "lidar_points": 703,
+          "lidar_rms_m": 0.005761798007392884,
+          "lidar_extent_m": [
+            0.8852641047743464,
+            0.7132153980913427
+          ],
+          "seed_center_gap_m": 0.4222205609477093,
+          "seed_normal_gap_deg": 2.4818148761543224,
+          "search": {
+            "roi_points": 743,
+            "orientation_candidates": 165,
+            "shape_candidates": 139,
+            "maximum_inliers": 713
+          },
+          "sparse_plane_equation_only": false,
+          "seed_plane_gap_m": 0.41077118119384787
+        },
+        {
+          "lidar": "lidar_front_left",
+          "camera_lidar_source_gap_ms": 316.38758,
+          "lidar_center": [
+            3.0382933072541585,
+            -0.026991709229401282,
+            -0.5623908756063716
+          ],
+          "lidar_normal": [
+            -0.9985846639096654,
+            -0.007763181298687937,
+            -0.052615606245146676
+          ],
+          "lidar_points": 361,
+          "lidar_rms_m": 0.006031594123173462,
+          "lidar_extent_m": [
+            0.8715846516399457,
+            0.8847781061885969
+          ],
+          "seed_center_gap_m": 0.43806056731788257,
+          "seed_normal_gap_deg": 2.101061186615064,
+          "search": {
+            "roi_points": 402,
+            "orientation_candidates": 162,
+            "shape_candidates": 130,
+            "maximum_inliers": 393
+          },
+          "sparse_plane_equation_only": false,
+          "seed_plane_gap_m": 0.4123727968271773
+        },
+        {
+          "lidar": "lidar_front_right",
+          "camera_lidar_source_gap_ms": 238.816426,
+          "lidar_center": [
+            3.031170507371802,
+            -0.04327301664971347,
+            -0.5595084732889334
+          ],
+          "lidar_normal": [
+            -0.998528245215106,
+            0.0007988744685038311,
+            -0.054228270369106026
+          ],
+          "lidar_points": 377,
+          "lidar_rms_m": 0.0058675037714325156,
+          "lidar_extent_m": [
+            0.8658154884507105,
+            0.888736253810742
+          ],
+          "seed_center_gap_m": 0.4431471835736596,
+          "seed_normal_gap_deg": 2.0868687961034214,
+          "search": {
+            "roi_points": 401,
+            "orientation_candidates": 159,
+            "shape_candidates": 85,
+            "maximum_inliers": 389
+          },
+          "sparse_plane_equation_only": false,
+          "seed_plane_gap_m": 0.419730181986515
+        }
+      ],
+      "lidar_observations": [
+        {
+          "lidar": "lidar_consensus",
+          "supporting_lidars": [
+            "lidar_front_left",
+            "lidar_front_right",
+            "lidar_top"
+          ],
+          "camera_lidar_source_gap_ms": 316.38758,
+          "lidar_center": [
+            3.030105486572342,
+            -0.046148131886407706,
+            -0.416455850091356
+          ],
+          "lidar_normal": [
+            -0.9986290146454226,
+            0.0008389153165591111,
+            -0.05233915675098183
+          ],
+          "lidar_points": 1441,
+          "lidar_rms_m": 0.006031594123173462,
+          "lidar_extent_m": [
+            null,
+            null
+          ],
+          "seed_center_gap_m": 0.4130345815894066,
+          "seed_plane_gap_m": 0.41303458158940654,
+          "sparse_plane_equation_only": false
+        }
+      ],
+      "lidar_status": {
+        "lidar_top": "accepted",
+        "lidar_front_left": "accepted",
+        "lidar_front_right": "accepted",
+        "lidar_rear": "board_not_found"
+      },
+      "lidar_diagnostics": {
+        "lidar_top": {
+          "roi_points": 743,
+          "orientation_candidates": 165,
+          "shape_candidates": 139,
+          "maximum_inliers": 713
+        },
+        "lidar_front_left": {
+          "roi_points": 402,
+          "orientation_candidates": 162,
+          "shape_candidates": 130,
+          "maximum_inliers": 393
+        },
+        "lidar_front_right": {
+          "roi_points": 401,
+          "orientation_candidates": 159,
+          "shape_candidates": 85,
+          "maximum_inliers": 389
+        },
+        "lidar_rear": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        }
+      }
+    },
+    {
+      "capture_id": "20260903_160104_435",
+      "index": 6,
+      "image_file": "cameras/20260903_160104_328_traffic_light_front.png",
+      "image_sha256": "97fd1b363796fa159c35c80881657a974fb9234532a35e05f435b3094e306935",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 44.371822916666666,
+      "previous_frame_changed_fraction": 0.7903645833333334,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 310.324623,
+      "receive_minus_camera_source_ms": 203.456804,
+      "camera_top_source_gap_ms": 279.142499,
+      "camera_source_stamp_ns": 1788422464125038981,
+      "camera_receive_stamp_ns": 1788422464328495785,
+      "top_source_stamp_ns": 1788422464404181480,
+      "sample_sequence": 1830,
+      "status": "accepted_camera_lidar_plane",
+      "tag_count": 30,
+      "tag_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "reprojection_rms_px": 0.5793115340928835,
+      "predicted_center_top": [
+        3.9650612880665337,
+        -0.04185148177744618,
+        -0.3971028608206807
+      ],
+      "predicted_normal_top": [
+        -0.9958611902145561,
+        -0.002987332941087423,
+        -0.09083812892363417
+      ],
+      "camera_center": [
+        0.04185148177744618,
+        0.19710286082068074,
+        3.9650612880665337
+      ],
+      "camera_normal": [
+        0.002987332941087423,
+        0.09083812892363417,
+        -0.9958611902145561
+      ],
+      "raw_lidar_observations": [
+        {
+          "lidar": "lidar_top",
+          "camera_lidar_source_gap_ms": 279.142499,
+          "lidar_center": [
+            3.4644052553940092,
+            -0.038387534697596,
+            -0.41682764394289157
+          ],
+          "lidar_normal": [
+            -0.9992009275631997,
+            0.0069132875853711515,
+            -0.039366391904814176
+          ],
+          "lidar_points": 671,
+          "lidar_rms_m": 0.005951242373584541,
+          "lidar_extent_m": [
+            0.8796382557938546,
+            0.8662470553024267
+          ],
+          "seed_center_gap_m": 0.501056413041468,
+          "seed_normal_gap_deg": 3.0096105695712936,
+          "search": {
+            "roi_points": 706,
+            "orientation_candidates": 170,
+            "shape_candidates": 0,
+            "maximum_inliers": 0,
+            "rejection": "no_oriented_board_sized_plane",
+            "sparse_roi_points": 706
+          },
+          "sparse_plane_equation_only": true,
+          "seed_plane_gap_m": 0.501056413041468
+        },
+        {
+          "lidar": "lidar_front_left",
+          "camera_lidar_source_gap_ms": 217.800975,
+          "lidar_center": [
+            3.4633194179694646,
+            -0.04711733637363115,
+            -0.41987705066131165
+          ],
+          "lidar_normal": [
+            -0.9989165518027199,
+            -0.010483775879613036,
+            -0.04534107384999055
+          ],
+          "lidar_points": 302,
+          "lidar_rms_m": 0.005621359891683023,
+          "lidar_extent_m": [
+            0.8949887067002276,
+            0.8744098691039228
+          ],
+          "seed_center_gap_m": 0.5022860710352511,
+          "seed_normal_gap_deg": 2.6479664963723466,
+          "search": {
+            "roi_points": 318,
+            "orientation_candidates": 158,
+            "shape_candidates": 1,
+            "maximum_inliers": 62,
+            "rejection": "board_center_over_limit_from_camera_prediction",
+            "candidate_prediction_error_m": 0.5263194366035483,
+            "sparse_roi_points": 310
+          },
+          "sparse_plane_equation_only": true,
+          "seed_plane_gap_m": 0.5022860710352511
+        },
+        {
+          "lidar": "lidar_front_right",
+          "camera_lidar_source_gap_ms": 240.161777,
+          "lidar_center": [
+            3.457444750799472,
+            -0.03948996849691675,
+            -0.4205299227852146
+          ],
+          "lidar_normal": [
+            -0.9989259495111339,
+            0.00464716320854404,
+            -0.04610153215884349
+          ],
+          "lidar_points": 321,
+          "lidar_rms_m": 0.006169138764105997,
+          "lidar_extent_m": [
+            0.8497157018561257,
+            0.86274847115139
+          ],
+          "seed_center_gap_m": 0.5081623292652322,
+          "seed_normal_gap_deg": 2.60642160773897,
+          "search": {
+            "roi_points": 333,
+            "orientation_candidates": 153,
+            "shape_candidates": 2,
+            "maximum_inliers": 106,
+            "rejection": "board_center_over_limit_from_camera_prediction",
+            "candidate_prediction_error_m": 0.5267376083217089,
+            "sparse_roi_points": 325
+          },
+          "sparse_plane_equation_only": true,
+          "seed_plane_gap_m": 0.5081623292652323
+        }
+      ],
+      "lidar_observations": [
+        {
+          "lidar": "lidar_consensus",
+          "supporting_lidars": [
+            "lidar_front_left",
+            "lidar_front_right",
+            "lidar_top"
+          ],
+          "camera_lidar_source_gap_ms": 279.142499,
+          "lidar_center": [
+            3.46158679242702,
+            -0.04167061073826704,
+            -0.41907751544701044
+          ],
+          "lidar_normal": [
+            -0.9990488070998442,
+            0.0003589039712951124,
+            -0.04360449770743622
+          ],
+          "lidar_points": 1294,
+          "lidar_rms_m": 0.006169138764105997,
+          "lidar_extent_m": [
+            null,
+            null
+          ],
+          "seed_center_gap_m": 0.5039538529664616,
+          "seed_plane_gap_m": 0.5039538529664614,
+          "sparse_plane_equation_only": true
+        }
+      ],
+      "lidar_status": {
+        "lidar_top": "accepted",
+        "lidar_front_left": "accepted",
+        "lidar_front_right": "accepted",
+        "lidar_rear": "board_not_found"
+      },
+      "lidar_diagnostics": {
+        "lidar_top": {
+          "roi_points": 706,
+          "orientation_candidates": 170,
+          "shape_candidates": 0,
+          "maximum_inliers": 0,
+          "rejection": "no_oriented_board_sized_plane",
+          "sparse_roi_points": 706
+        },
+        "lidar_front_left": {
+          "roi_points": 318,
+          "orientation_candidates": 158,
+          "shape_candidates": 1,
+          "maximum_inliers": 62,
+          "rejection": "board_center_over_limit_from_camera_prediction",
+          "candidate_prediction_error_m": 0.5263194366035483,
+          "sparse_roi_points": 310
+        },
+        "lidar_front_right": {
+          "roi_points": 333,
+          "orientation_candidates": 153,
+          "shape_candidates": 2,
+          "maximum_inliers": 106,
+          "rejection": "board_center_over_limit_from_camera_prediction",
+          "candidate_prediction_error_m": 0.5267376083217089,
+          "sparse_roi_points": 325
+        },
+        "lidar_rear": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        }
+      }
+    },
+    {
+      "capture_id": "20260903_160107_730",
+      "index": 7,
+      "image_file": "cameras/20260903_160107_528_traffic_light_front.png",
+      "image_sha256": "be4db36f940a8da4054a9e2009c82fade37046665cb7f2caf3020797be11c313",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 40.09847222222222,
+      "previous_frame_changed_fraction": 0.9235416666666667,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 404.990929,
+      "receive_minus_camera_source_ms": 203.353988,
+      "camera_top_source_gap_ms": 378.984205,
+      "camera_source_stamp_ns": 1788422467325123080,
+      "camera_receive_stamp_ns": 1788422467528477068,
+      "top_source_stamp_ns": 1788422467704107285,
+      "sample_sequence": 1846,
+      "status": "accepted_camera_lidar_plane",
+      "tag_count": 30,
+      "tag_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "reprojection_rms_px": 0.5588382330912911,
+      "predicted_center_top": [
+        4.4446719231574265,
+        -0.04080374429609547,
+        -0.3836361607789526
+      ],
+      "predicted_normal_top": [
+        -0.9950046705435271,
+        -0.0011421970373163004,
+        -0.09982184621862542
+      ],
+      "camera_center": [
+        0.04080374429609547,
+        0.18363616077895265,
+        4.4446719231574265
+      ],
+      "camera_normal": [
+        0.0011421970373163004,
+        0.09982184621862542,
+        -0.9950046705435271
+      ],
+      "raw_lidar_observations": [
+        {
+          "lidar": "lidar_top",
+          "camera_lidar_source_gap_ms": 378.984205,
+          "lidar_center": [
+            3.8462191584926773,
+            -0.0357597037524997,
+            -0.41313798941704166
+          ],
+          "lidar_normal": [
+            -0.9987517325198778,
+            0.00841794796392812,
+            -0.04923530177240005
+          ],
+          "lidar_points": 641,
+          "lidar_rms_m": 0.005500074254738686,
+          "lidar_extent_m": [
+            0.8757377076850696,
+            0.899570787887044
+          ],
+          "seed_center_gap_m": 0.5992007274468869,
+          "seed_normal_gap_deg": 2.95783163931926,
+          "search": {
+            "roi_points": 648,
+            "orientation_candidates": 172,
+            "shape_candidates": 0,
+            "maximum_inliers": 0,
+            "rejection": "no_oriented_board_sized_plane",
+            "sparse_roi_points": 654
+          },
+          "sparse_plane_equation_only": true,
+          "seed_plane_gap_m": 0.5992007274468869
+        },
+        {
+          "lidar": "lidar_front_left",
+          "camera_lidar_source_gap_ms": 317.677728,
+          "lidar_center": [
+            3.848444682149063,
+            -0.0493457363719868,
+            -0.4146805326580586
+          ],
+          "lidar_normal": [
+            -0.9985450145693591,
+            -0.01430589381901893,
+            -0.05199226173881527
+          ],
+          "lidar_points": 259,
+          "lidar_rms_m": 0.005302474276423966,
+          "lidar_extent_m": [
+            0.872512430382465,
+            0.8623533620656073
+          ],
+          "seed_center_gap_m": 0.5970960069992411,
+          "seed_normal_gap_deg": 2.8498508995278207,
+          "search": {
+            "roi_points": 276,
+            "orientation_candidates": 164,
+            "shape_candidates": 0,
+            "maximum_inliers": 0,
+            "rejection": "no_oriented_board_sized_plane",
+            "sparse_roi_points": 268
+          },
+          "sparse_plane_equation_only": true,
+          "seed_plane_gap_m": 0.5970960069992411
+        },
+        {
+          "lidar": "lidar_front_right",
+          "camera_lidar_source_gap_ms": 340.14558,
+          "lidar_center": [
+            3.8407526407559,
+            -0.03630467744197201,
+            -0.4141030246822708
+          ],
+          "lidar_normal": [
+            -0.9987022518960301,
+            0.007440113819145271,
+            -0.05038309998557659
+          ],
+          "lidar_points": 266,
+          "lidar_rms_m": 0.006136500694862907,
+          "lidar_extent_m": [
+            0.8656940293868154,
+            0.8810010950230172
+          ],
+          "seed_center_gap_m": 0.6047040359176015,
+          "seed_normal_gap_deg": 2.883094946012425,
+          "search": {
+            "roi_points": 284,
+            "orientation_candidates": 152,
+            "shape_candidates": 0,
+            "maximum_inliers": 0,
+            "rejection": "no_oriented_board_sized_plane",
+            "sparse_roi_points": 273
+          },
+          "sparse_plane_equation_only": true,
+          "seed_plane_gap_m": 0.6047040359176015
+        }
+      ],
+      "lidar_observations": [
+        {
+          "lidar": "lidar_consensus",
+          "supporting_lidars": [
+            "lidar_front_left",
+            "lidar_front_right",
+            "lidar_top"
+          ],
+          "camera_lidar_source_gap_ms": 378.984205,
+          "lidar_center": [
+            3.846393161105371,
+            -0.04049378787476626,
+            -0.4139116849368288
+          ],
+          "lidar_normal": [
+            -0.998721918719274,
+            0.0005174181192183648,
+            -0.050539700713218706
+          ],
+          "lidar_points": 1166,
+          "lidar_rms_m": 0.006136500694862907,
+          "lidar_extent_m": [
+            null,
+            null
+          ],
+          "seed_center_gap_m": 0.5990443894725641,
+          "seed_plane_gap_m": 0.599044389472564,
+          "sparse_plane_equation_only": true
+        }
+      ],
+      "lidar_status": {
+        "lidar_top": "accepted",
+        "lidar_front_left": "accepted",
+        "lidar_front_right": "accepted",
+        "lidar_rear": "board_not_found"
+      },
+      "lidar_diagnostics": {
+        "lidar_top": {
+          "roi_points": 648,
+          "orientation_candidates": 172,
+          "shape_candidates": 0,
+          "maximum_inliers": 0,
+          "rejection": "no_oriented_board_sized_plane",
+          "sparse_roi_points": 654
+        },
+        "lidar_front_left": {
+          "roi_points": 276,
+          "orientation_candidates": 164,
+          "shape_candidates": 0,
+          "maximum_inliers": 0,
+          "rejection": "no_oriented_board_sized_plane",
+          "sparse_roi_points": 268
+        },
+        "lidar_front_right": {
+          "roi_points": 284,
+          "orientation_candidates": 152,
+          "shape_candidates": 0,
+          "maximum_inliers": 0,
+          "rejection": "no_oriented_board_sized_plane",
+          "sparse_roi_points": 273
+        },
+        "lidar_rear": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        }
+      }
+    },
+    {
+      "capture_id": "20260903_160109_256",
+      "index": 8,
+      "image_file": "cameras/20260903_160109_127_traffic_light_front.png",
+      "image_sha256": "e4eec1bc9014e8cace219d61c4785f78a9cef61c5ce702844f5fe4447c5f3e67",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 7.567847222222222,
+      "previous_frame_changed_fraction": 0.52734375,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 330.665392,
+      "receive_minus_camera_source_ms": 202.472443,
+      "camera_top_source_gap_ms": 278.934188,
+      "camera_source_stamp_ns": 1788422468925360255,
+      "camera_receive_stamp_ns": 1788422469127832698,
+      "top_source_stamp_ns": 1788422469204294443,
+      "sample_sequence": 1853,
+      "status": "accepted_camera_lidar_plane",
+      "tag_count": 30,
+      "tag_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "reprojection_rms_px": 0.5692433676221484,
+      "predicted_center_top": [
+        4.442233637740256,
+        -0.04208581498480404,
+        -0.38142123777035053
+      ],
+      "predicted_normal_top": [
+        -0.996364327633199,
+        -0.014883978496393785,
+        -0.08388440739590498
+      ],
+      "camera_center": [
+        0.04208581498480404,
+        0.18142123777035055,
+        4.442233637740256
+      ],
+      "camera_normal": [
+        0.014883978496393785,
+        0.08388440739590498,
+        -0.996364327633199
+      ],
+      "raw_lidar_observations": [
+        {
+          "lidar": "lidar_top",
+          "camera_lidar_source_gap_ms": 278.934188,
+          "lidar_center": [
+            3.846321395470425,
+            -0.03602441029717721,
+            -0.41121168088206045
+          ],
+          "lidar_normal": [
+            -0.9987012371052794,
+            0.010158429263125624,
+            -0.04992639902186713
+          ],
+          "lidar_points": 640,
+          "lidar_rms_m": 0.0053987272609240895,
+          "lidar_extent_m": [
+            0.8734553850016381,
+            0.8999953877696973
+          ],
+          "seed_center_gap_m": 0.5966871974616491,
+          "seed_normal_gap_deg": 2.421379204265931,
+          "search": {
+            "roi_points": 654,
+            "orientation_candidates": 167,
+            "shape_candidates": 0,
+            "maximum_inliers": 0,
+            "rejection": "no_oriented_board_sized_plane",
+            "sparse_roi_points": 659
+          },
+          "sparse_plane_equation_only": true,
+          "seed_plane_gap_m": 0.5966871974616492
+        },
+        {
+          "lidar": "lidar_front_left",
+          "camera_lidar_source_gap_ms": 317.45071,
+          "lidar_center": [
+            3.8493191863523832,
+            -0.049903611699578854,
+            -0.4122068342484175
+          ],
+          "lidar_normal": [
+            -0.9985681813984973,
+            -0.013166491438591882,
+            -0.05184814945294833
+          ],
+          "lidar_points": 265,
+          "lidar_rms_m": 0.006221816039906463,
+          "lidar_extent_m": [
+            0.8831077497250708,
+            0.8655254279509942
+          ],
+          "seed_center_gap_m": 0.5937646146079826,
+          "seed_normal_gap_deg": 1.8425895880823895,
+          "search": {
+            "roi_points": 285,
+            "orientation_candidates": 163,
+            "shape_candidates": 0,
+            "maximum_inliers": 0,
+            "rejection": "no_oriented_board_sized_plane",
+            "sparse_roi_points": 274
+          },
+          "sparse_plane_equation_only": true,
+          "seed_plane_gap_m": 0.5937646146079826
+        },
+        {
+          "lidar": "lidar_front_right",
+          "camera_lidar_source_gap_ms": 239.878364,
+          "lidar_center": [
+            3.8408786721580794,
+            -0.03970621371142288,
+            -0.41110822366510613
+          ],
+          "lidar_normal": [
+            -0.9987758804415938,
+            0.003952222053442783,
+            -0.04930639501078479
+          ],
+          "lidar_points": 268,
+          "lidar_rms_m": 0.005759618126317797,
+          "lidar_extent_m": [
+            0.8490542289441035,
+            0.8783236187476877
+          ],
+          "seed_center_gap_m": 0.6020919981731002,
+          "seed_normal_gap_deg": 2.260432036429534,
+          "search": {
+            "roi_points": 284,
+            "orientation_candidates": 155,
+            "shape_candidates": 0,
+            "maximum_inliers": 0,
+            "rejection": "no_oriented_board_sized_plane",
+            "sparse_roi_points": 276
+          },
+          "sparse_plane_equation_only": true,
+          "seed_plane_gap_m": 0.6020919981731003
+        }
+      ],
+      "lidar_observations": [
+        {
+          "lidar": "lidar_consensus",
+          "supporting_lidars": [
+            "lidar_front_left",
+            "lidar_front_right",
+            "lidar_top"
+          ],
+          "camera_lidar_source_gap_ms": 317.45071,
+          "lidar_center": [
+            3.846751887177203,
+            -0.04189815761622328,
+            -0.4114494702323869
+          ],
+          "lidar_normal": [
+            -0.9987309396964258,
+            0.00031473545559777973,
+            -0.05036279415091295
+          ],
+          "lidar_points": 1173,
+          "lidar_rms_m": 0.006221816039906463,
+          "lidar_extent_m": [
+            null,
+            null
+          ],
+          "seed_center_gap_m": 0.5962384130645393,
+          "seed_plane_gap_m": 0.5962384130645393,
+          "sparse_plane_equation_only": true
+        }
+      ],
+      "lidar_status": {
+        "lidar_top": "accepted",
+        "lidar_front_left": "accepted",
+        "lidar_front_right": "accepted",
+        "lidar_rear": "board_not_found"
+      },
+      "lidar_diagnostics": {
+        "lidar_top": {
+          "roi_points": 654,
+          "orientation_candidates": 167,
+          "shape_candidates": 0,
+          "maximum_inliers": 0,
+          "rejection": "no_oriented_board_sized_plane",
+          "sparse_roi_points": 659
+        },
+        "lidar_front_left": {
+          "roi_points": 285,
+          "orientation_candidates": 163,
+          "shape_candidates": 0,
+          "maximum_inliers": 0,
+          "rejection": "no_oriented_board_sized_plane",
+          "sparse_roi_points": 274
+        },
+        "lidar_front_right": {
+          "roi_points": 284,
+          "orientation_candidates": 155,
+          "shape_candidates": 0,
+          "maximum_inliers": 0,
+          "rejection": "no_oriented_board_sized_plane",
+          "sparse_roi_points": 276
+        },
+        "lidar_rear": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        }
+      }
+    },
+    {
+      "capture_id": "20260903_160112_855",
+      "index": 9,
+      "image_file": "cameras/20260903_160112_728_traffic_light_front.png",
+      "image_sha256": "77a32f53fb09e184e2ab283bdad2f71aa24526e566b15f80b022591626cbdc5b",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 36.15052083333333,
+      "previous_frame_changed_fraction": 0.8950520833333333,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 330.196607,
+      "receive_minus_camera_source_ms": 202.561143,
+      "camera_top_source_gap_ms": 278.1971,
+      "camera_source_stamp_ns": 1788422472525530288,
+      "camera_receive_stamp_ns": 1788422472728091431,
+      "top_source_stamp_ns": 1788422472803727388,
+      "sample_sequence": 1871,
+      "status": "accepted_camera_lidar_plane",
+      "tag_count": 29,
+      "tag_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "reprojection_rms_px": 0.6116056445827309,
+      "predicted_center_top": [
+        5.029461242153226,
+        -0.04402594195022035,
+        -0.3557023460779633
+      ],
+      "predicted_normal_top": [
+        -0.9947646207677759,
+        -0.037933958730332465,
+        -0.09489132754782359
+      ],
+      "camera_center": [
+        0.04402594195022035,
+        0.15570234607796335,
+        5.029461242153226
+      ],
+      "camera_normal": [
+        0.037933958730332465,
+        0.09489132754782359,
+        -0.9947646207677759
+      ],
+      "raw_lidar_observations": [
+        {
+          "lidar": "lidar_top",
+          "camera_lidar_source_gap_ms": 278.1971,
+          "lidar_center": [
+            4.327550340179881,
+            -0.037197634498354094,
+            -0.39411653183782575
+          ],
+          "lidar_normal": [
+            -0.9984586747792199,
+            0.009713174122538928,
+            -0.05464365476969261
+          ],
+          "lidar_points": 535,
+          "lidar_rms_m": 0.004897189398981516,
+          "lidar_extent_m": [
+            0.8646197472786574,
+            0.8500729781942533
+          ],
+          "seed_center_gap_m": 0.7029944450415556,
+          "seed_normal_gap_deg": 3.580432049316208,
+          "search": {
+            "roi_points": 16,
+            "rejection": "roi_points_lt_28",
+            "sparse_roi_points": 546
+          },
+          "sparse_plane_equation_only": true,
+          "seed_plane_gap_m": 0.7029944450415556
+        },
+        {
+          "lidar": "lidar_front_left",
+          "camera_lidar_source_gap_ms": 317.36665,
+          "lidar_center": [
+            4.328223166635734,
+            -0.047345037938918796,
+            -0.397675702065741
+          ],
+          "lidar_normal": [
+            -0.998202283147361,
+            -0.004724685252521476,
+            -0.05974846666367527
+          ],
+          "lidar_points": 242,
+          "lidar_rms_m": 0.00525352363503903,
+          "lidar_extent_m": [
+            0.8684154401827284,
+            0.862514405996783
+          ],
+          "seed_center_gap_m": 0.7025009733562897,
+          "seed_normal_gap_deg": 2.777607129457211,
+          "search": {
+            "roi_points": 0,
+            "rejection": "roi_points_lt_28",
+            "sparse_roi_points": 245
+          },
+          "sparse_plane_equation_only": true,
+          "seed_plane_gap_m": 0.7025009733562898
+        },
+        {
+          "lidar": "lidar_front_right",
+          "camera_lidar_source_gap_ms": 239.991477,
+          "lidar_center": [
+            4.324938578353653,
+            -0.03805281784036099,
+            -0.39545481917505054
+          ],
+          "lidar_normal": [
+            -0.9983761506551974,
+            0.008464489451660367,
+            -0.056333065079344255
+          ],
+          "lidar_points": 236,
+          "lidar_rms_m": 0.005779721285579519,
+          "lidar_extent_m": [
+            0.880455437148967,
+            0.8527202786986063
+          ],
+          "seed_center_gap_m": 0.7056685632336274,
+          "seed_normal_gap_deg": 3.4632969736835,
+          "search": {
+            "roi_points": 10,
+            "rejection": "roi_points_lt_28",
+            "sparse_roi_points": 242
+          },
+          "sparse_plane_equation_only": true,
+          "seed_plane_gap_m": 0.7056685632336275
+        }
+      ],
+      "lidar_observations": [
+        {
+          "lidar": "lidar_consensus",
+          "supporting_lidars": [
+            "lidar_front_left",
+            "lidar_front_right",
+            "lidar_top"
+          ],
+          "camera_lidar_source_gap_ms": 317.36665,
+          "lidar_center": [
+            4.32585457863286,
+            -0.04086551192943516,
+            -0.3958098220477628
+          ],
+          "lidar_normal": [
+            -0.9983692561269382,
+            0.004484431902770389,
+            -0.05690973810389274
+          ],
+          "lidar_points": 1013,
+          "lidar_rms_m": 0.005779721285579519,
+          "lidar_extent_m": [
+            null,
+            null
+          ],
+          "seed_center_gap_m": 0.7047559399514453,
+          "seed_plane_gap_m": 0.7047559399514454,
+          "sparse_plane_equation_only": true
+        }
+      ],
+      "lidar_status": {
+        "lidar_top": "accepted",
+        "lidar_front_left": "accepted",
+        "lidar_front_right": "accepted",
+        "lidar_rear": "board_not_found"
+      },
+      "lidar_diagnostics": {
+        "lidar_top": {
+          "roi_points": 16,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 546
+        },
+        "lidar_front_left": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 245
+        },
+        "lidar_front_right": {
+          "roi_points": 10,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 242
+        },
+        "lidar_rear": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        }
+      }
+    },
+    {
+      "capture_id": "20260903_160115_282",
+      "index": 10,
+      "image_file": "cameras/20260903_160115_127_traffic_light_front.png",
+      "image_sha256": "e92cb216cd387bac3a2df27ffb9ccf724f9ec4b33b330e30a3399df306e37e5a",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 5.423211805555556,
+      "previous_frame_changed_fraction": 0.3358333333333333,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 356.729569,
+      "receive_minus_camera_source_ms": 201.986949,
+      "camera_top_source_gap_ms": 278.164108,
+      "camera_source_stamp_ns": 1788422474925756256,
+      "camera_receive_stamp_ns": 1788422475127743205,
+      "top_source_stamp_ns": 1788422475203920364,
+      "sample_sequence": 1884,
+      "status": "accepted_camera_lidar_plane",
+      "tag_count": 30,
+      "tag_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "reprojection_rms_px": 0.5642468256675739,
+      "predicted_center_top": [
+        5.039545191877825,
+        -0.042842628540781,
+        -0.3542190698381771
+      ],
+      "predicted_normal_top": [
+        -0.995856447366974,
+        0.001955432941739885,
+        -0.09091816385981293
+      ],
+      "camera_center": [
+        0.042842628540781,
+        0.15421906983817715,
+        5.039545191877825
+      ],
+      "camera_normal": [
+        -0.001955432941739885,
+        0.09091816385981293,
+        -0.995856447366974
+      ],
+      "raw_lidar_observations": [
+        {
+          "lidar": "lidar_top",
+          "camera_lidar_source_gap_ms": 278.164108,
+          "lidar_center": [
+            4.327483005093337,
+            -0.03577621119321357,
+            -0.3926579179336092
+          ],
+          "lidar_normal": [
+            -0.9984971017465536,
+            0.009908962127507477,
+            -0.05390130122073371
+          ],
+          "lidar_points": 534,
+          "lidar_rms_m": 0.004461995155184859,
+          "lidar_extent_m": [
+            0.8649767976567195,
+            0.8495069128398305
+          ],
+          "seed_center_gap_m": 0.7131339545592683,
+          "seed_normal_gap_deg": 2.1747146930488928,
+          "search": {
+            "roi_points": 12,
+            "rejection": "roi_points_lt_28",
+            "sparse_roi_points": 545
+          },
+          "sparse_plane_equation_only": true,
+          "seed_plane_gap_m": 0.7131339545592683
+        },
+        {
+          "lidar": "lidar_front_left",
+          "camera_lidar_source_gap_ms": 317.145546,
+          "lidar_center": [
+            4.328901259713423,
+            -0.04572362236500692,
+            -0.39494957651059925
+          ],
+          "lidar_normal": [
+            -0.9983533578326904,
+            -0.004047385375614235,
+            -0.05722055204044478
+          ],
+          "lidar_points": 238,
+          "lidar_rms_m": 0.005555289717424081,
+          "lidar_extent_m": [
+            0.8698415826369778,
+            0.8570086246047544
+          ],
+          "seed_center_gap_m": 0.7118160384687117,
+          "seed_normal_gap_deg": 1.9664334320093642,
+          "search": {
+            "roi_points": 1,
+            "rejection": "roi_points_lt_28",
+            "sparse_roi_points": 241
+          },
+          "sparse_plane_equation_only": true,
+          "seed_plane_gap_m": 0.7118160384687117
+        },
+        {
+          "lidar": "lidar_front_right",
+          "camera_lidar_source_gap_ms": 339.515408,
+          "lidar_center": [
+            4.323760909837093,
+            -0.03871186710933285,
+            -0.39536737396737615
+          ],
+          "lidar_normal": [
+            -0.9983351362866891,
+            0.005761350703140905,
+            -0.05739131026133983
+          ],
+          "lidar_points": 243,
+          "lidar_rms_m": 0.0061806023034582155,
+          "lidar_extent_m": [
+            0.8793071549982978,
+            0.8743489620874627
+          ],
+          "seed_center_gap_m": 0.7169779526172888,
+          "seed_normal_gap_deg": 1.9385864461534548,
+          "search": {
+            "roi_points": 11,
+            "rejection": "roi_points_lt_28",
+            "sparse_roi_points": 249
+          },
+          "sparse_plane_equation_only": true,
+          "seed_plane_gap_m": 0.7169779526172888
+        }
+      ],
+      "lidar_observations": [
+        {
+          "lidar": "lidar_consensus",
+          "supporting_lidars": [
+            "lidar_front_left",
+            "lidar_front_right",
+            "lidar_top"
+          ],
+          "camera_lidar_source_gap_ms": 339.515408,
+          "lidar_center": [
+            4.327845708896526,
+            -0.04008085261881666,
+            -0.3942602384121887
+          ],
+          "lidar_normal": [
+            -0.9984135844439819,
+            0.0038743804985340337,
+            -0.05617208891854032
+          ],
+          "lidar_points": 1015,
+          "lidar_rms_m": 0.0061806023034582155,
+          "lidar_extent_m": [
+            null,
+            null
+          ],
+          "seed_center_gap_m": 0.7128303281026023,
+          "seed_plane_gap_m": 0.7128303281026023,
+          "sparse_plane_equation_only": true
+        }
+      ],
+      "lidar_status": {
+        "lidar_top": "accepted",
+        "lidar_front_left": "accepted",
+        "lidar_front_right": "accepted",
+        "lidar_rear": "board_not_found"
+      },
+      "lidar_diagnostics": {
+        "lidar_top": {
+          "roi_points": 12,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 545
+        },
+        "lidar_front_left": {
+          "roi_points": 1,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 241
+        },
+        "lidar_front_right": {
+          "roi_points": 11,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 249
+        },
+        "lidar_rear": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        }
+      }
+    },
+    {
+      "capture_id": "20260903_160119_506",
+      "index": 11,
+      "image_file": "cameras/20260903_160119_328_traffic_light_front.png",
+      "image_sha256": "7fb362d96fe38a3a79683a0eaf6905fc31a65629fa04d5e849b3dc7efd18232e",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 33.39925347222222,
+      "previous_frame_changed_fraction": 0.7779166666666667,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 380.461707,
+      "receive_minus_camera_source_ms": 202.580805,
+      "camera_top_source_gap_ms": 278.487065,
+      "camera_source_stamp_ns": 1788422479125992200,
+      "camera_receive_stamp_ns": 1788422479328573005,
+      "top_source_stamp_ns": 1788422479404479265,
+      "sample_sequence": 1905,
+      "status": "no_lidar_board_accepted",
+      "tag_count": 28,
+      "tag_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        23,
+        24,
+        25,
+        27,
+        28,
+        29
+      ],
+      "reprojection_rms_px": 0.5828035762996496,
+      "predicted_center_top": [
+        5.817003320838369,
+        -0.03253685305396206,
+        -0.32726801132800476
+      ],
+      "predicted_normal_top": [
+        -0.9941969861048937,
+        -0.037713500198058275,
+        -0.1007474303531205
+      ],
+      "camera_center": [
+        0.03253685305396206,
+        0.12726801132800478,
+        5.817003320838369
+      ],
+      "camera_normal": [
+        0.037713500198058275,
+        0.1007474303531205,
+        -0.9941969861048937
+      ],
+      "raw_lidar_observations": [],
+      "lidar_observations": [],
+      "lidar_status": {
+        "lidar_top": "geometry_gate_rejected",
+        "lidar_front_left": "geometry_gate_rejected",
+        "lidar_front_right": "geometry_gate_rejected",
+        "lidar_rear": "board_not_found"
+      },
+      "lidar_diagnostics": {
+        "lidar_top": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 483
+        },
+        "lidar_front_left": {
+          "roi_points": 6,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 204
+        },
+        "lidar_front_right": {
+          "roi_points": 7,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 204
+        },
+        "lidar_rear": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        }
+      }
+    },
+    {
+      "capture_id": "20260903_160123_167",
+      "index": 12,
+      "image_file": "cameras/20260903_160123_128_traffic_light_front.png",
+      "image_sha256": "b38e3fa41519a48ade1e71fac81897426591143a6e5ecdce5fe931d9b86a9713",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 33.90963541666667,
+      "previous_frame_changed_fraction": 0.8240104166666666,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 241.143607,
+      "receive_minus_camera_source_ms": 201.784035,
+      "camera_top_source_gap_ms": 178.02656,
+      "camera_source_stamp_ns": 1788422482926250812,
+      "camera_receive_stamp_ns": 1788422483128034847,
+      "top_source_stamp_ns": 1788422483104277372,
+      "sample_sequence": 1923,
+      "status": "no_lidar_board_accepted",
+      "tag_count": 23,
+      "tag_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13,
+        14,
+        15,
+        16,
+        17,
+        19,
+        20,
+        22,
+        25,
+        27,
+        28,
+        29
+      ],
+      "reprojection_rms_px": 0.5980650308993329,
+      "predicted_center_top": [
+        6.724489891527288,
+        -0.03939646827133383,
+        -0.3414879936272682
+      ],
+      "predicted_normal_top": [
+        -0.9954131644988978,
+        -0.02388698419372675,
+        -0.09263932171825869
+      ],
+      "camera_center": [
+        0.03939646827133383,
+        0.14148799362726827,
+        6.724489891527288
+      ],
+      "camera_normal": [
+        0.023886984193726746,
+        0.09263932171825867,
+        -0.9954131644988977
+      ],
+      "raw_lidar_observations": [],
+      "lidar_observations": [],
+      "lidar_status": {
+        "lidar_top": "geometry_gate_rejected",
+        "lidar_front_left": "geometry_gate_rejected",
+        "lidar_front_right": "geometry_gate_rejected",
+        "lidar_rear": "board_not_found"
+      },
+      "lidar_diagnostics": {
+        "lidar_top": {
+          "roi_points": 3,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 390
+        },
+        "lidar_front_left": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 184
+        },
+        "lidar_front_right": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 157
+        },
+        "lidar_rear": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        }
+      }
+    },
+    {
+      "capture_id": "20260903_160124_505",
+      "index": 13,
+      "image_file": "cameras/20260903_160124_328_traffic_light_front.png",
+      "image_sha256": "5728dc7d4b237f23d5ac4b9c0e62d417d2d644e36d258dd113619f0cb74dbcbd",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 15.487690972222222,
+      "previous_frame_changed_fraction": 0.9253645833333334,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 379.365729,
+      "receive_minus_camera_source_ms": 201.88652,
+      "camera_top_source_gap_ms": 278.099547,
+      "camera_source_stamp_ns": 1788422484126198759,
+      "camera_receive_stamp_ns": 1788422484328085279,
+      "top_source_stamp_ns": 1788422484404298306,
+      "sample_sequence": 1930,
+      "status": "no_lidar_board_accepted",
+      "tag_count": 24,
+      "tag_ids": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13,
+        14,
+        15,
+        16,
+        17,
+        19,
+        20,
+        21,
+        22,
+        24,
+        25,
+        27,
+        28,
+        29
+      ],
+      "reprojection_rms_px": 0.6089438557925748,
+      "predicted_center_top": [
+        6.722787755378682,
+        -0.03902859255582859,
+        -0.3424643837744609
+      ],
+      "predicted_normal_top": [
+        -0.9966412833479504,
+        -0.016735683823488737,
+        -0.0801627670025851
+      ],
+      "camera_center": [
+        0.03902859255582859,
+        0.14246438377446097,
+        6.722787755378682
+      ],
+      "camera_normal": [
+        0.016735683823488737,
+        0.0801627670025851,
+        -0.9966412833479504
+      ],
+      "raw_lidar_observations": [],
+      "lidar_observations": [],
+      "lidar_status": {
+        "lidar_top": "geometry_gate_rejected",
+        "lidar_front_left": "geometry_gate_rejected",
+        "lidar_front_right": "geometry_gate_rejected",
+        "lidar_rear": "board_not_found"
+      },
+      "lidar_diagnostics": {
+        "lidar_top": {
+          "roi_points": 3,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 390
+        },
+        "lidar_front_left": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 175
+        },
+        "lidar_front_right": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 144
+        },
+        "lidar_rear": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        }
+      }
+    },
+    {
+      "capture_id": "20260903_160128_855",
+      "index": 14,
+      "image_file": "cameras/20260903_160128_728_traffic_light_front.png",
+      "image_sha256": "311990e11a9a8ecb703333ff82048c6791a61443cb18582a323ea39e8a8a6890",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 34.72232638888889,
+      "previous_frame_changed_fraction": 0.8546354166666666,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 328.94542,
+      "receive_minus_camera_source_ms": 202.083096,
+      "camera_top_source_gap_ms": 278.252243,
+      "camera_source_stamp_ns": 1788422488526107193,
+      "camera_receive_stamp_ns": 1788422488728190289,
+      "top_source_stamp_ns": 1788422488804359436,
+      "sample_sequence": 1951,
+      "status": "no_lidar_board_accepted",
+      "tag_count": 16,
+      "tag_ids": [
+        0,
+        1,
+        5,
+        6,
+        7,
+        11,
+        12,
+        13,
+        14,
+        17,
+        19,
+        20,
+        22,
+        25,
+        26,
+        27
+      ],
+      "reprojection_rms_px": 0.4773666706686248,
+      "predicted_center_top": [
+        8.063488612072904,
+        -0.03499346361662925,
+        -0.34712816711726546
+      ],
+      "predicted_normal_top": [
+        -0.9952118609196313,
+        -0.06598413146952331,
+        -0.07210718604339691
+      ],
+      "camera_center": [
+        0.03499346361662925,
+        0.14712816711726548,
+        8.063488612072904
+      ],
+      "camera_normal": [
+        0.06598413146952331,
+        0.07210718604339691,
+        -0.9952118609196313
+      ],
+      "raw_lidar_observations": [],
+      "lidar_observations": [],
+      "lidar_status": {
+        "lidar_top": "board_not_found",
+        "lidar_front_left": "board_not_found",
+        "lidar_front_right": "board_not_found",
+        "lidar_rear": "board_not_found"
+      },
+      "lidar_diagnostics": {
+        "lidar_top": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        },
+        "lidar_front_left": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        },
+        "lidar_front_right": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        },
+        "lidar_rear": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        }
+      }
+    },
+    {
+      "capture_id": "20260903_160134_414",
+      "index": 15,
+      "image_file": "cameras/20260903_160134_327_traffic_light_front.png",
+      "image_sha256": "3cce0f5544aa43a63bad73e9285ef95b5acc1ac5cda7baf2a73f9b1adedac0e3",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 31.836875,
+      "previous_frame_changed_fraction": 0.84921875,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 287.277396,
+      "receive_minus_camera_source_ms": 201.177639,
+      "camera_top_source_gap_ms": 278.038316,
+      "camera_source_stamp_ns": 1788422494126738019,
+      "camera_receive_stamp_ns": 1788422494327915658,
+      "top_source_stamp_ns": 1788422494404776335,
+      "sample_sequence": 1980,
+      "status": "too_few_tags",
+      "tag_count": 1
+    },
+    {
+      "capture_id": "20260903_160140_714",
+      "index": 16,
+      "image_file": "cameras/20260903_160140_527_traffic_light_front.png",
+      "image_sha256": "ff95cad91c9ee592793a00e2771b84748cf9f61f0514c4dd0d75b5a9da6ef342",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 25.25986111111111,
+      "previous_frame_changed_fraction": 0.7686458333333334,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 387.462379,
+      "receive_minus_camera_source_ms": 200.942977,
+      "camera_top_source_gap_ms": 376.977499,
+      "camera_source_stamp_ns": 1788422500326965754,
+      "camera_receive_stamp_ns": 1788422500527908731,
+      "top_source_stamp_ns": 1788422500703943253,
+      "sample_sequence": 2011,
+      "status": "too_few_tags",
+      "tag_count": 1
+    },
+    {
+      "capture_id": "20260903_160212_420",
+      "index": 17,
+      "image_file": "cameras/20260903_160212_351_traffic_light_front.png",
+      "image_sha256": "ed42538ede5e32bfd59fa513b00fd6250359526cee6546c981d9ac0f84442170",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 73.91045138888889,
+      "previous_frame_changed_fraction": 0.9858333333333333,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 291.070339,
+      "receive_minus_camera_source_ms": 222.028274,
+      "camera_top_source_gap_ms": 275.425844,
+      "camera_source_stamp_ns": 1788422532129199572,
+      "camera_receive_stamp_ns": 1788422532351227846,
+      "top_source_stamp_ns": 1788422532404625416,
+      "sample_sequence": 2169,
+      "status": "accepted_camera_lidar_plane",
+      "tag_count": 4,
+      "tag_ids": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "reprojection_rms_px": 1.856239044976925,
+      "predicted_center_top": [
+        0.9905559268951725,
+        0.07578473298700254,
+        -0.3926321415352195
+      ],
+      "predicted_normal_top": [
+        -0.6720488671122703,
+        0.734921401435268,
+        -0.09077914917829925
+      ],
+      "camera_center": [
+        -0.07578473298700254,
+        0.19263214153521957,
+        0.9905559268951725
+      ],
+      "camera_normal": [
+        -0.734921401435268,
+        0.09077914917829925,
+        -0.6720488671122703
+      ],
+      "raw_lidar_observations": [
+        {
+          "lidar": "lidar_top",
+          "camera_lidar_source_gap_ms": 275.425844,
+          "lidar_center": [
+            1.0470425516420134,
+            0.11390889226460435,
+            -0.21862623801451597
+          ],
+          "lidar_normal": [
+            -0.6893475404293564,
+            0.7185990691599468,
+            -0.09173519666112262
+          ],
+          "lidar_points": 603,
+          "lidar_rms_m": 0.0059676413635263775,
+          "lidar_extent_m": [
+            0.8738795731929463,
+            0.27616307878896007
+          ],
+          "seed_center_gap_m": 0.18687494416312414,
+          "seed_normal_gap_deg": 1.3638362324799658,
+          "search": {
+            "roi_points": 615,
+            "orientation_candidates": 144,
+            "shape_candidates": 132,
+            "maximum_inliers": 607
+          },
+          "sparse_plane_equation_only": false,
+          "seed_plane_gap_m": 0.027505396246668697
+        },
+        {
+          "lidar": "lidar_front_left",
+          "camera_lidar_source_gap_ms": 214.003257,
+          "lidar_center": [
+            1.1641598616486353,
+            0.2102896140105202,
+            -0.5377457793227395
+          ],
+          "lidar_normal": [
+            -0.6823878406478079,
+            0.7276906765875192,
+            -0.06937661092630996
+          ],
+          "lidar_points": 621,
+          "lidar_rms_m": 0.00616176299884206,
+          "lidar_extent_m": [
+            0.5853658903309068,
+            0.8730115662076452
+          ],
+          "seed_center_gap_m": 0.26322586699061845,
+          "seed_normal_gap_deg": 1.423518399838501,
+          "search": {
+            "roi_points": 680,
+            "orientation_candidates": 152,
+            "shape_candidates": 149,
+            "maximum_inliers": 635
+          },
+          "sparse_plane_equation_only": false,
+          "seed_plane_gap_m": 0.010519773899164832
+        },
+        {
+          "lidar": "lidar_front_right",
+          "camera_lidar_source_gap_ms": 236.511163,
+          "lidar_center": [
+            0.9883519624944896,
+            0.0780449514241763,
+            -0.3929750886533816
+          ],
+          "lidar_normal": [
+            -0.6940575708787564,
+            0.7117727117889048,
+            -0.10799858822479497
+          ],
+          "lidar_points": 87,
+          "lidar_rms_m": 0.0032287826752007112,
+          "lidar_extent_m": [
+            0.8269943057592751,
+            0.3499059405236453
+          ],
+          "seed_center_gap_m": 0.00317547778910089,
+          "seed_normal_gap_deg": 2.0792120261910223,
+          "search": {
+            "roi_points": 151,
+            "orientation_candidates": 87,
+            "shape_candidates": 86,
+            "maximum_inliers": 121,
+            "rejection": "board_center_over_limit_from_camera_prediction",
+            "candidate_prediction_error_m": 0.657230699473836,
+            "sparse_roi_points": 87
+          },
+          "sparse_plane_equation_only": true,
+          "seed_plane_gap_m": 0.00317547778910089
+        }
+      ],
+      "lidar_observations": [
+        {
+          "lidar": "lidar_consensus",
+          "supporting_lidars": [
+            "lidar_front_left",
+            "lidar_front_right",
+            "lidar_top"
+          ],
+          "camera_lidar_source_gap_ms": 275.425844,
+          "lidar_center": [
+            0.9985615484852804,
+            0.067421536962688,
+            -0.391589250962475
+          ],
+          "lidar_normal": [
+            -0.6887065324319248,
+            0.7194678975422827,
+            -0.08971764927639116
+          ],
+          "lidar_points": 1311,
+          "lidar_rms_m": 0.00616176299884206,
+          "lidar_extent_m": [
+            null,
+            null
+          ],
+          "seed_center_gap_m": 0.011624140636272127,
+          "seed_plane_gap_m": 0.011624140636272129,
+          "sparse_plane_equation_only": true
+        }
+      ],
+      "lidar_status": {
+        "lidar_top": "accepted",
+        "lidar_front_left": "accepted",
+        "lidar_front_right": "accepted",
+        "lidar_rear": "board_not_found"
+      },
+      "lidar_diagnostics": {
+        "lidar_top": {
+          "roi_points": 615,
+          "orientation_candidates": 144,
+          "shape_candidates": 132,
+          "maximum_inliers": 607
+        },
+        "lidar_front_left": {
+          "roi_points": 680,
+          "orientation_candidates": 152,
+          "shape_candidates": 149,
+          "maximum_inliers": 635
+        },
+        "lidar_front_right": {
+          "roi_points": 151,
+          "orientation_candidates": 87,
+          "shape_candidates": 86,
+          "maximum_inliers": 121,
+          "rejection": "board_center_over_limit_from_camera_prediction",
+          "candidate_prediction_error_m": 0.657230699473836,
+          "sparse_roi_points": 87
+        },
+        "lidar_rear": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        }
+      }
+    },
+    {
+      "capture_id": "20260903_160218_618",
+      "index": 18,
+      "image_file": "cameras/20260903_160218_549_traffic_light_front.png",
+      "image_sha256": "66185ec02038ae3c741f6945fdfb7b841e185df3a6c7314c347edf5c3a2f7147",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 74.99730902777777,
+      "previous_frame_changed_fraction": 0.8598958333333333,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 288.464266,
+      "receive_minus_camera_source_ms": 219.94159,
+      "camera_top_source_gap_ms": 274.712399,
+      "camera_source_stamp_ns": 1788422538329682991,
+      "camera_receive_stamp_ns": 1788422538549624581,
+      "top_source_stamp_ns": 1788422538604395390,
+      "sample_sequence": 2200,
+      "status": "accepted_camera_lidar_plane",
+      "tag_count": 16,
+      "tag_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "reprojection_rms_px": 2.239055189558422,
+      "predicted_center_top": [
+        1.5589727094946044,
+        0.08922142722267415,
+        -0.37669742434249587
+      ],
+      "predicted_normal_top": [
+        -0.6828795603257346,
+        0.7242474609263975,
+        -0.09560921206137984
+      ],
+      "camera_center": [
+        -0.08922142722267415,
+        0.1766974243424959,
+        1.5589727094946044
+      ],
+      "camera_normal": [
+        -0.7242474609263975,
+        0.09560921206137984,
+        -0.6828795603257346
+      ],
+      "raw_lidar_observations": [
+        {
+          "lidar": "lidar_top",
+          "camera_lidar_source_gap_ms": 274.712399,
+          "lidar_center": [
+            1.4868483521474112,
+            0.1158193265811825,
+            -0.27117371227640047
+          ],
+          "lidar_normal": [
+            -0.6866355115316728,
+            0.7223355965567632,
+            -0.08223721937555659
+          ],
+          "lidar_points": 759,
+          "lidar_rms_m": 0.005775785193791729,
+          "lidar_extent_m": [
+            0.8661847134442304,
+            0.3845367211431155
+          ],
+          "seed_center_gap_m": 0.1305550649390485,
+          "seed_normal_gap_deg": 0.8033183027635202,
+          "search": {
+            "roi_points": 763,
+            "orientation_candidates": 164,
+            "shape_candidates": 163,
+            "maximum_inliers": 760
+          },
+          "sparse_plane_equation_only": false,
+          "seed_plane_gap_m": 0.060057777842765524
+        },
+        {
+          "lidar": "lidar_front_left",
+          "camera_lidar_source_gap_ms": 213.634804,
+          "lidar_center": [
+            1.4955415520334523,
+            0.11026729519917931,
+            -0.5237346445250508
+          ],
+          "lidar_normal": [
+            -0.6883249495004171,
+            0.7217414955692361,
+            -0.07278720676554977
+          ],
+          "lidar_points": 736,
+          "lidar_rms_m": 0.006475773754389453,
+          "lidar_extent_m": [
+            0.8818620400017934,
+            0.8890943048724845
+          ],
+          "seed_center_gap_m": 0.16151279953848582,
+          "seed_normal_gap_deg": 1.3519884500028028,
+          "search": {
+            "roi_points": 776,
+            "orientation_candidates": 156,
+            "shape_candidates": 156,
+            "maximum_inliers": 743
+          },
+          "sparse_plane_equation_only": false,
+          "seed_plane_gap_m": 0.06955335303277538
+        },
+        {
+          "lidar": "lidar_front_right",
+          "camera_lidar_source_gap_ms": 236.120775,
+          "lidar_center": [
+            1.500832722204949,
+            0.11253585511175303,
+            -0.5521808527206623
+          ],
+          "lidar_normal": [
+            -0.6883014612415477,
+            0.720897604741633,
+            -0.0809181186788637
+          ],
+          "lidar_points": 259,
+          "lidar_rms_m": 0.005616432687567697,
+          "lidar_extent_m": [
+            0.8905757593589272,
+            0.9384349000979241
+          ],
+          "seed_center_gap_m": 0.1863283507821379,
+          "seed_normal_gap_deg": 0.9175418678631052,
+          "search": {
+            "roi_points": 308,
+            "orientation_candidates": 133,
+            "shape_candidates": 131,
+            "maximum_inliers": 276
+          },
+          "sparse_plane_equation_only": false,
+          "seed_plane_gap_m": 0.07102494231287175
+        }
+      ],
+      "lidar_observations": [
+        {
+          "lidar": "lidar_consensus",
+          "supporting_lidars": [
+            "lidar_front_left",
+            "lidar_front_right",
+            "lidar_top"
+          ],
+          "camera_lidar_source_gap_ms": 274.712399,
+          "lidar_center": [
+            1.5132558368563043,
+            0.13719200789077102,
+            -0.3819253380431494
+          ],
+          "lidar_normal": [
+            -0.6877603136490309,
+            0.7216648843686768,
+            -0.07864823989467878
+          ],
+          "lidar_points": 1754,
+          "lidar_rms_m": 0.006475773754389453,
+          "lidar_extent_m": [
+            null,
+            null
+          ],
+          "seed_center_gap_m": 0.0664721004265882,
+          "seed_plane_gap_m": 0.0664721004265882,
+          "sparse_plane_equation_only": false
+        }
+      ],
+      "lidar_status": {
+        "lidar_top": "accepted",
+        "lidar_front_left": "accepted",
+        "lidar_front_right": "accepted",
+        "lidar_rear": "board_not_found"
+      },
+      "lidar_diagnostics": {
+        "lidar_top": {
+          "roi_points": 763,
+          "orientation_candidates": 164,
+          "shape_candidates": 163,
+          "maximum_inliers": 760
+        },
+        "lidar_front_left": {
+          "roi_points": 776,
+          "orientation_candidates": 156,
+          "shape_candidates": 156,
+          "maximum_inliers": 743
+        },
+        "lidar_front_right": {
+          "roi_points": 308,
+          "orientation_candidates": 133,
+          "shape_candidates": 131,
+          "maximum_inliers": 276
+        },
+        "lidar_rear": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        }
+      }
+    },
+    {
+      "capture_id": "20260903_160222_856",
+      "index": 19,
+      "image_file": "cameras/20260903_160222_751_traffic_light_front.png",
+      "image_sha256": "60fcfca03a536e6be8bfb134a56c667c8787e8a740a3aa6887ddbee89bf46122",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 60.535885416666666,
+      "previous_frame_changed_fraction": 0.7641145833333334,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 325.98944,
+      "receive_minus_camera_source_ms": 221.747307,
+      "camera_top_source_gap_ms": 274.16789,
+      "camera_source_stamp_ns": 1788422542530021554,
+      "camera_receive_stamp_ns": 1788422542751768861,
+      "top_source_stamp_ns": 1788422542804189444,
+      "sample_sequence": 2221,
+      "status": "accepted_camera_lidar_plane",
+      "tag_count": 18,
+      "tag_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "reprojection_rms_px": 1.8208838154220437,
+      "predicted_center_top": [
+        1.8023982654334285,
+        0.09233170684736286,
+        -0.377876226351809
+      ],
+      "predicted_normal_top": [
+        -0.6849054269836863,
+        0.7225531473356843,
+        -0.09392286922571856
+      ],
+      "camera_center": [
+        -0.09233170684736286,
+        0.17787622635180905,
+        1.8023982654334285
+      ],
+      "camera_normal": [
+        -0.7225531473356843,
+        0.09392286922571856,
+        -0.6849054269836863
+      ],
+      "raw_lidar_observations": [
+        {
+          "lidar": "lidar_top",
+          "camera_lidar_source_gap_ms": 274.16789,
+          "lidar_center": [
+            1.7050037688589035,
+            0.11702363898122996,
+            -0.30156695361319436
+          ],
+          "lidar_normal": [
+            -0.6886821665718477,
+            0.7209041527949313,
+            -0.07755047342813833
+          ],
+          "lidar_points": 741,
+          "lidar_rms_m": 0.00573494395922702,
+          "lidar_extent_m": [
+            0.8634442523117767,
+            0.43803046571508464
+          ],
+          "seed_center_gap_m": 0.1261684769718845,
+          "seed_normal_gap_deg": 0.9673405463684721,
+          "search": {
+            "roi_points": 748,
+            "orientation_candidates": 168,
+            "shape_candidates": 164,
+            "maximum_inliers": 744
+          },
+          "sparse_plane_equation_only": false,
+          "seed_plane_gap_m": 0.0789565491011172
+        },
+        {
+          "lidar": "lidar_front_left",
+          "camera_lidar_source_gap_ms": 313.276404,
+          "lidar_center": [
+            1.7160376451324872,
+            0.11609956989222843,
+            -0.5272937765856532
+          ],
+          "lidar_normal": [
+            -0.6853216574666727,
+            0.724851762250399,
+            -0.07017227778563055
+          ],
+          "lidar_points": 596,
+          "lidar_rms_m": 0.006449493900983041,
+          "lidar_extent_m": [
+            0.8647291718318643,
+            0.8868712010609847
+          ],
+          "seed_center_gap_m": 0.1742087034862673,
+          "seed_normal_gap_deg": 1.3674073298308598,
+          "search": {
+            "roi_points": 635,
+            "orientation_candidates": 147,
+            "shape_candidates": 146,
+            "maximum_inliers": 604
+          },
+          "sparse_plane_equation_only": false,
+          "seed_plane_gap_m": 0.08689795069854572
+        },
+        {
+          "lidar": "lidar_front_right",
+          "camera_lidar_source_gap_ms": 235.888118,
+          "lidar_center": [
+            1.7041996784321136,
+            0.10602583040993951,
+            -0.5413982234069763
+          ],
+          "lidar_normal": [
+            -0.6873537382264574,
+            0.7224867366381724,
+            -0.07455034492233384
+          ],
+          "lidar_points": 253,
+          "lidar_rms_m": 0.00386900159728421,
+          "lidar_extent_m": [
+            0.8606086530837034,
+            0.8595648421333449
+          ],
+          "seed_center_gap_m": 0.19123267249639134,
+          "seed_normal_gap_deg": 1.1188172146513318,
+          "search": {
+            "roi_points": 286,
+            "orientation_candidates": 142,
+            "shape_candidates": 141,
+            "maximum_inliers": 261
+          },
+          "sparse_plane_equation_only": false,
+          "seed_plane_gap_m": 0.0895816097906073
+        }
+      ],
+      "lidar_observations": [
+        {
+          "lidar": "lidar_consensus",
+          "supporting_lidars": [
+            "lidar_front_left",
+            "lidar_front_right",
+            "lidar_top"
+          ],
+          "camera_lidar_source_gap_ms": 313.276404,
+          "lidar_center": [
+            1.7413410246681043,
+            0.15655487513458644,
+            -0.3844599371038263
+          ],
+          "lidar_normal": [
+            -0.687123900903464,
+            0.722752508445464,
+            -0.07409154029304546
+          ],
+          "lidar_points": 1590,
+          "lidar_rms_m": 0.006449493900983041,
+          "lidar_extent_m": [
+            null,
+            null
+          ],
+          "seed_center_gap_m": 0.08885914270343848,
+          "seed_plane_gap_m": 0.08885914270343846,
+          "sparse_plane_equation_only": false
+        }
+      ],
+      "lidar_status": {
+        "lidar_top": "accepted",
+        "lidar_front_left": "accepted",
+        "lidar_front_right": "accepted",
+        "lidar_rear": "board_not_found"
+      },
+      "lidar_diagnostics": {
+        "lidar_top": {
+          "roi_points": 748,
+          "orientation_candidates": 168,
+          "shape_candidates": 164,
+          "maximum_inliers": 744
+        },
+        "lidar_front_left": {
+          "roi_points": 635,
+          "orientation_candidates": 147,
+          "shape_candidates": 146,
+          "maximum_inliers": 604
+        },
+        "lidar_front_right": {
+          "roi_points": 286,
+          "orientation_candidates": 142,
+          "shape_candidates": 141,
+          "maximum_inliers": 261
+        },
+        "lidar_rear": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        }
+      }
+    },
+    {
+      "capture_id": "20260903_160226_228",
+      "index": 20,
+      "image_file": "cameras/20260903_160225_951_traffic_light_front.png",
+      "image_sha256": "d8b03d31497aab5dc8ecc91564038d837a497bf33e0c71f7b5f79e59a5575835",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 57.27223958333333,
+      "previous_frame_changed_fraction": 0.8232291666666667,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 498.26226,
+      "receive_minus_camera_source_ms": 221.472364,
+      "camera_top_source_gap_ms": 474.371106,
+      "camera_source_stamp_ns": 1788422545730131238,
+      "camera_receive_stamp_ns": 1788422545951603602,
+      "top_source_stamp_ns": 1788422546204502344,
+      "sample_sequence": 2238,
+      "status": "accepted_camera_lidar_plane",
+      "tag_count": 20,
+      "tag_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        22,
+        23
+      ],
+      "reprojection_rms_px": 1.505912671634741,
+      "predicted_center_top": [
+        2.180288253698397,
+        0.09345966789041257,
+        -0.3863985000517789
+      ],
+      "predicted_normal_top": [
+        -0.6818870213702105,
+        0.7247679044423364,
+        -0.09869941629577407
+      ],
+      "camera_center": [
+        -0.09345966789041257,
+        0.18639850005177894,
+        2.180288253698397
+      ],
+      "camera_normal": [
+        -0.7247679044423364,
+        0.09869941629577407,
+        -0.6818870213702105
+      ],
+      "raw_lidar_observations": [
+        {
+          "lidar": "lidar_top",
+          "camera_lidar_source_gap_ms": 474.371106,
+          "lidar_center": [
+            2.0216790731205285,
+            0.11295038522180982,
+            -0.35640457192540625
+          ],
+          "lidar_normal": [
+            -0.6886180140225554,
+            0.7213093891571615,
+            -0.07428321396758807
+          ],
+          "lidar_points": 735,
+          "lidar_rms_m": 0.005319854981516129,
+          "lidar_extent_m": [
+            0.8746760647152076,
+            0.5145684570887321
+          ],
+          "seed_center_gap_m": 0.1625927303114297,
+          "seed_normal_gap_deg": 1.4646375996387024,
+          "search": {
+            "roi_points": 738,
+            "orientation_candidates": 165,
+            "shape_candidates": 165,
+            "maximum_inliers": 736
+          },
+          "sparse_plane_equation_only": false,
+          "seed_plane_gap_m": 0.12105193096708187
+        },
+        {
+          "lidar": "lidar_front_left",
+          "camera_lidar_source_gap_ms": 413.111598,
+          "lidar_center": [
+            2.0293699321754395,
+            0.11183479697661666,
+            -0.5482395928783323
+          ],
+          "lidar_normal": [
+            -0.6846018299540589,
+            0.7259254105184701,
+            -0.06597448588010893
+          ],
+          "lidar_points": 506,
+          "lidar_rms_m": 0.0060111458245129855,
+          "lidar_extent_m": [
+            0.851869296107302,
+            0.8838237241152349
+          ],
+          "seed_center_gap_m": 0.2220507249876355,
+          "seed_normal_gap_deg": 1.8826945240523643,
+          "search": {
+            "roi_points": 531,
+            "orientation_candidates": 167,
+            "shape_candidates": 167,
+            "maximum_inliers": 517
+          },
+          "sparse_plane_equation_only": false,
+          "seed_plane_gap_m": 0.12733531510695115
+        },
+        {
+          "lidar": "lidar_front_right",
+          "camera_lidar_source_gap_ms": 435.737521,
+          "lidar_center": [
+            2.027308155945029,
+            0.11400498178027102,
+            -0.5412029857986675
+          ],
+          "lidar_normal": [
+            -0.6883239382306656,
+            0.7217337031887985,
+            -0.0728739853446368
+          ],
+          "lidar_points": 271,
+          "lidar_rms_m": 0.005026331165841221,
+          "lidar_extent_m": [
+            0.8851879087127701,
+            0.8993302032224699
+          ],
+          "seed_center_gap_m": 0.2186079802724994,
+          "seed_normal_gap_deg": 1.5348811894194123,
+          "search": {
+            "roi_points": 314,
+            "orientation_candidates": 143,
+            "shape_candidates": 141,
+            "maximum_inliers": 297
+          },
+          "sparse_plane_equation_only": false,
+          "seed_plane_gap_m": 0.13140932865901703
+        }
+      ],
+      "lidar_observations": [
+        {
+          "lidar": "lidar_consensus",
+          "supporting_lidars": [
+            "lidar_front_left",
+            "lidar_front_right",
+            "lidar_top"
+          ],
+          "camera_lidar_source_gap_ms": 474.371106,
+          "lidar_center": [
+            2.0912819750196556,
+            0.1871039633342206,
+            -0.39560037018969446
+          ],
+          "lidar_normal": [
+            -0.68718842862153,
+            0.7229970423510207,
+            -0.07104463611243951
+          ],
+          "lidar_points": 1512,
+          "lidar_rms_m": 0.0060111458245129855,
+          "lidar_extent_m": [
+            null,
+            null
+          ],
+          "seed_center_gap_m": 0.12952237693711474,
+          "seed_plane_gap_m": 0.12952237693711474,
+          "sparse_plane_equation_only": false
+        }
+      ],
+      "lidar_status": {
+        "lidar_top": "accepted",
+        "lidar_front_left": "accepted",
+        "lidar_front_right": "accepted",
+        "lidar_rear": "board_not_found"
+      },
+      "lidar_diagnostics": {
+        "lidar_top": {
+          "roi_points": 738,
+          "orientation_candidates": 165,
+          "shape_candidates": 165,
+          "maximum_inliers": 736
+        },
+        "lidar_front_left": {
+          "roi_points": 531,
+          "orientation_candidates": 167,
+          "shape_candidates": 167,
+          "maximum_inliers": 517
+        },
+        "lidar_front_right": {
+          "roi_points": 314,
+          "orientation_candidates": 143,
+          "shape_candidates": 141,
+          "maximum_inliers": 297
+        },
+        "lidar_rear": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        }
+      }
+    },
+    {
+      "capture_id": "20260903_160230_017",
+      "index": 21,
+      "image_file": "cameras/20260903_160229_950_traffic_light_front.png",
+      "image_sha256": "af539537feeed1729d2036878bd6832913c1980dbe38fd4e847ccb14f11976f0",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 48.50637152777778,
+      "previous_frame_changed_fraction": 0.81703125,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 285.968794,
+      "receive_minus_camera_source_ms": 218.664947,
+      "camera_top_source_gap_ms": 273.215168,
+      "camera_source_stamp_ns": 1788422549731784231,
+      "camera_receive_stamp_ns": 1788422549950449178,
+      "top_source_stamp_ns": 1788422550004999399,
+      "sample_sequence": 2257,
+      "status": "accepted_camera_lidar_plane",
+      "tag_count": 24,
+      "tag_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "reprojection_rms_px": 1.1364807191698936,
+      "predicted_center_top": [
+        2.711971645249951,
+        0.08955482239219943,
+        -0.3927083048844551
+      ],
+      "predicted_normal_top": [
+        -0.6859731622165632,
+        0.7219949948055603,
+        -0.0903551226789474
+      ],
+      "camera_center": [
+        -0.08955482239219943,
+        0.1927083048844551,
+        2.711971645249951
+      ],
+      "camera_normal": [
+        -0.7219949948055604,
+        0.09035512267894741,
+        -0.6859731622165633
+      ],
+      "raw_lidar_observations": [
+        {
+          "lidar": "lidar_top",
+          "camera_lidar_source_gap_ms": 273.215168,
+          "lidar_center": [
+            2.4512776981025697,
+            0.09564464767354106,
+            -0.4231691597385776
+          ],
+          "lidar_normal": [
+            -0.6882285101699832,
+            0.7226625264379367,
+            -0.06403429293389376
+          ],
+          "lidar_points": 670,
+          "lidar_rms_m": 0.0046020405168880375,
+          "lidar_extent_m": [
+            0.8593721434029554,
+            0.6044253962962846
+          ],
+          "seed_center_gap_m": 0.2625381567119012,
+          "seed_normal_gap_deg": 1.514125844344598,
+          "search": {
+            "roi_points": 673,
+            "orientation_candidates": 172,
+            "shape_candidates": 172,
+            "maximum_inliers": 672
+          },
+          "sparse_plane_equation_only": false,
+          "seed_plane_gap_m": 0.1857684346817002
+        },
+        {
+          "lidar": "lidar_front_left",
+          "camera_lidar_source_gap_ms": 211.527699,
+          "lidar_center": [
+            2.449328434285404,
+            0.09444963249017976,
+            -0.5472207109641468
+          ],
+          "lidar_normal": [
+            -0.68168081663912,
+            0.7296424021679458,
+            -0.05415929453761691
+          ],
+          "lidar_points": 379,
+          "lidar_rms_m": 0.005775175781090349,
+          "lidar_extent_m": [
+            0.8389878372474552,
+            0.8844972873585859
+          ],
+          "seed_center_gap_m": 0.3047613805327019,
+          "seed_normal_gap_deg": 2.1339931331473316,
+          "search": {
+            "roi_points": 394,
+            "orientation_candidates": 165,
+            "shape_candidates": 165,
+            "maximum_inliers": 387
+          },
+          "sparse_plane_equation_only": false,
+          "seed_plane_gap_m": 0.19097858244366517
+        },
+        {
+          "lidar": "lidar_front_right",
+          "camera_lidar_source_gap_ms": 234.175556,
+          "lidar_center": [
+            2.4545094631358513,
+            0.10206641586666534,
+            -0.5560656547586622
+          ],
+          "lidar_normal": [
+            -0.6897434484796432,
+            0.7208009111769604,
+            -0.06855670445604538
+          ],
+          "lidar_points": 238,
+          "lidar_rms_m": 0.004718164678663002,
+          "lidar_extent_m": [
+            0.8762160927025384,
+            0.8800882600968091
+          ],
+          "seed_center_gap_m": 0.30517034414921157,
+          "seed_normal_gap_deg": 1.26937245526383,
+          "search": {
+            "roi_points": 255,
+            "orientation_candidates": 155,
+            "shape_candidates": 154,
+            "maximum_inliers": 242
+          },
+          "sparse_plane_equation_only": false,
+          "seed_plane_gap_m": 0.19780046287719258
+        }
+      ],
+      "lidar_observations": [
+        {
+          "lidar": "lidar_consensus",
+          "supporting_lidars": [
+            "lidar_front_left",
+            "lidar_front_right",
+            "lidar_top"
+          ],
+          "camera_lidar_source_gap_ms": 273.215168,
+          "lidar_center": [
+            2.58059235642247,
+            0.2281709538114824,
+            -0.4046205654538742
+          ],
+          "lidar_normal": [
+            -0.6865725060422656,
+            0.7243913829628992,
+            -0.062252054070061284
+          ],
+          "lidar_points": 1287,
+          "lidar_rms_m": 0.005775175781090349,
+          "lidar_extent_m": [
+            null,
+            null
+          ],
+          "seed_center_gap_m": 0.1913553014011797,
+          "seed_plane_gap_m": 0.19135530140117976,
+          "sparse_plane_equation_only": false
+        }
+      ],
+      "lidar_status": {
+        "lidar_top": "accepted",
+        "lidar_front_left": "accepted",
+        "lidar_front_right": "accepted",
+        "lidar_rear": "board_not_found"
+      },
+      "lidar_diagnostics": {
+        "lidar_top": {
+          "roi_points": 673,
+          "orientation_candidates": 172,
+          "shape_candidates": 172,
+          "maximum_inliers": 672
+        },
+        "lidar_front_left": {
+          "roi_points": 394,
+          "orientation_candidates": 165,
+          "shape_candidates": 165,
+          "maximum_inliers": 387
+        },
+        "lidar_front_right": {
+          "roi_points": 255,
+          "orientation_candidates": 155,
+          "shape_candidates": 154,
+          "maximum_inliers": 242
+        },
+        "lidar_rear": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        }
+      }
+    },
+    {
+      "capture_id": "20260903_160233_531",
+      "index": 22,
+      "image_file": "cameras/20260903_160233_350_traffic_light_front.png",
+      "image_sha256": "249846b23514fc042368afc3f8ba7df2e6207e3e060587976b5aa1536c133fa1",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 42.19425347222222,
+      "previous_frame_changed_fraction": 0.86671875,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 400.736767,
+      "receive_minus_camera_source_ms": 219.409437,
+      "camera_top_source_gap_ms": 373.980536,
+      "camera_source_stamp_ns": 1788422553130611883,
+      "camera_receive_stamp_ns": 1788422553350021320,
+      "top_source_stamp_ns": 1788422553504592419,
+      "sample_sequence": 2274,
+      "status": "accepted_camera_lidar_plane",
+      "tag_count": 28,
+      "tag_ids": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "reprojection_rms_px": 1.0088880051070126,
+      "predicted_center_top": [
+        3.511980131649246,
+        0.09271675092128595,
+        -0.3974745373951176
+      ],
+      "predicted_normal_top": [
+        -0.6856797277715786,
+        0.7225601039843864,
+        -0.08803526028340405
+      ],
+      "camera_center": [
+        -0.09271675092128595,
+        0.19747453739511767,
+        3.511980131649246
+      ],
+      "camera_normal": [
+        -0.7225601039843864,
+        0.08803526028340405,
+        -0.6856797277715786
+      ],
+      "raw_lidar_observations": [
+        {
+          "lidar": "lidar_top",
+          "camera_lidar_source_gap_ms": 373.980536,
+          "lidar_center": [
+            3.095077441920466,
+            0.08962942078184359,
+            -0.5265928579196537
+          ],
+          "lidar_normal": [
+            -0.6902058365118666,
+            0.7213215916067494,
+            -0.057541851958903385
+          ],
+          "lidar_points": 644,
+          "lidar_rms_m": 0.005474660465873139,
+          "lidar_extent_m": [
+            0.8696368269359354,
+            0.7547213113244267
+          ],
+          "seed_center_gap_m": 0.43645036946433935,
+          "seed_normal_gap_deg": 1.7677795822022053,
+          "search": {
+            "roi_points": 656,
+            "orientation_candidates": 169,
+            "shape_candidates": 168,
+            "maximum_inliers": 647
+          },
+          "sparse_plane_equation_only": false,
+          "seed_plane_gap_m": 0.29295141910310696
+        },
+        {
+          "lidar": "lidar_front_left",
+          "camera_lidar_source_gap_ms": 312.716021,
+          "lidar_center": [
+            3.110832647785664,
+            0.1104594778166766,
+            -0.5654409771067144
+          ],
+          "lidar_normal": [
+            -0.6889769277598967,
+            0.7231002180026759,
+            -0.04936464057416703
+          ],
+          "lidar_points": 298,
+          "lidar_rms_m": 0.005326077690577688,
+          "lidar_extent_m": [
+            0.8764936320909277,
+            0.8826402396827264
+          ],
+          "seed_center_gap_m": 0.43525490581630055,
+          "seed_normal_gap_deg": 2.224057489191993,
+          "search": {
+            "roi_points": 311,
+            "orientation_candidates": 161,
+            "shape_candidates": 160,
+            "maximum_inliers": 303
+          },
+          "sparse_plane_equation_only": false,
+          "seed_plane_gap_m": 0.2975027336218478
+        },
+        {
+          "lidar": "lidar_front_right",
+          "camera_lidar_source_gap_ms": 335.337891,
+          "lidar_center": [
+            3.0920979575251044,
+            0.10032344309729438,
+            -0.5493767486075496
+          ],
+          "lidar_normal": [
+            -0.6880547276550362,
+            0.7228484367775526,
+            -0.06380305008228607
+          ],
+          "lidar_points": 210,
+          "lidar_rms_m": 0.004706748554015522,
+          "lidar_extent_m": [
+            0.8833145437550656,
+            0.9077671052070544
+          ],
+          "seed_center_gap_m": 0.44657942595276695,
+          "seed_normal_gap_deg": 1.395188196832581,
+          "search": {
+            "roi_points": 224,
+            "orientation_candidates": 146,
+            "shape_candidates": 137,
+            "maximum_inliers": 211
+          },
+          "sparse_plane_equation_only": false,
+          "seed_plane_gap_m": 0.3040922249022633
+        }
+      ],
+      "lidar_observations": [
+        {
+          "lidar": "lidar_consensus",
+          "supporting_lidars": [
+            "lidar_front_left",
+            "lidar_front_right",
+            "lidar_top"
+          ],
+          "camera_lidar_source_gap_ms": 373.980536,
+          "lidar_center": [
+            3.308718408117776,
+            0.305814223930299,
+            -0.4142596024835632
+          ],
+          "lidar_normal": [
+            -0.6890916857718539,
+            0.7224365431830444,
+            -0.05690421490397561
+          ],
+          "lidar_points": 1152,
+          "lidar_rms_m": 0.005474660465873139,
+          "lidar_extent_m": [
+            null,
+            null
+          ],
+          "seed_center_gap_m": 0.29497050643383693,
+          "seed_plane_gap_m": 0.2949705064338369,
+          "sparse_plane_equation_only": false
+        }
+      ],
+      "lidar_status": {
+        "lidar_top": "accepted",
+        "lidar_front_left": "accepted",
+        "lidar_front_right": "accepted",
+        "lidar_rear": "board_not_found"
+      },
+      "lidar_diagnostics": {
+        "lidar_top": {
+          "roi_points": 656,
+          "orientation_candidates": 169,
+          "shape_candidates": 168,
+          "maximum_inliers": 647
+        },
+        "lidar_front_left": {
+          "roi_points": 311,
+          "orientation_candidates": 161,
+          "shape_candidates": 160,
+          "maximum_inliers": 303
+        },
+        "lidar_front_right": {
+          "roi_points": 224,
+          "orientation_candidates": 146,
+          "shape_candidates": 137,
+          "maximum_inliers": 211
+        },
+        "lidar_rear": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        }
+      }
+    },
+    {
+      "capture_id": "20260903_160237_183",
+      "index": 23,
+      "image_file": "cameras/20260903_160237_151_traffic_light_front.png",
+      "image_sha256": "9c485eaeb28437530cd16641a7e5d84593643bf2c13f98e70950ee280e5b1667",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 35.95954861111111,
+      "previous_frame_changed_fraction": 0.9483333333333334,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 252.454901,
+      "receive_minus_camera_source_ms": 220.973394,
+      "camera_top_source_gap_ms": 173.403695,
+      "camera_source_stamp_ns": 1788422556930862710,
+      "camera_receive_stamp_ns": 1788422557151836104,
+      "top_source_stamp_ns": 1788422557104266405,
+      "sample_sequence": 2292,
+      "status": "accepted_camera_lidar_plane",
+      "tag_count": 22,
+      "tag_ids": [
+        0,
+        1,
+        3,
+        6,
+        7,
+        8,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        18,
+        19,
+        20,
+        21,
+        23,
+        24,
+        25,
+        26,
+        28
+      ],
+      "reprojection_rms_px": 4.05172892211449,
+      "predicted_center_top": [
+        4.161587889658643,
+        0.08481397218362666,
+        -0.3925072000416241
+      ],
+      "predicted_normal_top": [
+        -0.6533427389280781,
+        -0.7444152217285122,
+        0.13780146279647132
+      ],
+      "camera_center": [
+        -0.08481397218362666,
+        0.19250720004162414,
+        4.161587889658643
+      ],
+      "camera_normal": [
+        0.7444152217285122,
+        -0.13780146279647132,
+        -0.6533427389280781
+      ],
+      "raw_lidar_observations": [
+        {
+          "lidar": "lidar_front_left",
+          "camera_lidar_source_gap_ms": 212.455228,
+          "lidar_center": [
+            3.8957335727541405,
+            -0.14048077844246562,
+            -0.3460512223079677
+          ],
+          "lidar_normal": [
+            -0.7562133140064435,
+            -0.6408430451043292,
+            0.13214240523315315
+          ],
+          "lidar_points": 49,
+          "lidar_rms_m": 0.010095560511106102,
+          "lidar_extent_m": [
+            0.03404534644301627,
+            0.866189527440884
+          ],
+          "seed_center_gap_m": 0.3515599527017015,
+          "seed_normal_gap_deg": 8.377661751503194,
+          "search": {
+            "roi_points": 192,
+            "orientation_candidates": 0,
+            "shape_candidates": 0,
+            "maximum_inliers": 0,
+            "rejection": "no_oriented_board_sized_plane",
+            "sparse_roi_points": 240
+          },
+          "sparse_plane_equation_only": true,
+          "seed_plane_gap_m": 0.35155995270170154
+        }
+      ],
+      "lidar_observations": [],
+      "lidar_status": {
+        "lidar_top": "geometry_gate_rejected",
+        "lidar_front_left": "accepted",
+        "lidar_front_right": "geometry_gate_rejected",
+        "lidar_rear": "board_not_found"
+      },
+      "lidar_diagnostics": {
+        "lidar_top": {
+          "roi_points": 517,
+          "orientation_candidates": 0,
+          "shape_candidates": 0,
+          "maximum_inliers": 0,
+          "rejection": "no_oriented_board_sized_plane",
+          "sparse_roi_points": 595
+        },
+        "lidar_front_left": {
+          "roi_points": 192,
+          "orientation_candidates": 0,
+          "shape_candidates": 0,
+          "maximum_inliers": 0,
+          "rejection": "no_oriented_board_sized_plane",
+          "sparse_roi_points": 240
+        },
+        "lidar_front_right": {
+          "roi_points": 158,
+          "orientation_candidates": 1,
+          "shape_candidates": 0,
+          "maximum_inliers": 20,
+          "rejection": "no_oriented_board_sized_plane",
+          "sparse_roi_points": 168
+        },
+        "lidar_rear": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        }
+      }
+    },
+    {
+      "capture_id": "20260903_160240_832",
+      "index": 24,
+      "image_file": "cameras/20260903_160240_750_traffic_light_front.png",
+      "image_sha256": "5001c53d859291de890e78a1fc1d98c09a77711b8c2d389ee38b15ad6ccc2bb1",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 36.95956597222222,
+      "previous_frame_changed_fraction": 0.8609895833333333,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 301.38837,
+      "receive_minus_camera_source_ms": 218.942938,
+      "camera_top_source_gap_ms": 273.271964,
+      "camera_source_stamp_ns": 1788422560531080319,
+      "camera_receive_stamp_ns": 1788422560750023257,
+      "top_source_stamp_ns": 1788422560804352283,
+      "sample_sequence": 2311,
+      "status": "accepted_camera_lidar_plane",
+      "tag_count": 21,
+      "tag_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        12,
+        13,
+        16,
+        17,
+        18,
+        22,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "reprojection_rms_px": 0.6624694915895896,
+      "predicted_center_top": [
+        5.470803371991952,
+        0.09968803843016513,
+        -0.3264636356317232
+      ],
+      "predicted_normal_top": [
+        -0.6816193230852576,
+        0.7256576005128093,
+        -0.09389433004600137
+      ],
+      "camera_center": [
+        -0.09968803843016513,
+        0.12646363563172322,
+        5.470803371991952
+      ],
+      "camera_normal": [
+        -0.7256576005128093,
+        0.09389433004600137,
+        -0.6816193230852576
+      ],
+      "raw_lidar_observations": [
+        {
+          "lidar": "lidar_top",
+          "camera_lidar_source_gap_ms": 273.271964,
+          "lidar_center": [
+            5.1285818834831485,
+            0.45768693198290145,
+            -0.35707898202069366
+          ],
+          "lidar_normal": [
+            -0.6896823187204648,
+            0.7214786776852583,
+            -0.0616994075327687
+          ],
+          "lidar_points": 266,
+          "lidar_rms_m": 0.008364252491404107,
+          "lidar_extent_m": [
+            0.6012745994689992,
+            0.8994870956392949
+          ],
+          "seed_center_gap_m": 0.49620162677754415,
+          "seed_normal_gap_deg": 1.916706704287468,
+          "search": {
+            "roi_points": 413,
+            "orientation_candidates": 155,
+            "shape_candidates": 6,
+            "maximum_inliers": 174,
+            "rejection": "board_center_over_limit_from_camera_prediction",
+            "candidate_prediction_error_m": 0.752289920541647,
+            "sparse_roi_points": 274
+          },
+          "sparse_plane_equation_only": true,
+          "seed_plane_gap_m": 0.4962016267775442
+        },
+        {
+          "lidar": "lidar_front_left",
+          "camera_lidar_source_gap_ms": 212.317632,
+          "lidar_center": [
+            5.135221146738657,
+            0.4548207350982204,
+            -0.3599680796359782
+          ],
+          "lidar_normal": [
+            -0.6852082144635251,
+            0.7251273240049111,
+            -0.06841101382953338
+          ],
+          "lidar_points": 110,
+          "lidar_rms_m": 0.005198952440067277,
+          "lidar_extent_m": [
+            0.6032168365782067,
+            0.9282643956474597
+          ],
+          "seed_center_gap_m": 0.4897521923551872,
+          "seed_normal_gap_deg": 1.4748487065299165,
+          "search": {
+            "roi_points": 195,
+            "orientation_candidates": 165,
+            "shape_candidates": 6,
+            "maximum_inliers": 127,
+            "rejection": "board_center_over_limit_from_camera_prediction",
+            "candidate_prediction_error_m": 0.7781919425409025,
+            "sparse_roi_points": 111
+          },
+          "sparse_plane_equation_only": true,
+          "seed_plane_gap_m": 0.4897521923551872
+        },
+        {
+          "lidar": "lidar_front_right",
+          "camera_lidar_source_gap_ms": 234.860347,
+          "lidar_center": [
+            5.145194725145359,
+            0.4617587192214192,
+            -0.3579947228642557
+          ],
+          "lidar_normal": [
+            -0.6672779393243722,
+            0.7420004969400849,
+            -0.06461744525812331
+          ],
+          "lidar_points": 93,
+          "lidar_rms_m": 0.0034580095235281385,
+          "lidar_extent_m": [
+            0.6439974535278274,
+            0.8559419467351642
+          ],
+          "seed_center_gap_m": 0.4879655502717145,
+          "seed_normal_gap_deg": 2.08956768977544,
+          "search": {
+            "roi_points": 147,
+            "orientation_candidates": 134,
+            "shape_candidates": 1,
+            "maximum_inliers": 55,
+            "rejection": "board_center_over_limit_from_camera_prediction",
+            "candidate_prediction_error_m": 0.83153789350648,
+            "sparse_roi_points": 93
+          },
+          "sparse_plane_equation_only": true,
+          "seed_plane_gap_m": 0.4879655502717145
+        }
+      ],
+      "lidar_observations": [
+        {
+          "lidar": "lidar_consensus",
+          "supporting_lidars": [
+            "lidar_front_left",
+            "lidar_front_right",
+            "lidar_top"
+          ],
+          "camera_lidar_source_gap_ms": 273.271964,
+          "lidar_center": [
+            5.1533902257381,
+            0.4398619682473147,
+            -0.35673008310624055
+          ],
+          "lidar_normal": [
+            -0.6807844977937585,
+            0.7296015956058947,
+            -0.06491516966805659
+          ],
+          "lidar_points": 469,
+          "lidar_rms_m": 0.008364252491404107,
+          "lidar_extent_m": [
+            null,
+            null
+          ],
+          "seed_center_gap_m": 0.46624614291674293,
+          "seed_plane_gap_m": 0.46624614291674293,
+          "sparse_plane_equation_only": true
+        }
+      ],
+      "lidar_status": {
+        "lidar_top": "accepted",
+        "lidar_front_left": "accepted",
+        "lidar_front_right": "accepted",
+        "lidar_rear": "board_not_found"
+      },
+      "lidar_diagnostics": {
+        "lidar_top": {
+          "roi_points": 413,
+          "orientation_candidates": 155,
+          "shape_candidates": 6,
+          "maximum_inliers": 174,
+          "rejection": "board_center_over_limit_from_camera_prediction",
+          "candidate_prediction_error_m": 0.752289920541647,
+          "sparse_roi_points": 274
+        },
+        "lidar_front_left": {
+          "roi_points": 195,
+          "orientation_candidates": 165,
+          "shape_candidates": 6,
+          "maximum_inliers": 127,
+          "rejection": "board_center_over_limit_from_camera_prediction",
+          "candidate_prediction_error_m": 0.7781919425409025,
+          "sparse_roi_points": 111
+        },
+        "lidar_front_right": {
+          "roi_points": 147,
+          "orientation_candidates": 134,
+          "shape_candidates": 1,
+          "maximum_inliers": 55,
+          "rejection": "board_center_over_limit_from_camera_prediction",
+          "candidate_prediction_error_m": 0.83153789350648,
+          "sparse_roi_points": 93
+        },
+        "lidar_rear": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        }
+      }
+    },
+    {
+      "capture_id": "20260903_160244_623",
+      "index": 25,
+      "image_file": "cameras/20260903_160244_548_traffic_light_front.png",
+      "image_sha256": "6ca8ba447c4c577121a0b715114aca15d17641fd4477ad6e4d562b5080e4bd0e",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 33.84411458333334,
+      "previous_frame_changed_fraction": 0.8520833333333333,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 292.329451,
+      "receive_minus_camera_source_ms": 216.865181,
+      "camera_top_source_gap_ms": 273.395689,
+      "camera_source_stamp_ns": 1788422564331297724,
+      "camera_receive_stamp_ns": 1788422564548162905,
+      "top_source_stamp_ns": 1788422564604693413,
+      "sample_sequence": 2330,
+      "status": "accepted_camera_lidar_plane",
+      "tag_count": 7,
+      "tag_ids": [
+        0,
+        2,
+        3,
+        9,
+        13,
+        24,
+        27
+      ],
+      "reprojection_rms_px": 0.918099027082491,
+      "predicted_center_top": [
+        6.878129735219932,
+        0.10001868979328561,
+        -0.3417068103898273
+      ],
+      "predicted_normal_top": [
+        -0.7000603408457479,
+        0.7090615312743024,
+        -0.08454149301897171
+      ],
+      "camera_center": [
+        -0.10001868979328561,
+        0.14170681038982735,
+        6.878129735219932
+      ],
+      "camera_normal": [
+        -0.7090615312743024,
+        0.08454149301897171,
+        -0.7000603408457479
+      ],
+      "raw_lidar_observations": [
+        {
+          "lidar": "lidar_top",
+          "camera_lidar_source_gap_ms": 273.395689,
+          "lidar_center": [
+            6.388025686510103,
+            0.6181285290884087,
+            -0.394939605039018
+          ],
+          "lidar_normal": [
+            -0.6852936621766693,
+            0.7244530832075118,
+            -0.07443337162603378
+          ],
+          "lidar_points": 108,
+          "lidar_rms_m": 0.007613564632444397,
+          "lidar_extent_m": [
+            0.38919421101884516,
+            0.8296550703619017
+          ],
+          "seed_center_gap_m": 0.7151737652922876,
+          "seed_normal_gap_deg": 1.3524166674056333,
+          "search": {
+            "roi_points": 10,
+            "rejection": "roi_points_lt_28",
+            "sparse_roi_points": 111
+          },
+          "sparse_plane_equation_only": true,
+          "seed_plane_gap_m": 0.7151737652922877
+        },
+        {
+          "lidar": "lidar_front_left",
+          "camera_lidar_source_gap_ms": 212.063225,
+          "lidar_center": [
+            6.377085770646326,
+            0.5988458940199857,
+            -0.39461256974477144
+          ],
+          "lidar_normal": [
+            -0.70669693130063,
+            0.7035703040077127,
+            -0.07462087247390854
+          ],
+          "lidar_points": 45,
+          "lidar_rms_m": 0.009421361932287264,
+          "lidar_extent_m": [
+            0.08704890993548436,
+            0.8636020653039429
+          ],
+          "seed_center_gap_m": 0.7089941138579263,
+          "seed_normal_gap_deg": 0.7527782499231142,
+          "search": {
+            "roi_points": 0,
+            "rejection": "roi_points_lt_28",
+            "sparse_roi_points": 45
+          },
+          "sparse_plane_equation_only": true,
+          "seed_plane_gap_m": 0.7089941138579263
+        },
+        {
+          "lidar": "lidar_front_right",
+          "camera_lidar_source_gap_ms": 234.701069,
+          "lidar_center": [
+            6.530287832961162,
+            0.604121909073755,
+            -0.3589315704756538
+          ],
+          "lidar_normal": [
+            -0.5677126254299928,
+            0.8227466565903385,
+            -0.028112523842661233
+          ],
+          "lidar_points": 45,
+          "lidar_rms_m": 0.0019551959632821084,
+          "lidar_extent_m": [
+            0.2528380600327509,
+            0.8229051803108135
+          ],
+          "seed_center_gap_m": 0.6127077092839189,
+          "seed_normal_gap_deg": 10.521086523093514,
+          "search": {
+            "roi_points": 0,
+            "rejection": "roi_points_lt_28",
+            "sparse_roi_points": 45
+          },
+          "sparse_plane_equation_only": true,
+          "seed_plane_gap_m": 0.6127077092839189
+        }
+      ],
+      "lidar_observations": [
+        {
+          "lidar": "lidar_consensus",
+          "supporting_lidars": [
+            "lidar_front_left",
+            "lidar_top"
+          ],
+          "camera_lidar_source_gap_ms": 273.395689,
+          "lidar_center": [
+            6.38210226404364,
+            0.608886230177654,
+            -0.3948213932867511
+          ],
+          "lidar_normal": [
+            -0.6960731068824862,
+            0.7140915179294731,
+            -0.07453545395409984
+          ],
+          "lidar_points": 153,
+          "lidar_rms_m": 0.009421361932287264,
+          "lidar_extent_m": [
+            null,
+            null
+          ],
+          "seed_center_gap_m": 0.7126082968466606,
+          "seed_plane_gap_m": 0.7126082968466607,
+          "sparse_plane_equation_only": true
+        }
+      ],
+      "lidar_status": {
+        "lidar_top": "accepted",
+        "lidar_front_left": "accepted",
+        "lidar_front_right": "accepted",
+        "lidar_rear": "board_not_found"
+      },
+      "lidar_diagnostics": {
+        "lidar_top": {
+          "roi_points": 10,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 111
+        },
+        "lidar_front_left": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 45
+        },
+        "lidar_front_right": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 45
+        },
+        "lidar_rear": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        }
+      }
+    },
+    {
+      "capture_id": "20260903_160248_896",
+      "index": 26,
+      "image_file": "cameras/20260903_160248_748_traffic_light_front.png",
+      "image_sha256": "cd101a808abcde3602d6860b6fbe94bb26f920f8d828bb995ac47dd5b357e32b",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 31.77947916666667,
+      "previous_frame_changed_fraction": 0.851875,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 364.723015,
+      "receive_minus_camera_source_ms": 216.578742,
+      "camera_top_source_gap_ms": 273.218884,
+      "camera_source_stamp_ns": 1788422568531486497,
+      "camera_receive_stamp_ns": 1788422568748065239,
+      "top_source_stamp_ns": 1788422568804705381,
+      "sample_sequence": 2351,
+      "status": "no_lidar_board_accepted",
+      "tag_count": 8,
+      "tag_ids": [
+        6,
+        12,
+        13,
+        18,
+        19,
+        22,
+        25,
+        27
+      ],
+      "reprojection_rms_px": 0.7195495465593812,
+      "predicted_center_top": [
+        8.333427196192234,
+        0.10036246478328358,
+        -0.35561689927264406
+      ],
+      "predicted_normal_top": [
+        -0.6841699517180799,
+        0.7250036839380356,
+        -0.07925361469584428
+      ],
+      "camera_center": [
+        -0.10036246478328358,
+        0.15561689927264413,
+        8.333427196192234
+      ],
+      "camera_normal": [
+        -0.7250036839380356,
+        0.07925361469584428,
+        -0.6841699517180799
+      ],
+      "raw_lidar_observations": [],
+      "lidar_observations": [],
+      "lidar_status": {
+        "lidar_top": "geometry_gate_rejected",
+        "lidar_front_left": "board_not_found",
+        "lidar_front_right": "board_not_found",
+        "lidar_rear": "board_not_found"
+      },
+      "lidar_diagnostics": {
+        "lidar_top": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 32
+        },
+        "lidar_front_left": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        },
+        "lidar_front_right": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 10,
+          "sparse_rejection": "no_sparse_board_plane"
+        },
+        "lidar_rear": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        }
+      }
+    },
+    {
+      "capture_id": "20260903_160253_763",
+      "index": 27,
+      "image_file": "cameras/20260903_160253_748_traffic_light_front.png",
+      "image_sha256": "f2e92727cad962900a206b75de70b1f169ef28d9d4954d72ef104a0680aa5df4",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 33.555399305555554,
+      "previous_frame_changed_fraction": 0.9265625,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 231.425881,
+      "receive_minus_camera_source_ms": 217.015714,
+      "camera_top_source_gap_ms": 173.498721,
+      "camera_source_stamp_ns": 1788422573531757741,
+      "camera_receive_stamp_ns": 1788422573748773455,
+      "top_source_stamp_ns": 1788422573705256462,
+      "sample_sequence": 2375,
+      "status": "too_few_tags",
+      "tag_count": 1
+    },
+    {
+      "capture_id": "20260903_160257_116",
+      "index": 28,
+      "image_file": "cameras/20260903_160256_951_traffic_light_front.png",
+      "image_sha256": "1734d9d7fd95b3e792aedac56d000fa16a488662ab7542500496fda56006bb9d",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 4.505034722222222,
+      "previous_frame_changed_fraction": 0.30635416666666665,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 386.864625,
+      "receive_minus_camera_source_ms": 221.411712,
+      "camera_top_source_gap_ms": 375.352144,
+      "camera_source_stamp_ns": 1788422576729663134,
+      "camera_receive_stamp_ns": 1788422576951074846,
+      "top_source_stamp_ns": 1788422577105015278,
+      "sample_sequence": 2391,
+      "status": "too_few_tags",
+      "tag_count": 1
+    },
+    {
+      "capture_id": "20260903_160319_076",
+      "index": 29,
+      "image_file": "cameras/20260903_160318_949_traffic_light_front.png",
+      "image_sha256": "19fe6b9c4dc5b05010d9cdf7365bc511cc37e36347e57ad5d2d8912b36cdc2a4",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 37.487430555555555,
+      "previous_frame_changed_fraction": 0.9209895833333334,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 341.121005,
+      "receive_minus_camera_source_ms": 213.993385,
+      "camera_top_source_gap_ms": 269.639558,
+      "camera_source_stamp_ns": 1788422598735214883,
+      "camera_receive_stamp_ns": 1788422598949208268,
+      "top_source_stamp_ns": 1788422599004854441,
+      "sample_sequence": 2502,
+      "status": "no_tags",
+      "tag_count": 0
+    },
+    {
+      "capture_id": "20260903_160324_087",
+      "index": 30,
+      "image_file": "cameras/20260903_160323_951_traffic_light_front.png",
+      "image_sha256": "81b62ac5e23ee3221c3d2966a4da78e1a17a4fe410e43c6773107209f8a10bd2",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 26.028194444444445,
+      "previous_frame_changed_fraction": 0.7988020833333334,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 353.655889,
+      "receive_minus_camera_source_ms": 218.029223,
+      "camera_top_source_gap_ms": 270.981556,
+      "camera_source_stamp_ns": 1788422603733452791,
+      "camera_receive_stamp_ns": 1788422603951482014,
+      "top_source_stamp_ns": 1788422604004434347,
+      "sample_sequence": 2527,
+      "status": "no_tags",
+      "tag_count": 0
+    },
+    {
+      "capture_id": "20260903_160328_192",
+      "index": 31,
+      "image_file": "cameras/20260903_160328_151_traffic_light_front.png",
+      "image_sha256": "95a2b4df666e9c35d362fd0413f675f8eecc2f78dcc5dae93bb5ca6306f2587a",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 25.26861111111111,
+      "previous_frame_changed_fraction": 0.7977604166666666,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 258.002241,
+      "receive_minus_camera_source_ms": 217.236136,
+      "camera_top_source_gap_ms": 170.531456,
+      "camera_source_stamp_ns": 1788422607934028919,
+      "camera_receive_stamp_ns": 1788422608151265055,
+      "top_source_stamp_ns": 1788422608104560375,
+      "sample_sequence": 2547,
+      "status": "no_tags",
+      "tag_count": 0
+    },
+    {
+      "capture_id": "20260903_160330_048",
+      "index": 32,
+      "image_file": "cameras/20260903_160329_948_traffic_light_front.png",
+      "image_sha256": "2e23296a148df0f350d92d9a82b5fddc09bbee89cac81d257b915dc16251c21e",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 14.138663194444444,
+      "previous_frame_changed_fraction": 0.5641666666666667,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 313.812034,
+      "receive_minus_camera_source_ms": 214.30316,
+      "camera_top_source_gap_ms": 271.023887,
+      "camera_source_stamp_ns": 1788422609734265429,
+      "camera_receive_stamp_ns": 1788422609948568589,
+      "top_source_stamp_ns": 1788422610005289316,
+      "sample_sequence": 2556,
+      "status": "no_tags",
+      "tag_count": 0
+    },
+    {
+      "capture_id": "20260903_160334_560",
+      "index": 33,
+      "image_file": "cameras/20260903_160334_548_traffic_light_front.png",
+      "image_sha256": "ccbcc0941dfc886579f121d1ae781241b1bfeb3ae51efc01da14019f0758d463",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 33.78647569444445,
+      "previous_frame_changed_fraction": 0.88015625,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 226.05987,
+      "receive_minus_camera_source_ms": 213.869147,
+      "camera_top_source_gap_ms": 170.615766,
+      "camera_source_stamp_ns": 1788422614334554579,
+      "camera_receive_stamp_ns": 1788422614548423726,
+      "top_source_stamp_ns": 1788422614505170345,
+      "sample_sequence": 2579,
+      "status": "no_lidar_board_accepted",
+      "tag_count": 3,
+      "tag_ids": [
+        8,
+        19,
+        25
+      ],
+      "reprojection_rms_px": 0.3794641683095484,
+      "predicted_center_top": [
+        9.095943406782588,
+        0.11384385624738144,
+        -0.3463826850607959
+      ],
+      "predicted_normal_top": [
+        -0.6646057073782914,
+        0.7467058276728366,
+        0.027012231296673555
+      ],
+      "camera_center": [
+        -0.11384385624738144,
+        0.14638268506079594,
+        9.095943406782588
+      ],
+      "camera_normal": [
+        -0.7467058276728366,
+        -0.027012231296673555,
+        -0.6646057073782914
+      ],
+      "raw_lidar_observations": [],
+      "lidar_observations": [],
+      "lidar_status": {
+        "lidar_top": "board_not_found",
+        "lidar_front_left": "board_not_found",
+        "lidar_front_right": "board_not_found",
+        "lidar_rear": "board_not_found"
+      },
+      "lidar_diagnostics": {
+        "lidar_top": {
+          "roi_points": 5,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        },
+        "lidar_front_left": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        },
+        "lidar_front_right": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        },
+        "lidar_rear": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        }
+      }
+    },
+    {
+      "capture_id": "20260903_160338_892",
+      "index": 34,
+      "image_file": "cameras/20260903_160338_748_traffic_light_front.png",
+      "image_sha256": "826f5f2989821fe1116934eed8d2db31a6f34f68c6d47aaaeb3332c7a3f7c296",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 30.915694444444444,
+      "previous_frame_changed_fraction": 0.8304166666666667,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 358.538642,
+      "receive_minus_camera_source_ms": 214.570768,
+      "camera_top_source_gap_ms": 270.794137,
+      "camera_source_stamp_ns": 1788422618534046189,
+      "camera_receive_stamp_ns": 1788422618748616957,
+      "top_source_stamp_ns": 1788422618804840326,
+      "sample_sequence": 2601,
+      "status": "accepted_camera_lidar_plane",
+      "tag_count": 4,
+      "tag_ids": [
+        10,
+        15,
+        23,
+        28
+      ],
+      "reprojection_rms_px": 0.6788685629082197,
+      "predicted_center_top": [
+        7.336012744374567,
+        0.12230231181206742,
+        -0.33553596129748203
+      ],
+      "predicted_normal_top": [
+        -0.8199118689593747,
+        0.5619495097602566,
+        0.10934932839186792
+      ],
+      "camera_center": [
+        -0.12230231181206742,
+        0.13553596129748208,
+        7.336012744374567
+      ],
+      "camera_normal": [
+        -0.5619495097602566,
+        -0.10934932839186792,
+        -0.8199118689593747
+      ],
+      "raw_lidar_observations": [
+        {
+          "lidar": "lidar_front_right",
+          "camera_lidar_source_gap_ms": 332.34547,
+          "lidar_center": [
+            6.798229890141529,
+            0.41504761160856357,
+            -0.2734623506661047
+          ],
+          "lidar_normal": [
+            -0.8738220145275819,
+            0.4756702181896001,
+            0.10086094613088285
+          ],
+          "lidar_points": 46,
+          "lidar_rms_m": 0.0075317229560564304,
+          "lidar_extent_m": [
+            0.061738831862199806,
+            0.8359639718677757
+          ],
+          "seed_center_gap_m": 0.6154375207905262,
+          "seed_normal_gap_deg": 5.851898630548287,
+          "search": {
+            "roi_points": 62,
+            "orientation_candidates": 15,
+            "shape_candidates": 0,
+            "maximum_inliers": 48,
+            "rejection": "no_oriented_board_sized_plane",
+            "sparse_roi_points": 106
+          },
+          "sparse_plane_equation_only": true,
+          "seed_plane_gap_m": 0.6154375207905262
+        }
+      ],
+      "lidar_observations": [],
+      "lidar_status": {
+        "lidar_top": "geometry_gate_rejected",
+        "lidar_front_left": "geometry_gate_rejected",
+        "lidar_front_right": "accepted",
+        "lidar_rear": "board_not_found"
+      },
+      "lidar_diagnostics": {
+        "lidar_top": {
+          "roi_points": 121,
+          "orientation_candidates": 0,
+          "shape_candidates": 0,
+          "maximum_inliers": 0,
+          "rejection": "no_oriented_board_sized_plane",
+          "sparse_roi_points": 232
+        },
+        "lidar_front_left": {
+          "roi_points": 48,
+          "orientation_candidates": 4,
+          "shape_candidates": 0,
+          "maximum_inliers": 0,
+          "rejection": "no_oriented_board_sized_plane",
+          "sparse_roi_points": 94
+        },
+        "lidar_front_right": {
+          "roi_points": 62,
+          "orientation_candidates": 15,
+          "shape_candidates": 0,
+          "maximum_inliers": 48,
+          "rejection": "no_oriented_board_sized_plane",
+          "sparse_roi_points": 106
+        },
+        "lidar_rear": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        }
+      }
+    },
+    {
+      "capture_id": "20260903_160343_469",
+      "index": 35,
+      "image_file": "cameras/20260903_160343_348_traffic_light_front.png",
+      "image_sha256": "c25ba3879df2132325a27aff596e9f74ed9056104abea6e17d5374947c25c0d6",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 41.437413194444446,
+      "previous_frame_changed_fraction": 0.898125,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 333.946613,
+      "receive_minus_camera_source_ms": 213.41386,
+      "camera_top_source_gap_ms": 269.514676,
+      "camera_source_stamp_ns": 1788422623135140781,
+      "camera_receive_stamp_ns": 1788422623348554641,
+      "top_source_stamp_ns": 1788422623404655457,
+      "sample_sequence": 2623,
+      "status": "accepted_camera_lidar_plane",
+      "tag_count": 19,
+      "tag_ids": [
+        0,
+        4,
+        5,
+        7,
+        10,
+        11,
+        13,
+        14,
+        15,
+        16,
+        17,
+        19,
+        20,
+        23,
+        24,
+        25,
+        26,
+        27,
+        29
+      ],
+      "reprojection_rms_px": 2.1087345972920284,
+      "predicted_center_top": [
+        5.922148894663753,
+        0.15117508293960574,
+        -0.32465804840467116
+      ],
+      "predicted_normal_top": [
+        -0.8187633144941384,
+        0.5622608394397697,
+        0.11614380427323014
+      ],
+      "camera_center": [
+        -0.15117508293960574,
+        0.12465804840467118,
+        5.922148894663753
+      ],
+      "camera_normal": [
+        -0.5622608394397697,
+        -0.11614380427323014,
+        -0.8187633144941384
+      ],
+      "raw_lidar_observations": [
+        {
+          "lidar": "lidar_top",
+          "camera_lidar_source_gap_ms": 269.514676,
+          "lidar_center": [
+            5.283862648155539,
+            0.5812574343927431,
+            -0.16209929284393906
+          ],
+          "lidar_normal": [
+            -0.8114063466057675,
+            0.5467320523374577,
+            0.20664898653212066
+          ],
+          "lidar_points": 23,
+          "lidar_rms_m": 0.014808540726482371,
+          "lidar_extent_m": [
+            0.0963403798357027,
+            0.794179091228896
+          ],
+          "seed_center_gap_m": 0.7866419201405797,
+          "seed_normal_gap_deg": 5.28006789621605,
+          "search": {
+            "roi_points": 197,
+            "orientation_candidates": 2,
+            "shape_candidates": 0,
+            "maximum_inliers": 29,
+            "rejection": "no_oriented_board_sized_plane",
+            "sparse_roi_points": 363
+          },
+          "sparse_plane_equation_only": true,
+          "seed_plane_gap_m": 0.7866419201405797
+        },
+        {
+          "lidar": "lidar_front_right",
+          "camera_lidar_source_gap_ms": 231.35602,
+          "lidar_center": [
+            5.6576523212722725,
+            0.33506458847607506,
+            -0.283086674808006
+          ],
+          "lidar_normal": [
+            -0.8143100078391196,
+            0.5661436848684608,
+            0.12798648060093823
+          ],
+          "lidar_points": 46,
+          "lidar_rms_m": 0.009008376413623231,
+          "lidar_extent_m": [
+            0.06990203687118579,
+            0.8583203723351497
+          ],
+          "seed_center_gap_m": 0.3248106628252765,
+          "seed_normal_gap_deg": 0.7582982629742332,
+          "search": {
+            "roi_points": 116,
+            "orientation_candidates": 4,
+            "shape_candidates": 0,
+            "maximum_inliers": 27,
+            "rejection": "no_oriented_board_sized_plane",
+            "sparse_roi_points": 150
+          },
+          "sparse_plane_equation_only": true,
+          "seed_plane_gap_m": 0.32481066282527654
+        }
+      ],
+      "lidar_observations": [],
+      "lidar_status": {
+        "lidar_top": "accepted",
+        "lidar_front_left": "geometry_gate_rejected",
+        "lidar_front_right": "accepted",
+        "lidar_rear": "board_not_found"
+      },
+      "lidar_diagnostics": {
+        "lidar_top": {
+          "roi_points": 197,
+          "orientation_candidates": 2,
+          "shape_candidates": 0,
+          "maximum_inliers": 29,
+          "rejection": "no_oriented_board_sized_plane",
+          "sparse_roi_points": 363
+        },
+        "lidar_front_left": {
+          "roi_points": 82,
+          "orientation_candidates": 1,
+          "shape_candidates": 0,
+          "maximum_inliers": 0,
+          "rejection": "no_oriented_board_sized_plane",
+          "sparse_roi_points": 150
+        },
+        "lidar_front_right": {
+          "roi_points": 116,
+          "orientation_candidates": 4,
+          "shape_candidates": 0,
+          "maximum_inliers": 27,
+          "rejection": "no_oriented_board_sized_plane",
+          "sparse_roi_points": 150
+        },
+        "lidar_rear": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        }
+      }
+    },
+    {
+      "capture_id": "20260903_160347_304",
+      "index": 36,
+      "image_file": "cameras/20260903_160347_148_traffic_light_front.png",
+      "image_sha256": "4f59239285fe48a29adab479d29cff023201cb2640d76ed9f37852370a391501",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 42.13458333333333,
+      "previous_frame_changed_fraction": 0.8521354166666667,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 369.324635,
+      "receive_minus_camera_source_ms": 212.959975,
+      "camera_top_source_gap_ms": 269.259515,
+      "camera_source_stamp_ns": 1788422626935334859,
+      "camera_receive_stamp_ns": 1788422627148294834,
+      "top_source_stamp_ns": 1788422627204594374,
+      "sample_sequence": 2643,
+      "status": "no_lidar_board_accepted",
+      "tag_count": 26,
+      "tag_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        15,
+        16,
+        17,
+        18,
+        20,
+        21,
+        22,
+        23,
+        26,
+        27,
+        28,
+        29
+      ],
+      "reprojection_rms_px": 3.70286673023523,
+      "predicted_center_top": [
+        4.395025010901723,
+        0.14634821508689003,
+        -0.39829017897675245
+      ],
+      "predicted_normal_top": [
+        -0.8079711002403915,
+        0.5670999793422786,
+        0.15993847131418484
+      ],
+      "camera_center": [
+        -0.14634821508689003,
+        0.19829017897675247,
+        4.395025010901723
+      ],
+      "camera_normal": [
+        -0.5670999793422786,
+        -0.15993847131418484,
+        -0.8079711002403915
+      ],
+      "raw_lidar_observations": [],
+      "lidar_observations": [],
+      "lidar_status": {
+        "lidar_top": "board_not_found",
+        "lidar_front_left": "board_not_found",
+        "lidar_front_right": "geometry_gate_rejected",
+        "lidar_rear": "board_not_found"
+      },
+      "lidar_diagnostics": {
+        "lidar_top": {
+          "roi_points": 446,
+          "orientation_candidates": 2,
+          "shape_candidates": 0,
+          "maximum_inliers": 53,
+          "rejection": "no_oriented_board_sized_plane",
+          "sparse_roi_points": 609,
+          "sparse_rejection": "no_sparse_board_plane"
+        },
+        "lidar_front_left": {
+          "roi_points": 172,
+          "orientation_candidates": 0,
+          "shape_candidates": 0,
+          "maximum_inliers": 0,
+          "rejection": "no_oriented_board_sized_plane",
+          "sparse_roi_points": 198,
+          "sparse_rejection": "no_sparse_board_plane"
+        },
+        "lidar_front_right": {
+          "roi_points": 213,
+          "orientation_candidates": 2,
+          "shape_candidates": 0,
+          "maximum_inliers": 0,
+          "rejection": "no_oriented_board_sized_plane",
+          "sparse_roi_points": 245
+        },
+        "lidar_rear": {
+          "roi_points": 0,
+          "rejection": "roi_points_lt_28",
+          "sparse_roi_points": 0,
+          "sparse_rejection": "roi_points_lt_9"
+        }
+      }
+    },
+    {
+      "capture_id": "20260903_160350_870",
+      "index": 37,
+      "image_file": "cameras/20260903_160350_748_traffic_light_front.png",
+      "image_sha256": "1a2da0671d0430d3f177d0598029307c4365afc648172178b336ef6dc76e2c3f",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 43.41767361111111,
+      "previous_frame_changed_fraction": 0.7865104166666667,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 334.66894,
+      "receive_minus_camera_source_ms": 212.923797,
+      "camera_top_source_gap_ms": 269.795618,
+      "camera_source_stamp_ns": 1788422630535422840,
+      "camera_receive_stamp_ns": 1788422630748346637,
+      "top_source_stamp_ns": 1788422630805218458,
+      "sample_sequence": 2660,
+      "status": "pnp_rejected",
+      "tag_count": 29
+    },
+    {
+      "capture_id": "20260903_160354_508",
+      "index": 38,
+      "image_file": "cameras/20260903_160354_347_traffic_light_front.png",
+      "image_sha256": "349c23dc1d343e2094c10cc830585b4dd96841ab47fb539beb730a77f70e72a0",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 43.60208333333333,
+      "previous_frame_changed_fraction": 0.7372916666666667,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 372.342243,
+      "receive_minus_camera_source_ms": 212.168944,
+      "camera_top_source_gap_ms": 269.333222,
+      "camera_source_stamp_ns": 1788422634135796211,
+      "camera_receive_stamp_ns": 1788422634347965155,
+      "top_source_stamp_ns": 1788422634405129433,
+      "sample_sequence": 2679,
+      "status": "pnp_rejected",
+      "tag_count": 25
+    },
+    {
+      "capture_id": "20260903_160358_705",
+      "index": 39,
+      "image_file": "cameras/20260903_160358_546_traffic_light_front.png",
+      "image_sha256": "d7f81923a6d7c0d3846c9b9422bedb7ba598d060243003159fdd7d559ce13f1c",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 64.08107638888889,
+      "previous_frame_changed_fraction": 0.94390625,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 369.604296,
+      "receive_minus_camera_source_ms": 210.342623,
+      "camera_top_source_gap_ms": 268.759516,
+      "camera_source_stamp_ns": 1788422638336064789,
+      "camera_receive_stamp_ns": 1788422638546407412,
+      "top_source_stamp_ns": 1788422638604824305,
+      "sample_sequence": 2700,
+      "status": "pnp_rejected",
+      "tag_count": 22
+    },
+    {
+      "capture_id": "20260903_160402_198",
+      "index": 40,
+      "image_file": "cameras/20260903_160402_146_traffic_light_front.png",
+      "image_sha256": "06ed04f5df6c72e6d93140c08cc68978a0ad0164dfedf2f3c49b6d30285afc5f",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 69.23270833333333,
+      "previous_frame_changed_fraction": 0.93984375,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 262.375053,
+      "receive_minus_camera_source_ms": 210.112169,
+      "camera_top_source_gap_ms": 168.598071,
+      "camera_source_stamp_ns": 1788422641936219319,
+      "camera_receive_stamp_ns": 1788422642146331488,
+      "top_source_stamp_ns": 1788422642104817390,
+      "sample_sequence": 2717,
+      "status": "pnp_rejected",
+      "tag_count": 15
+    },
+    {
+      "capture_id": "20260903_160405_930",
+      "index": 41,
+      "image_file": "cameras/20260903_160405_746_traffic_light_front.png",
+      "image_sha256": "06e4016b3121abcf9e4a041eb019fa44a4b8adf58e3a96ac529c3673cacc6168",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 70.13694444444444,
+      "previous_frame_changed_fraction": 0.7266666666666667,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 393.733873,
+      "receive_minus_camera_source_ms": 210.343873,
+      "camera_top_source_gap_ms": 368.466016,
+      "camera_source_stamp_ns": 1788422645536555413,
+      "camera_receive_stamp_ns": 1788422645746899286,
+      "top_source_stamp_ns": 1788422645905021429,
+      "sample_sequence": 2736,
+      "status": "pnp_rejected",
+      "tag_count": 15
+    },
+    {
+      "capture_id": "20260903_160409_313",
+      "index": 42,
+      "image_file": "cameras/20260903_160409_147_traffic_light_front.png",
+      "image_sha256": "c1244f231fc7bdce2134af829d38f6286256b7b7dc4595ebea871ba68de37adb",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 66.09965277777778,
+      "previous_frame_changed_fraction": 0.6625520833333334,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 377.095262,
+      "receive_minus_camera_source_ms": 210.28843,
+      "camera_top_source_gap_ms": 368.151923,
+      "camera_source_stamp_ns": 1788422648936774472,
+      "camera_receive_stamp_ns": 1788422649147062902,
+      "top_source_stamp_ns": 1788422649304926395,
+      "sample_sequence": 2753,
+      "status": "pnp_rejected",
+      "tag_count": 11
+    },
+    {
+      "capture_id": "20260903_160413_084",
+      "index": 43,
+      "image_file": "cameras/20260903_160412_946_traffic_light_front.png",
+      "image_sha256": "0a36155c194bcdc292366a56f5f675cccdd1ce94ab700ee8881e2e1089af7a4b",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 74.6262673611111,
+      "previous_frame_changed_fraction": 0.70203125,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 347.289844,
+      "receive_minus_camera_source_ms": 209.205292,
+      "camera_top_source_gap_ms": 268.301507,
+      "camera_source_stamp_ns": 1788422652737129907,
+      "camera_receive_stamp_ns": 1788422652946335199,
+      "top_source_stamp_ns": 1788422653005431414,
+      "sample_sequence": 2772,
+      "status": "pnp_rejected",
+      "tag_count": 7
+    },
+    {
+      "capture_id": "20260903_160414_181",
+      "index": 44,
+      "image_file": "cameras/20260903_160414_146_traffic_light_front.png",
+      "image_sha256": "92d077660834b26a3424eb979306ccc1ed61edd1e3d4e6ead1bbe5bd5cc28a00",
+      "width": 320,
+      "height": 240,
+      "previous_frame_mae": 3.62765625,
+      "previous_frame_changed_fraction": 0.23489583333333333,
+      "near_same_as_previous": false,
+      "capture_minus_camera_source_ms": 244.719471,
+      "receive_minus_camera_source_ms": 209.653692,
+      "camera_top_source_gap_ms": 167.536731,
+      "camera_source_stamp_ns": 1788422653937037711,
+      "camera_receive_stamp_ns": 1788422654146691403,
+      "top_source_stamp_ns": 1788422654104574442,
+      "sample_sequence": 2777,
+      "status": "pnp_rejected",
+      "tag_count": 7
+    }
+  ]
+}

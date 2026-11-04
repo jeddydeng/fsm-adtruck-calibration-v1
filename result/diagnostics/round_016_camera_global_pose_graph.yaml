@@ -1,0 +1,154 @@
+schema_version: 1
+reference_frame: velodyne_top_base_link
+method: robust_camera_absolute_and_relative_pose_graph
+transforms:
+  fisheye_left/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - -0.053257223
+    - 0.581861966
+    - -0.709145117
+    rpy_deg:
+    - 1.67565155
+    - 23.84418063
+    - 90.6437149
+    source: camera_pose_graph_consensus
+  fisheye_right/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - -0.0380743
+    - -0.563979612
+    - -0.696888182
+    rpy_deg:
+    - -0.2206114
+    - 24.53397334
+    - -90.35406663
+    source: camera_pose_graph_consensus
+  video_front_left/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.101171732
+    - 0.49555913
+    - -0.330623377
+    rpy_deg:
+    - 0.59760354
+    - 0.01945122
+    - 56.26007382
+    source: camera_pose_graph_consensus
+  video_front_mid/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.220520023
+    - -0.020165882
+    - -0.307367906
+    rpy_deg:
+    - -0.78064877
+    - 2.06596963
+    - -0.00689078
+    source: camera_pose_graph_consensus
+  video_front_right/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.126734449
+    - -0.490963052
+    - -0.308289344
+    rpy_deg:
+    - -1.21749549
+    - 5.17765208
+    - -56.41403273
+    source: camera_pose_graph_consensus
+  video_rear_left/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - -0.008103342
+    - 0.550613808
+    - -0.340019198
+    rpy_deg:
+    - 0.95346392
+    - -1.28120505
+    - 108.53460724
+    source: camera_pose_graph_consensus
+  video_rear_right/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.009266685
+    - -0.523738442
+    - -0.3136232
+    rpy_deg:
+    - -1.84780578
+    - 4.032244
+    - -109.34819079
+    source: camera_pose_graph_consensus
+quality:
+  fisheye_left/camera_link:
+    absolute_input_position_p95_m: 0.01616127915314967
+    absolute_input_angle_p95_deg: 0.12246951337052511
+    graph_adjustment_m: 0.026900999899194818
+    graph_adjustment_deg: 0.1140875894049231
+  fisheye_right/camera_link:
+    absolute_input_position_p95_m: 0.025462520031952186
+    absolute_input_angle_p95_deg: 0.5252375937235173
+    graph_adjustment_m: 0.034064566709651786
+    graph_adjustment_deg: 0.6551094534627888
+  video_front_left/camera_link:
+    absolute_input_position_p95_m: 0.04670154795467739
+    absolute_input_angle_p95_deg: 0.5220475716146544
+    graph_adjustment_m: 0.011031924051345789
+    graph_adjustment_deg: 0.5735608872216509
+  video_front_mid/camera_link:
+    absolute_input_position_p95_m: 0.018143675200978628
+    absolute_input_angle_p95_deg: 0.1182539392728508
+    graph_adjustment_m: 3.469446951953614e-18
+    graph_adjustment_deg: 5.134976437133588e-15
+  video_front_right/camera_link:
+    absolute_input_position_p95_m: 0.03913686699213722
+    absolute_input_angle_p95_deg: 0.40356879357880643
+    graph_adjustment_m: 0.015189174490084235
+    graph_adjustment_deg: 0.21048043509008696
+  video_rear_left/camera_link:
+    absolute_input_position_p95_m: 0.006152918142939189
+    absolute_input_angle_p95_deg: 0.10985539916738178
+    graph_adjustment_m: 0.0023974568615476627
+    graph_adjustment_deg: 0.07286598289101956
+  video_rear_right/camera_link:
+    absolute_input_position_p95_m: 0.014906310799798428
+    absolute_input_angle_p95_deg: 0.366308984720634
+    graph_adjustment_m: 0.00785868943238166
+    graph_adjustment_deg: 0.34354384231385826
+pair_closure:
+  video_front_right<-video_rear_right:
+    support: five_fold
+    before_position_m: 0.014969580972237636
+    before_angle_deg: 0.5202779519100139
+    after_position_m: 0.0004849803549002349
+    after_angle_deg: 0.016992746732817574
+    edge_position_p95_m: 0.007206659189128639
+    edge_angle_p95_deg: 0.12092820047591826
+  video_rear_left<-fisheye_left:
+    support: five_fold
+    before_position_m: 0.03583679746538216
+    before_angle_deg: 0.6311938991161734
+    after_position_m: 0.006512169078362671
+    after_angle_deg: 0.44730472614064987
+    edge_position_p95_m: 0.009491954959163286
+    edge_angle_p95_deg: 0.18129487011420717
+  video_rear_right<-fisheye_right:
+    support: five_fold
+    before_position_m: 0.0470884425262166
+    before_angle_deg: 1.0937722451075647
+    after_position_m: 0.006850061883475417
+    after_angle_deg: 0.13740425885551247
+    edge_position_p95_m: 0.013175596781701118
+    edge_angle_p95_deg: 0.26589339949754703
+  video_front_left<-video_rear_left:
+    support: four_view_leave_one_out_provisional
+    before_position_m: 0.009444393010903284
+    before_angle_deg: 0.6158711962624105
+    after_position_m: 0.0008204970871660539
+    after_angle_deg: 0.07792475992123754
+    edge_position_p95_m: 0.01282783645955683
+    edge_angle_p95_deg: 0.2232246397164188
+rejected_pair_edges:
+  video_front_left<-fisheye_front: one or both nodes lack an absolute candidate
+  video_front_mid<-fisheye_front: one or both nodes lack an absolute candidate
+  video_front_right<-fisheye_front: one or both nodes lack an absolute candidate

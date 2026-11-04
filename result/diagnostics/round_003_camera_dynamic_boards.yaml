@@ -1,0 +1,93 @@
+schema_version: 1
+reference_frame: velodyne_top_base_link
+method: camera_aprilgrid_to_temporal_difference_roof_lidar_board
+ground_z_top_m: -1.728145
+excluded:
+  traffic_light_front: frozen complete session
+transforms:
+  video_front_mid/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.256868051
+    - -0.061414606
+    - 0.06454508
+    rpy_deg:
+    - -1.23523905
+    - 4.65240004
+    - 0.33794979
+    source: temporal_dynamic_board_bootstrap
+quality:
+  video_front_mid/camera_link:
+    raw_observations: 54
+    unique_board_poses: 49
+    stability:
+      bootstrap_count: 5
+      dominant_count: 4
+      dominant_fraction: 0.8
+      position_p95_m: 0.04665458176654216
+      angle_p95_deg: 0.5607408104562788
+      fold_audits:
+      - raw_count: 39
+        accepted_count: 14
+        discarded_over_10cm_or_6deg: 25
+      - raw_count: 39
+        accepted_count: 15
+        discarded_over_10cm_or_6deg: 24
+      - raw_count: 39
+        accepted_count: 14
+        discarded_over_10cm_or_6deg: 25
+      - raw_count: 39
+        accepted_count: 13
+        discarded_over_10cm_or_6deg: 26
+      - raw_count: 40
+        accepted_count: 13
+        discarded_over_10cm_or_6deg: 27
+    fit:
+      count: 49
+      capture_count: 49
+      center_rms_m: 0.137124
+      center_median_m: 0.124373
+      center_p95_m: 0.241693
+      normal_rms_deg: 9.27791
+      normal_median_deg: 8.50445
+      normal_p95_deg: 14.80331
+    difference_from_rough:
+      position_m: 0.37381419020933904
+      angle_deg: 4.828855227596293
+rejected:
+  video_front_left/camera_link:
+    raw_observations: 6
+    unique_board_poses: 6
+    error: need >=8 unique board poses, got 6
+  video_front_right/camera_link:
+    raw_observations: 6
+    unique_board_poses: 6
+    error: need >=8 unique board poses, got 6
+  video_rear_left/camera_link:
+    raw_observations: 8
+    unique_board_poses: 8
+    error: only 4 observations remain after 10 cm gate
+  video_rear_mid/camera_link:
+    raw_observations: 0
+    unique_board_poses: 0
+    error: need >=8 unique board poses, got 0
+  video_rear_right/camera_link:
+    raw_observations: 7
+    unique_board_poses: 7
+    error: need >=8 unique board poses, got 7
+  fisheye_front/camera_link:
+    raw_observations: 0
+    unique_board_poses: 0
+    error: need >=8 unique board poses, got 0
+  fisheye_left/camera_link:
+    raw_observations: 2
+    unique_board_poses: 2
+    error: need >=8 unique board poses, got 2
+  fisheye_right/camera_link:
+    raw_observations: 2
+    unique_board_poses: 2
+    error: need >=8 unique board poses, got 2
+  fisheye_rear/camera_link:
+    raw_observations: 0
+    unique_board_poses: 0
+    error: need >=8 unique board poses, got 0

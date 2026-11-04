@@ -1,0 +1,27 @@
+[Unit]
+Description=FSM-Pi traffic-light camera lease-controlled MJPEG sender
+After=network-online.target fsm-pi-camera-gateway.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=@RUN_USER@
+Group=@RUN_GROUP@
+SupplementaryGroups=video
+EnvironmentFile=@INSTALL_DIR@/config/telephoto.env
+ExecStart=@INSTALL_DIR@/bin/telephoto_udp_sender --device ${CAMERA_DEVICE} --peer-ip ${PEER_IP} --port ${DATA_PORT} --control-port ${CONTROL_PORT} --lease-timeout-ms ${LEASE_TIMEOUT_MS} --width ${WIDTH} --height ${HEIGHT} --fps ${FPS}
+Restart=always
+RestartSec=2
+Nice=5
+CPUQuota=25%
+MemoryMax=64M
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadOnlyPaths=@INSTALL_DIR@/app/telephoto-camera @INSTALL_DIR@/config/telephoto.env
+DevicePolicy=closed
+DeviceAllow=char-video4linux rw
+
+[Install]
+WantedBy=multi-user.target

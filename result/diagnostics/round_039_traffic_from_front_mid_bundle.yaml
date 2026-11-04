@@ -1,0 +1,86 @@
+schema_version: 1
+reference_frame: velodyne_top_base_link
+method: anchored_reference_camera_multiview_projection_bundle
+reference_camera: video_front_mid
+target_camera: traffic_light_front
+reference_transform_source: round_035_camera_global_gated_pose_graph.yaml
+corner_source: fresh_redetection_from_each_saved_image
+transform:
+  frame: traffic_light_front/camera_link
+  parent: velodyne_top_base_link
+  xyz_m:
+  - -0.4
+  - 0.4
+  - 0.2
+  rpy_deg:
+  - -0.08908728
+  - 6.79695383
+  - -4.62370645
+  source: anchored_reference_camera_bundle
+quality:
+  raw_views: 96
+  accepted_views: 68
+  discarded_views: 28
+  rejection_history:
+  - iteration: 1
+    input: 96
+    output: 76
+    normalized_rms_cut: 0.0035
+  - iteration: 2
+    input: 76
+    output: 74
+    normalized_rms_cut: 0.0035
+  - iteration: 3
+    input: 74
+    output: 68
+    normalized_rms_cut: 0.0035
+  - iteration: 4
+    input: 68
+    output: 68
+    normalized_rms_cut: 0.0035
+  dominant_count: 5
+  dominant_fraction: 1.0
+  position_p95_m: 2.2204460492503126e-17
+  angle_p95_deg: 0.007391642548132365
+  achieved_tier: target_1mm_0.1deg
+  bootstrap_transforms:
+  - xyz_m:
+    - -0.4
+    - 0.4
+    - 0.2
+    rpy_deg:
+    - -96.79746625
+    - -0.08777358
+    - -94.61452751
+  - xyz_m:
+    - -0.4
+    - 0.4
+    - 0.2
+    rpy_deg:
+    - -96.79569849
+    - -0.08192843
+    - -94.61528722
+  - xyz_m:
+    - -0.4
+    - 0.4
+    - 0.2
+    rpy_deg:
+    - -96.79718053
+    - -0.09010201
+    - -94.6130743
+  - xyz_m:
+    - -0.4
+    - 0.4
+    - 0.2
+    rpy_deg:
+    - -96.79696707
+    - -0.08695041
+    - -94.61212868
+  - xyz_m:
+    - -0.4
+    - 0.4
+    - 0.2
+    rpy_deg:
+    - -96.79749774
+    - -0.0955513
+    - -94.61079646

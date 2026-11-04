@@ -1,0 +1,397 @@
+schema_version: 1
+reference_note: relative camera optical-frame constraints; no absolute lidar anchor
+  yet
+exclusions:
+  frames_without_decodable_board: skipped for every camera
+  traffic_stream: included after round-22 content audit disproved full-session freeze
+board_pose_count: 1300
+capture_count: 310
+per_camera_board_poses:
+  video_front_left: 67
+  video_front_mid: 260
+  video_front_right: 75
+  video_rear_left: 219
+  video_rear_mid: 5
+  video_rear_right: 104
+  fisheye_front: 124
+  fisheye_left: 122
+  fisheye_right: 11
+  fisheye_rear: 3
+  traffic_light_front: 310
+accepted_edges:
+  video_front_left<-fisheye_front:
+    transform:
+      xyz_m:
+      - 0.187718397
+      - 0.604929402
+      - -0.19993632
+      rpy_deg:
+      - -23.50708451
+      - 62.19109999
+      - -3.71877427
+    quality:
+      raw_view_count: 22
+      dominant_count: 3
+      dominant_fraction: 0.6
+      normalized_reprojection_rms_median: 0.0015498185924504697
+      position_p95_m: 0.03373871528201985
+      angle_p95_deg: 0.5409253460169465
+      bootstrap_transforms:
+      - xyz_m:
+        - 0.26114998
+        - 0.582123585
+        - -0.223508399
+        rpy_deg:
+        - -24.19214565
+        - 60.72581325
+        - -4.10575353
+      - xyz_m:
+        - 0.161287603
+        - 0.597373202
+        - -0.178875682
+        rpy_deg:
+        - -23.97529751
+        - 62.68062623
+        - -4.02044311
+      - xyz_m:
+        - 0.203081586
+        - 0.623372458
+        - -0.209167814
+        rpy_deg:
+        - -22.93399513
+        - 61.80182984
+        - -3.31626301
+      - xyz_m:
+        - 0.187718397
+        - 0.604929402
+        - -0.19993632
+        rpy_deg:
+        - -23.62472034
+        - 62.08927493
+        - -3.83269397
+      - xyz_m:
+        - 0.253177688
+        - 0.550455124
+        - -0.212913742
+        rpy_deg:
+        - -25.29601462
+        - 60.8913256
+        - -4.84679138
+    difference_from_rough_position_m: 0.3073565278643268
+    difference_from_rough_angle_deg: 2.8442089866915428
+  video_front_mid<-fisheye_front:
+    transform:
+      xyz_m:
+      - -0.049486981
+      - 0.736462614
+      - 0.174814688
+      rpy_deg:
+      - -17.47763284
+      - 0.22313535
+      - 0.59014972
+    quality:
+      raw_view_count: 11
+      dominant_count: 5
+      dominant_fraction: 1.0
+      normalized_reprojection_rms_median: 0.0019319811084397228
+      position_p95_m: 0.003997632074098143
+      angle_p95_deg: 0.07665168380302906
+      bootstrap_transforms:
+      - xyz_m:
+        - -0.049017043
+        - 0.734611864
+        - 0.175848081
+        rpy_deg:
+        - -17.51380162
+        - 0.20297323
+        - 0.59016611
+      - xyz_m:
+        - -0.049486981
+        - 0.737879622
+        - 0.174814688
+        rpy_deg:
+        - -17.43677241
+        - 0.22222233
+        - 0.598015
+      - xyz_m:
+        - -0.048966687
+        - 0.736462614
+        - 0.176110049
+        rpy_deg:
+        - -17.46521174
+        - 0.21002364
+        - 0.52626321
+      - xyz_m:
+        - -0.050470364
+        - 0.737443558
+        - 0.173439921
+        rpy_deg:
+        - -17.42127763
+        - 0.24478886
+        - 0.63829603
+      - xyz_m:
+        - -0.050073136
+        - 0.732533755
+        - 0.172799548
+        rpy_deg:
+        - -17.55108359
+        - 0.23565421
+        - 0.59801554
+    difference_from_rough_position_m: 0.055550099422014255
+    difference_from_rough_angle_deg: 2.598949833988811
+  video_front_right<-fisheye_front:
+    transform:
+      xyz_m:
+      - -0.181534263
+      - 1.289943663
+      - -0.038427671
+      rpy_deg:
+      - 7.91001628
+      - -60.77369039
+      - -17.35147933
+    quality:
+      raw_view_count: 16
+      dominant_count: 5
+      dominant_fraction: 1.0
+      normalized_reprojection_rms_median: 0.0017004766834121587
+      position_p95_m: 0.02727923437823303
+      angle_p95_deg: 0.4551769099676913
+      bootstrap_transforms:
+      - xyz_m:
+        - -0.16576386
+        - 1.279011548
+        - -0.034886861
+        rpy_deg:
+        - 7.80450279
+        - -61.03580919
+        - -17.43443536
+      - xyz_m:
+        - -0.181534263
+        - 1.273431252
+        - -0.055556825
+        rpy_deg:
+        - 7.24113903
+        - -60.72471198
+        - -16.87959751
+      - xyz_m:
+        - -0.184628154
+        - 1.317901343
+        - -0.037298632
+        rpy_deg:
+        - 8.68988019
+        - -60.60740006
+        - -17.78923899
+      - xyz_m:
+        - -0.190729617
+        - 1.289943663
+        - -0.05541217
+        rpy_deg:
+        - 7.7050142
+        - -60.50019016
+        - -17.18535782
+      - xyz_m:
+        - -0.165528379
+        - 1.293840651
+        - -0.038427671
+        rpy_deg:
+        - 8.10996215
+        - -60.99732056
+        - -17.46902846
+    difference_from_rough_position_m: 0.7045589095879811
+    difference_from_rough_angle_deg: 15.398745644494909
+  video_front_right<-video_rear_right:
+    transform:
+      xyz_m:
+      - 0.116143852
+      - 0.011082223
+      - -0.037346193
+      rpy_deg:
+      - 2.08609399
+      - 52.73112339
+      - 4.96303225
+    quality:
+      raw_view_count: 5
+      dominant_count: 5
+      dominant_fraction: 1.0
+      normalized_reprojection_rms_median: 0.0013902192240573537
+      position_p95_m: 0.007206659189128639
+      angle_p95_deg: 0.12092820047591826
+      bootstrap_transforms:
+      - xyz_m:
+        - 0.11754419
+        - 0.005386739
+        - -0.037639359
+        rpy_deg:
+        - 1.95376832
+        - 52.70228593
+        - 4.9364832
+      - xyz_m:
+        - 0.113984174
+        - 0.013875111
+        - -0.036020992
+        rpy_deg:
+        - 2.20394888
+        - 52.77237465
+        - 5.03178288
+      - xyz_m:
+        - 0.1184919
+        - 0.005837725
+        - -0.039786287
+        rpy_deg:
+        - 1.98374052
+        - 52.67294535
+        - 4.92483088
+      - xyz_m:
+        - 0.116143852
+        - 0.011082223
+        - -0.036530744
+        rpy_deg:
+        - 2.07452543
+        - 52.71181808
+        - 4.92498037
+      - xyz_m:
+        - 0.110255096
+        - 0.015641804
+        - -0.037346193
+        rpy_deg:
+        - 2.21487994
+        - 52.79608516
+        - 4.99751951
+    difference_from_rough_position_m: 0.12250284930323307
+    difference_from_rough_angle_deg: 8.03296977704749
+  video_rear_left<-fisheye_left:
+    transform:
+      xyz_m:
+      - -0.023441538
+      - 0.375809021
+      - 0.037621819
+      rpy_deg:
+      - -24.24127474
+      - 18.4584668
+      - 0.34035567
+    quality:
+      raw_view_count: 13
+      dominant_count: 5
+      dominant_fraction: 1.0
+      normalized_reprojection_rms_median: 0.0019958537545152156
+      position_p95_m: 0.009491954959163286
+      angle_p95_deg: 0.18129487011420717
+      bootstrap_transforms:
+      - xyz_m:
+        - -0.013966213
+        - 0.372798747
+        - 0.03928451
+        rpy_deg:
+        - -24.32962774
+        - 18.29749706
+        - 0.36460438
+      - xyz_m:
+        - -0.028070802
+        - 0.378526125
+        - 0.037621819
+        rpy_deg:
+        - -24.18263334
+        - 18.59042506
+        - 0.31057253
+      - xyz_m:
+        - -0.024038545
+        - 0.375876667
+        - 0.038729304
+        rpy_deg:
+        - -24.24039757
+        - 18.51918925
+        - 0.35850486
+      - xyz_m:
+        - -0.017624026
+        - 0.374907376
+        - 0.033582611
+        rpy_deg:
+        - -24.23372324
+        - 18.39361798
+        - 0.36439804
+      - xyz_m:
+        - -0.023441538
+        - 0.375809021
+        - 0.035341674
+        rpy_deg:
+        - -24.22001458
+        - 18.49164149
+        - 0.30387539
+    difference_from_rough_position_m: 0.224714361435066
+    difference_from_rough_angle_deg: 11.704746076676003
+  video_rear_right<-fisheye_right:
+    transform:
+      xyz_m:
+      - 0.023690889
+      - 0.383460199
+      - 0.083491753
+      rpy_deg:
+      - -20.1341361
+      - -19.1243174
+      - 0.28861078
+    quality:
+      raw_view_count: 5
+      dominant_count: 5
+      dominant_fraction: 1.0
+      normalized_reprojection_rms_median: 0.0015799228197687057
+      position_p95_m: 0.013175596781701118
+      angle_p95_deg: 0.26589339949754703
+      bootstrap_transforms:
+      - xyz_m:
+        - 0.035220701
+        - 0.3876771
+        - 0.084548659
+        rpy_deg:
+        - -19.97794828
+        - -19.34738078
+        - 0.26777148
+      - xyz_m:
+        - 0.019580661
+        - 0.383460199
+        - 0.079269303
+        rpy_deg:
+        - -20.07845513
+        - -18.9969072
+        - 0.31090736
+      - xyz_m:
+        - 0.018393803
+        - 0.384322339
+        - 0.076775292
+        rpy_deg:
+        - -20.01714194
+        - -18.98688972
+        - 0.19132121
+      - xyz_m:
+        - 0.026274706
+        - 0.370332006
+        - 0.083980122
+        rpy_deg:
+        - -20.39316377
+        - -19.17682364
+        - 0.33737696
+      - xyz_m:
+        - 0.023690889
+        - 0.378541245
+        - 0.083491753
+        rpy_deg:
+        - -20.20404789
+        - -19.11334468
+        - 0.33571157
+    difference_from_rough_position_m: 0.1609709286039083
+    difference_from_rough_angle_deg: 11.219712787777244
+rejected_edges:
+  video_front_left<-fisheye_left:
+    raw_count: 2
+    error: stereo bootstrap needs >=5 board views, got 2
+  video_front_left<-video_rear_left:
+    raw_count: 4
+    error: stereo bootstrap needs >=5 board views, got 4
+  video_front_mid<-traffic_light_front:
+    raw_count: 3
+    error: stereo bootstrap needs >=5 board views, got 3
+  video_front_right<-fisheye_right:
+    raw_count: 2
+    error: stereo bootstrap needs >=5 board views, got 2
+  video_rear_mid<-fisheye_rear:
+    raw_count: 2
+    error: stereo bootstrap needs >=5 board views, got 2

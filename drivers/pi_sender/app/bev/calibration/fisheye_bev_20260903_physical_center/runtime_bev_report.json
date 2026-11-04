@@ -1,0 +1,77 @@
+{
+  "source_package": "/home/fsm-lab/white_ws/calibration/offline_results/fisheye_bev_20260903/relative_usable",
+  "source_package_status": "usable",
+  "source_deployment_scope": "BEV_relative_planar_mapping_only",
+  "output_width": 512,
+  "output_height": 512,
+  "meters_per_pixel": 0.021,
+  "physical_vehicle_center_pixel": [
+    256.0,
+    256.0
+  ],
+  "source_physical_vehicle_center_pixel": [
+    256.0,
+    200.0
+  ],
+  "physical_half_extent_forward_rear_m": 5.376,
+  "physical_half_extent_left_right_m": 5.376,
+  "vehicle_footprint_m": {
+    "length": 4.35,
+    "width": 1.53,
+    "source": "vehicle mask (205,55)-(307,345) in the reviewed 0.015 m/px calibration preview"
+  },
+  "minimum_visible_ground_beyond_vehicle_m": {
+    "front": 3.2010000000000005,
+    "rear": 3.2010000000000005,
+    "left": 4.611000000000001,
+    "right": 4.611000000000001
+  },
+  "coordinate_change_from_source_bev": [
+    [
+      0.7142857142857142,
+      0.0,
+      73.14285714285717
+    ],
+    [
+      0.0,
+      0.7142857142857142,
+      113.14285714285717
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "coverage_annulus_0_75_to_5_2_m": {
+    "at_least_one_camera_fraction": 0.9939875296912114,
+    "at_least_two_cameras_fraction": 0.7300167543264336
+  },
+  "source_reconstruction_checks": {
+    "front": {
+      "reviewed_map_reconstruction_p95_px": 0.0,
+      "reviewed_valid_mask_iou": 0.9907156840165822,
+      "runtime_valid_fraction": 0.4111213684082031
+    },
+    "rear": {
+      "reviewed_map_reconstruction_p95_px": 0.08009194731712335,
+      "reviewed_valid_mask_iou": 0.970131712599582,
+      "runtime_valid_fraction": 0.3895835876464844
+    },
+    "left": {
+      "reviewed_map_reconstruction_p95_px": 0.07183314561843872,
+      "reviewed_valid_mask_iou": 0.9950654893654156,
+      "runtime_valid_fraction": 0.4869651794433594
+    },
+    "right": {
+      "reviewed_map_reconstruction_p95_px": 0.07627922743558847,
+      "reviewed_valid_mask_iou": 0.9947249615778688,
+      "runtime_valid_fraction": 0.4842262268066406
+    }
+  },
+  "absolute_vehicle_extrinsics_used": false,
+  "notes": [
+    "Only the package's authorised relative planar BEV calibration is used.",
+    "Runtime maps are precomputed; the Raspberry Pi performs one cv::remap per camera."
+  ]
+}

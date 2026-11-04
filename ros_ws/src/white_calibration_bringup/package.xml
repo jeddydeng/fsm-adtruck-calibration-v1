@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>white_calibration_bringup</name>
+  <version>1.0.0</version>
+  <description>Standalone sensing-only launch for the calibration repository.</description>
+  <maintainer email="jeddydeng@users.noreply.github.com">FSM Lab</maintainer>
+  <license>Proprietary</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>rslidar_sdk</exec_depend>
+  <exec_depend>white_sensor_kit_description</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>xacro</exec_depend>
+  <export><build_type>ament_cmake</build_type></export>
+</package>

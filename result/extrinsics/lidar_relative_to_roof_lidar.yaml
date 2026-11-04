@@ -1,0 +1,119 @@
+schema_version: 1
+reference_frame: velodyne_top_base_link
+coordinate_convention: x_forward_y_left_z_up_fixed_xyz_rpy
+warning: Repeatability is not surveyed absolute accuracy.
+transforms:
+  velodyne_front_left_base_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.276903998
+    - 0.495025839
+    - -1.27613
+    rpy_deg:
+    - -93.75563268
+    - -88.52940021
+    - -41.35102094
+    source: dominant_solver_variant_consensus
+    quaternion_xyzw:
+    - 0.6574859373
+    - 0.261825808
+    - 0.6494725352
+    - -0.278109537
+    matrix_row_major:
+    - - 0.0192653445
+      - 0.7055425856
+      - 0.7084056087
+      - 0.276903998
+    - - -0.0169554386
+      - -0.7082046635
+      - 0.7058035617
+      - 0.495025839
+    - - 0.9996706256
+      - -0.0256088765
+      - -0.0016810229
+      - -1.27613
+    - - 0.0
+      - 0.0
+      - 0.0
+      - 1.0
+    calibration_status: fallback_1cm_1deg
+    repeatability_position_p95_m: 0.007005304513357282
+    repeatability_angle_p95_deg: 0.33285807427070613
+    dominant_fraction: 1.0
+    evidence: round_029_lidar_variant_consensus
+  velodyne_front_right_base_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.269213348
+    - -0.488674493
+    - -1.280495
+    rpy_deg:
+    - 142.27595891
+    - -88.80632253
+    - -7.7917234
+    source: dominant_solver_variant_consensus
+    quaternion_xyzw:
+    - 0.6591373628
+    - -0.2716186397
+    - 0.6449057558
+    - 0.2754229795
+    matrix_row_major:
+    - - 0.0206397613
+      - -0.7133117173
+      - 0.7005429282
+      - 0.269213348
+    - - -0.0028242582
+      - -0.7007309938
+      - -0.713420001
+      - -0.488674493
+    - - 0.9997829884
+      - 0.0127463044
+      - -0.0164774969
+      - -1.280495
+    - - 0.0
+      - 0.0
+      - 0.0
+      - 1.0
+    calibration_status: fallback_1cm_1deg
+    repeatability_position_p95_m: 0.007561879328398073
+    repeatability_angle_p95_deg: 0.20729778628110143
+    dominant_fraction: 1.0
+    evidence: round_029_lidar_variant_consensus
+  velodyne_rear_base_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - -2.103010584
+    - 0.027228635
+    - -1.334865
+    rpy_deg:
+    - 1.30149561
+    - -89.71082283
+    - -1.47117058
+    source: dominant_solver_variant_consensus
+    quaternion_xyzw:
+    - -0.001003833
+    - -0.7053198616
+    - -0.0010901763
+    - 0.7088876474
+    matrix_row_major:
+    - - 0.0050454086
+      - 0.0029616718
+      - -0.999982886
+      - -2.103010584
+    - - -0.0001295783
+      - 0.9999956077
+      - 0.0029610556
+      - 0.027228635
+    - - 0.9999872634
+      - 0.0001146363
+      - 0.0050457703
+      - -1.334865
+    - - 0.0
+      - 0.0
+      - 0.0
+      - 1.0
+    calibration_status: fallback_1cm_1deg
+    repeatability_position_p95_m: 0.0036538066491248883
+    repeatability_angle_p95_deg: 0.13819289564557594
+    dominant_fraction: 0.75
+    evidence: round_029_lidar_variant_consensus

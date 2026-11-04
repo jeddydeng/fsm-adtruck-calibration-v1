@@ -1,0 +1,2 @@
+# Current vehicle's FTDI adapter. Change ATTRS{serial} on replacement hardware.
+SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}=="A9IM4UBG", SYMLINK+="w102-rs485", GROUP="dialout", MODE="0660", ENV{ID_MM_DEVICE_IGNORE}="1"

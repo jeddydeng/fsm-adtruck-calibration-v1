@@ -1,0 +1,218 @@
+{
+  "schema_version": 1,
+  "status": "pass",
+  "passed_checks": 42,
+  "total_checks": 42,
+  "checks": [
+    {
+      "name": "intrinsic_files:video_front_left",
+      "passed": true,
+      "detail": "YAML and source report present"
+    },
+    {
+      "name": "intrinsic_numeric:video_front_left",
+      "passed": true,
+      "detail": "model=plumb_bob, rms=0.5036px, max=0.7871px"
+    },
+    {
+      "name": "intrinsic_files:video_front_mid",
+      "passed": true,
+      "detail": "YAML and source report present"
+    },
+    {
+      "name": "intrinsic_numeric:video_front_mid",
+      "passed": true,
+      "detail": "model=plumb_bob, rms=0.3392px, max=0.6245px"
+    },
+    {
+      "name": "intrinsic_files:video_front_right",
+      "passed": true,
+      "detail": "YAML and source report present"
+    },
+    {
+      "name": "intrinsic_numeric:video_front_right",
+      "passed": true,
+      "detail": "model=plumb_bob, rms=0.4031px, max=0.7986px"
+    },
+    {
+      "name": "intrinsic_files:video_rear_left",
+      "passed": true,
+      "detail": "YAML and source report present"
+    },
+    {
+      "name": "intrinsic_numeric:video_rear_left",
+      "passed": true,
+      "detail": "model=plumb_bob, rms=0.3745px, max=0.7956px"
+    },
+    {
+      "name": "intrinsic_files:video_rear_mid",
+      "passed": true,
+      "detail": "YAML and source report present"
+    },
+    {
+      "name": "intrinsic_numeric:video_rear_mid",
+      "passed": true,
+      "detail": "model=plumb_bob, rms=0.4139px, max=0.6342px"
+    },
+    {
+      "name": "intrinsic_files:video_rear_right",
+      "passed": true,
+      "detail": "YAML and source report present"
+    },
+    {
+      "name": "intrinsic_numeric:video_rear_right",
+      "passed": true,
+      "detail": "model=plumb_bob, rms=0.3657px, max=0.7845px"
+    },
+    {
+      "name": "intrinsic_files:fisheye_front",
+      "passed": true,
+      "detail": "YAML and source report present"
+    },
+    {
+      "name": "intrinsic_numeric:fisheye_front",
+      "passed": true,
+      "detail": "model=equidistant, rms=0.3595px, max=0.7528px"
+    },
+    {
+      "name": "intrinsic_files:fisheye_left",
+      "passed": true,
+      "detail": "YAML and source report present"
+    },
+    {
+      "name": "intrinsic_numeric:fisheye_left",
+      "passed": true,
+      "detail": "model=plumb_bob, rms=0.3865px, max=0.7410px"
+    },
+    {
+      "name": "intrinsic_files:fisheye_right",
+      "passed": true,
+      "detail": "YAML and source report present"
+    },
+    {
+      "name": "intrinsic_numeric:fisheye_right",
+      "passed": true,
+      "detail": "model=equidistant, rms=0.2845px, max=0.5779px"
+    },
+    {
+      "name": "intrinsic_files:fisheye_rear",
+      "passed": true,
+      "detail": "YAML and source report present"
+    },
+    {
+      "name": "intrinsic_numeric:fisheye_rear",
+      "passed": true,
+      "detail": "model=equidistant, rms=0.4390px, max=0.7754px"
+    },
+    {
+      "name": "intrinsic_files:traffic_light_front",
+      "passed": true,
+      "detail": "YAML and source report present"
+    },
+    {
+      "name": "intrinsic_numeric:traffic_light_front",
+      "passed": true,
+      "detail": "model=plumb_bob, rms=0.4560px, max=0.7444px"
+    },
+    {
+      "name": "lidar_frame_set",
+      "passed": true,
+      "detail": "found 3/3 lower lidar frames"
+    },
+    {
+      "name": "camera_frame_set",
+      "passed": true,
+      "detail": "found 11/11 camera frames"
+    },
+    {
+      "name": "combined_frame_set",
+      "passed": true,
+      "detail": "found 14/14 non-reference sensor frames"
+    },
+    {
+      "name": "extrinsic_numeric:velodyne_front_left_base_link",
+      "passed": true,
+      "detail": "status=fallback_1cm_1deg, det=1.000000000000, orthogonality=5.434e-16, representations=2.062e-10"
+    },
+    {
+      "name": "extrinsic_numeric:velodyne_front_right_base_link",
+      "passed": true,
+      "detail": "status=fallback_1cm_1deg, det=1.000000000000, orthogonality=4.106e-16, representations=1.253e-10"
+    },
+    {
+      "name": "extrinsic_numeric:velodyne_rear_base_link",
+      "passed": true,
+      "detail": "status=fallback_1cm_1deg, det=1.000000000000, orthogonality=3.151e-16, representations=1.176e-10"
+    },
+    {
+      "name": "extrinsic_numeric:video_front_left/camera_link",
+      "passed": true,
+      "detail": "status=fallback_1cm_1deg, det=1.000000000000, orthogonality=5.770e-16, representations=1.115e-10"
+    },
+    {
+      "name": "extrinsic_numeric:video_front_mid/camera_link",
+      "passed": true,
+      "detail": "status=requires_recapture, det=1.000000000000, orthogonality=2.222e-16, representations=9.705e-11"
+    },
+    {
+      "name": "extrinsic_numeric:video_front_right/camera_link",
+      "passed": true,
+      "detail": "status=fallback_1cm_1deg, det=1.000000000000, orthogonality=6.485e-16, representations=1.121e-10"
+    },
+    {
+      "name": "extrinsic_numeric:video_rear_left/camera_link",
+      "passed": true,
+      "detail": "status=fallback_1cm_1deg, det=1.000000000000, orthogonality=7.119e-16, representations=7.497e-11"
+    },
+    {
+      "name": "extrinsic_numeric:video_rear_mid/camera_link",
+      "passed": true,
+      "detail": "status=requires_recapture, det=1.000000000000, orthogonality=6.662e-16, representations=1.829e-10"
+    },
+    {
+      "name": "extrinsic_numeric:video_rear_right/camera_link",
+      "passed": true,
+      "detail": "status=fallback_1cm_1deg, det=1.000000000000, orthogonality=3.169e-16, representations=1.137e-10"
+    },
+    {
+      "name": "extrinsic_numeric:fisheye_front/camera_link",
+      "passed": true,
+      "detail": "status=requires_recapture, det=1.000000000000, orthogonality=6.117e-16, representations=1.386e-10"
+    },
+    {
+      "name": "extrinsic_numeric:fisheye_left/camera_link",
+      "passed": true,
+      "detail": "status=fallback_1cm_1deg, det=1.000000000000, orthogonality=5.519e-16, representations=1.745e-10"
+    },
+    {
+      "name": "extrinsic_numeric:fisheye_right/camera_link",
+      "passed": true,
+      "detail": "status=fallback_1cm_1deg, det=1.000000000000, orthogonality=1.222e-15, representations=1.942e-10"
+    },
+    {
+      "name": "extrinsic_numeric:fisheye_rear/camera_link",
+      "passed": true,
+      "detail": "status=requires_recapture, det=1.000000000000, orthogonality=5.449e-16, representations=1.936e-10"
+    },
+    {
+      "name": "extrinsic_numeric:traffic_light_front/camera_link",
+      "passed": true,
+      "detail": "status=requires_recapture, det=1.000000000000, orthogonality=5.439e-16, representations=1.670e-10"
+    },
+    {
+      "name": "deployment_block_list",
+      "passed": true,
+      "detail": "blocked=fisheye_front/camera_link,fisheye_rear/camera_link,traffic_light_front/camera_link,video_front_mid/camera_link,video_rear_mid/camera_link"
+    },
+    {
+      "name": "autoware_frame_count",
+      "passed": true,
+      "detail": "found 15/15 including roof lidar"
+    },
+    {
+      "name": "manifest_hashes",
+      "passed": true,
+      "detail": "all tracked files match"
+    }
+  ]
+}

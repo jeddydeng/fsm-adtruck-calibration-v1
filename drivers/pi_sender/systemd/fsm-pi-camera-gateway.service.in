@@ -1,0 +1,32 @@
+[Unit]
+Description=FSM-Pi four-camera UDP BEV gateway
+After=local-fs.target fsm-pi-can-interfaces.service
+Wants=fsm-pi-can-interfaces.service
+
+[Service]
+Type=simple
+User=@RUN_USER@
+Group=@RUN_GROUP@
+SupplementaryGroups=video
+Slice=fsm-pi.slice
+EnvironmentFile=@INSTALL_DIR@/config/gateway.env
+Environment=TZ=Asia/Shanghai
+ExecStart=@INSTALL_DIR@/bin/w102_camera_gateway --camera ${CAMERA_FRONT} --camera ${CAMERA_REAR} --camera ${CAMERA_LEFT} --camera ${CAMERA_RIGHT} --calibration ${CALIBRATION_DIR}/front.yaml --calibration ${CALIBRATION_DIR}/rear.yaml --calibration ${CALIBRATION_DIR}/left.yaml --calibration ${CALIBRATION_DIR}/right.yaml --peer-ip ${PEER_IP} --data-port ${DATA_PORT} --control-port ${CONTROL_PORT} --width ${CAPTURE_WIDTH} --height ${CAPTURE_HEIGHT} --fps ${OUTPUT_FPS} --jpeg-quality ${JPEG_QUALITY} --send-raw 0 --default-output-mode ${DEFAULT_OUTPUT_MODE} --bev-width ${BEV_SIZE} --bev-height ${BEV_SIZE} --adaptive-illumination 1 --camera-stale-ms 350 --thermal-degrade-c 75 --thermal-pause-c 82 --draw-vehicle 1 --vehicle-length-m ${VEHICLE_LENGTH_M} --vehicle-width-m ${VEHICLE_WIDTH_M} --meters-per-pixel ${METERS_PER_PIXEL} --can-interface ${CAN_INTERFACE_PRIMARY} --can-interface ${CAN_INTERFACE_SECONDARY} --can-stale-ms ${CAN_STALE_MS}
+Restart=always
+RestartSec=2
+TimeoutStopSec=15
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadOnlyPaths=@INSTALL_DIR@/app/bev @INSTALL_DIR@/config/gateway.env
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+MemoryMax=700M
+CPUAccounting=true
+CPUQuota=350%
+CPUQuotaPeriodSec=100ms
+
+[Install]
+WantedBy=multi-user.target

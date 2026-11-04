@@ -1,0 +1,94 @@
+common:
+  msg_source: 1
+  send_packet_ros: false
+  send_point_cloud_ros: true
+
+# All four lidars are timestamped with CLOCK_REALTIME on packet reception.  The
+# Autoware concatenator then performs bounded software matching across streams.
+# The side-lidar poses are represented by TF, not applied a second time here.
+lidar:
+  # Roof-mounted 32-line main lidar.
+  - driver:
+      lidar_type: RSHELIOS
+      msop_port: 6699
+      difop_port: 7788
+      start_angle: 0
+      end_angle: 360
+      wait_for_difop: true
+      min_distance: 0.2
+      max_distance: 200.0
+      use_lidar_clock: false
+      pcap_path: ""
+      split_frame_mode: 1
+      split_angle: 0
+      dense_points: true
+    ros:
+      ros_frame_id: velodyne_top_base_link
+      ros_recv_packet_topic: /sensing/lidar/top/packets
+      ros_send_packet_topic: /sensing/lidar/top/packets
+      ros_send_point_cloud_topic: /sensing/lidar/top/pointcloud_raw
+
+  # Lower front-left BPearl.  On-vehicle observation confirmed that this
+  # physical unit sends MSOP/DIFOP to 6702/7791.  Its pose is supplied by TF,
+  # not applied a second time in this driver.
+  - driver:
+      lidar_type: RSBPV4
+      msop_port: 6702
+      difop_port: 7791
+      start_angle: 0
+      end_angle: 360
+      wait_for_difop: true
+      min_distance: 0.2
+      max_distance: 200.0
+      use_lidar_clock: false
+      pcap_path: ""
+      split_frame_mode: 1
+      split_angle: 0
+      dense_points: true
+    ros:
+      ros_frame_id: velodyne_front_left_base_link
+      ros_recv_packet_topic: /sensing/lidar/front_left/packets
+      ros_send_packet_topic: /sensing/lidar/front_left/packets
+      ros_send_point_cloud_topic: /sensing/lidar/front_left/pointcloud_raw
+
+  # Lower front-right BPearl (confirmed physical stream 6700/7789).
+  - driver:
+      lidar_type: RSBPV4
+      msop_port: 6700
+      difop_port: 7789
+      start_angle: 0
+      end_angle: 360
+      wait_for_difop: true
+      min_distance: 0.2
+      max_distance: 200.0
+      use_lidar_clock: false
+      pcap_path: ""
+      split_frame_mode: 1
+      split_angle: 0
+      dense_points: true
+    ros:
+      ros_frame_id: velodyne_front_right_base_link
+      ros_recv_packet_topic: /sensing/lidar/front_right/packets
+      ros_send_packet_topic: /sensing/lidar/front_right/packets
+      ros_send_point_cloud_topic: /sensing/lidar/front_right/pointcloud_raw
+
+  # Lower rear BPearl (confirmed physical stream 6701/7790).
+  - driver:
+      lidar_type: RSBPV4
+      msop_port: 6701
+      difop_port: 7790
+      start_angle: 0
+      end_angle: 360
+      wait_for_difop: true
+      min_distance: 0.2
+      max_distance: 200.0
+      use_lidar_clock: false
+      pcap_path: ""
+      split_frame_mode: 1
+      split_angle: 0
+      dense_points: true
+    ros:
+      ros_frame_id: velodyne_rear_base_link
+      ros_recv_packet_topic: /sensing/lidar/rear/packets
+      ros_send_packet_topic: /sensing/lidar/rear/packets
+      ros_send_point_cloud_topic: /sensing/lidar/rear/pointcloud_raw

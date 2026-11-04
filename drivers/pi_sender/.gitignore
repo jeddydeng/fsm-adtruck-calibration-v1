@@ -1,0 +1,46 @@
+# Build products
+build/
+build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+*.o
+*.a
+*.so
+*.dylib
+*.pyc
+__pycache__/
+
+# Runtime and diagnostics
+*.log
+logs/
+pressur-log/
+pressure-log/
+benchmarks/
+benchmark-*/
+captures/
+capture-image/
+resolution-sweep-*/
+diagnostics/
+backups/
+*.bak
+*.backup*
+
+# Local configuration and secrets
+*.current
+.env
+.env.*
+hardware-inventory.txt
+id_*
+*.pem
+*.key
+
+# Shared-workspace duplicate staging trees (not part of this release)
+/components/
+/assets/
+/config/calibration/
+/config/boot/
+/config/systemd/
+/config/udev/
+
+.DS_Store

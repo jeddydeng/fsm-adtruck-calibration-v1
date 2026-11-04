@@ -1,0 +1,114 @@
+schema_version: 1
+reference_frame: velodyne_top_base_link
+method: camera_aprilgrid_to_temporal_difference_roof_lidar_board
+ground_z_top_m: -1.728145
+excluded:
+  traffic_light_front: frozen complete session
+transforms:
+  video_front_mid/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.1
+    - -0.006770639
+    - -0.259213187
+    rpy_deg:
+    - -0.54387057
+    - 2.37981641
+    - -0.55505855
+    source: temporal_dynamic_board_bootstrap
+quality:
+  video_front_mid/camera_link:
+    raw_observations: 68
+    unique_board_poses: 63
+    stability:
+      bootstrap_count: 5
+      dominant_count: 3
+      dominant_fraction: 0.6
+      position_p95_m: 0.05943907450921846
+      angle_p95_deg: 0.641884720393185
+      fold_audits:
+      - raw_count: 50
+        accepted_count: 15
+        discarded_over_10cm_or_6deg: 35
+        plane_distance_median_m: 0.04221331452098376
+        plane_distance_p95_m: 0.09485325936898711
+        normal_median_deg: 3.0404373850180564
+      - raw_count: 50
+        accepted_count: 14
+        discarded_over_10cm_or_6deg: 36
+        plane_distance_median_m: 0.056568479168315644
+        plane_distance_p95_m: 0.09402063392726054
+        normal_median_deg: 3.1693207535276757
+      - raw_count: 50
+        accepted_count: 14
+        discarded_over_10cm_or_6deg: 36
+        plane_distance_median_m: 0.05825369751816556
+        plane_distance_p95_m: 0.09295540600262817
+        normal_median_deg: 3.2382620173943106
+      - raw_count: 51
+        accepted_count: 14
+        discarded_over_10cm_or_6deg: 37
+        plane_distance_median_m: 0.05219670229907414
+        plane_distance_p95_m: 0.09888503451902886
+        normal_median_deg: 3.1558820092851576
+      - raw_count: 51
+        accepted_count: 13
+        discarded_over_10cm_or_6deg: 38
+        plane_distance_median_m: 0.04235589739511347
+        plane_distance_p95_m: 0.09497036386859516
+        normal_median_deg: 3.159905810402298
+    plane_fit:
+      count: 63
+      plane_distance_median_m: 0.14626573994914693
+      plane_distance_p95_m: 0.511829413438405
+      normal_median_deg: 5.239161544945921
+      normal_p95_deg: 16.566784208472157
+    board_center_diagnostic_only:
+      count: 63
+      capture_count: 63
+      center_rms_m: 0.220195
+      center_median_m: 0.158097
+      center_p95_m: 0.413924
+      normal_rms_deg: 9.2419
+      normal_median_deg: 5.23916
+      normal_p95_deg: 16.56678
+    difference_from_rough:
+      position_m: 0.11641324278719029
+      angle_deg: 2.5009564968749523
+rejected:
+  video_front_left/camera_link:
+    raw_observations: 8
+    unique_board_poses: 8
+    error: only 3 plane observations remain after 10 cm gate
+  video_front_right/camera_link:
+    raw_observations: 7
+    unique_board_poses: 7
+    error: need >=8 unique board poses, got 7
+  video_rear_left/camera_link:
+    raw_observations: 12
+    unique_board_poses: 12
+    error: only 3 plane observations remain after 10 cm gate
+  video_rear_mid/camera_link:
+    raw_observations: 0
+    unique_board_poses: 0
+    error: need >=8 unique board poses, got 0
+  video_rear_right/camera_link:
+    raw_observations: 8
+    unique_board_poses: 8
+    error: only 3 plane observations remain after 10 cm gate
+  fisheye_front/camera_link:
+    raw_observations: 0
+    unique_board_poses: 0
+    error: need >=8 unique board poses, got 0
+  fisheye_left/camera_link:
+    raw_observations: 8
+    unique_board_poses: 8
+    error: only 1 plane observations remain after 10 cm gate
+  fisheye_right/camera_link:
+    raw_observations: 2
+    unique_board_poses: 2
+    error: need >=8 unique board poses, got 2
+  fisheye_rear/camera_link:
+    raw_observations: 0
+    unique_board_poses: 0
+    error: need >=8 unique board poses, got 0

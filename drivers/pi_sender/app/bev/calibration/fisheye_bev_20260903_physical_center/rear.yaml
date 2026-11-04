@@ -1,0 +1,40 @@
+%YAML:1.0
+---
+camera_name: rear
+camera_frame: fisheye_rear/camera_optical_frame
+image_width: 1600
+image_height: 1200
+distortion_model: equidistant
+bev_width: 512
+bev_height: 512
+meters_per_pixel: 0.021
+bev_origin_u_px: 256
+bev_origin_v_px: 256
+bev_axes: "u_right_is_vehicle_minus_y; v_down_is_vehicle_minus_x"
+bev_origin_definition: "physical_vehicle_center"
+deployment_allowed: 1
+deployment_scope: "BEV_relative_planar_mapping_only"
+source_calibration: "fisheye_bev_20260903/relative_usable"
+K: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [ 477.089017202103, 0, 816.395138121344, 0, 477.234120575306, 618.043405242697, 0, 0, 1 ]
+D: !!opencv-matrix
+   rows: 4
+   cols: 1
+   dt: d
+   data: [ 0.0373683454029737, -0.011428333171322, -0.00405237003446351, 0.000603844998944569 ]
+K_rectified: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [ 128.025782959368, 0, 766.70035310665, 0, 128.064721128755, 581.041490023268, 0, 0, 1 ]
+H_bev: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [ 0.0572519527510762, -0.433584906091432, 196.902477422668, 0.00182438190788337, -0.560683549361672, 302.291392171669, 1.12267774924355e-06, -0.00180360681450801, 1 ]
+H_bev_definition: "p_bev ~ H_bev * p_rectified; NOT valid on raw equidistant pixels"
+bev_remap_file: "rear_runtime_maps.xml.gz"
+bev_remap_definition: "raw equidistant image -> physical-centred BEV; load directly"

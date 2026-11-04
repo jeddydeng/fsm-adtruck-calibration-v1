@@ -1,0 +1,54 @@
+image_width: 1600
+image_height: 1200
+camera_name: fisheye_rear
+camera_matrix:
+  rows: 3
+  cols: 3
+  data:
+  - 477.08901720210264
+  - 0.0
+  - 816.395138121344
+  - 0.0
+  - 477.2341205753062
+  - 618.0434052426967
+  - 0.0
+  - 0.0
+  - 1.0
+distortion_model: equidistant
+distortion_coefficients:
+  rows: 1
+  cols: 4
+  data:
+  - 0.03736834540297366
+  - -0.01142833317132205
+  - -0.004052370034463508
+  - 0.0006038449989445685
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data:
+  - 1.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 1.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 1.0
+projection_matrix:
+  rows: 3
+  cols: 4
+  data:
+  - 477.08901720210264
+  - 0.0
+  - 816.395138121344
+  - 0.0
+  - 0.0
+  - 477.2341205753062
+  - 618.0434052426967
+  - 0.0
+  - 0.0
+  - 0.0
+  - 1.0
+  - 0.0

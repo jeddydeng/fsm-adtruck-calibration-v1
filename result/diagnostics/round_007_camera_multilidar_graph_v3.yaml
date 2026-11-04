@@ -1,0 +1,270 @@
+schema_version: 1
+reference_frame: velodyne_top_base_link
+method: full_aprilgrid_pose_to_cross_validated_multilidar_plane_graph
+excluded:
+  traffic_light_front: frozen during extrinsic session
+transforms:
+  video_front_mid/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.201069259
+    - -0.128056531
+    - -0.129011106
+    rpy_deg:
+    - 0.13185157
+    - 3.51734015
+    - 1.15809819
+    source: multilidar_dynamic_board_graph
+quality:
+  video_front_mid/camera_link:
+    raw_capture_observations: 72
+    unique_board_poses: 66
+    cross_lidar_corroborated: 67
+    difference_from_rough_position_m: 0.24873026579578747
+    difference_from_rough_angle_deg: 3.704113494362978
+    stability:
+      status: bootstrap_consensus
+      achieved_tier: coarse_only
+      dominant_count: 3
+      dominant_fraction: 0.6
+      position_p95_m: 0.03612136445130003
+      angle_p95_deg: 0.43533654577347847
+      full_fit:
+        raw_count: 66
+        accepted_count: 15
+        discarded_count: 51
+        rejection_history:
+        - iteration: 1
+          input: 66
+          output: 24
+          plane_cut_m: 0.1
+          normal_cut_deg: 6.0
+        - iteration: 2
+          input: 24
+          output: 21
+          plane_cut_m: 0.1
+          normal_cut_deg: 5.5115939875889675
+        - iteration: 3
+          input: 21
+          output: 19
+          plane_cut_m: 0.1
+          normal_cut_deg: 4.995180831561307
+        - iteration: 4
+          input: 19
+          output: 15
+          plane_cut_m: 0.06626406533036944
+          normal_cut_deg: 5.722345439539286
+        - iteration: 5
+          input: 15
+          output: 15
+          plane_cut_m: 0.06854308759924344
+          normal_cut_deg: 5.718092509907492
+        plane_median_m: 0.018658923425983076
+        plane_p95_m: 0.05174323155508035
+        normal_median_deg: 2.4585367903096396
+        normal_p95_deg: 4.292957594878966
+        center_median_m: 0.04452149964761554
+        center_p95_m: 0.06502491009232858
+        plane_normal_singular_values:
+        - 3.789845170294256
+        - 0.7934180522572759
+        - 0.0869561932789602
+        translation_observable: false
+      fold_audits:
+      - raw_count: 52
+        accepted_count: 12
+        discarded_count: 40
+        rejection_history:
+        - iteration: 1
+          input: 52
+          output: 16
+          plane_cut_m: 0.1
+          normal_cut_deg: 6.0
+        - iteration: 2
+          input: 16
+          output: 13
+          plane_cut_m: 0.1
+          normal_cut_deg: 4.828097314181372
+        - iteration: 3
+          input: 13
+          output: 12
+          plane_cut_m: 0.08254798992083012
+          normal_cut_deg: 4.5011941984820645
+        - iteration: 4
+          input: 12
+          output: 12
+          plane_cut_m: 0.08899987257035447
+          normal_cut_deg: 4.202088953006564
+        plane_median_m: 0.02740784109603922
+        plane_p95_m: 0.04744271914693627
+        normal_median_deg: 1.6053498367824146
+        normal_p95_deg: 3.6572174571105
+        center_median_m: 0.04617295534516883
+        center_p95_m: 0.08434280167011896
+        plane_normal_singular_values:
+        - 3.4182598257801455
+        - 0.5579568591186176
+        - 0.06468312623845197
+        translation_observable: false
+      - raw_count: 53
+        accepted_count: 21
+        discarded_count: 32
+        rejection_history:
+        - iteration: 1
+          input: 53
+          output: 21
+          plane_cut_m: 0.1
+          normal_cut_deg: 6.0
+        - iteration: 2
+          input: 21
+          output: 21
+          plane_cut_m: 0.1
+          normal_cut_deg: 6.0
+        plane_median_m: 0.034325920672282795
+        plane_p95_m: 0.08013434259911012
+        normal_median_deg: 2.649544812576787
+        normal_p95_deg: 5.175919807380481
+        center_median_m: 0.04129096770844364
+        center_p95_m: 0.07374520183500241
+        plane_normal_singular_values:
+        - 4.4530929354314726
+        - 1.0763625120905684
+        - 0.10680379663849006
+        translation_observable: false
+      - raw_count: 53
+        accepted_count: 15
+        discarded_count: 38
+        rejection_history:
+        - iteration: 1
+          input: 53
+          output: 22
+          plane_cut_m: 0.1
+          normal_cut_deg: 6.0
+        - iteration: 2
+          input: 22
+          output: 18
+          plane_cut_m: 0.08283189004584512
+          normal_cut_deg: 5.026830899751155
+        - iteration: 3
+          input: 18
+          output: 15
+          plane_cut_m: 0.0732502028327997
+          normal_cut_deg: 5.8275610549423575
+        - iteration: 4
+          input: 15
+          output: 15
+          plane_cut_m: 0.060856350795052805
+          normal_cut_deg: 5.030201726107563
+        plane_median_m: 0.021476284261712664
+        plane_p95_m: 0.04759333696412134
+        normal_median_deg: 2.015029395534009
+        normal_p95_deg: 3.620697248589224
+        center_median_m: 0.04327116349636935
+        center_p95_m: 0.07192788183760773
+        plane_normal_singular_values:
+        - 3.789814907579878
+        - 0.7942224568953364
+        - 0.08070721930820209
+        translation_observable: false
+      - raw_count: 53
+        accepted_count: 18
+        discarded_count: 35
+        rejection_history:
+        - iteration: 1
+          input: 53
+          output: 20
+          plane_cut_m: 0.1
+          normal_cut_deg: 6.0
+        - iteration: 2
+          input: 20
+          output: 18
+          plane_cut_m: 0.1
+          normal_cut_deg: 6.0
+        - iteration: 3
+          input: 18
+          output: 18
+          plane_cut_m: 0.1
+          normal_cut_deg: 5.691334574343717
+        plane_median_m: 0.03677560965017368
+        plane_p95_m: 0.08579296833553339
+        normal_median_deg: 2.6504446603105327
+        normal_p95_deg: 5.106977250779916
+        center_median_m: 0.04566755031883228
+        center_p95_m: 0.07216547241348696
+        plane_normal_singular_values:
+        - 4.135887524858053
+        - 0.938997321599245
+        - 0.11277593605452618
+        translation_observable: false
+      - raw_count: 53
+        accepted_count: 13
+        discarded_count: 40
+        rejection_history:
+        - iteration: 1
+          input: 53
+          output: 16
+          plane_cut_m: 0.1
+          normal_cut_deg: 6.0
+        - iteration: 2
+          input: 16
+          output: 14
+          plane_cut_m: 0.1
+          normal_cut_deg: 5.095758986990338
+        - iteration: 3
+          input: 14
+          output: 13
+          plane_cut_m: 0.07887225509050144
+          normal_cut_deg: 6.0
+        - iteration: 4
+          input: 13
+          output: 13
+          plane_cut_m: 0.07253612108967555
+          normal_cut_deg: 5.609262307246493
+        plane_median_m: 0.01966821485934034
+        plane_p95_m: 0.06875053847393237
+        normal_median_deg: 1.9019566564430643
+        normal_p95_deg: 4.3460529305492654
+        center_median_m: 0.04603060613235523
+        center_p95_m: 0.0941762578294663
+        plane_normal_singular_values:
+        - 3.5164776514135263
+        - 0.7926174931671853
+        - 0.07837369861489457
+        translation_observable: false
+rejected:
+  video_front_left/camera_link:
+    raw_capture_observations: 9
+    unique_board_poses: 9
+    error: only 4 observations remain after robust gate
+  video_front_right/camera_link:
+    raw_capture_observations: 11
+    unique_board_poses: 11
+    error: only 3 observations remain after robust gate
+  video_rear_left/camera_link:
+    raw_capture_observations: 32
+    unique_board_poses: 31
+    error: bootstrap dominant cluster 2/5
+  video_rear_mid/camera_link:
+    raw_capture_observations: 5
+    unique_board_poses: 5
+    error: only 0 observations remain after robust gate
+  video_rear_right/camera_link:
+    raw_capture_observations: 15
+    unique_board_poses: 15
+    error: only 4 observations remain after robust gate
+  fisheye_front/camera_link:
+    raw_capture_observations: 12
+    unique_board_poses: 11
+    error: only 0 observations remain after robust gate
+  fisheye_left/camera_link:
+    raw_capture_observations: 21
+    unique_board_poses: 20
+    error: only 2 observations remain after robust gate
+  fisheye_right/camera_link:
+    raw_capture_observations: 8
+    unique_board_poses: 8
+    error: only 0 observations remain after robust gate
+  fisheye_rear/camera_link:
+    raw_capture_observations: 3
+    unique_board_poses: 3
+    error: need >=5 unique board poses, got 3

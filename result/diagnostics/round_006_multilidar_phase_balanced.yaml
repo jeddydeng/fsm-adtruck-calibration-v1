@@ -1,0 +1,103 @@
+schema_version: 1
+reference_frame: velodyne_top_base_link
+source_observations: /Users/djhuai/fsm-adtruck/calibration-white/result/diagnostics/round_004_multilidar_board_observations_v2.csv
+transforms:
+  velodyne_front_left_base_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.277045895
+    - 0.498121656
+    - -1.27613
+    rpy_deg:
+    - -89.05892347
+    - -88.43891974
+    - -45.96411975
+    source: robust_refit_dynamic_board_graph_bootstrap_floor_z
+  velodyne_front_right_base_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.268923852
+    - -0.489387052
+    - -1.280495
+    rpy_deg:
+    - 136.76318635
+    - -88.81305644
+    - -2.32020272
+    source: robust_refit_dynamic_board_graph_bootstrap_floor_z
+  velodyne_rear_base_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - -2.103010584
+    - 0.025176212
+    - -1.334865
+    rpy_deg:
+    - -18.20750225
+    - -89.73316261
+    - 18.0270639
+    source: robust_refit_dynamic_board_graph_bootstrap_floor_z
+quality:
+  velodyne_front_left_base_link:
+    bootstrap:
+      selection_tier: fallback_1cm_1deg
+      achieved_tier: fallback_1cm_1deg
+      dominant_count: 5
+      dominant_fraction: 1.0
+      position_p95_m: 0.005152119453769956
+      angle_p95_deg: 0.19251607084731062
+    correction_from_initial_m: 0.0337041025296679
+    correction_from_initial_deg: 0.806022516891057
+  velodyne_front_right_base_link:
+    bootstrap:
+      selection_tier: fallback_1cm_1deg
+      achieved_tier: fallback_1cm_1deg
+      dominant_count: 5
+      dominant_fraction: 1.0
+      position_p95_m: 0.003239601123738591
+      angle_p95_deg: 0.07075066533933505
+    correction_from_initial_m: 0.030391150323287174
+    correction_from_initial_deg: 1.0002220585069495
+  velodyne_rear_base_link:
+    bootstrap:
+      selection_tier: fallback_1cm_1deg
+      achieved_tier: fallback_1cm_1deg
+      dominant_count: 5
+      dominant_fraction: 1.0
+      position_p95_m: 0.005976442894417053
+      angle_p95_deg: 0.2688836291399183
+    correction_from_initial_m: 0.010387382953448421
+    correction_from_initial_deg: 0.19862719249961255
+graph_quality:
+  raw_edges: 246
+  accepted_edges: 160
+  discarded_edges: 86
+  rejection_history:
+  - iteration: 1
+    input_edges: 246
+    output_edges: 201
+    plane_distance_cut_m: 0.038207470955213374
+    angle_cut_deg: 1.9411097957607084
+  - iteration: 2
+    input_edges: 201
+    output_edges: 181
+    plane_distance_cut_m: 0.028800349682144954
+    angle_cut_deg: 1.721111537522624
+  - iteration: 3
+    input_edges: 181
+    output_edges: 174
+    plane_distance_cut_m: 0.02746474150275624
+    angle_cut_deg: 1.5038145030266126
+  - iteration: 4
+    input_edges: 174
+    output_edges: 164
+    plane_distance_cut_m: 0.02636645637141566
+    angle_cut_deg: 1.4661272624170907
+  - iteration: 5
+    input_edges: 164
+    output_edges: 160
+    plane_distance_cut_m: 0.025157234605132972
+    angle_cut_deg: 1.4536715541815566
+  plane_distance_median_m: 0.008285720002159769
+  plane_distance_p95_m: 0.02245629474762205
+  angle_median_deg: 0.6864663976066254
+  angle_p95_deg: 1.270355817384802
+accepted_edge_count: 160

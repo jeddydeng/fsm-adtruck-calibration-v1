@@ -1,0 +1,342 @@
+schema_version: 1
+reference_frame: velodyne_top_base_link
+raw_edge_count: 246
+accepted_edge_count: 160
+full_fit_quality:
+  raw_edges: 246
+  accepted_edges: 160
+  discarded_edges: 86
+  rejection_history:
+  - iteration: 1
+    input_edges: 246
+    output_edges: 201
+    plane_distance_cut_m: 0.038207470955213374
+    angle_cut_deg: 1.9411097957607084
+  - iteration: 2
+    input_edges: 201
+    output_edges: 181
+    plane_distance_cut_m: 0.028800349682144954
+    angle_cut_deg: 1.721111537522624
+  - iteration: 3
+    input_edges: 181
+    output_edges: 174
+    plane_distance_cut_m: 0.02746474150275624
+    angle_cut_deg: 1.5038145030266126
+  - iteration: 4
+    input_edges: 174
+    output_edges: 164
+    plane_distance_cut_m: 0.02636645637141566
+    angle_cut_deg: 1.4661272624170907
+  - iteration: 5
+    input_edges: 164
+    output_edges: 160
+    plane_distance_cut_m: 0.025157234605132972
+    angle_cut_deg: 1.4536715541815566
+  plane_distance_median_m: 0.008285720002159769
+  plane_distance_p95_m: 0.02245629474762205
+  angle_median_deg: 0.6864663976066254
+  angle_p95_deg: 1.270355817384802
+residuals_by_phase_all_edges:
+  front_sweep_1:
+    count: 214
+    plane_median_m: 0.013815038381578049
+    plane_p95_m: 0.06478842595006444
+    angle_median_deg: 0.8706899688562633
+    angle_p95_deg: 2.1237635857204076
+    accepted_count: 138
+  left_sweep:
+    count: 17
+    plane_median_m: 0.009004468868671012
+    plane_p95_m: 0.035549173611318076
+    angle_median_deg: 0.9297317907532988
+    angle_p95_deg: 2.249600261403386
+    accepted_count: 12
+  rear_sweep:
+    count: 6
+    plane_median_m: 0.0007386420446837683
+    plane_p95_m: 0.003139244032508204
+    angle_median_deg: 0.3697178375569211
+    angle_p95_deg: 0.7349335169937214
+    accepted_count: 6
+  right_sweep:
+    count: 9
+    plane_median_m: 0.005698441253165321
+    plane_p95_m: 0.03840533421308763
+    angle_median_deg: 1.6171528744896995
+    angle_p95_deg: 2.56426384692488
+    accepted_count: 4
+residuals_by_lidar_pair_all_edges:
+  lidar_front_left__lidar_front_right:
+    count: 74
+    plane_median_m: 0.01451405751006285
+    plane_p95_m: 0.0749144085712182
+    angle_median_deg: 0.9510951312387732
+    angle_p95_deg: 2.165708506703119
+  lidar_top__lidar_front_left:
+    count: 87
+    plane_median_m: 0.01273710023211283
+    plane_p95_m: 0.046580966483682665
+    angle_median_deg: 0.9297317907532988
+    angle_p95_deg: 2.0822866851156623
+  lidar_top__lidar_front_right:
+    count: 79
+    plane_median_m: 0.013033824817949125
+    plane_p95_m: 0.05800432771277861
+    angle_median_deg: 0.7283082394560624
+    angle_p95_deg: 2.2203963453003075
+  lidar_top__lidar_rear:
+    count: 6
+    plane_median_m: 0.0007386420446837683
+    plane_p95_m: 0.003139244032508204
+    angle_median_deg: 0.3697178375569211
+    angle_p95_deg: 0.7349335169937214
+residuals_by_phase_and_pair_all_edges:
+  front_sweep_1:lidar_front_left__lidar_front_right:
+    count: 74
+    plane_median_m: 0.01451405751006285
+    plane_p95_m: 0.0749144085712182
+    angle_median_deg: 0.9510951312387732
+    angle_p95_deg: 2.165708506703119
+  front_sweep_1:lidar_top__lidar_front_left:
+    count: 70
+    plane_median_m: 0.013165688758028926
+    plane_p95_m: 0.05412454379649222
+    angle_median_deg: 0.9542676206123748
+    angle_p95_deg: 2.068302942355735
+  front_sweep_1:lidar_top__lidar_front_right:
+    count: 70
+    plane_median_m: 0.013619837187509809
+    plane_p95_m: 0.05998024953152491
+    angle_median_deg: 0.7167183758116851
+    angle_p95_deg: 1.7704418661250405
+  left_sweep:lidar_top__lidar_front_left:
+    count: 17
+    plane_median_m: 0.009004468868671012
+    plane_p95_m: 0.035549173611318076
+    angle_median_deg: 0.9297317907532988
+    angle_p95_deg: 2.249600261403386
+  rear_sweep:lidar_top__lidar_rear:
+    count: 6
+    plane_median_m: 0.0007386420446837683
+    plane_p95_m: 0.003139244032508204
+    angle_median_deg: 0.3697178375569211
+    angle_p95_deg: 0.7349335169937214
+  right_sweep:lidar_top__lidar_front_right:
+    count: 9
+    plane_median_m: 0.005698441253165321
+    plane_p95_m: 0.03840533421308763
+    angle_median_deg: 1.6171528744896995
+    angle_p95_deg: 2.56426384692488
+leave_one_phase_out:
+  front_sweep_1:
+    training_edges: 32
+    holdout_edges: 214
+    holdout_residuals:
+      count: 214
+      plane_median_m: 0.028193689864931315
+      plane_p95_m: 0.07670762908850852
+      angle_median_deg: 1.1774563009496841
+      angle_p95_deg: 2.5149730251619595
+    transform_delta_from_full:
+      velodyne_front_left_base_link:
+        translation_delta_m: 0.005123618531451286
+        rotation_delta_deg: 0.9581620031011959
+      velodyne_front_right_base_link:
+        translation_delta_m: 0.022528988299510683
+        rotation_delta_deg: 0.6473099589310264
+      velodyne_rear_base_link:
+        translation_delta_m: 0.003095390912955069
+        rotation_delta_deg: 0.09099801326781841
+    training_quality:
+      raw_edges: 32
+      accepted_edges: 16
+      discarded_edges: 16
+      rejection_history:
+      - iteration: 1
+        input_edges: 32
+        output_edges: 24
+        plane_distance_cut_m: 0.019418510414981993
+        angle_cut_deg: 1.5917986194811586
+      - iteration: 2
+        input_edges: 24
+        output_edges: 19
+        plane_distance_cut_m: 0.015
+        angle_cut_deg: 1.0777236177325613
+      - iteration: 3
+        input_edges: 19
+        output_edges: 16
+        plane_distance_cut_m: 0.015
+        angle_cut_deg: 0.6544478366130111
+      - iteration: 4
+        input_edges: 16
+        output_edges: 16
+        plane_distance_cut_m: 0.015
+        angle_cut_deg: 0.6433850835884027
+      plane_distance_median_m: 0.003063248905077476
+      plane_distance_p95_m: 0.01170720683740023
+      angle_median_deg: 0.30370504696208794
+      angle_p95_deg: 0.621642194439631
+  left_sweep:
+    training_edges: 229
+    holdout_edges: 17
+    holdout_residuals:
+      count: 17
+      plane_median_m: 0.0349021759394188
+      plane_p95_m: 0.05512681775897991
+      angle_median_deg: 2.4045894006791615
+      angle_p95_deg: 3.6613022932028776
+    transform_delta_from_full:
+      velodyne_front_left_base_link:
+        translation_delta_m: 0.002464601328495094
+        rotation_delta_deg: 1.6689841863804329
+      velodyne_front_right_base_link:
+        translation_delta_m: 0.0010263242872934882
+        rotation_delta_deg: 0.12468624426428601
+      velodyne_rear_base_link:
+        translation_delta_m: 0.0008073751855394766
+        rotation_delta_deg: 0.03243542146260495
+    training_quality:
+      raw_edges: 229
+      accepted_edges: 153
+      discarded_edges: 76
+      rejection_history:
+      - iteration: 1
+        input_edges: 229
+        output_edges: 189
+        plane_distance_cut_m: 0.03888195210281964
+        angle_cut_deg: 1.9410038116707748
+      - iteration: 2
+        input_edges: 189
+        output_edges: 174
+        plane_distance_cut_m: 0.02752573594566332
+        angle_cut_deg: 1.747195454213301
+      - iteration: 3
+        input_edges: 174
+        output_edges: 166
+        plane_distance_cut_m: 0.024633573471236847
+        angle_cut_deg: 1.6295937984799171
+      - iteration: 4
+        input_edges: 166
+        output_edges: 160
+        plane_distance_cut_m: 0.022807346723014543
+        angle_cut_deg: 1.6009676513894566
+      - iteration: 5
+        input_edges: 160
+        output_edges: 153
+        plane_distance_cut_m: 0.02161623750055286
+        angle_cut_deg: 1.5226458779085201
+      plane_distance_median_m: 0.006841870962992935
+      plane_distance_p95_m: 0.018642893730472565
+      angle_median_deg: 0.6455100625652878
+      angle_p95_deg: 1.2647983669855145
+  rear_sweep:
+    training_edges: 240
+    holdout_edges: 6
+    holdout_residuals:
+      count: 6
+      plane_median_m: 0.01173094264805985
+      plane_p95_m: 0.014231234332879206
+      angle_median_deg: 0.3889679076637226
+      angle_p95_deg: 0.762792493776568
+    transform_delta_from_full:
+      velodyne_front_left_base_link:
+        translation_delta_m: 0.0010024670196068979
+        rotation_delta_deg: 0.034423636099292755
+      velodyne_front_right_base_link:
+        translation_delta_m: 0.000646283953364775
+        rotation_delta_deg: 0.02906393491698955
+      velodyne_rear_base_link:
+        translation_delta_m: 0.011467079191118251
+        rotation_delta_deg: 0.21641387612763333
+    training_quality:
+      raw_edges: 240
+      accepted_edges: 152
+      discarded_edges: 88
+      rejection_history:
+      - iteration: 1
+        input_edges: 240
+        output_edges: 197
+        plane_distance_cut_m: 0.038798165539214446
+        angle_cut_deg: 1.961178317471172
+      - iteration: 2
+        input_edges: 197
+        output_edges: 175
+        plane_distance_cut_m: 0.029150063700102535
+        angle_cut_deg: 1.7044840437543556
+      - iteration: 3
+        input_edges: 175
+        output_edges: 170
+        plane_distance_cut_m: 0.027657620776752267
+        angle_cut_deg: 1.5247810717577592
+      - iteration: 4
+        input_edges: 170
+        output_edges: 162
+        plane_distance_cut_m: 0.027153319288567346
+        angle_cut_deg: 1.449713331582955
+      - iteration: 5
+        input_edges: 162
+        output_edges: 152
+        plane_distance_cut_m: 0.02617413088053655
+        angle_cut_deg: 1.4019018274399535
+      plane_distance_median_m: 0.008153216720597545
+      plane_distance_p95_m: 0.022382082061883853
+      angle_median_deg: 0.7017587947746808
+      angle_p95_deg: 1.2485554580888436
+  right_sweep:
+    training_edges: 237
+    holdout_edges: 9
+    holdout_residuals:
+      count: 9
+      plane_median_m: 0.034540921208960906
+      plane_p95_m: 0.04544932013522977
+      angle_median_deg: 1.6638713542832462
+      angle_p95_deg: 3.1232928582299424
+    transform_delta_from_full:
+      velodyne_front_left_base_link:
+        translation_delta_m: 0.001741614390403709
+        rotation_delta_deg: 0.10658369846917809
+      velodyne_front_right_base_link:
+        translation_delta_m: 0.013478477582033924
+        rotation_delta_deg: 1.2201177238982812
+      velodyne_rear_base_link:
+        translation_delta_m: 0.0008995394295962151
+        rotation_delta_deg: 0.036127392312335124
+    training_quality:
+      raw_edges: 237
+      accepted_edges: 156
+      discarded_edges: 81
+      rejection_history:
+      - iteration: 1
+        input_edges: 237
+        output_edges: 197
+        plane_distance_cut_m: 0.03748132513734426
+        angle_cut_deg: 1.9393154667588663
+      - iteration: 2
+        input_edges: 197
+        output_edges: 181
+        plane_distance_cut_m: 0.028806523829877584
+        angle_cut_deg: 1.6886081850956316
+      - iteration: 3
+        input_edges: 181
+        output_edges: 170
+        plane_distance_cut_m: 0.02520980325997435
+        angle_cut_deg: 1.6089898844420496
+      - iteration: 4
+        input_edges: 170
+        output_edges: 165
+        plane_distance_cut_m: 0.024605144509495247
+        angle_cut_deg: 1.5563805862910487
+      - iteration: 5
+        input_edges: 165
+        output_edges: 156
+        plane_distance_cut_m: 0.023464732810945854
+        angle_cut_deg: 1.4970175114664779
+      plane_distance_median_m: 0.006884673893224669
+      plane_distance_p95_m: 0.02070717545872014
+      angle_median_deg: 0.7007807593343834
+      angle_p95_deg: 1.2961555354798917
+interpretation:
+  translation_gate_m: 0.01
+  rotation_gate_deg: 1.0
+  note: Leave-one-phase-out deltas above these gates indicate phase-dependent bias;
+    all residual tables include rejected edges so failures remain visible.

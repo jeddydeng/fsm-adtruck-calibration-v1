@@ -1,0 +1,508 @@
+schema_version: 1
+reference_frame: velodyne_top_base_link
+method: multiview_lidar_board_frame_to_tag_center_projection_bundle
+excluded:
+  traffic_light_front: frozen during extrinsic session
+transforms:
+  video_front_mid/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.263659769
+    - -0.029716721
+    - -0.100949774
+    rpy_deg:
+    - -0.9752655
+    - 3.89389613
+    - 0.00260772
+    source: multiview_lidar_aprilgrid_projection_bundle
+  video_rear_left/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.034306401
+    - 0.560392145
+    - -0.347884643
+    rpy_deg:
+    - 0.61297471
+    - -2.01796308
+    - 109.63416324
+    source: multiview_lidar_aprilgrid_projection_bundle
+  video_rear_mid/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - -2.149443288
+    - 0.052549017
+    - -0.973257651
+    rpy_deg:
+    - -3.84594123
+    - 1.14556281
+    - -179.73532885
+    source: multiview_lidar_aprilgrid_projection_bundle
+quality:
+  video_front_mid/camera_link:
+    raw_observations: 72
+    unique_board_poses: 66
+    difference_from_rough_position_m: 0.28321459125585596
+    difference_from_rough_angle_deg: 4.014147903419607
+    stability:
+      status: bootstrap_consensus
+      achieved_tier: coarse_only
+      dominant_count: 5
+      dominant_fraction: 1.0
+      position_p95_m: 0.06323310419793667
+      angle_p95_deg: 0.6150884551969307
+      full_fit:
+        raw_capture_count: 66
+        accepted_capture_count: 27
+        discarded_capture_count: 39
+        tag_center_count: 607
+        normalized_reprojection_rms: 0.00474870357150017
+        normalized_reprojection_p95: 0.008038181223723661
+        center_median_m: 0.035824600863458594
+        center_p95_m: 0.0848614598388075
+        normal_median_deg: 3.2116407274730543
+        normal_p95_deg: 6.9897400642754475
+        rejection_history:
+        - iteration: 1
+          input: 66
+          output: 30
+          normalized_reprojection_cut: 0.014649614058820678
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+        - iteration: 2
+          input: 30
+          output: 27
+          normalized_reprojection_cut: 0.010090109292726746
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+        - iteration: 3
+          input: 27
+          output: 27
+          normalized_reprojection_cut: 0.010222867698754558
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+      fold_quality:
+      - raw_capture_count: 52
+        accepted_capture_count: 20
+        discarded_capture_count: 32
+        tag_center_count: 425
+        normalized_reprojection_rms: 0.00539645142069301
+        normalized_reprojection_p95: 0.00927347007295169
+        center_median_m: 0.05754234207245678
+        center_p95_m: 0.09244280130509377
+        normal_median_deg: 3.2151544582361753
+        normal_p95_deg: 8.354248967703302
+        rejection_history:
+        - iteration: 1
+          input: 52
+          output: 22
+          normalized_reprojection_cut: 0.013402243068164725
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+        - iteration: 2
+          input: 22
+          output: 20
+          normalized_reprojection_cut: 0.011479561764420113
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+        - iteration: 3
+          input: 20
+          output: 20
+          normalized_reprojection_cut: 0.011242476880203408
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+      - raw_capture_count: 53
+        accepted_capture_count: 15
+        discarded_capture_count: 38
+        tag_center_count: 339
+        normalized_reprojection_rms: 0.003490173051416103
+        normalized_reprojection_p95: 0.005916481198782414
+        center_median_m: 0.028371735521715447
+        center_p95_m: 0.0690883219473069
+        normal_median_deg: 3.3744303720818327
+        normal_p95_deg: 6.730581490891809
+        rejection_history:
+        - iteration: 1
+          input: 53
+          output: 22
+          normalized_reprojection_cut: 0.015108438384793785
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+        - iteration: 2
+          input: 22
+          output: 20
+          normalized_reprojection_cut: 0.01083382368417546
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+        - iteration: 3
+          input: 20
+          output: 18
+          normalized_reprojection_cut: 0.008434271995737317
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+        - iteration: 4
+          input: 18
+          output: 15
+          normalized_reprojection_cut: 0.0068403473666689045
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+        - iteration: 5
+          input: 15
+          output: 15
+          normalized_reprojection_cut: 0.006
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+      - raw_capture_count: 53
+        accepted_capture_count: 19
+        discarded_capture_count: 34
+        tag_center_count: 462
+        normalized_reprojection_rms: 0.004931396323046649
+        normalized_reprojection_p95: 0.008865077954631635
+        center_median_m: 0.051905657482747024
+        center_p95_m: 0.08377348265245466
+        normal_median_deg: 3.282403845570925
+        normal_p95_deg: 7.718092383364758
+        rejection_history:
+        - iteration: 1
+          input: 53
+          output: 27
+          normalized_reprojection_cut: 0.014130261815384414
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+        - iteration: 2
+          input: 27
+          output: 24
+          normalized_reprojection_cut: 0.01047043341880767
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+        - iteration: 3
+          input: 24
+          output: 22
+          normalized_reprojection_cut: 0.011259227980968572
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+        - iteration: 4
+          input: 22
+          output: 19
+          normalized_reprojection_cut: 0.01018540522165563
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+        - iteration: 5
+          input: 19
+          output: 19
+          normalized_reprojection_cut: 0.009574848618631511
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+      - raw_capture_count: 53
+        accepted_capture_count: 23
+        discarded_capture_count: 30
+        tag_center_count: 505
+        normalized_reprojection_rms: 0.004851110280290952
+        normalized_reprojection_p95: 0.007960336558994587
+        center_median_m: 0.03512009155096126
+        center_p95_m: 0.08008543042329459
+        normal_median_deg: 3.9753795652032244
+        normal_p95_deg: 6.915083460985701
+        rejection_history:
+        - iteration: 1
+          input: 53
+          output: 26
+          normalized_reprojection_cut: 0.012720232163668495
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+        - iteration: 2
+          input: 26
+          output: 25
+          normalized_reprojection_cut: 0.012077610151545853
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+        - iteration: 3
+          input: 25
+          output: 23
+          normalized_reprojection_cut: 0.009795730935226324
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+        - iteration: 4
+          input: 23
+          output: 23
+          normalized_reprojection_cut: 0.009769860885308387
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+      - raw_capture_count: 53
+        accepted_capture_count: 21
+        discarded_capture_count: 32
+        tag_center_count: 453
+        normalized_reprojection_rms: 0.004975229096592201
+        normalized_reprojection_p95: 0.00842434118012035
+        center_median_m: 0.0354628283133612
+        center_p95_m: 0.07822313274262169
+        normal_median_deg: 3.210294287128642
+        normal_p95_deg: 6.337862435626032
+        rejection_history:
+        - iteration: 1
+          input: 53
+          output: 24
+          normalized_reprojection_cut: 0.013819447596558277
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+        - iteration: 2
+          input: 24
+          output: 23
+          normalized_reprojection_cut: 0.010600232538752367
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+        - iteration: 3
+          input: 23
+          output: 21
+          normalized_reprojection_cut: 0.010186257103342079
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+        - iteration: 4
+          input: 21
+          output: 21
+          normalized_reprojection_cut: 0.009777427248218052
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+  video_rear_left/camera_link:
+    raw_observations: 32
+    unique_board_poses: 31
+    difference_from_rough_position_m: 0.20485859317269806
+    difference_from_rough_angle_deg: 10.567048732207146
+    stability:
+      status: bootstrap_consensus
+      achieved_tier: coarse_only
+      dominant_count: 3
+      dominant_fraction: 0.6
+      position_p95_m: 0.04334631252162449
+      angle_p95_deg: 0.5393469737438091
+      full_fit:
+        raw_capture_count: 31
+        accepted_capture_count: 11
+        discarded_capture_count: 20
+        tag_center_count: 187
+        normalized_reprojection_rms: 0.005731989341062819
+        normalized_reprojection_p95: 0.01129053106110856
+        center_median_m: 0.037888136527898734
+        center_p95_m: 0.05131127340247699
+        normal_median_deg: 2.773126095808261
+        normal_p95_deg: 6.051398133178105
+        rejection_history:
+        - iteration: 1
+          input: 31
+          output: 14
+          normalized_reprojection_cut: 0.018
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+        - iteration: 2
+          input: 14
+          output: 11
+          normalized_reprojection_cut: 0.018
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+        - iteration: 3
+          input: 11
+          output: 11
+          normalized_reprojection_cut: 0.015235812934890793
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+      fold_quality:
+      - raw_capture_count: 24
+        accepted_capture_count: 11
+        discarded_capture_count: 13
+        tag_center_count: 158
+        normalized_reprojection_rms: 0.006302917117560078
+        normalized_reprojection_p95: 0.011306475660051194
+        center_median_m: 0.03910659838962494
+        center_p95_m: 0.05397783753728515
+        normal_median_deg: 6.010622209296518
+        normal_p95_deg: 7.83714007959783
+        rejection_history:
+        - iteration: 1
+          input: 24
+          output: 11
+          normalized_reprojection_cut: 0.018
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+        - iteration: 2
+          input: 11
+          output: 11
+          normalized_reprojection_cut: 0.012426909877405868
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+      - raw_capture_count: 25
+        accepted_capture_count: 7
+        discarded_capture_count: 18
+        tag_center_count: 128
+        normalized_reprojection_rms: 0.002758036066583026
+        normalized_reprojection_p95: 0.004756052696893883
+        center_median_m: 0.007160806424036479
+        center_p95_m: 0.01671692618302731
+        normal_median_deg: 2.2577022714449426
+        normal_p95_deg: 4.413723520552693
+        rejection_history:
+        - iteration: 1
+          input: 25
+          output: 11
+          normalized_reprojection_cut: 0.018
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+        - iteration: 2
+          input: 11
+          output: 8
+          normalized_reprojection_cut: 0.009004015542099696
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+        - iteration: 3
+          input: 8
+          output: 7
+          normalized_reprojection_cut: 0.006976128926185238
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+        - iteration: 4
+          input: 7
+          output: 7
+          normalized_reprojection_cut: 0.006
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+      - raw_capture_count: 25
+        accepted_capture_count: 10
+        discarded_capture_count: 15
+        tag_center_count: 140
+        normalized_reprojection_rms: 0.0060914947780426896
+        normalized_reprojection_p95: 0.010167312919281175
+        center_median_m: 0.045502835904766
+        center_p95_m: 0.05682855386119417
+        normal_median_deg: 5.9370197169282575
+        normal_p95_deg: 7.828141386842488
+        rejection_history:
+        - iteration: 1
+          input: 25
+          output: 10
+          normalized_reprojection_cut: 0.018
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+        - iteration: 2
+          input: 10
+          output: 10
+          normalized_reprojection_cut: 0.012235265940127797
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+      - raw_capture_count: 25
+        accepted_capture_count: 9
+        discarded_capture_count: 16
+        tag_center_count: 146
+        normalized_reprojection_rms: 0.006228949879591002
+        normalized_reprojection_p95: 0.010453771694017303
+        center_median_m: 0.030896830592335233
+        center_p95_m: 0.05204806467826227
+        normal_median_deg: 3.107871539794718
+        normal_p95_deg: 6.06739094407305
+        rejection_history:
+        - iteration: 1
+          input: 25
+          output: 10
+          normalized_reprojection_cut: 0.018
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+        - iteration: 2
+          input: 10
+          output: 9
+          normalized_reprojection_cut: 0.016544955314922397
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+        - iteration: 3
+          input: 9
+          output: 9
+          normalized_reprojection_cut: 0.018
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+      - raw_capture_count: 25
+        accepted_capture_count: 8
+        discarded_capture_count: 17
+        tag_center_count: 146
+        normalized_reprojection_rms: 0.004132291066275252
+        normalized_reprojection_p95: 0.007019919783810209
+        center_median_m: 0.05437896701347971
+        center_p95_m: 0.061427154063214584
+        normal_median_deg: 2.492760008534897
+        normal_p95_deg: 6.259225880575307
+        rejection_history:
+        - iteration: 1
+          input: 25
+          output: 10
+          normalized_reprojection_cut: 0.018
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+        - iteration: 2
+          input: 10
+          output: 8
+          normalized_reprojection_cut: 0.0077468232589956235
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+        - iteration: 3
+          input: 8
+          output: 8
+          normalized_reprojection_cut: 0.006945377000075093
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+  video_rear_mid/camera_link:
+    raw_observations: 5
+    unique_board_poses: 5
+    difference_from_rough_position_m: 0.7557330482281116
+    difference_from_rough_angle_deg: 4.024109769029865
+    stability:
+      status: provisional_low_support
+      achieved_tier: unvalidated
+      bootstrap_count: 0
+      full_fit:
+        raw_capture_count: 5
+        accepted_capture_count: 4
+        discarded_capture_count: 1
+        tag_center_count: 64
+        normalized_reprojection_rms: 0.010215123144560571
+        normalized_reprojection_p95: 0.017946191358268433
+        center_median_m: 0.017248004593129092
+        center_p95_m: 0.018407769679004572
+        normal_median_deg: 1.700057540986474
+        normal_p95_deg: 2.7735263848483456
+        rejection_history:
+        - iteration: 1
+          input: 5
+          output: 4
+          normalized_reprojection_cut: 0.018
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+        - iteration: 2
+          input: 4
+          output: 4
+          normalized_reprojection_cut: 0.014365902445123018
+          center_cut_m: 0.1
+          normal_cut_deg: 10.0
+rejected:
+  video_front_left/camera_link:
+    raw_observations: 9
+    unique_board_poses: 9
+    error: only 3 bundle captures after robust gates
+  video_front_right/camera_link:
+    raw_observations: 11
+    unique_board_poses: 11
+    error: only 3 bundle captures after robust gates
+  video_rear_right/camera_link:
+    raw_observations: 15
+    unique_board_poses: 15
+    error: only 1 bundle captures after robust gates
+  fisheye_front/camera_link:
+    raw_observations: 12
+    unique_board_poses: 11
+    error: only 3 bundle captures after robust gates
+  fisheye_left/camera_link:
+    raw_observations: 21
+    unique_board_poses: 20
+    error: only 3 bundle captures after robust gates
+  fisheye_right/camera_link:
+    raw_observations: 8
+    unique_board_poses: 8
+    error: only 3 bundle captures after robust gates
+  fisheye_rear/camera_link:
+    raw_observations: 3
+    unique_board_poses: 3
+    error: need >=4 unique poses, got 3

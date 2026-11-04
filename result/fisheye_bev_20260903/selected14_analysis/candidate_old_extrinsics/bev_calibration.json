@@ -1,0 +1,470 @@
+{
+  "schema_version": 1,
+  "status": "candidate_pending_C_cross_validation",
+  "coordinate_convention": {
+    "vehicle_frame": "sensor_kit_base_link: x forward, y left, z up",
+    "camera_frame": "camera optical: x right, y down, z forward",
+    "extrinsic": "p_vehicle = R_vehicle_camera * p_camera_optical + t_vehicle_camera_m",
+    "bev": "u right = -vehicle y; v down = -vehicle x; vehicle origin=(256,256)",
+    "H_bev": "p_bev ~ H_bev * p_rectified; never apply to raw equidistant pixels"
+  },
+  "bev": {
+    "width": 512,
+    "height": 512,
+    "meters_per_pixel": 0.015,
+    "origin": [
+      256.0,
+      256.0
+    ]
+  },
+  "sample_capture": "20260903_153627_452",
+  "extrinsic_source": "camera_relative_to_roof_lidar.yaml + quality-gated Part3 ground refinement",
+  "ground_refinements": {
+    "fisheye_front": {
+      "candidate_ground_boards": 11,
+      "applied": true,
+      "normal_dispersion_p95_deg": 1.9572248927742293,
+      "orientation_correction_deg": 0.21963069558121823,
+      "seed_camera_height_m": 0.677978956,
+      "refined_camera_height_m": 0.6468599382457567,
+      "height_repeatability_p95_m": 0.0163062103208248,
+      "reason": "quality_gated_ground_plane_refinement"
+    },
+    "fisheye_right": {
+      "candidate_ground_boards": 14,
+      "applied": true,
+      "normal_dispersion_p95_deg": 0.49052314434316,
+      "orientation_correction_deg": 1.095248805397617,
+      "seed_camera_height_m": 1.0438499540000001,
+      "refined_camera_height_m": 0.9989676162467026,
+      "height_repeatability_p95_m": 0.006171896542043187,
+      "reason": "quality_gated_ground_plane_refinement"
+    },
+    "fisheye_rear": {
+      "candidate_ground_boards": 18,
+      "applied": true,
+      "normal_dispersion_p95_deg": 0.562745218860625,
+      "orientation_correction_deg": 0.20096205315914992,
+      "seed_camera_height_m": 0.7585555429999999,
+      "refined_camera_height_m": 0.6500820902039839,
+      "height_repeatability_p95_m": 0.016239534048004257,
+      "reason": "quality_gated_ground_plane_refinement"
+    },
+    "fisheye_left": {
+      "candidate_ground_boards": 14,
+      "applied": true,
+      "normal_dispersion_p95_deg": 0.4730414311660523,
+      "orientation_correction_deg": 0.5416849051241986,
+      "seed_camera_height_m": 1.024877841,
+      "refined_camera_height_m": 1.0133197245090115,
+      "height_repeatability_p95_m": 0.008803668397136276,
+      "reason": "quality_gated_ground_plane_refinement"
+    }
+  },
+  "cameras": {
+    "fisheye_front": {
+      "K": [
+        [
+          479.7802910855629,
+          0.0,
+          773.7599469204199
+        ],
+        [
+          0.0,
+          479.87119998853103,
+          603.8221219335932
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "D": [
+        0.03256487694724908,
+        -0.007421159623977069,
+        -0.005790953664528703,
+        0.0009246380002881712
+      ],
+      "K_rectified": [
+        [
+          115.3204191490751,
+          0.0,
+          843.3974940491594
+        ],
+        [
+          0.0,
+          115.34227009416279,
+          596.9090855328769
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_vehicle_from_camera_optical": [
+        [
+          -0.002951613999195385,
+          -0.3331140879753657,
+          0.9428819079176268,
+          2.037153818
+        ],
+        [
+          -0.9999951536585786,
+          4.952847190168202e-05,
+          -0.003112904235295547,
+          0.009871027
+        ],
+        [
+          0.0009902526689974853,
+          -0.9428865265297502,
+          -0.33311261983502105,
+          0.6468599382457567
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "H_bev_from_rectified": [
+        [
+          -0.08189899518490594,
+          -0.45984457097822834,
+          324.7907253585494
+        ],
+        [
+          -1.5793293015203134e-05,
+          -0.24388884787880524,
+          145.7302839379805
+        ],
+        [
+          1.8917408898641748e-06,
+          -0.0018009131822571021,
+          1.0
+        ]
+      ],
+      "intrinsic_rms_px": 0.3609367390029118,
+      "intrinsic_accepted_p95_px": 0.7335632539374134
+    },
+    "fisheye_right": {
+      "K": [
+        [
+          478.8791086467349,
+          0.0,
+          809.6406506765276
+        ],
+        [
+          0.0,
+          479.5527765915595,
+          533.3641777611949
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "D": [
+        0.033081822540305644,
+        -0.010005043246402733,
+        -0.004116607613346332,
+        0.0005879695811789663
+      ],
+      "K_rectified": [
+        [
+          167.08430229894554,
+          0.0,
+          780.7375686475335
+        ],
+        [
+          0.0,
+          167.31934980156112,
+          626.2888151497665
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_vehicle_from_camera_optical": [
+        [
+          -0.9999160857706092,
+          0.011029282322230164,
+          -0.0067953115592658455,
+          1.660756071
+        ],
+        [
+          0.01068499594451532,
+          0.4055735049315502,
+          -0.913999979748493,
+          -0.583885067
+        ],
+        [
+          -0.007324765523465131,
+          -0.9139958900436549,
+          -0.40565731936465554,
+          0.9989676162467026
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "H_bev_from_rectified": [
+        [
+          -0.0028429641852718386,
+          -0.4753303168472561,
+          240.72497662522443
+        ],
+        [
+          -0.13277392401901267,
+          -0.25878739123164674,
+          246.26412133166875
+        ],
+        [
+          -1.4374658296993519e-05,
+          -0.0017911729708645914,
+          1.0
+        ]
+      ],
+      "intrinsic_rms_px": 0.4965244305037814,
+      "intrinsic_accepted_p95_px": 0.6882379135561872
+    },
+    "fisheye_rear": {
+      "K": [
+        [
+          477.08901720210264,
+          0.0,
+          816.395138121344
+        ],
+        [
+          0.0,
+          477.2341205753062,
+          618.0434052426967
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "D": [
+        0.03736834540297366,
+        -0.01142833317132205,
+        -0.004052370034463508,
+        0.0006038449989445685
+      ],
+      "K_rectified": [
+        [
+          128.02578295936775,
+          0.0,
+          766.7003531066503
+        ],
+        [
+          0.0,
+          128.0647211287546,
+          581.0414900232682
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_vehicle_from_camera_optical": [
+        [
+          0.01711319164087149,
+          0.19981754602205481,
+          -0.9796836667837618,
+          -0.515840351
+        ],
+        [
+          0.9998533903275667,
+          -0.002851544487676705,
+          0.016883913329037287,
+          0.403634805
+        ],
+        [
+          0.0005800905548224814,
+          -0.979828973324087,
+          -0.19983704989071396,
+          0.6500820902039839
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "H_bev_from_rectified": [
+        [
+          0.08002911877549601,
+          -0.4133997365126504,
+          168.22491674847907
+        ],
+        [
+          0.0016757233531760033,
+          -0.5077857788711403,
+          270.0722687144512
+        ],
+        [
+          1.0680723967414988e-06,
+          -0.0018035289034975973,
+          1.0
+        ]
+      ],
+      "intrinsic_rms_px": 0.5198576761128648,
+      "intrinsic_accepted_p95_px": 0.8399035448551962
+    },
+    "fisheye_left": {
+      "K": [
+        [
+          478.1636402805319,
+          0.0,
+          832.3604941162002
+        ],
+        [
+          0.0,
+          478.4276624627162,
+          624.2362956172609
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "D": [
+        0.03068849362896986,
+        -0.0024558036424550803,
+        -0.008699474369106433,
+        0.0014365663765736182
+      ],
+      "K_rectified": [
+        [
+          135.01200445426457,
+          0.0,
+          732.999819326694
+        ],
+        [
+          0.0,
+          135.08655249814382,
+          575.1067487644717
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_vehicle_from_camera_optical": [
+        [
+          0.9997886291244175,
+          -0.017896646477512438,
+          -0.010119635688547964,
+          1.62088209
+        ],
+        [
+          0.0020697338691665,
+          -0.4020970399290351,
+          0.9155947174884336,
+          0.5954799
+        ],
+        [
+          -0.020455150524955393,
+          -0.9154221324329617,
+          -0.4019750070166468,
+          1.0133197245090115
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "H_bev_from_rectified": [
+        [
+          -0.008799921916050458,
+          -0.4622050612538302,
+          265.30896774399207
+        ],
+        [
+          0.1325007108806786,
+          -0.280474550513606,
+          47.50014243836894
+        ],
+        [
+          -4.201124051817543e-05,
+          -0.001879076671939431,
+          1.0
+        ]
+      ],
+      "intrinsic_rms_px": 0.4544677734564234,
+      "intrinsic_accepted_p95_px": 0.7577161252270721
+    }
+  },
+  "validation": {
+    "per_camera": {
+      "fisheye_front": {
+        "fresh_board_poses": 11,
+        "reprojection_median_px": 1.3698734246436628,
+        "reprojection_p95_px": 2.0635638069956164,
+        "classified_ground_poses": 11,
+        "ground_abs_height_median_m": 0.0022930481413976356,
+        "ground_abs_height_p95_m": 0.016306210320824813,
+        "ground_normal_error_median_deg": 0.35865827655513166,
+        "ground_normal_error_p95_deg": 1.9572248927740374
+      },
+      "fisheye_right": {
+        "fresh_board_poses": 14,
+        "reprojection_median_px": 1.2312419458066923,
+        "reprojection_p95_px": 1.3984360125293103,
+        "classified_ground_poses": 14,
+        "ground_abs_height_median_m": 0.0018217827012239618,
+        "ground_abs_height_p95_m": 0.006171896542043226,
+        "ground_normal_error_median_deg": 0.24687283980193742,
+        "ground_normal_error_p95_deg": 0.4905231443439217
+      },
+      "fisheye_rear": {
+        "fresh_board_poses": 18,
+        "reprojection_median_px": 1.6889493747162043,
+        "reprojection_p95_px": 1.9005416405558868,
+        "classified_ground_poses": 18,
+        "ground_abs_height_median_m": 0.004197852326019574,
+        "ground_abs_height_p95_m": 0.01623953404800429,
+        "ground_normal_error_median_deg": 0.3787628680155118,
+        "ground_normal_error_p95_deg": 0.5627452188611917
+      },
+      "fisheye_left": {
+        "fresh_board_poses": 14,
+        "reprojection_median_px": 1.139681220677324,
+        "reprojection_p95_px": 1.2962333579827119,
+        "classified_ground_poses": 14,
+        "ground_abs_height_median_m": 0.004036565624859045,
+        "ground_abs_height_p95_m": 0.008803668397136349,
+        "ground_normal_error_median_deg": 0.25281417134624584,
+        "ground_normal_error_p95_deg": 0.47304143116526776
+      }
+    },
+    "cross_camera_same_board": {
+      "fisheye_front<->fisheye_right": {
+        "matches": 2,
+        "centre_delta_median_m": 0.04043792402940005,
+        "centre_delta_p95_m": 0.043681801539983474
+      },
+      "fisheye_front<->fisheye_left": {
+        "matches": 9,
+        "centre_delta_median_m": 0.028460388042106644,
+        "centre_delta_p95_m": 0.05055999789904938
+      }
+    }
+  }
+}

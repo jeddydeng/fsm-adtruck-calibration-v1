@@ -1,0 +1,20 @@
+charuco:
+  dictionary: DICT_5X5_100
+  squares_x: 12
+  squares_y: 8
+  square_length_m: 0.070
+  marker_length_m: 0.050
+  outer_size_m: [0.900, 0.620]
+  active_size_m: [0.840, 0.560]
+aprilgrid:
+  dictionary: DICT_APRILTAG_16h5
+  outer_size_m: [0.900, 0.900]
+  active_size_m: [0.800, 0.800]
+  columns: 6
+  rows: 5
+  tag_size_m: 0.108
+  horizontal_gap_m: 0.0304
+  vertical_gap_m: 0.065
+  first_id: 0
+  id_origin: bottom_left
+  corner_rotation_quarters: 2

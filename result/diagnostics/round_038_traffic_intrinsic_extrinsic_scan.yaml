@@ -1,0 +1,317 @@
+schema_version: 1
+reference_frame: velodyne_top_base_link
+method: traffic_intrinsic_candidate_extrinsic_sensitivity
+warning: A low extrinsic fold spread cannot repair a wrong intrinsic model.
+candidates:
+  traffic_light_front_20260901_231630_372090284.yaml:
+    unique_board_poses: 31
+    transform:
+      parent: velodyne_top_base_link
+      xyz_m:
+      - -0.4
+      - -0.055855727
+      - -0.083801805
+      rpy_deg:
+      - 0.17830743
+      - 2.52720892
+      - -2.42593672
+    difference_from_mechanical_seed_m: 0.42026406324879906
+    difference_from_mechanical_seed_deg: 3.51025110856596
+    stability:
+      achieved_tier: coarse_only
+      dominant_count: 4
+      dominant_fraction: 0.8
+      position_p95_m: 0.07797084564260531
+      angle_p95_deg: 0.6219745692366456
+      bootstrap_optical_transforms:
+      - xyz_m:
+        - -0.4
+        - 0.026974305
+        - -0.065874524
+        rpy_deg:
+        - -92.63625766
+        - -0.06884698
+        - -93.01406609
+      - xyz_m:
+        - -0.4
+        - -0.066654954
+        - -0.121701238
+        rpy_deg:
+        - -92.27244817
+        - 0.33181331
+        - -92.13415169
+      - xyz_m:
+        - -0.4
+        - -0.318659693
+        - -0.049815115
+        rpy_deg:
+        - -92.80005463
+        - 0.42939064
+        - -90.36139131
+      - xyz_m:
+        - -0.4
+        - -0.049874089
+        - -0.044688855
+        rpy_deg:
+        - -92.81905118
+        - 0.60816944
+        - -92.46223388
+      - xyz_m:
+        - -0.4
+        - -0.061837365
+        - -0.101729085
+        rpy_deg:
+        - -92.38049787
+        - -0.16028841
+        - -92.1256998
+      full_fit:
+        raw_grounded_pose_count: 31
+        accepted_pose_count: 24
+        discarded_pose_count: 7
+        normalized_reprojection_rms: 0.004280071286317229
+        normalized_reprojection_p95: 0.00796214932834512
+        board_horizontal_shift_median_m: 0.06109946872168885
+        board_horizontal_shift_p95_m: 0.2798285323298445
+        rejection_history:
+        - iteration: 1
+          input: 31
+          output: 24
+          normalized_reprojection_rms_cut: 0.006186953398547433
+        - iteration: 2
+          input: 24
+          output: 24
+          normalized_reprojection_rms_cut: 0.006
+  traffic_light_front_20260901_231923_564865757.yaml:
+    unique_board_poses: 31
+    transform:
+      parent: velodyne_top_base_link
+      xyz_m:
+      - -0.4
+      - 0.286400074
+      - -0.102254278
+      rpy_deg:
+      - -0.17982671
+      - 1.93782985
+      - -4.02884958
+    difference_from_mechanical_seed_m: 0.5015767426020985
+    difference_from_mechanical_seed_deg: 4.47136262676755
+    stability:
+      achieved_tier: coarse_only
+      dominant_count: 3
+      dominant_fraction: 0.6
+      position_p95_m: 0.05388751276870689
+      angle_p95_deg: 0.5682763918921487
+      bootstrap_optical_transforms:
+      - xyz_m:
+        - -0.4
+        - 0.4
+        - -0.079395129
+        rpy_deg:
+        - -92.12557329
+        - -0.82734351
+        - -95.38692814
+      - xyz_m:
+        - -0.4
+        - 0.328029981
+        - -0.141277212
+        rpy_deg:
+        - -91.71904765
+        - -0.03443582
+        - -94.089398
+      - xyz_m:
+        - -0.4
+        - 0.4
+        - -0.040283872
+        rpy_deg:
+        - -92.42552989
+        - -1.1883032
+        - -95.56166034
+      - xyz_m:
+        - -0.4
+        - 0.286400074
+        - -0.081124256
+        rpy_deg:
+        - -92.11848223
+        - 0.0933833
+        - -94.35513963
+      - xyz_m:
+        - -0.4
+        - 0.261064547
+        - -0.102254278
+        rpy_deg:
+        - -91.97832552
+        - -0.59837896
+        - -93.62376273
+      full_fit:
+        raw_grounded_pose_count: 31
+        accepted_pose_count: 26
+        discarded_pose_count: 5
+        normalized_reprojection_rms: 0.006342417727781455
+        normalized_reprojection_p95: 0.010675893627733619
+        board_horizontal_shift_median_m: 0.09774142581720623
+        board_horizontal_shift_p95_m: 0.39580870932203793
+        rejection_history:
+        - iteration: 1
+          input: 31
+          output: 26
+          normalized_reprojection_rms_cut: 0.007788757363544041
+        - iteration: 2
+          input: 26
+          output: 26
+          normalized_reprojection_rms_cut: 0.006991797867541993
+  traffic_light_front_20260901_231925_129579029.yaml:
+    unique_board_poses: 31
+    transform:
+      parent: velodyne_top_base_link
+      xyz_m:
+      - 0.029651601
+      - -0.147744236
+      - -0.170667249
+      rpy_deg:
+      - 0.66128282
+      - 2.94438549
+      - -0.94385885
+    difference_from_mechanical_seed_m: 0.15351868582750164
+    difference_from_mechanical_seed_deg: 3.166913830842324
+    stability:
+      achieved_tier: coarse_only
+      dominant_count: 3
+      dominant_fraction: 0.6
+      position_p95_m: 0.06683678226144794
+      angle_p95_deg: 0.6699679082999556
+      bootstrap_optical_transforms:
+      - xyz_m:
+        - 0.092691998
+        - -0.097075564
+        - -0.133224704
+        rpy_deg:
+        - -93.35216906
+        - 0.19766707
+        - -91.40856981
+      - xyz_m:
+        - -0.007717019
+        - -0.147744236
+        - -0.202029604
+        rpy_deg:
+        - -92.76358274
+        - 0.76977138
+        - -90.89063395
+      - xyz_m:
+        - 0.003295838
+        - -0.24618127
+        - -0.166469936
+        rpy_deg:
+        - -93.03302286
+        - 0.49831248
+        - -90.13964671
+      - xyz_m:
+        - 0.04159935
+        - -0.079946444
+        - -0.170667249
+        rpy_deg:
+        - -93.05408593
+        - 0.87079225
+        - -91.60980393
+      - xyz_m:
+        - 0.029651601
+        - -0.188164427
+        - -0.169259759
+        rpy_deg:
+        - -93.01867807
+        - 0.34027495
+        - -90.43290042
+      full_fit:
+        raw_grounded_pose_count: 31
+        accepted_pose_count: 24
+        discarded_pose_count: 7
+        normalized_reprojection_rms: 0.003388434144610628
+        normalized_reprojection_p95: 0.006427077431192679
+        board_horizontal_shift_median_m: 0.06529929548557568
+        board_horizontal_shift_p95_m: 0.25664237346335095
+        rejection_history:
+        - iteration: 1
+          input: 31
+          output: 24
+          normalized_reprojection_rms_cut: 0.0071878436344182395
+        - iteration: 2
+          input: 24
+          output: 24
+          normalized_reprojection_rms_cut: 0.006
+  traffic_light_front_20260901_232705_372307319.yaml:
+    unique_board_poses: 31
+    transform:
+      parent: velodyne_top_base_link
+      xyz_m:
+      - 0.006450265
+      - -0.159797807
+      - -0.167912391
+      rpy_deg:
+      - 0.7044189
+      - 1.93352098
+      - 0.01530058
+    difference_from_mechanical_seed_m: 0.16311517330300307
+    difference_from_mechanical_seed_deg: 2.057798009675995
+    stability:
+      achieved_tier: coarse_only
+      dominant_count: 3
+      dominant_fraction: 0.6
+      position_p95_m: 0.0718208967409994
+      angle_p95_deg: 0.698371171962256
+      bootstrap_optical_transforms:
+      - xyz_m:
+        - 0.070770054
+        - -0.103750065
+        - -0.131116814
+        rpy_deg:
+        - -92.34173385
+        - 0.25488357
+        - -90.47288842
+      - xyz_m:
+        - -0.031302545
+        - -0.159797807
+        - -0.198291387
+        rpy_deg:
+        - -91.75650679
+        - 0.80784235
+        - -89.90644471
+      - xyz_m:
+        - -0.042344683
+        - -0.31447195
+        - -0.160278826
+        rpy_deg:
+        - -92.02020177
+        - 0.63537332
+        - -88.65248727
+      - xyz_m:
+        - 0.019887956
+        - -0.08660431
+        - -0.167912391
+        rpy_deg:
+        - -92.03825549
+        - 0.91254136
+        - -90.67395299
+      - xyz_m:
+        - 0.006450265
+        - -0.200530565
+        - -0.166664955
+        rpy_deg:
+        - -92.00889923
+        - 0.39127346
+        - -89.44486607
+      full_fit:
+        raw_grounded_pose_count: 31
+        accepted_pose_count: 24
+        discarded_pose_count: 7
+        normalized_reprojection_rms: 0.003371882874091381
+        normalized_reprojection_p95: 0.006294763197177716
+        board_horizontal_shift_median_m: 0.0705499599691139
+        board_horizontal_shift_p95_m: 0.2564292908179211
+        rejection_history:
+        - iteration: 1
+          input: 31
+          output: 24
+          normalized_reprojection_rms_cut: 0.006725264601280599
+        - iteration: 2
+          input: 24
+          output: 24
+          normalized_reprojection_rms_cut: 0.006

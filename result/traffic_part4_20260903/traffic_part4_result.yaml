@@ -1,0 +1,783 @@
+schema_version: 1
+status: rejected_for_vehicle_integration
+deployment_action: none
+reference_frame: velodyne_top_base_link
+camera_frame: traffic_light_front/camera_link
+coordinate_convention: x_forward_y_left_z_up; output is camera_link
+data:
+  part: 4
+  capture_count: 45
+  capture_range:
+  - '20260903_160042_050'
+  - '20260903_160414_181'
+time_and_freshness_audit:
+  capture_count: 45
+  decoded_320x240_count: 45
+  exact_duplicate_frames: 0
+  unique_frame_hashes: 45
+  near_same_consecutive_transitions: 0
+  consecutive_mae_min: 3.62765625
+  consecutive_mae_median: 37.223498263888885
+  freshness_capture_source_ms:
+    count: 45
+    min: 208.0591
+    median: 333.946613
+    p95: 399.3361882
+    max: 498.26226
+  transport_receive_source_ms:
+    count: 45
+    min: 200.942977
+    median: 210.343873
+    p95: 221.4602336
+    max: 222.028274
+  camera_top_source_gap_ms:
+    count: 45
+    min: 167.536731
+    median: 273.395689
+    p95: 378.5828638
+    max: 474.371106
+  source_stamp_strictly_increasing: true
+  sample_sequence_strictly_increasing: true
+  fresh_pixel_tag_detection_count: 37
+  fresh_pixel_pnp_count: 29
+  camera_lidar_plane_count: 19
+  camera_lidar_capture_count: 19
+  plane_count_by_lidar:
+    lidar_top: 20
+    lidar_front_left: 20
+    lidar_front_right: 21
+  status_counts:
+    accepted_camera_lidar_plane: 22
+    no_lidar_board_accepted: 7
+    too_few_tags: 4
+    no_tags: 4
+    pnp_rejected: 8
+  fresh_pixel_pnp_reprojection_px:
+    count: 29
+    min: 0.3794641683095484
+    median: 0.6382412979740284
+    p95: 3.1173421139645034
+    max: 4.05172892211449
+intrinsic_source: /Users/djhuai/fsm-adtruck/calibration-white/result/camera_intrinsics/traffic_light_front.yaml
+lidar_anchor_source: /Users/djhuai/fsm-adtruck/calibration-white/result/extrinsics/all_sensors_relative_to_roof_lidar.yaml
+lidar_anchor_warning: Three lower-lidar poses are frozen fallback_1cm_1deg anchors;
+  final traffic-camera result inherits their uncertainty.
+mechanical_seed_top_from_camera_optical:
+  xyz_m:
+  - 0.0
+  - 0.0
+  - -0.2
+  rpy_deg:
+  - -90.0
+  - 0.0
+  - -90.0
+  matrix_row_major:
+  - - 0.0
+    - 0.0
+    - 1.0
+    - 0.0
+  - - -1.0
+    - 0.0
+    - 0.0
+    - 0.0
+  - - 0.0
+    - -1.0
+    - 0.0
+    - -0.2
+  - - 0.0
+    - 0.0
+    - 0.0
+    - 1.0
+observations_before_filter: 19
+observations_after_filter: 18
+fit:
+  rejection_history:
+  - iteration: 1
+    input: 19
+    output: 18
+    plane_cut_m: 0.4382076692373371
+    angle_cut_deg: 3.968172084680134
+    centre_cut_m: 0.6859806220374932
+  - iteration: 2
+    input: 18
+    output: 18
+    plane_cut_m: 0.38161670088066413
+    angle_cut_deg: 4.610028447212805
+    centre_cut_m: 0.6505700641033406
+metrics:
+  count: 18
+  capture_count: 18
+  plane_distance_m:
+    count: 18
+    min: 0.0033105781162108957
+    median: 0.10425761396837924
+    p95: 0.3285013932755861
+    max: 0.36124741928380205
+  normal_angle_deg:
+    count: 18
+    min: 2.550604360745769
+    median: 3.38687918498773
+    p95: 4.289423560379507
+    max: 4.670339849622469
+  board_center_distance_m:
+    count: 18
+    min: 0.1311725962070494
+    median: 0.37213178184215845
+    p95: 0.4795045378189681
+    max: 0.48962560466837096
+validation:
+  five_fold_time_interleaved:
+  - fold: 1
+    train_count: 13
+    test:
+      count: 5
+      capture_count: 5
+      plane_distance_m:
+        count: 5
+        min: 0.023075388243337207
+        median: 0.23724193119458648
+        p95: 0.40374681599595746
+        max: 0.40813214997414865
+      normal_angle_deg:
+        count: 5
+        min: 2.0554449772607124
+        median: 2.790473469171249
+        p95: 3.2431172810789883
+        max: 3.3236589375660786
+      board_center_distance_m:
+        count: 5
+        min: 0.14724128608771986
+        median: 0.304322615428997
+        p95: 0.4904686323739553
+        max: 0.5074765211940462
+    transform:
+      xyz_m:
+      - -0.303175653
+      - -0.181314512
+      - -0.173191866
+      rpy_deg:
+      - -92.45494518
+      - 0.01105448
+      - -87.80068725
+      matrix_row_major:
+      - - 0.038375822409
+        - -0.042809612347
+        - 0.99834594873
+        - -0.303175652867
+      - - -0.999263358194
+        - -0.001451163128
+        - 0.038348860424
+        - -0.181314512191
+      - - -0.000192937019
+        - -0.999082194425
+        - -0.042833766575
+        - -0.173191865931
+      - - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+    difference_from_full:
+      translation_m: 0.1746532612036598
+      angle_deg: 0.9292865752153958
+  - fold: 2
+    train_count: 15
+    test:
+      count: 3
+      capture_count: 3
+      plane_distance_m:
+        count: 3
+        min: 0.02134232588209454
+        median: 0.0936912624599519
+        p95: 0.25806306251728095
+        max: 0.2763265958569842
+      normal_angle_deg:
+        count: 3
+        min: 5.606497501357607
+        median: 5.612561610078405
+        p95: 6.345409396097355
+        max: 6.426836927877238
+      board_center_distance_m:
+        count: 3
+        min: 0.16105441766872972
+        median: 0.37016118031978834
+        p95: 0.41231105958861486
+        max: 0.4169943795073734
+    transform:
+      xyz_m:
+      - -0.379237671
+      - -0.416868516
+      - -0.178333806
+      rpy_deg:
+      - -92.36066366
+      - 0.08095365
+      - -84.58030392
+      matrix_row_major:
+      - - 0.094450449294
+        - -0.041138897886
+        - 0.994679196379
+        - -0.379237671381
+      - - -0.995528561279
+        - -0.002484992165
+        - 0.09442832463
+        - -0.41686851649
+      - - -0.001412907195
+        - -0.999150346992
+        - -0.041189656451
+        - -0.178333805902
+      - - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+    difference_from_full:
+      translation_m: 0.12626218182864932
+      angle_deg: 2.2945037907179264
+  - fold: 3
+    train_count: 14
+    test:
+      count: 4
+      capture_count: 4
+      plane_distance_m:
+        count: 4
+        min: 0.11768772399989558
+        median: 0.1547213182252167
+        p95: 0.21746554730932632
+        max: 0.22240188210864395
+      normal_angle_deg:
+        count: 4
+        min: 1.7747489588048593
+        median: 1.9829146330425274
+        p95: 3.261378326611071
+        max: 3.4728922357920404
+      board_center_distance_m:
+        count: 4
+        min: 0.2681775996264848
+        median: 0.3667977714420344
+        p95: 0.46323023090896437
+        max: 0.46883532173806175
+    transform:
+      xyz_m:
+      - -0.389014195
+      - -0.269490469
+      - -0.18242118
+      rpy_deg:
+      - -92.38652707
+      - 0.07770373
+      - -88.0735933
+      matrix_row_major:
+      - - 0.03361577443
+        - -0.041662727524
+        - 0.998566070345
+        - -0.389014194645
+      - - -0.999433910006
+        - -4.554262e-05
+        - 0.03364308927
+        - -0.269490469367
+      - - -0.001356185546
+        - -0.999131730585
+        - -0.041640673622
+        - -0.18242118035
+      - - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+    difference_from_full:
+      translation_m: 0.08917614420160884
+      angle_deg: 1.2022752510814103
+  - fold: 4
+    train_count: 15
+    test:
+      count: 3
+      capture_count: 3
+      plane_distance_m:
+        count: 3
+        min: 0.05874976866215274
+        median: 0.09760634576400251
+        p95: 0.1782310827457802
+        max: 0.18718938685486664
+      normal_angle_deg:
+        count: 3
+        min: 3.892966866790518
+        median: 4.881686957280876
+        p95: 4.979104578288526
+        max: 4.989928758400487
+      board_center_distance_m:
+        count: 3
+        min: 0.17513201155223582
+        median: 0.23837589627308767
+        p95: 0.4213682290022611
+        max: 0.44170071041661374
+    transform:
+      xyz_m:
+      - -0.381278587
+      - -0.320513829
+      - -0.175294001
+      rpy_deg:
+      - -92.4814919
+      - 0.07319769
+      - -86.01351746
+      matrix_row_major:
+      - - 0.069521065521
+        - -0.043280640882
+        - 0.996641162893
+        - -0.381278587411
+      - - -0.997579665661
+        - -0.001736778559
+        - 0.069511108901
+        - -0.320513828648
+      - - -0.001277540339
+        - -0.999061444419
+        - -0.043296629957
+        - -0.175294000688
+      - - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+    difference_from_full:
+      translation_m: 0.07096739299788261
+      angle_deg: 0.8602381219871911
+  - fold: 5
+    train_count: 15
+    test:
+      count: 3
+      capture_count: 3
+      plane_distance_m:
+        count: 3
+        min: 0.052324201458058654
+        median: 0.11500066518037018
+        p95: 0.2220058941388985
+        max: 0.23389536402317945
+      normal_angle_deg:
+        count: 3
+        min: 1.9065971538605286
+        median: 2.117720780168493
+        p95: 2.435665187275742
+        max: 2.470992343620992
+      board_center_distance_m:
+        count: 3
+        min: 0.21904411527292622
+        median: 0.4454595989266189
+        p95: 0.47213411186699306
+        max: 0.47509794663814575
+    transform:
+      xyz_m:
+      - -0.401346165
+      - -0.259185071
+      - -0.172722993
+      rpy_deg:
+      - -92.44997653
+      - -0.07675911
+      - -88.21347954
+      matrix_row_major:
+      - - 0.031175584044
+        - -0.042684621318
+        - 0.998602075935
+        - -0.401346165029
+      - - -0.999513025511
+        - -0.002670491413
+        - 0.031089874699
+        - -0.259185070917
+      - - 0.001339698741
+        - -0.999085027202
+        - -0.042747089126
+        - -0.172722992774
+      - - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+    difference_from_full:
+      translation_m: 0.08737124556723996
+      angle_deg: 1.3481018822045254
+  bootstrap_100:
+  - iteration: 1
+    translation_from_full_m: 0.20062215898740776
+    angle_from_full_deg: 2.633525879154031
+  - iteration: 2
+    translation_from_full_m: 0.2287269193519845
+    angle_from_full_deg: 2.0267469968630922
+  - iteration: 3
+    translation_from_full_m: 0.38451397679734484
+    angle_from_full_deg: 1.2657343587940462
+  - iteration: 4
+    translation_from_full_m: 0.6453270944681574
+    angle_from_full_deg: 2.5616919880941835
+  - iteration: 5
+    translation_from_full_m: 0.23321901740217643
+    angle_from_full_deg: 2.615981992212524
+  - iteration: 6
+    translation_from_full_m: 0.628001697331795
+    angle_from_full_deg: 3.1109461013986195
+  - iteration: 7
+    translation_from_full_m: 0.14322261311381618
+    angle_from_full_deg: 3.551476748167328
+  - iteration: 8
+    translation_from_full_m: 0.35867689669989733
+    angle_from_full_deg: 2.0630612832901707
+  - iteration: 9
+    translation_from_full_m: 0.14372430726824983
+    angle_from_full_deg: 3.596811951073732
+  - iteration: 10
+    translation_from_full_m: 0.26539806429590107
+    angle_from_full_deg: 2.852180361882127
+  - iteration: 11
+    translation_from_full_m: 0.26226518334447024
+    angle_from_full_deg: 4.477412785643529
+  - iteration: 12
+    translation_from_full_m: 0.40410586981615626
+    angle_from_full_deg: 2.674271126161658
+  - iteration: 13
+    translation_from_full_m: 0.13485719837012147
+    angle_from_full_deg: 1.8382713010219147
+  - iteration: 14
+    translation_from_full_m: 0.1483974588919729
+    angle_from_full_deg: 3.19440678570885
+  - iteration: 15
+    translation_from_full_m: 0.32865701015347637
+    angle_from_full_deg: 1.4370626089911989
+  - iteration: 16
+    translation_from_full_m: 0.18713776431674436
+    angle_from_full_deg: 2.974767613305381
+  - iteration: 17
+    translation_from_full_m: 0.3972176862937984
+    angle_from_full_deg: 0.6349749023968517
+  - iteration: 18
+    translation_from_full_m: 0.3024446742848779
+    angle_from_full_deg: 5.305053124662354
+  - iteration: 19
+    translation_from_full_m: 0.17200101222193692
+    angle_from_full_deg: 1.8697745102798253
+  - iteration: 20
+    translation_from_full_m: 0.2600601758994536
+    angle_from_full_deg: 4.371495020232525
+  - iteration: 21
+    translation_from_full_m: 0.23340809766528137
+    angle_from_full_deg: 2.658301570703993
+  - iteration: 22
+    translation_from_full_m: 0.22017508182932166
+    angle_from_full_deg: 3.6031404384243686
+  - iteration: 23
+    translation_from_full_m: 0.11556114404601975
+    angle_from_full_deg: 1.8939675773374818
+  - iteration: 24
+    translation_from_full_m: 0.4048034894814563
+    angle_from_full_deg: 2.431319226990946
+  - iteration: 25
+    translation_from_full_m: 0.27060358500920717
+    angle_from_full_deg: 3.9098012389936754
+  - iteration: 26
+    translation_from_full_m: 0.1529568449559104
+    angle_from_full_deg: 2.045071641760314
+  - iteration: 27
+    translation_from_full_m: 0.2217410743805479
+    angle_from_full_deg: 1.3642740858728175
+  - iteration: 28
+    translation_from_full_m: 0.1883011879486558
+    angle_from_full_deg: 2.097085960258643
+  - iteration: 29
+    translation_from_full_m: 0.19868028728474796
+    angle_from_full_deg: 2.257829909753121
+  - iteration: 30
+    translation_from_full_m: 0.1938670323165648
+    angle_from_full_deg: 4.147603403694161
+  - iteration: 31
+    translation_from_full_m: 0.4122195551817845
+    angle_from_full_deg: 0.6795621790704167
+  - iteration: 32
+    translation_from_full_m: 0.1993758773268409
+    angle_from_full_deg: 2.1809535774091104
+  - iteration: 33
+    translation_from_full_m: 0.27843307801235756
+    angle_from_full_deg: 1.1338520244520476
+  - iteration: 34
+    translation_from_full_m: 0.33776786835380884
+    angle_from_full_deg: 1.4503630491500314
+  - iteration: 35
+    translation_from_full_m: 0.36649183825587495
+    angle_from_full_deg: 2.0755815860376536
+  - iteration: 36
+    translation_from_full_m: 0.1391924834440913
+    angle_from_full_deg: 2.3151893790240545
+  - iteration: 37
+    translation_from_full_m: 0.16687832254124932
+    angle_from_full_deg: 1.8431461737056016
+  - iteration: 38
+    translation_from_full_m: 0.2406246132386615
+    angle_from_full_deg: 2.2365802975433096
+  - iteration: 39
+    translation_from_full_m: 0.270594400706656
+    angle_from_full_deg: 2.1419007923257234
+  - iteration: 40
+    translation_from_full_m: 0.18691420824949154
+    angle_from_full_deg: 4.775134820841677
+  - iteration: 41
+    translation_from_full_m: 0.1620714651522039
+    angle_from_full_deg: 2.3677061143940894
+  - iteration: 42
+    translation_from_full_m: 0.29830577186949475
+    angle_from_full_deg: 4.846868080240527
+  - iteration: 43
+    translation_from_full_m: 0.3734376567483156
+    angle_from_full_deg: 4.0734506262510655
+  - iteration: 44
+    translation_from_full_m: 0.3042571696134634
+    angle_from_full_deg: 2.9077331446136627
+  - iteration: 45
+    translation_from_full_m: 0.17850977865065162
+    angle_from_full_deg: 1.8940106105129129
+  - iteration: 46
+    translation_from_full_m: 0.28185991240770775
+    angle_from_full_deg: 3.162473322550889
+  - iteration: 47
+    translation_from_full_m: 0.5134343017976954
+    angle_from_full_deg: 3.549194215159706
+  - iteration: 48
+    translation_from_full_m: 0.17095665647513594
+    angle_from_full_deg: 1.9204890493411155
+  - iteration: 49
+    translation_from_full_m: 0.19502874359040662
+    angle_from_full_deg: 2.6839696304905476
+  - iteration: 50
+    translation_from_full_m: 0.15824371301675344
+    angle_from_full_deg: 3.6237087312217637
+  - iteration: 51
+    translation_from_full_m: 0.1498237444792416
+    angle_from_full_deg: 1.122672361467088
+  - iteration: 52
+    translation_from_full_m: 0.22290689175819065
+    angle_from_full_deg: 5.381476339017998
+  - iteration: 53
+    translation_from_full_m: 0.12047774219845851
+    angle_from_full_deg: 2.406028491208981
+  - iteration: 54
+    translation_from_full_m: 0.17711301648935981
+    angle_from_full_deg: 2.310489973383304
+  - iteration: 55
+    translation_from_full_m: 0.15570748314392877
+    angle_from_full_deg: 1.9099175025325348
+  - iteration: 56
+    translation_from_full_m: 0.21345230444450233
+    angle_from_full_deg: 1.4353749801931315
+  - iteration: 57
+    translation_from_full_m: 0.23032023523760026
+    angle_from_full_deg: 1.1774736444857021
+  - iteration: 58
+    translation_from_full_m: 0.19064188456166029
+    angle_from_full_deg: 2.9746957286669096
+  - iteration: 59
+    translation_from_full_m: 0.19249918535504776
+    angle_from_full_deg: 1.6067855444176056
+  - iteration: 60
+    translation_from_full_m: 0.1792864133608867
+    angle_from_full_deg: 1.7401838784284716
+  - iteration: 61
+    translation_from_full_m: 0.25161146091035064
+    angle_from_full_deg: 0.43634397447241424
+  - iteration: 62
+    translation_from_full_m: 0.21183454682735714
+    angle_from_full_deg: 2.956983103690511
+  - iteration: 63
+    translation_from_full_m: 0.18520037519054133
+    angle_from_full_deg: 2.8079160628937703
+  - iteration: 64
+    translation_from_full_m: 0.11751677759324573
+    angle_from_full_deg: 1.7859178771607331
+  - iteration: 65
+    translation_from_full_m: 0.3099896114418729
+    angle_from_full_deg: 2.529254862303458
+  - iteration: 66
+    translation_from_full_m: 0.19308790503321074
+    angle_from_full_deg: 2.463159354615868
+  - iteration: 67
+    translation_from_full_m: 0.23904453442537774
+    angle_from_full_deg: 3.5531253908369194
+  - iteration: 68
+    translation_from_full_m: 0.2722289844891599
+    angle_from_full_deg: 1.279954062346076
+  - iteration: 69
+    translation_from_full_m: 0.2624449306770232
+    angle_from_full_deg: 1.6773856499160302
+  - iteration: 70
+    translation_from_full_m: 0.10862089776941052
+    angle_from_full_deg: 1.532167339578581
+  - iteration: 71
+    translation_from_full_m: 0.31814470117828464
+    angle_from_full_deg: 2.8982641301896948
+  - iteration: 72
+    translation_from_full_m: 0.1114148262605792
+    angle_from_full_deg: 1.7735311435956005
+  - iteration: 73
+    translation_from_full_m: 0.3731047258078492
+    angle_from_full_deg: 1.7647480737524166
+  - iteration: 74
+    translation_from_full_m: 0.1830087135170852
+    angle_from_full_deg: 5.064176654226762
+  - iteration: 75
+    translation_from_full_m: 0.08934748599071961
+    angle_from_full_deg: 2.4593318615175757
+  - iteration: 76
+    translation_from_full_m: 0.08704717226631575
+    angle_from_full_deg: 2.688700089008827
+  - iteration: 77
+    translation_from_full_m: 0.09787256943477504
+    angle_from_full_deg: 2.466327106040954
+  - iteration: 78
+    translation_from_full_m: 0.21420967487232148
+    angle_from_full_deg: 5.175512549668337
+  - iteration: 79
+    translation_from_full_m: 0.18110272609126232
+    angle_from_full_deg: 4.028725786272512
+  - iteration: 80
+    translation_from_full_m: 0.303079122406392
+    angle_from_full_deg: 2.8867446883562873
+  - iteration: 81
+    translation_from_full_m: 0.21630101300211713
+    angle_from_full_deg: 1.4176316695754034
+  - iteration: 82
+    translation_from_full_m: 0.3754057860056681
+    angle_from_full_deg: 0.7999913045097399
+  - iteration: 83
+    translation_from_full_m: 0.11528136517188746
+    angle_from_full_deg: 2.7008446822803487
+  - iteration: 84
+    translation_from_full_m: 0.35457703450496386
+    angle_from_full_deg: 4.31365152755684
+  - iteration: 85
+    translation_from_full_m: 0.17281659140330333
+    angle_from_full_deg: 1.4272683461430555
+  - iteration: 86
+    translation_from_full_m: 0.2634459225853794
+    angle_from_full_deg: 3.512743564596105
+  - iteration: 87
+    translation_from_full_m: 0.14388924634067554
+    angle_from_full_deg: 3.8973240315265127
+  - iteration: 88
+    translation_from_full_m: 0.14514671547434452
+    angle_from_full_deg: 1.963545475634254
+  - iteration: 89
+    translation_from_full_m: 0.16854637901208952
+    angle_from_full_deg: 1.9015535478081769
+  - iteration: 90
+    translation_from_full_m: 0.11392134864527761
+    angle_from_full_deg: 2.1021140448527835
+  - iteration: 91
+    translation_from_full_m: 0.17676553665196185
+    angle_from_full_deg: 4.084771408725396
+  - iteration: 92
+    translation_from_full_m: 0.08877119058106649
+    angle_from_full_deg: 0.8944461054524162
+  - iteration: 93
+    translation_from_full_m: 0.41362261786139654
+    angle_from_full_deg: 1.195895246645786
+  - iteration: 94
+    translation_from_full_m: 0.13537805073551556
+    angle_from_full_deg: 0.5746295473782177
+  - iteration: 95
+    translation_from_full_m: 0.42847044710034177
+    angle_from_full_deg: 1.8637369450361556
+  - iteration: 96
+    translation_from_full_m: 0.16232318667374487
+    angle_from_full_deg: 1.3136852894583229
+  - iteration: 97
+    translation_from_full_m: 0.20467523857935402
+    angle_from_full_deg: 1.1595962779280655
+  - iteration: 98
+    translation_from_full_m: 0.25927485511863746
+    angle_from_full_deg: 4.02494751171375
+  - iteration: 99
+    translation_from_full_m: 0.38588030048696115
+    angle_from_full_deg: 1.787965899658844
+  - iteration: 100
+    translation_from_full_m: 0.14148207415594527
+    angle_from_full_deg: 3.755046620801214
+  bootstrap_translation_m:
+    count: 100
+    min: 0.08704717226631575
+    median: 0.20825489270335557
+    p95: 0.4122897083157651
+    max: 0.6453270944681574
+  bootstrap_angle_deg:
+    count: 100
+    min: 0.43634397447241424
+    median: 2.341447746709072
+    p95: 4.778721483811619
+    max: 5.381476339017998
+  normal_design_singular_values:
+  - 3.9082550871126753
+  - 1.6505353633704156
+  - 0.03570977907496204
+  normal_design_condition: 109.44495284914696
+correction_from_mechanical_seed:
+  translation_m: 0.5126221884370967
+  angle_deg: 3.974093396547608
+transform_top_from_camera_optical:
+  xyz_m:
+  - -0.393559439
+  - -0.314626346
+  - -0.105645676
+  rpy_deg:
+  - -92.45030539
+  - 0.06764672
+  - -86.87313385
+  matrix_row_major:
+  - - 0.054546985601
+    - -0.042753554157
+    - 0.997595489148
+    - -0.393559438651
+  - - -0.99851050691
+    - -0.001154219254
+    - 0.054547551447
+    - -0.314626346467
+  - - -0.001180657774
+    - -0.999084982064
+    - -0.042752832214
+    - -0.105645676119
+  - - 0.0
+    - 0.0
+    - 0.0
+    - 1.0
+transform_top_from_camera_link:
+  xyz_m:
+  - -0.393559439
+  - -0.314626346
+  - -0.105645676
+  rpy_deg:
+  - 0.06770863
+  - 2.45030368
+  - 3.12976089
+  matrix_row_major:
+  - - 0.997595489148
+    - -0.054546985601
+    - 0.042753554157
+    - -0.393559438651
+  - - 0.054547551447
+    - 0.99851050691
+    - 0.001154219254
+    - -0.314626346467
+  - - -0.042752832214
+    - 0.001180657774
+    - 0.999084982064
+    - -0.105645676119
+  - - 0.0
+    - 0.0
+    - 0.0
+    - 1.0
+quality_gates:
+  all_45_images_fresh_unique: true
+  camera_lidar_time_gap_p95_le_250ms: false
+  fresh_pnp_count_ge_28: true
+  pnp_reprojection_p95_le_2p5px: false
+  accepted_plane_count_ge_24: false
+  accepted_capture_count_ge_16: true
+  heldout_plane_p95_le_50mm: false
+  heldout_normal_p95_le_2deg: false
+  bootstrap_translation_p95_le_10mm: false
+  bootstrap_angle_p95_le_0p25deg: false
+  mechanical_seed_correction_le_0p20m_5deg: false
+failed_quality_gates:
+- camera_lidar_time_gap_p95_le_250ms
+- pnp_reprojection_p95_le_2p5px
+- accepted_plane_count_ge_24
+- heldout_plane_p95_le_50mm
+- heldout_normal_p95_le_2deg
+- bootstrap_translation_p95_le_10mm
+- bootstrap_angle_p95_le_0p25deg
+- mechanical_seed_correction_le_0p20m_5deg

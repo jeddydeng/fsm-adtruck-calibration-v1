@@ -1,0 +1,31 @@
+{
+  "schema_version": 2,
+  "can": {
+    "interfaces": ["can10", "can11"],
+    "stale_ms": 500
+  },
+  "serial": {
+    "enabled": true,
+    "device": "/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A9IM4UBG-if00-port0",
+    "baud": 9600,
+    "interval_s": 0.5
+  },
+  "audio": {
+    "enabled": true,
+    "source": "original",
+    "muted": false,
+    "output": "hw:CARD=Audio,DEV=0",
+    "voice": "voice_announcer",
+    "volume_percent": 80,
+    "max_volume_percent": 80,
+    "rate_percent": 0,
+    "playback_rate": 1.0,
+    "events": {
+      "reverse": {"enabled": true, "text": "倒车请注意", "interval_s": 2.0},
+      "left": {"enabled": true, "text": "车辆左转弯", "interval_s": 2.0},
+      "right": {"enabled": true, "text": "车辆右转弯", "interval_s": 2.0},
+      "automatic": {"enabled": true, "text": "自动驾驶中", "interval_s": 10.0},
+      "remote": {"enabled": true, "text": "遥控驾驶中", "interval_s": 20.0}
+    }
+  }
+}

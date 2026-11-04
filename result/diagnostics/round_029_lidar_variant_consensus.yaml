@@ -1,0 +1,121 @@
+schema_version: 1
+reference_frame: velodyne_top_base_link
+method: dominant_solver_variant_cluster
+policy:
+  minimum_dominant_fraction: 0.6
+  cluster_position_radius_m: 0.1
+  cluster_angle_radius_deg: 1.0
+  warning: Variant sensitivity is repeatability evidence, not surveyed absolute accuracy.
+input_variants:
+- round_004_multilidar_dynamic_graph_robust_refit_v3.yaml
+- round_006_multilidar_phase_balanced.yaml
+- round_024_multilidar_with_traffic.yaml
+- round_028_multilidar_fresh_pixels.yaml
+transforms:
+  velodyne_front_left_base_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.276903998
+    - 0.495025839
+    - -1.27613
+    rpy_deg:
+    - -93.75563268
+    - -88.52940021
+    - -41.35102094
+    source: dominant_solver_variant_consensus
+  velodyne_front_right_base_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.269213348
+    - -0.488674493
+    - -1.280495
+    rpy_deg:
+    - 142.27595891
+    - -88.80632253
+    - -7.7917234
+    source: dominant_solver_variant_consensus
+  velodyne_rear_base_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - -2.103010584
+    - 0.027228635
+    - -1.334865
+    rpy_deg:
+    - 1.30149561
+    - -89.71082283
+    - -1.47117058
+    source: dominant_solver_variant_consensus
+quality:
+  velodyne_front_left_base_link:
+    dominant_count: 4
+    dominant_fraction: 1.0
+    member_variants:
+    - round_004_multilidar_dynamic_graph_robust_refit_v3.yaml
+    - round_006_multilidar_phase_balanced.yaml
+    - round_024_multilidar_with_traffic.yaml
+    - round_028_multilidar_fresh_pixels.yaml
+    excluded_variants: []
+    position_p95_m: 0.007005304513357282
+    angle_p95_deg: 0.33285807427070613
+    achieved_tier: fallback_1cm_1deg
+    member_deltas:
+    - variant: round_004_multilidar_dynamic_graph_robust_refit_v3.yaml
+      position_m: 0.007397737325325182
+      angle_deg: 0.36086960618154723
+    - variant: round_006_multilidar_phase_balanced.yaml
+      position_m: 0.003099067246446194
+      angle_deg: 0.17412606010927373
+    - variant: round_024_multilidar_with_traffic.yaml
+      position_m: 0.002216196833187719
+      angle_deg: 0.16026427887720346
+    - variant: round_028_multilidar_fresh_pixels.yaml
+      position_m: 0.004781518578872522
+      angle_deg: 0.11974752337637301
+  velodyne_front_right_base_link:
+    dominant_count: 4
+    dominant_fraction: 1.0
+    member_variants:
+    - round_004_multilidar_dynamic_graph_robust_refit_v3.yaml
+    - round_006_multilidar_phase_balanced.yaml
+    - round_024_multilidar_with_traffic.yaml
+    - round_028_multilidar_fresh_pixels.yaml
+    excluded_variants: []
+    position_p95_m: 0.007561879328398073
+    angle_p95_deg: 0.20729778628110143
+    achieved_tier: fallback_1cm_1deg
+    member_deltas:
+    - variant: round_004_multilidar_dynamic_graph_robust_refit_v3.yaml
+      position_m: 0.0022492151150746036
+      angle_deg: 0.22244398208329116
+    - variant: round_006_multilidar_phase_balanced.yaml
+      position_m: 0.00076912155931378
+      angle_deg: 0.12146934340202645
+    - variant: round_024_multilidar_with_traffic.yaml
+      position_m: 0.0005431841277322317
+      angle_deg: 0.11789158306224246
+    - variant: round_028_multilidar_fresh_pixels.yaml
+      position_m: 0.008499408307219864
+      angle_deg: 0.1135710856142369
+  velodyne_rear_base_link:
+    dominant_count: 3
+    dominant_fraction: 0.75
+    member_variants:
+    - round_004_multilidar_dynamic_graph_robust_refit_v3.yaml
+    - round_006_multilidar_phase_balanced.yaml
+    - round_024_multilidar_with_traffic.yaml
+    excluded_variants:
+    - round_028_multilidar_fresh_pixels.yaml
+    position_p95_m: 0.0036538066491248883
+    angle_p95_deg: 0.13819289564557594
+    achieved_tier: fallback_1cm_1deg
+    member_deltas:
+    - variant: round_004_multilidar_dynamic_graph_robust_refit_v3.yaml
+      position_m: 0.0005615950000001924
+      angle_deg: 0.07737223690994952
+    - variant: round_006_multilidar_phase_balanced.yaml
+      position_m: 0.002052423000000001
+      angle_deg: 0.09731439787278197
+    - variant: round_024_multilidar_with_traffic.yaml
+      position_m: 0.0038317381656943206
+      angle_deg: 0.14273495095366415
+rejected: {}

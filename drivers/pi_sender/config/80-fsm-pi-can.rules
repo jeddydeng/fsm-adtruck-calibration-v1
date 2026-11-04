@@ -1,0 +1,3 @@
+# Deterministic names for the two MCP251XFD controllers in HAT Mode B.
+ACTION=="add", SUBSYSTEM=="net", DRIVERS=="mcp251xfd", DEVPATH=="/devices/platform/axi/*/spi_master/spi0/spi0.0/net/can?", NAME="can10"
+ACTION=="add", SUBSYSTEM=="net", DRIVERS=="mcp251xfd", DEVPATH=="/devices/platform/axi/*/spi_master/spi0/spi0.1/net/can?", NAME="can11"

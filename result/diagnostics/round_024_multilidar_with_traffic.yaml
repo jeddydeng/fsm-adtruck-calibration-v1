@@ -1,0 +1,271 @@
+schema_version: 1
+reference_frame: velodyne_top_base_link
+method: four_lidar_temporal_dynamic_board_pose_graph
+raw_local_board_count: 434
+graph_edge_count: 256
+pair_edge_counts:
+  lidar_top<->lidar_front_left: 90
+  lidar_top<->lidar_front_right: 83
+  lidar_front_left<->lidar_front_right: 77
+  lidar_top<->lidar_rear: 6
+transforms:
+  velodyne_front_left_base_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.276887987
+    - 0.497241978
+    - -1.27613
+    rpy_deg:
+    - -89.4891492
+    - -88.41946045
+    - -45.58918869
+    source: dynamic_board_graph_bootstrap_floor_z
+  velodyne_front_right_base_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.269502843
+    - -0.489134103
+    - -1.280495
+    rpy_deg:
+    - 136.66242993
+    - -88.81995047
+    - -2.16510392
+    source: dynamic_board_graph_bootstrap_floor_z
+  velodyne_rear_base_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - -2.106077606
+    - 0.029525501
+    - -1.334865
+    rpy_deg:
+    - 12.96593681
+    - -89.58804511
+    - -13.11594369
+    source: dynamic_board_graph_bootstrap_floor_z
+quality:
+  velodyne_front_left_base_link:
+    bootstrap:
+      selection_tier: fallback_1cm_1deg
+      achieved_tier: fallback_1cm_1deg
+      dominant_count: 5
+      dominant_fraction: 1.0
+      position_p95_m: 0.005413069124847434
+      angle_p95_deg: 0.1491552185031321
+    correction_from_structure_candidate_m: 0.03316969747360413
+    correction_from_structure_candidate_deg: 0.7931627538472249
+  velodyne_front_right_base_link:
+    bootstrap:
+      selection_tier: fallback_1cm_1deg
+      achieved_tier: fallback_1cm_1deg
+      dominant_count: 5
+      dominant_fraction: 1.0
+      position_p95_m: 0.0023115805188604
+      angle_p95_deg: 0.02487181287943428
+    correction_from_structure_candidate_m: 0.030770895616007182
+    correction_from_structure_candidate_deg: 1.0060007049887378
+  velodyne_rear_base_link:
+    bootstrap:
+      selection_tier: fallback_1cm_1deg
+      achieved_tier: fallback_1cm_1deg
+      dominant_count: 5
+      dominant_fraction: 1.0
+      position_p95_m: 0.003847632325783902
+      angle_p95_deg: 0.13072125964825
+    correction_from_structure_candidate_m: 0.01294798891271136
+    correction_from_structure_candidate_deg: 0.09000241422702253
+graph_quality:
+  raw_edges: 256
+  accepted_edges: 172
+  discarded_edges: 84
+  rejection_history:
+  - iteration: 1
+    input_edges: 256
+    output_edges: 209
+    plane_distance_cut_m: 0.03605163362867225
+    angle_cut_deg: 1.9755530981445735
+  - iteration: 2
+    input_edges: 209
+    output_edges: 189
+    plane_distance_cut_m: 0.027845971761712107
+    angle_cut_deg: 1.7540393280378626
+  - iteration: 3
+    input_edges: 189
+    output_edges: 180
+    plane_distance_cut_m: 0.02593953597555565
+    angle_cut_deg: 1.5861474508282223
+  - iteration: 4
+    input_edges: 180
+    output_edges: 178
+    plane_distance_cut_m: 0.024477563220921983
+    angle_cut_deg: 1.578130427152098
+  - iteration: 5
+    input_edges: 178
+    output_edges: 172
+    plane_distance_cut_m: 0.023254640330559795
+    angle_cut_deg: 1.558900955582143
+  plane_distance_median_m: 0.0075099160877658555
+  plane_distance_p95_m: 0.020980788510311574
+  angle_median_deg: 0.6944891269853342
+  angle_p95_deg: 1.404751683079544
+fold_quality:
+- raw_edges: 204
+  accepted_edges: 140
+  discarded_edges: 64
+  rejection_history:
+  - iteration: 1
+    input_edges: 204
+    output_edges: 169
+    plane_distance_cut_m: 0.03652979329640704
+    angle_cut_deg: 2.002813845267835
+  - iteration: 2
+    input_edges: 169
+    output_edges: 157
+    plane_distance_cut_m: 0.02924905788777732
+    angle_cut_deg: 1.7047709350050475
+  - iteration: 3
+    input_edges: 157
+    output_edges: 148
+    plane_distance_cut_m: 0.026278574623050943
+    angle_cut_deg: 1.5531916501983947
+  - iteration: 4
+    input_edges: 148
+    output_edges: 142
+    plane_distance_cut_m: 0.02428235414685176
+    angle_cut_deg: 1.4792784536366343
+  - iteration: 5
+    input_edges: 142
+    output_edges: 140
+    plane_distance_cut_m: 0.023547905777340894
+    angle_cut_deg: 1.4605928389179135
+  plane_distance_median_m: 0.007233432044650767
+  plane_distance_p95_m: 0.021679950081080344
+  angle_median_deg: 0.6792409255101554
+  angle_p95_deg: 1.3772935054814877
+- raw_edges: 205
+  accepted_edges: 142
+  discarded_edges: 63
+  rejection_history:
+  - iteration: 1
+    input_edges: 205
+    output_edges: 169
+    plane_distance_cut_m: 0.0383357242936917
+    angle_cut_deg: 1.9524008332545506
+  - iteration: 2
+    input_edges: 169
+    output_edges: 156
+    plane_distance_cut_m: 0.029497152436435137
+    angle_cut_deg: 1.707720861058807
+  - iteration: 3
+    input_edges: 156
+    output_edges: 148
+    plane_distance_cut_m: 0.0264309183246616
+    angle_cut_deg: 1.6158581790462683
+  - iteration: 4
+    input_edges: 148
+    output_edges: 144
+    plane_distance_cut_m: 0.025948095977995633
+    angle_cut_deg: 1.5586112281703866
+  - iteration: 5
+    input_edges: 144
+    output_edges: 142
+    plane_distance_cut_m: 0.02516549405300217
+    angle_cut_deg: 1.5794110494871594
+  plane_distance_median_m: 0.008272402152228908
+  plane_distance_p95_m: 0.022469843687164235
+  angle_median_deg: 0.7290329321748934
+  angle_p95_deg: 1.4016670249888041
+- raw_edges: 205
+  accepted_edges: 132
+  discarded_edges: 73
+  rejection_history:
+  - iteration: 1
+    input_edges: 205
+    output_edges: 166
+    plane_distance_cut_m: 0.03536573939229104
+    angle_cut_deg: 1.9637593988782285
+  - iteration: 2
+    input_edges: 166
+    output_edges: 150
+    plane_distance_cut_m: 0.026192006765692888
+    angle_cut_deg: 1.7738380815449517
+  - iteration: 3
+    input_edges: 150
+    output_edges: 143
+    plane_distance_cut_m: 0.023600335376223303
+    angle_cut_deg: 1.6664216205166602
+  - iteration: 4
+    input_edges: 143
+    output_edges: 136
+    plane_distance_cut_m: 0.02200871707260177
+    angle_cut_deg: 1.5990902956234017
+  - iteration: 5
+    input_edges: 136
+    output_edges: 132
+    plane_distance_cut_m: 0.020358450075273815
+    angle_cut_deg: 1.517941379617955
+  plane_distance_median_m: 0.006569103646004937
+  plane_distance_p95_m: 0.018370666949590705
+  angle_median_deg: 0.6508015320365135
+  angle_p95_deg: 1.3717094018874985
+- raw_edges: 205
+  accepted_edges: 148
+  discarded_edges: 57
+  rejection_history:
+  - iteration: 1
+    input_edges: 205
+    output_edges: 165
+    plane_distance_cut_m: 0.03558875486388535
+    angle_cut_deg: 1.9535310232049992
+  - iteration: 2
+    input_edges: 165
+    output_edges: 149
+    plane_distance_cut_m: 0.027181140882288624
+    angle_cut_deg: 1.6495159500070633
+  - iteration: 3
+    input_edges: 149
+    output_edges: 148
+    plane_distance_cut_m: 0.02731343274619924
+    angle_cut_deg: 1.596555309995422
+  - iteration: 4
+    input_edges: 148
+    output_edges: 148
+    plane_distance_cut_m: 0.026304126718686982
+    angle_cut_deg: 1.5938779253014894
+  plane_distance_median_m: 0.009327506171515232
+  plane_distance_p95_m: 0.022170060763483736
+  angle_median_deg: 0.7139785444411146
+  angle_p95_deg: 1.438705421351165
+- raw_edges: 205
+  accepted_edges: 118
+  discarded_edges: 87
+  rejection_history:
+  - iteration: 1
+    input_edges: 205
+    output_edges: 170
+    plane_distance_cut_m: 0.03988577386345904
+    angle_cut_deg: 2.1658364099858884
+  - iteration: 2
+    input_edges: 170
+    output_edges: 149
+    plane_distance_cut_m: 0.028066714699214845
+    angle_cut_deg: 1.8107331165147889
+  - iteration: 3
+    input_edges: 149
+    output_edges: 132
+    plane_distance_cut_m: 0.02428739646625644
+    angle_cut_deg: 1.6472110486459965
+  - iteration: 4
+    input_edges: 132
+    output_edges: 124
+    plane_distance_cut_m: 0.0207933475435218
+    angle_cut_deg: 1.587143430485316
+  - iteration: 5
+    input_edges: 124
+    output_edges: 118
+    plane_distance_cut_m: 0.019356204400538646
+    angle_cut_deg: 1.5251591417075785
+  plane_distance_median_m: 0.005942662909048657
+  plane_distance_p95_m: 0.01727445978087982
+  angle_median_deg: 0.6884312861942508
+  angle_p95_deg: 1.4214667415434807
+accepted_edge_count_full_solve: 172

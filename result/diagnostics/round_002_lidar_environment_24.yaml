@@ -1,0 +1,730 @@
+schema_version: 1
+reference_frame: velodyne_top_base_link
+capture_ids:
+- '20260902_200659_745'
+- '20260902_201036_726'
+- '20260902_202908_523'
+- '20260902_203217_391'
+- '20260902_203521_906'
+- '20260902_203856_103'
+- '20260902_204224_001'
+- '20260902_204604_970'
+- '20260902_204836_687'
+- '20260902_205553_287'
+- '20260902_205858_764'
+- '20260902_210150_774'
+- '20260902_210451_906'
+- '20260902_210744_972'
+- '20260902_211417_748'
+- '20260902_211736_346'
+- '20260902_212032_423'
+- '20260902_212309_290'
+- '20260902_212556_733'
+- '20260902_213020_985'
+- '20260902_213218_480'
+- '20260902_213445_198'
+- '20260902_213635_353'
+- '20260902_213841_026'
+warning: Review held-out metrics and RViz overlay before applying.
+transforms:
+  velodyne_front_left_base_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.2513285
+    - 0.4795793
+    - -1.2798539
+    rpy_deg:
+    - -126.2589933
+    - -88.6922008
+    - -8.8875584
+    source: robust_stationary_garage_icp
+rejected_candidates:
+  velodyne_front_right_base_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.2443147
+    - -0.4756436
+    - -1.2921762
+    rpy_deg:
+    - 164.5873985
+    - -88.2657084
+    - -30.0792699
+    source: robust_stationary_garage_icp
+  velodyne_rear_base_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - -2.1033305
+    - 0.0249707
+    - -1.3294581
+    rpy_deg:
+    - 24.2119813
+    - -89.3748292
+    - -24.307264
+    source: robust_stationary_garage_icp
+quality:
+  velodyne_front_left_base_link:
+    accepted: true
+    acceptance_rule: median_gain>=0.01m and overlap_0_20_gain>=0.02 and p75_regression<=0.03m
+    before:
+      point_count: 5718
+      median_m: 0.29731
+      p75_m: 0.81999
+      p90_m: 1.24938
+      overlap_0_10: 0.1474
+      overlap_0_20: 0.3961
+    after:
+      point_count: 5714
+      median_m: 0.28338
+      p75_m: 0.84089
+      p90_m: 1.25476
+      overlap_0_10: 0.3311
+      overlap_0_20: 0.4363
+    correction_translation_m: 0.123773
+    correction_rotation_deg: 1.31598
+    iterations:
+    - threshold_m: 0.6
+      correspondence_count: 2666
+      median_m: 0.11934
+      p90_m: 0.21897
+      step_translation_m: 0.07654
+      step_rotation_deg: 0.62122
+    - threshold_m: 0.6
+      correspondence_count: 2682
+      median_m: 0.08982
+      p90_m: 0.20008
+      step_translation_m: 0.036449
+      step_rotation_deg: 0.3316
+    - threshold_m: 0.6
+      correspondence_count: 2691
+      median_m: 0.0814
+      p90_m: 0.19263
+      step_translation_m: 0.015425
+      step_rotation_deg: 0.193
+    - threshold_m: 0.6
+      correspondence_count: 2690
+      median_m: 0.07785
+      p90_m: 0.1881
+      step_translation_m: 0.006781
+      step_rotation_deg: 0.12638
+    - threshold_m: 0.6
+      correspondence_count: 2692
+      median_m: 0.07606
+      p90_m: 0.18621
+      step_translation_m: 0.004437
+      step_rotation_deg: 0.10216
+    - threshold_m: 0.4
+      correspondence_count: 2344
+      median_m: 0.06789
+      p90_m: 0.13419
+      step_translation_m: 0.009053
+      step_rotation_deg: 0.06735
+    - threshold_m: 0.4
+      correspondence_count: 2339
+      median_m: 0.06724
+      p90_m: 0.13063
+      step_translation_m: 0.007122
+      step_rotation_deg: 0.06812
+    - threshold_m: 0.4
+      correspondence_count: 2335
+      median_m: 0.06515
+      p90_m: 0.1292
+      step_translation_m: 0.007008
+      step_rotation_deg: 0.07217
+    - threshold_m: 0.4
+      correspondence_count: 2333
+      median_m: 0.06381
+      p90_m: 0.12886
+      step_translation_m: 0.006789
+      step_rotation_deg: 0.07032
+    - threshold_m: 0.4
+      correspondence_count: 2328
+      median_m: 0.06295
+      p90_m: 0.12718
+      step_translation_m: 0.005044
+      step_rotation_deg: 0.05649
+    - threshold_m: 0.4
+      correspondence_count: 2327
+      median_m: 0.0624
+      p90_m: 0.12589
+      step_translation_m: 0.00468
+      step_rotation_deg: 0.06508
+    - threshold_m: 0.28
+      correspondence_count: 2065
+      median_m: 0.05771
+      p90_m: 0.09989
+      step_translation_m: 0.006467
+      step_rotation_deg: 0.06371
+    - threshold_m: 0.28
+      correspondence_count: 2060
+      median_m: 0.0577
+      p90_m: 0.09859
+      step_translation_m: 0.004355
+      step_rotation_deg: 0.03981
+    - threshold_m: 0.28
+      correspondence_count: 2060
+      median_m: 0.05751
+      p90_m: 0.09841
+      step_translation_m: 0.003437
+      step_rotation_deg: 0.02647
+    - threshold_m: 0.28
+      correspondence_count: 2058
+      median_m: 0.0573
+      p90_m: 0.09803
+      step_translation_m: 0.003449
+      step_rotation_deg: 0.03086
+    - threshold_m: 0.28
+      correspondence_count: 2056
+      median_m: 0.05675
+      p90_m: 0.09714
+      step_translation_m: 0.003185
+      step_rotation_deg: 0.03396
+    - threshold_m: 0.28
+      correspondence_count: 2055
+      median_m: 0.05707
+      p90_m: 0.09585
+      step_translation_m: 0.002406
+      step_rotation_deg: 0.0256
+    - threshold_m: 0.28
+      correspondence_count: 2055
+      median_m: 0.05676
+      p90_m: 0.09579
+      step_translation_m: 0.001132
+      step_rotation_deg: 0.02006
+    - threshold_m: 0.2
+      correspondence_count: 1801
+      median_m: 0.05265
+      p90_m: 0.08146
+      step_translation_m: 0.002177
+      step_rotation_deg: 0.01922
+    - threshold_m: 0.2
+      correspondence_count: 1800
+      median_m: 0.0526
+      p90_m: 0.08119
+      step_translation_m: 0.00109
+      step_rotation_deg: 0.01498
+    - threshold_m: 0.2
+      correspondence_count: 1800
+      median_m: 0.05258
+      p90_m: 0.08079
+      step_translation_m: 0.001267
+      step_rotation_deg: 0.01759
+    - threshold_m: 0.2
+      correspondence_count: 1799
+      median_m: 0.05218
+      p90_m: 0.08079
+      step_translation_m: 0.000869
+      step_rotation_deg: 0.01056
+    - threshold_m: 0.2
+      correspondence_count: 1798
+      median_m: 0.05228
+      p90_m: 0.08059
+      step_translation_m: 0.000357
+      step_rotation_deg: 0.00732
+    - threshold_m: 0.2
+      correspondence_count: 1798
+      median_m: 0.05211
+      p90_m: 0.08048
+      step_translation_m: 0.000263
+      step_rotation_deg: 0.0088
+    - threshold_m: 0.2
+      correspondence_count: 1795
+      median_m: 0.05207
+      p90_m: 0.08013
+      step_translation_m: 0.000443
+      step_rotation_deg: 0.01016
+    - threshold_m: 0.2
+      correspondence_count: 1796
+      median_m: 0.05212
+      p90_m: 0.08001
+      step_translation_m: 0.000352
+      step_rotation_deg: 0.00799
+    - threshold_m: 0.14
+      correspondence_count: 1574
+      median_m: 0.04868
+      p90_m: 0.0709
+      step_translation_m: 0.000417
+      step_rotation_deg: 0.00761
+    - threshold_m: 0.14
+      correspondence_count: 1574
+      median_m: 0.04858
+      p90_m: 0.07099
+      step_translation_m: 0.000159
+      step_rotation_deg: 0.0121
+    - threshold_m: 0.14
+      correspondence_count: 1574
+      median_m: 0.04854
+      p90_m: 0.07103
+      step_translation_m: 0.000266
+      step_rotation_deg: 0.01151
+    - threshold_m: 0.14
+      correspondence_count: 1574
+      median_m: 0.0485
+      p90_m: 0.071
+      step_translation_m: 9.2e-05
+      step_rotation_deg: 0.011
+    - threshold_m: 0.14
+      correspondence_count: 1574
+      median_m: 0.04853
+      p90_m: 0.0709
+      step_translation_m: 0.000828
+      step_rotation_deg: 0.01483
+    - threshold_m: 0.14
+      correspondence_count: 1575
+      median_m: 0.04855
+      p90_m: 0.07102
+      step_translation_m: 0.000909
+      step_rotation_deg: 0.01461
+    - threshold_m: 0.14
+      correspondence_count: 1575
+      median_m: 0.0488
+      p90_m: 0.07093
+      step_translation_m: 0.000298
+      step_rotation_deg: 0.00798
+    - threshold_m: 0.14
+      correspondence_count: 1576
+      median_m: 0.04863
+      p90_m: 0.07079
+      step_translation_m: 0.000391
+      step_rotation_deg: 0.00803
+    - threshold_m: 0.14
+      correspondence_count: 1576
+      median_m: 0.04852
+      p90_m: 0.07055
+      step_translation_m: 0.000364
+      step_rotation_deg: 0.00878
+    - threshold_m: 0.14
+      correspondence_count: 1574
+      median_m: 0.04847
+      p90_m: 0.07035
+      step_translation_m: 0.000521
+      step_rotation_deg: 0.01068
+  velodyne_front_right_base_link:
+    accepted: false
+    acceptance_rule: median_gain>=0.01m and overlap_0_20_gain>=0.02 and p75_regression<=0.03m
+    before:
+      point_count: 5930
+      median_m: 0.33536
+      p75_m: 0.8066
+      p90_m: 1.29825
+      overlap_0_10: 0.1442
+      overlap_0_20: 0.3364
+    after:
+      point_count: 5928
+      median_m: 0.3016
+      p75_m: 0.85851
+      p90_m: 1.33301
+      overlap_0_10: 0.32
+      overlap_0_20: 0.4221
+    correction_translation_m: 0.118418
+    correction_rotation_deg: 1.80269
+    iterations:
+    - threshold_m: 0.6
+      correspondence_count: 2773
+      median_m: 0.13146
+      p90_m: 0.26309
+      step_translation_m: 0.071809
+      step_rotation_deg: 0.9353
+    - threshold_m: 0.6
+      correspondence_count: 2778
+      median_m: 0.09632
+      p90_m: 0.2201
+      step_translation_m: 0.042545
+      step_rotation_deg: 0.62873
+    - threshold_m: 0.6
+      correspondence_count: 2772
+      median_m: 0.08582
+      p90_m: 0.20127
+      step_translation_m: 0.023033
+      step_rotation_deg: 0.38941
+    - threshold_m: 0.6
+      correspondence_count: 2770
+      median_m: 0.07953
+      p90_m: 0.19643
+      step_translation_m: 0.009585
+      step_rotation_deg: 0.19335
+    - threshold_m: 0.6
+      correspondence_count: 2770
+      median_m: 0.07689
+      p90_m: 0.19463
+      step_translation_m: 0.003904
+      step_rotation_deg: 0.11276
+    - threshold_m: 0.4
+      correspondence_count: 2426
+      median_m: 0.06788
+      p90_m: 0.14477
+      step_translation_m: 0.008226
+      step_rotation_deg: 0.05624
+    - threshold_m: 0.4
+      correspondence_count: 2411
+      median_m: 0.06657
+      p90_m: 0.13977
+      step_translation_m: 0.007205
+      step_rotation_deg: 0.04999
+    - threshold_m: 0.4
+      correspondence_count: 2406
+      median_m: 0.06614
+      p90_m: 0.13744
+      step_translation_m: 0.008638
+      step_rotation_deg: 0.05989
+    - threshold_m: 0.4
+      correspondence_count: 2402
+      median_m: 0.06466
+      p90_m: 0.13633
+      step_translation_m: 0.008575
+      step_rotation_deg: 0.05967
+    - threshold_m: 0.4
+      correspondence_count: 2398
+      median_m: 0.06435
+      p90_m: 0.13607
+      step_translation_m: 0.008163
+      step_rotation_deg: 0.06317
+    - threshold_m: 0.4
+      correspondence_count: 2394
+      median_m: 0.06386
+      p90_m: 0.13609
+      step_translation_m: 0.006964
+      step_rotation_deg: 0.05291
+    - threshold_m: 0.28
+      correspondence_count: 2102
+      median_m: 0.05858
+      p90_m: 0.10027
+      step_translation_m: 0.009249
+      step_rotation_deg: 0.05749
+    - threshold_m: 0.28
+      correspondence_count: 2096
+      median_m: 0.05796
+      p90_m: 0.09907
+      step_translation_m: 0.008306
+      step_rotation_deg: 0.05854
+    - threshold_m: 0.28
+      correspondence_count: 2094
+      median_m: 0.05724
+      p90_m: 0.09881
+      step_translation_m: 0.005727
+      step_rotation_deg: 0.04477
+    - threshold_m: 0.28
+      correspondence_count: 2089
+      median_m: 0.05707
+      p90_m: 0.09892
+      step_translation_m: 0.004142
+      step_rotation_deg: 0.03051
+    - threshold_m: 0.28
+      correspondence_count: 2086
+      median_m: 0.0565
+      p90_m: 0.09784
+      step_translation_m: 0.003984
+      step_rotation_deg: 0.03817
+    - threshold_m: 0.28
+      correspondence_count: 2085
+      median_m: 0.05654
+      p90_m: 0.09746
+      step_translation_m: 0.002265
+      step_rotation_deg: 0.02535
+    - threshold_m: 0.28
+      correspondence_count: 2084
+      median_m: 0.05622
+      p90_m: 0.09729
+      step_translation_m: 0.00216
+      step_rotation_deg: 0.0201
+    - threshold_m: 0.2
+      correspondence_count: 1803
+      median_m: 0.05176
+      p90_m: 0.0817
+      step_translation_m: 0.002697
+      step_rotation_deg: 0.01336
+    - threshold_m: 0.2
+      correspondence_count: 1803
+      median_m: 0.05168
+      p90_m: 0.08126
+      step_translation_m: 0.001569
+      step_rotation_deg: 0.01524
+    - threshold_m: 0.2
+      correspondence_count: 1803
+      median_m: 0.05153
+      p90_m: 0.08137
+      step_translation_m: 0.001617
+      step_rotation_deg: 0.01523
+    - threshold_m: 0.2
+      correspondence_count: 1804
+      median_m: 0.05138
+      p90_m: 0.08148
+      step_translation_m: 0.001206
+      step_rotation_deg: 0.00768
+    - threshold_m: 0.2
+      correspondence_count: 1803
+      median_m: 0.05137
+      p90_m: 0.08155
+      step_translation_m: 0.000789
+      step_rotation_deg: 0.00626
+    - threshold_m: 0.2
+      correspondence_count: 1803
+      median_m: 0.05152
+      p90_m: 0.08158
+      step_translation_m: 0.000311
+      step_rotation_deg: 0.00233
+    - threshold_m: 0.2
+      correspondence_count: 1802
+      median_m: 0.05159
+      p90_m: 0.08154
+      step_translation_m: 0.000517
+      step_rotation_deg: 0.00395
+    - threshold_m: 0.2
+      correspondence_count: 1802
+      median_m: 0.05163
+      p90_m: 0.08147
+      step_translation_m: 0.000181
+      step_rotation_deg: 0.00232
+    - threshold_m: 0.14
+      correspondence_count: 1557
+      median_m: 0.04737
+      p90_m: 0.06978
+      step_translation_m: 0.000779
+      step_rotation_deg: 0.00779
+    - threshold_m: 0.14
+      correspondence_count: 1557
+      median_m: 0.04731
+      p90_m: 0.06976
+      step_translation_m: 0.000441
+      step_rotation_deg: 0.00533
+    - threshold_m: 0.14
+      correspondence_count: 1556
+      median_m: 0.04724
+      p90_m: 0.06973
+      step_translation_m: 0.000616
+      step_rotation_deg: 0.00444
+    - threshold_m: 0.14
+      correspondence_count: 1557
+      median_m: 0.0471
+      p90_m: 0.06967
+      step_translation_m: 0.000468
+      step_rotation_deg: 0.00312
+    - threshold_m: 0.14
+      correspondence_count: 1556
+      median_m: 0.04705
+      p90_m: 0.06966
+      step_translation_m: 0.000198
+      step_rotation_deg: 0.00199
+  velodyne_rear_base_link:
+    accepted: false
+    acceptance_rule: median_gain>=0.01m and overlap_0_20_gain>=0.02 and p75_regression<=0.03m
+    before:
+      point_count: 4550
+      median_m: 1.16943
+      p75_m: 1.5559
+      p90_m: 1.84599
+      overlap_0_10: 0.1064
+      overlap_0_20: 0.2156
+    after:
+      point_count: 4537
+      median_m: 1.14892
+      p75_m: 1.5409
+      p90_m: 1.83231
+      overlap_0_10: 0.1622
+      overlap_0_20: 0.2182
+    correction_translation_m: 0.103551
+    correction_rotation_deg: 0.63239
+    iterations:
+    - threshold_m: 0.6
+      correspondence_count: 1079
+      median_m: 0.1052
+      p90_m: 0.19413
+      step_translation_m: 0.040565
+      step_rotation_deg: 0.30392
+    - threshold_m: 0.6
+      correspondence_count: 1078
+      median_m: 0.08337
+      p90_m: 0.19559
+      step_translation_m: 0.027179
+      step_rotation_deg: 0.19418
+    - threshold_m: 0.6
+      correspondence_count: 1073
+      median_m: 0.07281
+      p90_m: 0.19101
+      step_translation_m: 0.015118
+      step_rotation_deg: 0.10161
+    - threshold_m: 0.6
+      correspondence_count: 1075
+      median_m: 0.06974
+      p90_m: 0.19113
+      step_translation_m: 0.008441
+      step_rotation_deg: 0.06564
+    - threshold_m: 0.6
+      correspondence_count: 1079
+      median_m: 0.06838
+      p90_m: 0.19268
+      step_translation_m: 0.00548
+      step_rotation_deg: 0.02883
+    - threshold_m: 0.4
+      correspondence_count: 938
+      median_m: 0.0593
+      p90_m: 0.13623
+      step_translation_m: 0.003271
+      step_rotation_deg: 0.01857
+    - threshold_m: 0.4
+      correspondence_count: 937
+      median_m: 0.05903
+      p90_m: 0.1356
+      step_translation_m: 0.001922
+      step_rotation_deg: 0.00773
+    - threshold_m: 0.4
+      correspondence_count: 937
+      median_m: 0.059
+      p90_m: 0.13504
+      step_translation_m: 0.001599
+      step_rotation_deg: 0.01536
+    - threshold_m: 0.4
+      correspondence_count: 935
+      median_m: 0.05877
+      p90_m: 0.13394
+      step_translation_m: 0.000957
+      step_rotation_deg: 0.01043
+    - threshold_m: 0.4
+      correspondence_count: 935
+      median_m: 0.05929
+      p90_m: 0.13405
+      step_translation_m: 0.000554
+      step_rotation_deg: 0.00708
+    - threshold_m: 0.4
+      correspondence_count: 934
+      median_m: 0.05905
+      p90_m: 0.13398
+      step_translation_m: 0.000444
+      step_rotation_deg: 0.00794
+    - threshold_m: 0.28
+      correspondence_count: 821
+      median_m: 0.05416
+      p90_m: 0.10034
+      step_translation_m: 0.001881
+      step_rotation_deg: 0.0279
+    - threshold_m: 0.28
+      correspondence_count: 818
+      median_m: 0.05431
+      p90_m: 0.09948
+      step_translation_m: 0.001491
+      step_rotation_deg: 0.02248
+    - threshold_m: 0.28
+      correspondence_count: 818
+      median_m: 0.05425
+      p90_m: 0.09964
+      step_translation_m: 0.000448
+      step_rotation_deg: 0.01125
+    - threshold_m: 0.28
+      correspondence_count: 818
+      median_m: 0.05429
+      p90_m: 0.09964
+      step_translation_m: 0.000242
+      step_rotation_deg: 0.00282
+    - threshold_m: 0.28
+      correspondence_count: 818
+      median_m: 0.05428
+      p90_m: 0.09944
+      step_translation_m: 0.000471
+      step_rotation_deg: 0.00744
+    - threshold_m: 0.28
+      correspondence_count: 818
+      median_m: 0.05456
+      p90_m: 0.09929
+      step_translation_m: 0.000339
+      step_rotation_deg: 0.00408
+    - threshold_m: 0.28
+      correspondence_count: 818
+      median_m: 0.05455
+      p90_m: 0.09929
+      step_translation_m: 0.00017
+      step_rotation_deg: 0.00218
+    - threshold_m: 0.2
+      correspondence_count: 713
+      median_m: 0.04966
+      p90_m: 0.08044
+      step_translation_m: 0.002524
+      step_rotation_deg: 0.02173
+    - threshold_m: 0.2
+      correspondence_count: 712
+      median_m: 0.04988
+      p90_m: 0.07988
+      step_translation_m: 0.00232
+      step_rotation_deg: 0.01841
+    - threshold_m: 0.2
+      correspondence_count: 713
+      median_m: 0.04991
+      p90_m: 0.08042
+      step_translation_m: 0.001022
+      step_rotation_deg: 0.01169
+    - threshold_m: 0.2
+      correspondence_count: 715
+      median_m: 0.04998
+      p90_m: 0.08087
+      step_translation_m: 0.000644
+      step_rotation_deg: 0.00547
+    - threshold_m: 0.2
+      correspondence_count: 714
+      median_m: 0.04994
+      p90_m: 0.08066
+      step_translation_m: 0.000383
+      step_rotation_deg: 0.00304
+    - threshold_m: 0.2
+      correspondence_count: 714
+      median_m: 0.05003
+      p90_m: 0.08044
+      step_translation_m: 0.000442
+      step_rotation_deg: 0.00211
+    - threshold_m: 0.2
+      correspondence_count: 713
+      median_m: 0.05
+      p90_m: 0.08016
+      step_translation_m: 0.000632
+      step_rotation_deg: 0.00558
+    - threshold_m: 0.2
+      correspondence_count: 713
+      median_m: 0.0501
+      p90_m: 0.08004
+      step_translation_m: 6.5e-05
+      step_rotation_deg: 0.0006
+    - threshold_m: 0.14
+      correspondence_count: 615
+      median_m: 0.04537
+      p90_m: 0.06794
+      step_translation_m: 0.000934
+      step_rotation_deg: 0.01238
+    - threshold_m: 0.14
+      correspondence_count: 615
+      median_m: 0.0456
+      p90_m: 0.06772
+      step_translation_m: 0.000948
+      step_rotation_deg: 0.00381
+    - threshold_m: 0.14
+      correspondence_count: 614
+      median_m: 0.04552
+      p90_m: 0.06745
+      step_translation_m: 0.000564
+      step_rotation_deg: 0.00382
+    - threshold_m: 0.14
+      correspondence_count: 614
+      median_m: 0.04574
+      p90_m: 0.06737
+      step_translation_m: 0.000277
+      step_rotation_deg: 0.00183
+    - threshold_m: 0.14
+      correspondence_count: 614
+      median_m: 0.04566
+      p90_m: 0.06735
+      step_translation_m: 0.000403
+      step_rotation_deg: 0.00335
+    - threshold_m: 0.14
+      correspondence_count: 615
+      median_m: 0.04571
+      p90_m: 0.06738
+      step_translation_m: 0.000754
+      step_rotation_deg: 0.00391
+    - threshold_m: 0.14
+      correspondence_count: 616
+      median_m: 0.04585
+      p90_m: 0.06762
+      step_translation_m: 0.000294
+      step_rotation_deg: 0.00201
+    - threshold_m: 0.14
+      correspondence_count: 616
+      median_m: 0.0459
+      p90_m: 0.06768
+      step_translation_m: 2.6e-05
+      step_rotation_deg: 0.00018

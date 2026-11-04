@@ -1,0 +1,7 @@
+/**:
+  ros__parameters:
+    device: /dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A96QHD2N-if00-port0
+    baudrate: 115200
+    reconnect_period_ms: 1000
+    data_timeout_ms: 2000
+    danger_topic: /Control_msgs/danger_flag

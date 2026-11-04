@@ -1,0 +1,10 @@
+schema_version: 1
+reference_frame: velodyne_top_base_link
+method: anchored_reference_camera_multiview_projection_bundle
+reference_camera: video_front_mid
+target_camera: traffic_light_front
+reference_transform_source: round_035_camera_global_gated_pose_graph.yaml
+corner_source: fresh_redetection_from_each_saved_image
+rejected:
+  raw_views: 0
+  error: need >= 5 simultaneous views, got 0

@@ -1,0 +1,49 @@
+schema_version: 1
+reference_frame: velodyne_top_base_link
+method: camera_aprilgrid_to_temporal_difference_roof_lidar_board
+ground_z_top_m: -1.728145
+excluded:
+  traffic_light_front: frozen complete session
+transforms: {}
+quality: {}
+rejected:
+  video_front_left/camera_link:
+    raw_observations: 8
+    unique_board_poses: 8
+    error: only 2 observations remain after 10 cm gate
+  video_front_mid/camera_link:
+    raw_observations: 68
+    unique_board_poses: 63
+    error: only 7 observations remain after 10 cm gate
+  video_front_right/camera_link:
+    raw_observations: 7
+    unique_board_poses: 7
+    error: need >=8 unique board poses, got 7
+  video_rear_left/camera_link:
+    raw_observations: 12
+    unique_board_poses: 12
+    error: only 3 observations remain after 10 cm gate
+  video_rear_mid/camera_link:
+    raw_observations: 0
+    unique_board_poses: 0
+    error: need >=8 unique board poses, got 0
+  video_rear_right/camera_link:
+    raw_observations: 8
+    unique_board_poses: 8
+    error: only 4 observations remain after 10 cm gate
+  fisheye_front/camera_link:
+    raw_observations: 0
+    unique_board_poses: 0
+    error: need >=8 unique board poses, got 0
+  fisheye_left/camera_link:
+    raw_observations: 8
+    unique_board_poses: 8
+    error: only 2 observations remain after 10 cm gate
+  fisheye_right/camera_link:
+    raw_observations: 2
+    unique_board_poses: 2
+    error: need >=8 unique board poses, got 2
+  fisheye_rear/camera_link:
+    raw_observations: 0
+    unique_board_poses: 0
+    error: need >=8 unique board poses, got 0

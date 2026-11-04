@@ -1,0 +1,20 @@
+image_width: 640
+image_height: 480
+camera_name: video_front_left
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [455.622818773, 0, 330.695934087, 0, 455.853368856, 235.020557747, 0, 0, 1]
+distortion_model: plumb_bob
+distortion_coefficients:
+  rows: 1
+  cols: 5
+  data: [0.0416741084428, -0.0817712758348, -0.000361358737355, -0.000482811868475, 0.0241732041513]
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data: [1, 0, 0, 0, 1, 0, 0, 0, 1]
+projection_matrix:
+  rows: 3
+  cols: 4
+  data: [455.622818773, 0, 330.695934087, 0, 0, 455.853368856, 235.020557747, 0, 0, 0, 1, 0]

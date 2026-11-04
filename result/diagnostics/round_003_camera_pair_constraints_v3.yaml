@@ -1,0 +1,107 @@
+schema_version: 1
+reference_note: relative camera optical-frame constraints; no absolute lidar anchor
+  yet
+excluded:
+  traffic_light_front: frozen complete session
+board_pose_count: 931
+capture_count: 310
+per_camera_board_poses:
+  video_front_left: 66
+  video_front_mid: 240
+  video_front_right: 75
+  video_rear_left: 214
+  video_rear_mid: 5
+  video_rear_right: 75
+  fisheye_front: 121
+  fisheye_left: 121
+  fisheye_right: 11
+  fisheye_rear: 3
+accepted_edges:
+  video_rear_left<-fisheye_left:
+    transform:
+      xyz_m:
+      - -0.023441538
+      - 0.375809021
+      - 0.037621819
+      rpy_deg:
+      - -24.24127474
+      - 18.4584668
+      - 0.34035567
+    quality:
+      raw_view_count: 13
+      dominant_count: 5
+      dominant_fraction: 1.0
+      normalized_reprojection_rms_median: 0.0019958537545152156
+      position_p95_m: 0.009491954959163286
+      angle_p95_deg: 0.18129487011420717
+      bootstrap_transforms:
+      - xyz_m:
+        - -0.013966213
+        - 0.372798747
+        - 0.03928451
+        rpy_deg:
+        - -24.32962774
+        - 18.29749706
+        - 0.36460438
+      - xyz_m:
+        - -0.028070802
+        - 0.378526125
+        - 0.037621819
+        rpy_deg:
+        - -24.18263334
+        - 18.59042506
+        - 0.31057253
+      - xyz_m:
+        - -0.024038545
+        - 0.375876667
+        - 0.038729304
+        rpy_deg:
+        - -24.24039757
+        - 18.51918925
+        - 0.35850486
+      - xyz_m:
+        - -0.017624026
+        - 0.374907376
+        - 0.033582611
+        rpy_deg:
+        - -24.23372324
+        - 18.39361798
+        - 0.36439804
+      - xyz_m:
+        - -0.023441538
+        - 0.375809021
+        - 0.035341674
+        rpy_deg:
+        - -24.22001458
+        - 18.49164149
+        - 0.30387539
+    difference_from_rough_position_m: 0.3912386324183928
+    difference_from_rough_angle_deg: 11.562172806842
+rejected_edges:
+  video_front_left<-fisheye_front:
+    raw_count: 7
+    error: stereo bootstrap needs >=8 board views, got 7
+  video_front_left<-fisheye_left:
+    raw_count: 2
+    error: stereo bootstrap needs >=8 board views, got 2
+  video_front_left<-video_rear_left:
+    raw_count: 4
+    error: stereo bootstrap needs >=8 board views, got 4
+  video_front_mid<-fisheye_front:
+    raw_count: 5
+    error: stereo bootstrap needs >=8 board views, got 5
+  video_front_right<-fisheye_front:
+    raw_count: 7
+    error: stereo bootstrap needs >=8 board views, got 7
+  video_front_right<-fisheye_right:
+    raw_count: 2
+    error: stereo bootstrap needs >=8 board views, got 2
+  video_front_right<-video_rear_right:
+    raw_count: 5
+    error: stereo bootstrap needs >=8 board views, got 5
+  video_rear_mid<-fisheye_rear:
+    raw_count: 2
+    error: stereo bootstrap needs >=8 board views, got 2
+  video_rear_right<-fisheye_right:
+    raw_count: 5
+    error: stereo bootstrap needs >=8 board views, got 5

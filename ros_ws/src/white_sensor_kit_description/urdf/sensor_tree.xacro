@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <!-- One shared sensor tree for the normal Autoware and calibration-only URDFs. -->
+  <xacro:macro name="white_fixed_sensor" params="parent child values">
+    <joint name="${child.replace('/', '_')}_joint" type="fixed">
+      <origin xyz="${values['x']} ${values['y']} ${values['z']}" rpy="${values['roll']} ${values['pitch']} ${values['yaw']}"/>
+      <parent link="${parent}"/>
+      <child link="${child}"/>
+    </joint>
+    <link name="${child}"/>
+  </xacro:macro>
+
+  <xacro:macro name="white_camera" params="name values">
+    <xacro:white_fixed_sensor parent="sensor_kit_base_link" child="${name}/camera_link" values="${values}"/>
+    <joint name="${name}_optical_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="${-pi/2.0} 0 ${-pi/2.0}"/>
+      <parent link="${name}/camera_link"/>
+      <child link="${name}/camera_optical_link"/>
+    </joint>
+    <link name="${name}/camera_optical_link"/>
+  </xacro:macro>
+
+  <xacro:macro name="white_sensor_tree" params="base_cal sensor_cal">
+    <xacro:white_fixed_sensor parent="base_link" child="sensor_kit_base_link" values="${base_cal['base_link']['sensor_kit_base_link']}"/>
+    <xacro:white_fixed_sensor parent="sensor_kit_base_link" child="velodyne_top_base_link" values="${sensor_cal['sensor_kit_base_link']['velodyne_top_base_link']}"/>
+    <xacro:white_fixed_sensor parent="velodyne_top_base_link" child="velodyne_front_left_base_link" values="${sensor_cal['sensor_kit_base_link']['velodyne_front_left_base_link']}"/>
+    <xacro:white_fixed_sensor parent="velodyne_top_base_link" child="velodyne_front_right_base_link" values="${sensor_cal['sensor_kit_base_link']['velodyne_front_right_base_link']}"/>
+    <xacro:white_fixed_sensor parent="velodyne_top_base_link" child="velodyne_rear_base_link" values="${sensor_cal['sensor_kit_base_link']['velodyne_rear_base_link']}"/>
+    <xacro:white_fixed_sensor parent="sensor_kit_base_link" child="tamagawa/imu_link" values="${sensor_cal['sensor_kit_base_link']['tamagawa/imu_link']}"/>
+    <xacro:white_fixed_sensor parent="sensor_kit_base_link" child="gnss_link" values="${sensor_cal['sensor_kit_base_link']['gnss_link']}"/>
+    <xacro:white_fixed_sensor parent="sensor_kit_base_link" child="ins" values="${sensor_cal['sensor_kit_base_link']['ins']}"/>
+    <xacro:white_camera name="video_rear_left" values="${sensor_cal['sensor_kit_base_link']['video_rear_left/camera_link']}"/>
+    <xacro:white_camera name="video_front_left" values="${sensor_cal['sensor_kit_base_link']['video_front_left/camera_link']}"/>
+    <xacro:white_camera name="video_front_right" values="${sensor_cal['sensor_kit_base_link']['video_front_right/camera_link']}"/>
+    <xacro:white_camera name="video_rear_right" values="${sensor_cal['sensor_kit_base_link']['video_rear_right/camera_link']}"/>
+    <xacro:white_camera name="video_rear_mid" values="${sensor_cal['sensor_kit_base_link']['video_rear_mid/camera_link']}"/>
+    <xacro:white_camera name="video_front_mid" values="${sensor_cal['sensor_kit_base_link']['video_front_mid/camera_link']}"/>
+    <xacro:white_camera name="traffic_light_front" values="${sensor_cal['sensor_kit_base_link']['traffic_light_front/camera_link']}"/>
+  </xacro:macro>
+</robot>

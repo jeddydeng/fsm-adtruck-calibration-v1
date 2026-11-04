@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "method": "fresh pixels; repeated-ID multi-homography separation; fisheye PnP",
+  "capture_groups": 14,
+  "board": {
+    "dictionary": "DICT_APRILTAG_16h5",
+    "columns": 6,
+    "rows": 5,
+    "outer_size_m": [
+      0.9,
+      0.9
+    ],
+    "active_size_m": [
+      0.8,
+      0.8
+    ],
+    "tag_size_m": 0.108,
+    "horizontal_gap_m": 0.0304,
+    "vertical_gap_m": 0.065,
+    "same_ids_on_all_physical_boards": true
+  },
+  "cameras": {
+    "fisheye_front": {
+      "images": 14,
+      "images_with_board": 9,
+      "board_instances": 11,
+      "median_best_reprojection_px": 1.3645282242998218,
+      "p95_best_reprojection_px": 1.559083571457741
+    },
+    "fisheye_right": {
+      "images": 14,
+      "images_with_board": 14,
+      "board_instances": 14,
+      "median_best_reprojection_px": 1.2312419458066923,
+      "p95_best_reprojection_px": 1.3984360125293103
+    },
+    "fisheye_rear": {
+      "images": 14,
+      "images_with_board": 9,
+      "board_instances": 18,
+      "median_best_reprojection_px": 1.6149490948983727,
+      "p95_best_reprojection_px": 1.862436421824451
+    },
+    "fisheye_left": {
+      "images": 14,
+      "images_with_board": 14,
+      "board_instances": 14,
+      "median_best_reprojection_px": 1.139681220677324,
+      "p95_best_reprojection_px": 1.2962333579827119
+    }
+  }
+}

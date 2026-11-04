@@ -1,0 +1,41 @@
+schema_version: 1
+reference_note: relative camera optical-frame constraints; no absolute lidar anchor
+  yet
+excluded:
+  traffic_light_front: frozen complete session
+board_pose_count: 528
+capture_count: 310
+per_camera_board_poses:
+  video_front_left: 54
+  video_front_mid: 141
+  video_front_right: 15
+  video_rear_left: 147
+  video_rear_mid: 4
+  video_rear_right: 23
+  fisheye_front: 56
+  fisheye_left: 79
+  fisheye_right: 7
+  fisheye_rear: 2
+accepted_edges: {}
+rejected_edges:
+  video_front_left<-fisheye_front:
+    raw_count: 1
+    error: dominant cluster 1/1
+  video_front_left<-fisheye_left:
+    raw_count: 1
+    error: dominant cluster 1/1
+  video_front_left<-video_rear_left:
+    raw_count: 2
+    error: dominant cluster 1/2
+  video_front_mid<-fisheye_front:
+    raw_count: 1
+    error: dominant cluster 1/1
+  video_front_right<-fisheye_right:
+    raw_count: 4
+    error: dominant cluster 1/4
+  video_front_right<-video_rear_right:
+    raw_count: 3
+    error: dominant cluster 1/3
+  video_rear_left<-fisheye_left:
+    raw_count: 31
+    error: dominant cluster 2/31

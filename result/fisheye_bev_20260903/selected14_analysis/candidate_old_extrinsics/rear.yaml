@@ -1,0 +1,50 @@
+%YAML:1.0
+---
+camera_name: rear
+camera_frame: fisheye_rear/camera_optical_frame
+vehicle_frame: sensor_kit_base_link
+image_width: 1600
+image_height: 1200
+distortion_model: equidistant
+bev_width: 512
+bev_height: 512
+meters_per_pixel: 0.015
+bev_origin_u_px: 256
+bev_origin_v_px: 256
+bev_axes: "u_right_is_vehicle_minus_y; v_down_is_vehicle_minus_x"
+extrinsic_source: "camera_relative_to_roof_lidar.yaml + quality-gated Part3 ground refinement"
+K: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [477.089017202, 0, 816.395138121, 0, 477.234120575, 618.043405243, 0, 0, 1]
+D: !!opencv-matrix
+   rows: 4
+   cols: 1
+   dt: d
+   data: [0.037368345403, -0.0114283331713, -0.00405237003446, 0.000603844998945]
+K_rectified: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [128.025782959, 0, 766.700353107, 0, 128.064721129, 581.041490023, 0, 0, 1]
+H_bev: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [0.0800291187755, -0.413399736513, 168.224916748, 0.00167572335318, -0.507785778871, 270.072268714, 1.06807239674e-06, -0.0018035289035, 1]
+H_bev_definition: "p_bev ~ H_bev * p_rectified; NOT valid on raw fisheye pixels"
+R_vehicle_camera: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [0.0171131916409, 0.199817546022, -0.979683666784, 0.999853390328, -0.00285154448768, 0.016883913329, 0.000580090554822, -0.979828973324, -0.199837049891]
+R_vehicle_camera_definition: "p_vehicle = R_vehicle_camera * p_camera_optical + t_vehicle_camera_m"
+t_vehicle_camera_m: !!opencv-matrix
+   rows: 3
+   cols: 1
+   dt: d
+   data: [-0.515840351, 0.403634805, 0.650082090204]
+calibration_rms: 0.519857676113
+bev_remap_x: "fisheye_rear_bev_map_x.npy"
+bev_remap_y: "fisheye_rear_bev_map_y.npy"

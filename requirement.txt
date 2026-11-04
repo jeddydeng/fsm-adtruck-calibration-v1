@@ -1,0 +1,11 @@
+# Python 3.10 (Humble validation) / 3.12 (Jazzy deployment).
+# Use a venv with --system-site-packages so rclpy uses the ROS ABI.
+numpy==1.26.4
+scipy==1.14.1
+opencv-contrib-python==4.10.0.84
+PyYAML==6.0.2
+matplotlib==3.9.4
+Pillow==11.1.0
+psutil==6.1.1
+pytest==8.3.5
+ruff==0.9.10

@@ -1,0 +1,31 @@
+schema_version: 1
+sensor: traffic_light_front/camera_link
+parent: sensor_kit_base_link
+usage_class: static_low_speed_no_traffic_route
+deployment_allowed: true
+precision_traffic_light_fusion_allowed: false
+transform:
+  xyz_m: [1.671450265, -0.159797807, 1.574087609]
+  rpy_rad: [0.012294429118, 0.033746307257, 0.000267045498]
+  rpy_deg: [0.7044189, 1.93352098, 0.01530058]
+source:
+  selected: round_033_camera_fresh_variant_consensus
+  selected_observations: 31
+  selected_accepted_observations: 24
+  selected_variant_repeatability_p95_m: 0.01712617207176785
+  selected_variant_repeatability_p95_deg: 0.054056141498909784
+part4_negative_validation:
+  decoded_unique_images: 45
+  robust_observations: 18
+  plane_distance_median_m: 0.10425761396837924
+  plane_distance_p95_m: 0.3285013932755861
+  normal_angle_p95_deg: 4.289423560379507
+  bootstrap_translation_p95_m: 0.4122897083157651
+  bootstrap_angle_p95_deg: 4.778721483811619
+  rejected_unconstrained_transform_xyz_m: [-0.393559439, -0.314626346, -0.105645676]
+policy_notes:
+  - The 18 Part-4 observations are inliers, not 18 deployment passes.
+  - The unconstrained Part-4 solution conflicts with the physical installation and is not used.
+  - The selected static consensus is published for TF completeness and offline recording.
+  - The current campus Lanelet map contains no traffic lights or stop lines.
+  - Recalibration is required before enabling traffic-light decisions on a signalized road.

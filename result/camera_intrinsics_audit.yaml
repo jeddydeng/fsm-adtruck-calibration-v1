@@ -1,0 +1,101 @@
+schema_version: 1
+cameras:
+  video_front_left:
+    file: ../camera_intrinsics/video_front_left.yaml
+    model: plumb_bob
+    resolution:
+    - 640
+    - 480
+    rms_reprojection_error_px: 0.5035750730935725
+    maximum_view_error_px: 0.7871056673843043
+    status: accepted_existing_intrinsic_calibration
+  video_front_mid:
+    file: ../camera_intrinsics/video_front_mid.yaml
+    model: plumb_bob
+    resolution:
+    - 640
+    - 480
+    rms_reprojection_error_px: 0.33917172289936187
+    maximum_view_error_px: 0.6244917785352055
+    status: accepted_existing_intrinsic_calibration
+  video_front_right:
+    file: ../camera_intrinsics/video_front_right.yaml
+    model: plumb_bob
+    resolution:
+    - 640
+    - 480
+    rms_reprojection_error_px: 0.4031410394758046
+    maximum_view_error_px: 0.7986072693692746
+    status: accepted_existing_intrinsic_calibration
+  video_rear_left:
+    file: ../camera_intrinsics/video_rear_left.yaml
+    model: plumb_bob
+    resolution:
+    - 640
+    - 480
+    rms_reprojection_error_px: 0.3744542857324365
+    maximum_view_error_px: 0.7955608210062092
+    status: accepted_existing_intrinsic_calibration
+  video_rear_mid:
+    file: ../camera_intrinsics/video_rear_mid.yaml
+    model: plumb_bob
+    resolution:
+    - 640
+    - 480
+    rms_reprojection_error_px: 0.4139248920430575
+    maximum_view_error_px: 0.634193043366283
+    status: accepted_existing_intrinsic_calibration
+  video_rear_right:
+    file: ../camera_intrinsics/video_rear_right.yaml
+    model: plumb_bob
+    resolution:
+    - 640
+    - 480
+    rms_reprojection_error_px: 0.36566479516333183
+    maximum_view_error_px: 0.7845212753022538
+    status: accepted_existing_intrinsic_calibration
+  fisheye_front:
+    file: ../camera_intrinsics/fisheye_front.yaml
+    model: equidistant
+    resolution:
+    - 640
+    - 480
+    rms_reprojection_error_px: 0.35948268661379806
+    maximum_view_error_px: 0.7527806593826762
+    status: accepted_existing_intrinsic_calibration
+  fisheye_left:
+    file: ../camera_intrinsics/fisheye_left.yaml
+    model: plumb_bob
+    resolution:
+    - 640
+    - 480
+    rms_reprojection_error_px: 0.3864896220238535
+    maximum_view_error_px: 0.7409975789286265
+    status: accepted_existing_intrinsic_calibration
+  fisheye_right:
+    file: ../camera_intrinsics/fisheye_right.yaml
+    model: equidistant
+    resolution:
+    - 640
+    - 480
+    rms_reprojection_error_px: 0.2845052961406266
+    maximum_view_error_px: 0.5778878602539274
+    status: accepted_existing_intrinsic_calibration
+  fisheye_rear:
+    file: ../camera_intrinsics/fisheye_rear.yaml
+    model: equidistant
+    resolution:
+    - 640
+    - 480
+    rms_reprojection_error_px: 0.4389603826980665
+    maximum_view_error_px: 0.7754137681075777
+    status: accepted_existing_intrinsic_calibration
+  traffic_light_front:
+    file: ../camera_intrinsics/traffic_light_front.yaml
+    model: plumb_bob
+    resolution:
+    - 320
+    - 240
+    rms_reprojection_error_px: 0.4559665990091443
+    maximum_view_error_px: 0.744351395368984
+    status: accepted_existing_intrinsic_calibration

@@ -1,0 +1,60 @@
+%YAML:1.0
+---
+camera_name: left
+camera_frame: fisheye_left/camera_optical_frame
+vehicle_frame: sensor_kit_base_link
+image_width: 1600
+image_height: 1200
+distortion_model: equidistant
+bev_width: 512
+bev_height: 512
+meters_per_pixel: 0.015
+bev_origin_u_px: 256
+bev_origin_v_px: 256
+bev_axes: "u_right_is_vehicle_minus_y; v_down_is_vehicle_minus_x"
+deployment_allowed: 1
+deployment_scope: "BEV_relative_planar_mapping_only"
+bev_status: "usable"
+absolute_vehicle_extrinsic_deployment_allowed: 0
+absolute_vehicle_extrinsic_status: "review_only_not_signed"
+absolute_vehicle_extrinsic_warning: "rear absolute pose conflicts with cross-session calibration; all R/t below are reference-only"
+relative_calibration_source: "strict final 14 Part3 images; ground-only overlap; scale-preserving SE2 loop optimisation"
+K: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [478.163640281, 0, 832.360494116, 0, 478.427662463, 624.236295617, 0, 0, 1]
+D: !!opencv-matrix
+   rows: 4
+   cols: 1
+   dt: d
+   data: [0.030688493629, -0.00245580364246, -0.00869947436911, 0.00143656637657]
+H_bev: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [-0.00810833178635, -0.466570471323, 267.052739102, 0.13246135549, -0.281716188356, 48.0522335978, -4.20247618777e-05, -0.00187906245614, 1]
+H_bev_definition: "p_bev ~ H_bev * p_rectified; NOT valid on raw equidistant pixels"
+C_bev_from_baseline: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [0.99999934279, 0.00114648144863, -0.182284358429, -0.00114648144863, 0.99999934279, 1.27110875751, 0, 0, 1]
+C_bev_from_baseline_definition: "p_final_bev ~ C_bev_from_baseline * p_baseline_bev"
+R_vehicle_camera: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [0.99976864612, -0.0160680137992, -0.0142994126398, 0.00663088372633, -0.402182340585, 0.915535578916, -0.0204618095196, -0.915418583986, -0.401982748915]
+R_vehicle_camera_definition: "REFERENCE ONLY: p_vehicle = R_vehicle_camera * p_camera_optical + t_vehicle_camera_m"
+t_vehicle_camera_m: !!opencv-matrix
+   rows: 3
+   cols: 1
+   dt: d
+   data: [1.6237245555, 0.5605313475, 1.01333427466]
+intrinsic_calibration_rms_px: 0.454467773456
+intrinsic_accepted_view_p95_px: 0.757716125227
+part3_board_pose_reprojection_median_px: 1.13968122068
+part3_board_pose_reprojection_p95_px: 1.29623335798
+bev_remap_x: "fisheye_left_bev_map_x.npy"
+bev_remap_y: "fisheye_left_bev_map_y.npy"

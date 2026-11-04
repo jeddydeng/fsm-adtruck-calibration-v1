@@ -1,0 +1,53 @@
+schema_version: 1
+edges:
+  video_front_left<-video_rear_left:
+    status: provisional_low_support
+    view_count: 4
+    leave_one_out_count: 4
+    transform:
+      xyz_m:
+      - -0.120866764
+      - 0.011094656
+      - -0.014396303
+      rpy_deg:
+      - 0.11002251
+      - -52.3601774
+      - 0.92812507
+    normalized_reprojection_rms: 0.001598766590788741
+    position_p95_m: 0.01282783645955683
+    angle_p95_deg: 0.2232246397164188
+    achieved_tier: coarse_only
+    candidate_transforms:
+    - xyz_m:
+      - -0.119939508
+      - 0.009594901
+      - -0.001524089
+      rpy_deg:
+      - 0.00635478
+      - -52.49118015
+      - 0.94719998
+    - xyz_m:
+      - -0.130005919
+      - 0.016482033
+      - -0.01977661
+      rpy_deg:
+      - 0.24707477
+      - -52.15039935
+      - 0.88307305
+    - xyz_m:
+      - -0.121794021
+      - 0.012442156
+      - -0.018313775
+      rpy_deg:
+      - 0.16236902
+      - -52.33630087
+      - 0.88557023
+    - xyz_m:
+      - -0.117617277
+      - 0.009747156
+      - -0.010478832
+      rpy_deg:
+      - 0.02341096
+      - -52.46274142
+      - 0.99763403
+rejected: {}

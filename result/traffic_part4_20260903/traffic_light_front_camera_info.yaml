@@ -1,0 +1,20 @@
+image_width: 320
+image_height: 240
+camera_name: traffic_light_front
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [650.836043691, 0, 159.5, 0, 650.836043691, 119.5, 0, 0, 1]
+distortion_model: plumb_bob
+distortion_coefficients:
+  rows: 1
+  cols: 5
+  data: [-0.1011836722, 0.0401139710885, 0, 0, 0]
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data: [1, 0, 0, 0, 1, 0, 0, 0, 1]
+projection_matrix:
+  rows: 3
+  cols: 4
+  data: [650.836043691, 0, 159.5, 0, 0, 650.836043691, 119.5, 0, 0, 0, 1, 0]

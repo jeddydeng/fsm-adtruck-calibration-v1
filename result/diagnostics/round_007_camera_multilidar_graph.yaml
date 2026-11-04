@@ -1,0 +1,84 @@
+schema_version: 1
+reference_frame: velodyne_top_base_link
+method: full_aprilgrid_pose_to_cross_validated_multilidar_plane_graph
+excluded:
+  traffic_light_front: frozen during extrinsic session
+transforms:
+  video_rear_mid/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - -2.107651631
+    - 0.115449248
+    - -0.200333952
+    rpy_deg:
+    - -8.82924569
+    - 1.09380334
+    - -179.92969051
+    source: multilidar_dynamic_board_graph
+quality:
+  video_rear_mid/camera_link:
+    raw_capture_observations: 5
+    unique_board_poses: 5
+    cross_lidar_corroborated: 5
+    difference_from_rough_position_m: 0.14381289600855313
+    difference_from_rough_angle_deg: 8.897550292403706
+    stability:
+      status: provisional_low_support
+      achieved_tier: unvalidated
+      full_fit:
+        raw_count: 5
+        accepted_count: 5
+        discarded_count: 0
+        rejection_history:
+        - iteration: 1
+          input: 5
+          output: 5
+          plane_cut_m: 0.018
+          normal_cut_deg: 3.963956750017958
+        plane_median_m: 0.002895582083913606
+        plane_p95_m: 0.007596166066971488
+        normal_median_deg: 1.887446247347534
+        normal_p95_deg: 2.783766584039122
+        plane_normal_singular_values:
+        - 2.0865811653982567
+        - 0.8038473484917619
+        - 0.002912134615457782
+        translation_observable: false
+      bootstrap_count: 0
+rejected:
+  video_front_left/camera_link:
+    raw_capture_observations: 9
+    unique_board_poses: 9
+    error: only 3 observations remain after robust gate
+  video_front_mid/camera_link:
+    raw_capture_observations: 72
+    unique_board_poses: 66
+    error: bootstrap dominant cluster 2/5
+  video_front_right/camera_link:
+    raw_capture_observations: 11
+    unique_board_poses: 11
+    error: only 4 observations remain after robust gate
+  video_rear_left/camera_link:
+    raw_capture_observations: 32
+    unique_board_poses: 31
+    error: only 4 observations remain after robust gate
+  video_rear_right/camera_link:
+    raw_capture_observations: 15
+    unique_board_poses: 15
+    error: bootstrap dominant cluster 1/5
+  fisheye_front/camera_link:
+    raw_capture_observations: 12
+    unique_board_poses: 11
+    error: only 4 observations remain after robust gate
+  fisheye_left/camera_link:
+    raw_capture_observations: 21
+    unique_board_poses: 20
+    error: only 4 observations remain after robust gate
+  fisheye_right/camera_link:
+    raw_capture_observations: 8
+    unique_board_poses: 8
+    error: only 4 observations remain after robust gate
+  fisheye_rear/camera_link:
+    raw_capture_observations: 3
+    unique_board_poses: 3
+    error: need >=5 unique board poses, got 3

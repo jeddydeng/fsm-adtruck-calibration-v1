@@ -1,0 +1,13 @@
+std_msgs/Header header
+uint8 dat1
+uint8 dat2
+uint8 dat3
+uint8 dat4
+uint8 dat5
+uint8 dat6
+uint8 dat7
+uint8 dat8
+uint8 dat9
+uint8 dat10
+uint8 dat11
+uint8 dat12

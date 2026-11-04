@@ -1,0 +1,453 @@
+{
+  "quality_pass": true,
+  "passed": 80,
+  "total": 80,
+  "cameras": {
+    "fisheye_front": {
+      "K": [
+        [
+          479.7802910855629,
+          0.0,
+          773.7599469204199
+        ],
+        [
+          0.0,
+          479.87119998853103,
+          603.8221219335932
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "D": [
+        0.03256487694724908,
+        -0.007421159623977069,
+        -0.005790953664528703,
+        0.0009246380002881712
+      ],
+      "accepted_views": 124,
+      "median_px": 0.32788456613580363,
+      "p95_px": 0.7335632539374134,
+      "held_out_p95_max_px": 0.6929611963982407,
+      "focal_spread_percent": 0.08020315667297692,
+      "principal_point_spread_px": 0.5753174509926566
+    },
+    "fisheye_rear": {
+      "K": [
+        [
+          477.08901720210264,
+          0.0,
+          816.395138121344
+        ],
+        [
+          0.0,
+          477.2341205753062,
+          618.0434052426967
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "D": [
+        0.03736834540297366,
+        -0.01142833317132205,
+        -0.004052370034463508,
+        0.0006038449989445685
+      ],
+      "accepted_views": 115,
+      "median_px": 0.5386172254338403,
+      "p95_px": 0.8399035448551962,
+      "held_out_p95_max_px": 0.9182015911761039,
+      "focal_spread_percent": 0.1800440871106342,
+      "principal_point_spread_px": 0.3046853104448246
+    },
+    "fisheye_left": {
+      "K": [
+        [
+          478.1636402805319,
+          0.0,
+          832.3604941162002
+        ],
+        [
+          0.0,
+          478.4276624627162,
+          624.2362956172609
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "D": [
+        0.03068849362896986,
+        -0.0024558036424550803,
+        -0.008699474369106433,
+        0.0014365663765736182
+      ],
+      "accepted_views": 115,
+      "median_px": 0.3703319464065826,
+      "p95_px": 0.7577161252270721,
+      "held_out_p95_max_px": 0.762643290396847,
+      "focal_spread_percent": 0.10060166091654217,
+      "principal_point_spread_px": 0.5276845350156236
+    },
+    "fisheye_right": {
+      "K": [
+        [
+          478.8791086467349,
+          0.0,
+          809.6406506765276
+        ],
+        [
+          0.0,
+          479.5527765915595,
+          533.3641777611949
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "D": [
+        0.033081822540305644,
+        -0.010005043246402733,
+        -0.004116607613346332,
+        0.0005879695811789663
+      ],
+      "accepted_views": 115,
+      "median_px": 0.42233621134245347,
+      "p95_px": 0.6882379135561872,
+      "held_out_p95_max_px": 0.6681963863759872,
+      "focal_spread_percent": 0.10583376945546194,
+      "principal_point_spread_px": 0.6151642601944332
+    }
+  },
+  "checks": [
+    {
+      "check": "fisheye_front: equidistant model",
+      "pass": true
+    },
+    {
+      "check": "fisheye_front: 1600x1200 resolution",
+      "pass": true
+    },
+    {
+      "check": "fisheye_front: calibrator quality gate",
+      "pass": true
+    },
+    {
+      "check": "fisheye_front: at least 100 accepted views",
+      "pass": true
+    },
+    {
+      "check": "fisheye_front: median <= 0.65 px",
+      "pass": true
+    },
+    {
+      "check": "fisheye_front: p95 <= 0.90 px",
+      "pass": true
+    },
+    {
+      "check": "fisheye_front: max accepted <= 0.90 px",
+      "pass": true
+    },
+    {
+      "check": "fisheye_front: 5/5 held-out folds",
+      "pass": true
+    },
+    {
+      "check": "fisheye_front: focal spread <= 2%",
+      "pass": true
+    },
+    {
+      "check": "fisheye_front: principal spread <= 15 px",
+      "pass": true
+    },
+    {
+      "check": "fisheye_front: held-out p95 <= 1.2 px",
+      "pass": true
+    },
+    {
+      "check": "fisheye_front: full-frame target coverage",
+      "pass": true
+    },
+    {
+      "check": "fisheye_front: finite 3x3 K",
+      "pass": true
+    },
+    {
+      "check": "fisheye_front: finite 4-coefficient D",
+      "pass": true
+    },
+    {
+      "check": "fisheye_front: square-pixel focal ratio",
+      "pass": true
+    },
+    {
+      "check": "fisheye_front: ROS2 distortion model",
+      "pass": true
+    },
+    {
+      "check": "fisheye_front: ROS2 K matches report",
+      "pass": true
+    },
+    {
+      "check": "fisheye_front: ROS2 D matches report",
+      "pass": true
+    },
+    {
+      "check": "fisheye_front: reprojection_preview.jpg readable",
+      "pass": true
+    },
+    {
+      "check": "fisheye_front: undistortion_preview.jpg readable",
+      "pass": true
+    },
+    {
+      "check": "fisheye_rear: equidistant model",
+      "pass": true
+    },
+    {
+      "check": "fisheye_rear: 1600x1200 resolution",
+      "pass": true
+    },
+    {
+      "check": "fisheye_rear: calibrator quality gate",
+      "pass": true
+    },
+    {
+      "check": "fisheye_rear: at least 100 accepted views",
+      "pass": true
+    },
+    {
+      "check": "fisheye_rear: median <= 0.65 px",
+      "pass": true
+    },
+    {
+      "check": "fisheye_rear: p95 <= 0.90 px",
+      "pass": true
+    },
+    {
+      "check": "fisheye_rear: max accepted <= 0.90 px",
+      "pass": true
+    },
+    {
+      "check": "fisheye_rear: 5/5 held-out folds",
+      "pass": true
+    },
+    {
+      "check": "fisheye_rear: focal spread <= 2%",
+      "pass": true
+    },
+    {
+      "check": "fisheye_rear: principal spread <= 15 px",
+      "pass": true
+    },
+    {
+      "check": "fisheye_rear: held-out p95 <= 1.2 px",
+      "pass": true
+    },
+    {
+      "check": "fisheye_rear: full-frame target coverage",
+      "pass": true
+    },
+    {
+      "check": "fisheye_rear: finite 3x3 K",
+      "pass": true
+    },
+    {
+      "check": "fisheye_rear: finite 4-coefficient D",
+      "pass": true
+    },
+    {
+      "check": "fisheye_rear: square-pixel focal ratio",
+      "pass": true
+    },
+    {
+      "check": "fisheye_rear: ROS2 distortion model",
+      "pass": true
+    },
+    {
+      "check": "fisheye_rear: ROS2 K matches report",
+      "pass": true
+    },
+    {
+      "check": "fisheye_rear: ROS2 D matches report",
+      "pass": true
+    },
+    {
+      "check": "fisheye_rear: reprojection_preview.jpg readable",
+      "pass": true
+    },
+    {
+      "check": "fisheye_rear: undistortion_preview.jpg readable",
+      "pass": true
+    },
+    {
+      "check": "fisheye_left: equidistant model",
+      "pass": true
+    },
+    {
+      "check": "fisheye_left: 1600x1200 resolution",
+      "pass": true
+    },
+    {
+      "check": "fisheye_left: calibrator quality gate",
+      "pass": true
+    },
+    {
+      "check": "fisheye_left: at least 100 accepted views",
+      "pass": true
+    },
+    {
+      "check": "fisheye_left: median <= 0.65 px",
+      "pass": true
+    },
+    {
+      "check": "fisheye_left: p95 <= 0.90 px",
+      "pass": true
+    },
+    {
+      "check": "fisheye_left: max accepted <= 0.90 px",
+      "pass": true
+    },
+    {
+      "check": "fisheye_left: 5/5 held-out folds",
+      "pass": true
+    },
+    {
+      "check": "fisheye_left: focal spread <= 2%",
+      "pass": true
+    },
+    {
+      "check": "fisheye_left: principal spread <= 15 px",
+      "pass": true
+    },
+    {
+      "check": "fisheye_left: held-out p95 <= 1.2 px",
+      "pass": true
+    },
+    {
+      "check": "fisheye_left: full-frame target coverage",
+      "pass": true
+    },
+    {
+      "check": "fisheye_left: finite 3x3 K",
+      "pass": true
+    },
+    {
+      "check": "fisheye_left: finite 4-coefficient D",
+      "pass": true
+    },
+    {
+      "check": "fisheye_left: square-pixel focal ratio",
+      "pass": true
+    },
+    {
+      "check": "fisheye_left: ROS2 distortion model",
+      "pass": true
+    },
+    {
+      "check": "fisheye_left: ROS2 K matches report",
+      "pass": true
+    },
+    {
+      "check": "fisheye_left: ROS2 D matches report",
+      "pass": true
+    },
+    {
+      "check": "fisheye_left: reprojection_preview.jpg readable",
+      "pass": true
+    },
+    {
+      "check": "fisheye_left: undistortion_preview.jpg readable",
+      "pass": true
+    },
+    {
+      "check": "fisheye_right: equidistant model",
+      "pass": true
+    },
+    {
+      "check": "fisheye_right: 1600x1200 resolution",
+      "pass": true
+    },
+    {
+      "check": "fisheye_right: calibrator quality gate",
+      "pass": true
+    },
+    {
+      "check": "fisheye_right: at least 100 accepted views",
+      "pass": true
+    },
+    {
+      "check": "fisheye_right: median <= 0.65 px",
+      "pass": true
+    },
+    {
+      "check": "fisheye_right: p95 <= 0.90 px",
+      "pass": true
+    },
+    {
+      "check": "fisheye_right: max accepted <= 0.90 px",
+      "pass": true
+    },
+    {
+      "check": "fisheye_right: 5/5 held-out folds",
+      "pass": true
+    },
+    {
+      "check": "fisheye_right: focal spread <= 2%",
+      "pass": true
+    },
+    {
+      "check": "fisheye_right: principal spread <= 15 px",
+      "pass": true
+    },
+    {
+      "check": "fisheye_right: held-out p95 <= 1.2 px",
+      "pass": true
+    },
+    {
+      "check": "fisheye_right: full-frame target coverage",
+      "pass": true
+    },
+    {
+      "check": "fisheye_right: finite 3x3 K",
+      "pass": true
+    },
+    {
+      "check": "fisheye_right: finite 4-coefficient D",
+      "pass": true
+    },
+    {
+      "check": "fisheye_right: square-pixel focal ratio",
+      "pass": true
+    },
+    {
+      "check": "fisheye_right: ROS2 distortion model",
+      "pass": true
+    },
+    {
+      "check": "fisheye_right: ROS2 K matches report",
+      "pass": true
+    },
+    {
+      "check": "fisheye_right: ROS2 D matches report",
+      "pass": true
+    },
+    {
+      "check": "fisheye_right: reprojection_preview.jpg readable",
+      "pass": true
+    },
+    {
+      "check": "fisheye_right: undistortion_preview.jpg readable",
+      "pass": true
+    }
+  ]
+}

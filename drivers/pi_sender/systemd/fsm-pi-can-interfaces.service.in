@@ -1,0 +1,15 @@
+[Unit]
+Description=FSM-Pi dual MCP251XFD CAN setup (receive only)
+After=systemd-modules-load.service systemd-udev-trigger.service
+Before=network-online.target fsm-pi-camera-gateway.service
+
+[Service]
+Type=oneshot
+Environment=FSM_PI_CAN_BITRATE=500000
+ExecStart=/usr/local/libexec/fsm-pi-can-setup
+ExecStop=-/usr/sbin/ip link set can10 down
+ExecStop=-/usr/sbin/ip link set can11 down
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

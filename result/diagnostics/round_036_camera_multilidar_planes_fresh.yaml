@@ -1,0 +1,1142 @@
+schema_version: 1
+reference_frame: velodyne_top_base_link
+method: full_aprilgrid_pose_to_cross_validated_multilidar_plane_graph
+corner_source: fresh_redetection_from_each_saved_image
+transforms:
+  video_front_mid/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.189027224
+    - -0.002215315
+    - -0.194405742
+    rpy_deg:
+    - -1.08906519
+    - 2.72923159
+    - -0.29579455
+    source: multilidar_dynamic_board_graph
+  video_front_right/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.124154082
+    - -0.491264079
+    - -0.221510132
+    rpy_deg:
+    - -0.96110542
+    - 4.99347536
+    - -56.53483367
+    source: multilidar_dynamic_board_graph
+  video_rear_left/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - -0.001161683
+    - 0.540995514
+    - -0.326357227
+    rpy_deg:
+    - 0.34920123
+    - -2.62908552
+    - 108.80281813
+    source: multilidar_dynamic_board_graph
+  video_rear_mid/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - -2.155446883
+    - 0.03754558
+    - -1.130652094
+    rpy_deg:
+    - -2.00242178
+    - 1.51637002
+    - -179.27895424
+    source: multilidar_dynamic_board_graph
+  fisheye_front/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.338441343
+    - -0.022688676
+    - -0.991545073
+    rpy_deg:
+    - 0.68286271
+    - 19.42111333
+    - 0.26498888
+    source: multilidar_dynamic_board_graph
+  fisheye_left/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - -0.018236134
+    - 0.575370838
+    - -0.759063132
+    rpy_deg:
+    - 3.7688943
+    - 21.18132514
+    - 91.44214514
+    source: multilidar_dynamic_board_graph
+  fisheye_rear/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - -2.180840351
+    - 0.403634805
+    - -0.983444457
+    rpy_deg:
+    - 0.1269893
+    - 11.65208465
+    - 179.04498701
+    source: multilidar_dynamic_board_graph
+quality:
+  video_front_mid/camera_link:
+    raw_capture_observations: 86
+    unique_board_poses: 79
+    cross_lidar_corroborated: 84
+    difference_from_rough_position_m: 0.18912296155784628
+    difference_from_rough_angle_deg: 2.950707409496395
+    stability:
+      status: bootstrap_consensus
+      achieved_tier: coarse_only
+      dominant_count: 5
+      dominant_fraction: 1.0
+      position_p95_m: 0.02483448514335428
+      angle_p95_deg: 0.2396972906773338
+      full_fit:
+        raw_count: 79
+        accepted_count: 52
+        discarded_count: 27
+        rejection_history:
+        - iteration: 1
+          input: 79
+          output: 57
+          plane_cut_m: 0.1
+          normal_cut_deg: 5.579140729079617
+        - iteration: 2
+          input: 57
+          output: 53
+          plane_cut_m: 0.1
+          normal_cut_deg: 4.4673752411790755
+        - iteration: 3
+          input: 53
+          output: 52
+          plane_cut_m: 0.09403557039889154
+          normal_cut_deg: 4.324990104862109
+        - iteration: 4
+          input: 52
+          output: 52
+          plane_cut_m: 0.09895358888207806
+          normal_cut_deg: 4.398972698097968
+        plane_median_m: 0.029217303060721456
+        plane_p95_m: 0.07896141174620401
+        normal_median_deg: 1.954767742084739
+        normal_p95_deg: 3.734146134681955
+        center_median_m: 0.043834589890405985
+        center_p95_m: 0.08159039729296645
+        plane_normal_singular_values:
+        - 7.1139568805665965
+        - 1.1658239786997733
+        - 0.18019975618136808
+        translation_observable: true
+      fold_audits:
+      - raw_count: 63
+        accepted_count: 41
+        discarded_count: 22
+        rejection_history:
+        - iteration: 1
+          input: 63
+          output: 45
+          plane_cut_m: 0.1
+          normal_cut_deg: 5.9558088212249505
+        - iteration: 2
+          input: 45
+          output: 43
+          plane_cut_m: 0.1
+          normal_cut_deg: 5.517566932646423
+        - iteration: 3
+          input: 43
+          output: 42
+          plane_cut_m: 0.1
+          normal_cut_deg: 5.522864298432612
+        - iteration: 4
+          input: 42
+          output: 41
+          plane_cut_m: 0.1
+          normal_cut_deg: 5.556053631796372
+        - iteration: 5
+          input: 41
+          output: 41
+          plane_cut_m: 0.1
+          normal_cut_deg: 5.689894445446495
+        plane_median_m: 0.030148811741451453
+        plane_p95_m: 0.07959803860940706
+        normal_median_deg: 2.089784792524561
+        normal_p95_deg: 4.614189410767775
+        center_median_m: 0.04495002320606556
+        center_p95_m: 0.07351570615849734
+        plane_normal_singular_values:
+        - 6.313510739615163
+        - 1.0551559552409415
+        - 0.1619507668508331
+        translation_observable: true
+      - raw_count: 63
+        accepted_count: 39
+        discarded_count: 24
+        rejection_history:
+        - iteration: 1
+          input: 63
+          output: 46
+          plane_cut_m: 0.1
+          normal_cut_deg: 5.042262373615951
+        - iteration: 2
+          input: 46
+          output: 43
+          plane_cut_m: 0.09751503792198601
+          normal_cut_deg: 4.345099649602677
+        - iteration: 3
+          input: 43
+          output: 40
+          plane_cut_m: 0.08392052075674572
+          normal_cut_deg: 4.403478487536606
+        - iteration: 4
+          input: 40
+          output: 39
+          plane_cut_m: 0.07868694416136135
+          normal_cut_deg: 4.297520813357851
+        - iteration: 5
+          input: 39
+          output: 39
+          plane_cut_m: 0.08164554196308416
+          normal_cut_deg: 4.441520808283105
+        plane_median_m: 0.022927758304230217
+        plane_p95_m: 0.07361431433605418
+        normal_median_deg: 1.9227758520010114
+        normal_p95_deg: 3.25146454591915
+        center_median_m: 0.04626422460841489
+        center_p95_m: 0.08040854816099288
+        plane_normal_singular_values:
+        - 6.1567749061767865
+        - 1.0368897320183703
+        - 0.13777676983691983
+        translation_observable: true
+      - raw_count: 63
+        accepted_count: 42
+        discarded_count: 21
+        rejection_history:
+        - iteration: 1
+          input: 63
+          output: 46
+          plane_cut_m: 0.1
+          normal_cut_deg: 5.78766909751057
+        - iteration: 2
+          input: 46
+          output: 42
+          plane_cut_m: 0.0982315095534978
+          normal_cut_deg: 4.611901973635094
+        - iteration: 3
+          input: 42
+          output: 42
+          plane_cut_m: 0.0909980390300964
+          normal_cut_deg: 4.297501925496581
+        plane_median_m: 0.02905252520467405
+        plane_p95_m: 0.08384390333233532
+        normal_median_deg: 2.0660319852650515
+        normal_p95_deg: 3.6956494465910903
+        center_median_m: 0.04605850867968263
+        center_p95_m: 0.07554431733204667
+        plane_normal_singular_values:
+        - 6.397421047243942
+        - 1.0228780867708802
+        - 0.16347588165893248
+        translation_observable: true
+      - raw_count: 63
+        accepted_count: 44
+        discarded_count: 19
+        rejection_history:
+        - iteration: 1
+          input: 63
+          output: 47
+          plane_cut_m: 0.1
+          normal_cut_deg: 6.0
+        - iteration: 2
+          input: 47
+          output: 44
+          plane_cut_m: 0.1
+          normal_cut_deg: 5.089142677987461
+        - iteration: 3
+          input: 44
+          output: 44
+          plane_cut_m: 0.1
+          normal_cut_deg: 4.952031833489453
+        plane_median_m: 0.029353842925398776
+        plane_p95_m: 0.08580670820923948
+        normal_median_deg: 1.923539966167227
+        normal_p95_deg: 3.997668013693239
+        center_median_m: 0.04840972988482849
+        center_p95_m: 0.08100487447275363
+        plane_normal_singular_values:
+        - 6.5414989613104115
+        - 1.0865197227271102
+        - 0.1681256414108187
+        translation_observable: true
+      - raw_count: 64
+        accepted_count: 40
+        discarded_count: 24
+        rejection_history:
+        - iteration: 1
+          input: 64
+          output: 44
+          plane_cut_m: 0.1
+          normal_cut_deg: 4.668270301265959
+        - iteration: 2
+          input: 44
+          output: 41
+          plane_cut_m: 0.09133993518296935
+          normal_cut_deg: 3.892559743239934
+        - iteration: 3
+          input: 41
+          output: 40
+          plane_cut_m: 0.0874490114762656
+          normal_cut_deg: 3.5976123954912005
+        - iteration: 4
+          input: 40
+          output: 40
+          plane_cut_m: 0.0866058587009979
+          normal_cut_deg: 3.693510395702033
+        plane_median_m: 0.022978856158192285
+        plane_p95_m: 0.06772868860641477
+        normal_median_deg: 1.7010741461123533
+        normal_p95_deg: 3.133916273861719
+        center_median_m: 0.0410235224794688
+        center_p95_m: 0.08229338626404965
+        plane_normal_singular_values:
+        - 6.229785464210515
+        - 1.078839004821245
+        - 0.1608709780777229
+        translation_observable: true
+  video_front_right/camera_link:
+    raw_capture_observations: 15
+    unique_board_poses: 15
+    cross_lidar_corroborated: 9
+    difference_from_rough_position_m: 0.07566107787696587
+    difference_from_rough_angle_deg: 6.176380996586215
+    stability:
+      status: bootstrap_consensus
+      achieved_tier: coarse_only
+      dominant_count: 4
+      dominant_fraction: 0.8
+      position_p95_m: 0.019807767306938017
+      angle_p95_deg: 0.6787371253444794
+      full_fit:
+        raw_count: 15
+        accepted_count: 9
+        discarded_count: 6
+        rejection_history:
+        - iteration: 1
+          input: 15
+          output: 11
+          plane_cut_m: 0.07980629569438413
+          normal_cut_deg: 3.1401271469827425
+        - iteration: 2
+          input: 11
+          output: 9
+          plane_cut_m: 0.035947454825894454
+          normal_cut_deg: 2.5
+        - iteration: 3
+          input: 9
+          output: 9
+          plane_cut_m: 0.039541374054779865
+          normal_cut_deg: 2.5
+        plane_median_m: 0.010042529489353136
+        plane_p95_m: 0.02463671892584571
+        normal_median_deg: 1.0461695289456343
+        normal_p95_deg: 1.7272347866104683
+        center_median_m: 0.03824318284810515
+        center_p95_m: 0.06983691860887371
+        plane_normal_singular_values:
+        - 2.7309654602094233
+        - 1.2371708714367973
+        - 0.10599948118480694
+        translation_observable: false
+      fold_audits:
+      - raw_count: 12
+        accepted_count: 9
+        discarded_count: 3
+        rejection_history:
+        - iteration: 1
+          input: 12
+          output: 9
+          plane_cut_m: 0.08479384182738126
+          normal_cut_deg: 2.7198093665144647
+        - iteration: 2
+          input: 9
+          output: 9
+          plane_cut_m: 0.03901869246301182
+          normal_cut_deg: 2.5
+        plane_median_m: 0.018313189970930566
+        plane_p95_m: 0.03247061875960577
+        normal_median_deg: 1.024446904033908
+        normal_p95_deg: 1.6968024866536824
+        center_median_m: 0.03543538104639246
+        center_p95_m: 0.0709535451217112
+        plane_normal_singular_values:
+        - 2.6779712454527553
+        - 1.3479511292823263
+        - 0.1072276158212907
+        translation_observable: false
+      - raw_count: 12
+        accepted_count: 7
+        discarded_count: 5
+        rejection_history:
+        - iteration: 1
+          input: 12
+          output: 9
+          plane_cut_m: 0.0903888055086759
+          normal_cut_deg: 3.5724092378644228
+        - iteration: 2
+          input: 9
+          output: 7
+          plane_cut_m: 0.03551592008779725
+          normal_cut_deg: 2.5
+        - iteration: 3
+          input: 7
+          output: 7
+          plane_cut_m: 0.025
+          normal_cut_deg: 2.5
+        plane_median_m: 0.004107253611714157
+        plane_p95_m: 0.01970729159802257
+        normal_median_deg: 0.9903488216540555
+        normal_p95_deg: 1.1372053673508145
+        center_median_m: 0.030246220263387205
+        center_p95_m: 0.07629621263193136
+        plane_normal_singular_values:
+        - 2.4787160931838534
+        - 0.9220651118888941
+        - 0.07591086107201984
+        translation_observable: false
+      - raw_count: 12
+        accepted_count: 7
+        discarded_count: 5
+        rejection_history:
+        - iteration: 1
+          input: 12
+          output: 10
+          plane_cut_m: 0.05891144911613755
+          normal_cut_deg: 3.8126126855248934
+        - iteration: 2
+          input: 10
+          output: 8
+          plane_cut_m: 0.05079227008905174
+          normal_cut_deg: 2.5
+        - iteration: 3
+          input: 8
+          output: 7
+          plane_cut_m: 0.025
+          normal_cut_deg: 2.5
+        - iteration: 4
+          input: 7
+          output: 7
+          plane_cut_m: 0.029499334266389177
+          normal_cut_deg: 2.5
+        plane_median_m: 0.01057772465161344
+        plane_p95_m: 0.01486364349353404
+        normal_median_deg: 0.8805379098742246
+        normal_p95_deg: 1.2421087349768793
+        center_median_m: 0.043781935636501755
+        center_p95_m: 0.06801929584826716
+        plane_normal_singular_values:
+        - 2.496985009013269
+        - 0.8689826056141644
+        - 0.09967495123161385
+        translation_observable: false
+      - raw_count: 12
+        accepted_count: 9
+        discarded_count: 3
+        rejection_history:
+        - iteration: 1
+          input: 12
+          output: 9
+          plane_cut_m: 0.07620181166632767
+          normal_cut_deg: 3.3743205207813447
+        - iteration: 2
+          input: 9
+          output: 9
+          plane_cut_m: 0.039808179719472925
+          normal_cut_deg: 2.5
+        plane_median_m: 0.01235761756069298
+        plane_p95_m: 0.03637622170265331
+        normal_median_deg: 0.9717149682471421
+        normal_p95_deg: 1.7208564724699353
+        center_median_m: 0.04650506781356255
+        center_p95_m: 0.07137554445302026
+        plane_normal_singular_values:
+        - 2.7358216701844493
+        - 1.2269812356433523
+        - 0.09897896912114687
+        translation_observable: false
+      - raw_count: 12
+        accepted_count: 8
+        discarded_count: 4
+        rejection_history:
+        - iteration: 1
+          input: 12
+          output: 9
+          plane_cut_m: 0.1
+          normal_cut_deg: 3.5766390917594757
+        - iteration: 2
+          input: 9
+          output: 8
+          plane_cut_m: 0.1
+          normal_cut_deg: 2.5
+        - iteration: 3
+          input: 8
+          output: 8
+          plane_cut_m: 0.055308095692134795
+          normal_cut_deg: 2.5
+        plane_median_m: 0.018221303777505637
+        plane_p95_m: 0.04113262842044253
+        normal_median_deg: 0.9235653005425856
+        normal_p95_deg: 1.7513366348602073
+        center_median_m: 0.04797039924664498
+        center_p95_m: 0.06167550220188007
+        plane_normal_singular_values:
+        - 2.5801674179436067
+        - 1.1547763968703562
+        - 0.09606023429774285
+        translation_observable: false
+  video_rear_left/camera_link:
+    raw_capture_observations: 37
+    unique_board_poses: 36
+    cross_lidar_corroborated: 21
+    difference_from_rough_position_m: 0.21680199523938856
+    difference_from_rough_angle_deg: 11.498220407983764
+    stability:
+      status: bootstrap_consensus
+      achieved_tier: coarse_only
+      dominant_count: 4
+      dominant_fraction: 0.8
+      position_p95_m: 0.013911205594259657
+      angle_p95_deg: 0.5935578697046567
+      full_fit:
+        raw_count: 36
+        accepted_count: 27
+        discarded_count: 9
+        rejection_history:
+        - iteration: 1
+          input: 36
+          output: 27
+          plane_cut_m: 0.044941193300109816
+          normal_cut_deg: 3.905528219151927
+        - iteration: 2
+          input: 27
+          output: 27
+          plane_cut_m: 0.03577821757181576
+          normal_cut_deg: 3.369911658455057
+        plane_median_m: 0.013556903654056818
+        plane_p95_m: 0.027788059580508846
+        normal_median_deg: 1.1396531600068938
+        normal_p95_deg: 2.5352138385404883
+        center_median_m: 0.059456608193516544
+        center_p95_m: 0.07834448682616492
+        plane_normal_singular_values:
+        - 4.8743368201528785
+        - 1.7977561195297818
+        - 0.09441132556598822
+        translation_observable: false
+      fold_audits:
+      - raw_count: 28
+        accepted_count: 20
+        discarded_count: 8
+        rejection_history:
+        - iteration: 1
+          input: 28
+          output: 20
+          plane_cut_m: 0.04280831798869078
+          normal_cut_deg: 3.139622501937788
+        - iteration: 2
+          input: 20
+          output: 20
+          plane_cut_m: 0.03653341298312229
+          normal_cut_deg: 2.6526699486697405
+        plane_median_m: 0.014468946269135197
+        plane_p95_m: 0.02141642484213216
+        normal_median_deg: 0.8955565330991504
+        normal_p95_deg: 2.515729774496118
+        center_median_m: 0.05284613109250143
+        center_p95_m: 0.0833314544869683
+        plane_normal_singular_values:
+        - 4.180575201262274
+        - 1.586096631021625
+        - 0.08419301427522387
+        translation_observable: false
+      - raw_count: 29
+        accepted_count: 22
+        discarded_count: 7
+        rejection_history:
+        - iteration: 1
+          input: 29
+          output: 22
+          plane_cut_m: 0.033667295597727964
+          normal_cut_deg: 3.8900865810249656
+        - iteration: 2
+          input: 22
+          output: 22
+          plane_cut_m: 0.037255555311399347
+          normal_cut_deg: 3.448717158515549
+        plane_median_m: 0.012564140321060568
+        plane_p95_m: 0.02355904180246311
+        normal_median_deg: 1.167994611788369
+        normal_p95_deg: 2.584093970068852
+        center_median_m: 0.05435719337202129
+        center_p95_m: 0.08008612288153574
+        plane_normal_singular_values:
+        - 4.414161463230998
+        - 1.5836248840146865
+        - 0.08550323535311291
+        translation_observable: false
+      - raw_count: 29
+        accepted_count: 20
+        discarded_count: 9
+        rejection_history:
+        - iteration: 1
+          input: 29
+          output: 20
+          plane_cut_m: 0.03429327809025429
+          normal_cut_deg: 3.730344750848534
+        - iteration: 2
+          input: 20
+          output: 20
+          plane_cut_m: 0.02533062416110332
+          normal_cut_deg: 3.1496788594193106
+        plane_median_m: 0.008780119326642355
+        plane_p95_m: 0.018809157215830232
+        normal_median_deg: 1.0081238469720355
+        normal_p95_deg: 2.5278591834504547
+        center_median_m: 0.06410144689392216
+        center_p95_m: 0.08289968808794258
+        plane_normal_singular_values:
+        - 4.206942159897242
+        - 1.5144471910525437
+        - 0.08992979924469212
+        translation_observable: false
+      - raw_count: 29
+        accepted_count: 21
+        discarded_count: 8
+        rejection_history:
+        - iteration: 1
+          input: 29
+          output: 21
+          plane_cut_m: 0.04538444756918425
+          normal_cut_deg: 3.1996928750900793
+        - iteration: 2
+          input: 21
+          output: 21
+          plane_cut_m: 0.03912360337562015
+          normal_cut_deg: 3.1064869878765125
+        plane_median_m: 0.011914021298234712
+        plane_p95_m: 0.026896271529232685
+        normal_median_deg: 1.1069581319000112
+        normal_p95_deg: 2.6008291296057133
+        center_median_m: 0.06069732873746927
+        center_p95_m: 0.08157814876833208
+        plane_normal_singular_values:
+        - 4.338305766815357
+        - 1.4748876179007882
+        - 0.061721861439494916
+        translation_observable: false
+      - raw_count: 29
+        accepted_count: 23
+        discarded_count: 6
+        rejection_history:
+        - iteration: 1
+          input: 29
+          output: 23
+          plane_cut_m: 0.04460104154679101
+          normal_cut_deg: 3.7256882757417342
+        - iteration: 2
+          input: 23
+          output: 23
+          plane_cut_m: 0.04361347696709439
+          normal_cut_deg: 3.26264457931099
+        plane_median_m: 0.013185815134240553
+        plane_p95_m: 0.027060320611680174
+        normal_median_deg: 1.2109366460388753
+        normal_p95_deg: 2.229317043790436
+        center_median_m: 0.06076113519346668
+        center_p95_m: 0.0788877958337292
+        plane_normal_singular_values:
+        - 4.48937727410481
+        - 1.6843378151423347
+        - 0.0921835952478156
+        translation_observable: false
+  video_rear_mid/camera_link:
+    raw_capture_observations: 7
+    unique_board_poses: 7
+    cross_lidar_corroborated: 7
+    difference_from_rough_position_m: 0.07643039880769371
+    difference_from_rough_angle_deg: 2.6204718699669924
+    stability:
+      status: provisional_low_support
+      achieved_tier: unvalidated
+      full_fit:
+        raw_count: 7
+        accepted_count: 7
+        discarded_count: 0
+        rejection_history:
+        - iteration: 1
+          input: 7
+          output: 7
+          plane_cut_m: 0.03482541314354304
+          normal_cut_deg: 4.221528150134228
+        plane_median_m: 0.008511746513526042
+        plane_p95_m: 0.019580505092935494
+        normal_median_deg: 1.791071060981663
+        normal_p95_deg: 2.2979267097285594
+        center_median_m: 0.019146403222937636
+        center_p95_m: 0.036429818436709345
+        plane_normal_singular_values:
+        - 2.4836459371228514
+        - 0.9118351929869505
+        - 0.007709723964230231
+        translation_observable: false
+      bootstrap_count: 0
+  fisheye_front/camera_link:
+    raw_capture_observations: 16
+    unique_board_poses: 15
+    cross_lidar_corroborated: 16
+    difference_from_rough_position_m: 0.15130569121024756
+    difference_from_rough_angle_deg: 0.8657749709528592
+    stability:
+      status: bootstrap_consensus
+      achieved_tier: coarse_only
+      dominant_count: 3
+      dominant_fraction: 0.6
+      position_p95_m: 0.04887427738315775
+      angle_p95_deg: 0.5736202944005417
+      full_fit:
+        raw_count: 15
+        accepted_count: 12
+        discarded_count: 3
+        rejection_history:
+        - iteration: 1
+          input: 15
+          output: 12
+          plane_cut_m: 0.1
+          normal_cut_deg: 6.0
+        - iteration: 2
+          input: 12
+          output: 12
+          plane_cut_m: 0.08482246757084577
+          normal_cut_deg: 5.8527665950470436
+        plane_median_m: 0.04587483699529438
+        plane_p95_m: 0.06631532721299853
+        normal_median_deg: 1.843382708482439
+        normal_p95_deg: 5.366542900248676
+        center_median_m: 0.041480460849202816
+        center_p95_m: 0.08272779112723967
+        plane_normal_singular_values:
+        - 3.422032885441077
+        - 0.5326573260329442
+        - 0.0772470321970742
+        translation_observable: false
+      fold_audits:
+      - raw_count: 12
+        accepted_count: 8
+        discarded_count: 4
+        rejection_history:
+        - iteration: 1
+          input: 12
+          output: 9
+          plane_cut_m: 0.1
+          normal_cut_deg: 6.0
+        - iteration: 2
+          input: 9
+          output: 8
+          plane_cut_m: 0.1
+          normal_cut_deg: 4.293593901553428
+        - iteration: 3
+          input: 8
+          output: 8
+          plane_cut_m: 0.1
+          normal_cut_deg: 4.61559839427558
+        plane_median_m: 0.04228042117442854
+        plane_p95_m: 0.08525563624015615
+        normal_median_deg: 1.8384142498636336
+        normal_p95_deg: 3.170254965845533
+        center_median_m: 0.05236799006514509
+        center_p95_m: 0.08487418173335445
+        plane_normal_singular_values:
+        - 2.7824562938939033
+        - 0.5034267652768366
+        - 0.06707059395219797
+        translation_observable: false
+      - raw_count: 12
+        accepted_count: 10
+        discarded_count: 2
+        rejection_history:
+        - iteration: 1
+          input: 12
+          output: 10
+          plane_cut_m: 0.1
+          normal_cut_deg: 6.0
+        - iteration: 2
+          input: 10
+          output: 10
+          plane_cut_m: 0.09842348273391233
+          normal_cut_deg: 6.0
+        plane_median_m: 0.04396687528445109
+        plane_p95_m: 0.06667780874783152
+        normal_median_deg: 2.4494767237647306
+        normal_p95_deg: 4.669430598667446
+        center_median_m: 0.054069687547983046
+        center_p95_m: 0.08257057873370265
+        plane_normal_singular_values:
+        - 3.123083201285356
+        - 0.4896988545186054
+        - 0.0809095157096836
+        translation_observable: false
+      - raw_count: 12
+        accepted_count: 9
+        discarded_count: 3
+        rejection_history:
+        - iteration: 1
+          input: 12
+          output: 11
+          plane_cut_m: 0.08783406003641958
+          normal_cut_deg: 6.0
+        - iteration: 2
+          input: 11
+          output: 10
+          plane_cut_m: 0.061859499349807834
+          normal_cut_deg: 6.0
+        - iteration: 3
+          input: 10
+          output: 9
+          plane_cut_m: 0.05896774776339253
+          normal_cut_deg: 6.0
+        - iteration: 4
+          input: 9
+          output: 9
+          plane_cut_m: 0.05471287450306139
+          normal_cut_deg: 6.0
+        plane_median_m: 0.02698320462489967
+        plane_p95_m: 0.03828402150913206
+        normal_median_deg: 2.1450565432875472
+        normal_p95_deg: 4.104505182595756
+        center_median_m: 0.06333362477581495
+        center_p95_m: 0.08297574815901469
+        plane_normal_singular_values:
+        - 2.9425761623619695
+        - 0.5771519848959941
+        - 0.09022812770815054
+        translation_observable: false
+      - raw_count: 12
+        accepted_count: 9
+        discarded_count: 3
+        rejection_history:
+        - iteration: 1
+          input: 12
+          output: 10
+          plane_cut_m: 0.1
+          normal_cut_deg: 6.0
+        - iteration: 2
+          input: 10
+          output: 9
+          plane_cut_m: 0.1
+          normal_cut_deg: 4.65829422512245
+        - iteration: 3
+          input: 9
+          output: 9
+          plane_cut_m: 0.1
+          normal_cut_deg: 4.382463422471577
+        plane_median_m: 0.060991443050697924
+        plane_p95_m: 0.09037781431849128
+        normal_median_deg: 1.7504842424169367
+        normal_p95_deg: 3.160796094675604
+        center_median_m: 0.05285153026907102
+        center_p95_m: 0.0937071808108288
+        plane_normal_singular_values:
+        - 2.968592386740568
+        - 0.4261203639738834
+        - 0.07668557095506985
+        translation_observable: false
+      - raw_count: 12
+        accepted_count: 8
+        discarded_count: 4
+        rejection_history:
+        - iteration: 1
+          input: 12
+          output: 9
+          plane_cut_m: 0.1
+          normal_cut_deg: 6.0
+        - iteration: 2
+          input: 9
+          output: 8
+          plane_cut_m: 0.07578712632057805
+          normal_cut_deg: 6.0
+        - iteration: 3
+          input: 8
+          output: 8
+          plane_cut_m: 0.0857670011185534
+          normal_cut_deg: 5.95736018845005
+        plane_median_m: 0.03942595977089991
+        plane_p95_m: 0.06287901127251894
+        normal_median_deg: 2.438254495692548
+        normal_p95_deg: 4.035228791067691
+        center_median_m: 0.04666098521246434
+        center_p95_m: 0.08328277306001179
+        plane_normal_singular_values:
+        - 2.7845752829998203
+        - 0.4926438614833315
+        - 0.05867298398120046
+        translation_observable: false
+  fisheye_left/camera_link:
+    raw_capture_observations: 28
+    unique_board_poses: 27
+    cross_lidar_corroborated: 13
+    difference_from_rough_position_m: 0.08524378612181781
+    difference_from_rough_angle_deg: 3.3786922224762757
+    stability:
+      status: bootstrap_consensus
+      achieved_tier: coarse_only
+      dominant_count: 4
+      dominant_fraction: 0.8
+      position_p95_m: 0.02098128526245428
+      angle_p95_deg: 0.614686565036018
+      full_fit:
+        raw_count: 27
+        accepted_count: 20
+        discarded_count: 7
+        rejection_history:
+        - iteration: 1
+          input: 27
+          output: 22
+          plane_cut_m: 0.0637987189335214
+          normal_cut_deg: 4.94778953521376
+        - iteration: 2
+          input: 22
+          output: 20
+          plane_cut_m: 0.059445156778560104
+          normal_cut_deg: 3.960815665480434
+        - iteration: 3
+          input: 20
+          output: 20
+          plane_cut_m: 0.06861739257333266
+          normal_cut_deg: 3.9404102943482737
+        plane_median_m: 0.015202045395349195
+        plane_p95_m: 0.05156557174961649
+        normal_median_deg: 1.2648201881259273
+        normal_p95_deg: 2.603544728162957
+        center_median_m: 0.03973687174812421
+        center_p95_m: 0.0817448644505314
+        plane_normal_singular_values:
+        - 4.24665996888378
+        - 1.4009103491283492
+        - 0.05770010732329683
+        translation_observable: false
+      fold_audits:
+      - raw_count: 21
+        accepted_count: 15
+        discarded_count: 6
+        rejection_history:
+        - iteration: 1
+          input: 21
+          output: 15
+          plane_cut_m: 0.05597298814539409
+          normal_cut_deg: 3.8181709138815343
+        - iteration: 2
+          input: 15
+          output: 15
+          plane_cut_m: 0.05749016107027627
+          normal_cut_deg: 3.4299848316858554
+        plane_median_m: 0.014877139791664273
+        plane_p95_m: 0.04685039401182944
+        normal_median_deg: 1.070325934304435
+        normal_p95_deg: 2.2045807345460067
+        center_median_m: 0.03851266770150169
+        center_p95_m: 0.07070360392550985
+        plane_normal_singular_values:
+        - 3.683095044049427
+        - 1.1967142601168355
+        - 0.05182543903877285
+        translation_observable: false
+      - raw_count: 21
+        accepted_count: 16
+        discarded_count: 5
+        rejection_history:
+        - iteration: 1
+          input: 21
+          output: 16
+          plane_cut_m: 0.06897354644478648
+          normal_cut_deg: 5.171430505310213
+        - iteration: 2
+          input: 16
+          output: 16
+          plane_cut_m: 0.06614898030068339
+          normal_cut_deg: 2.7063666838006073
+        plane_median_m: 0.018099885706917007
+        plane_p95_m: 0.04730782924164523
+        normal_median_deg: 1.0315701060524185
+        normal_p95_deg: 2.299534682355908
+        center_median_m: 0.030659714143127917
+        center_p95_m: 0.07188495408319262
+        plane_normal_singular_values:
+        - 3.77806570314169
+        - 1.3127734036690324
+        - 0.0533435409746963
+        translation_observable: false
+      - raw_count: 22
+        accepted_count: 10
+        discarded_count: 12
+        rejection_history:
+        - iteration: 1
+          input: 22
+          output: 17
+          plane_cut_m: 0.06384799578857847
+          normal_cut_deg: 4.784968221545704
+        - iteration: 2
+          input: 17
+          output: 12
+          plane_cut_m: 0.03341724894044473
+          normal_cut_deg: 3.3565261371586255
+        - iteration: 3
+          input: 12
+          output: 10
+          plane_cut_m: 0.025
+          normal_cut_deg: 2.5
+        - iteration: 4
+          input: 10
+          output: 10
+          plane_cut_m: 0.025
+          normal_cut_deg: 2.5
+        plane_median_m: 0.002444564956209927
+        plane_p95_m: 0.011831162989252285
+        normal_median_deg: 0.8087056342394503
+        normal_p95_deg: 1.838367596934696
+        center_median_m: 0.021999316687740546
+        center_p95_m: 0.07919302857462411
+        plane_normal_singular_values:
+        - 3.0366390029852126
+        - 0.8819315754585522
+        - 0.03194153656560656
+        translation_observable: false
+      - raw_count: 22
+        accepted_count: 12
+        discarded_count: 10
+        rejection_history:
+        - iteration: 1
+          input: 22
+          output: 15
+          plane_cut_m: 0.05829662853292872
+          normal_cut_deg: 4.346750771161617
+        - iteration: 2
+          input: 15
+          output: 14
+          plane_cut_m: 0.03801056833028582
+          normal_cut_deg: 2.770124493014244
+        - iteration: 3
+          input: 14
+          output: 12
+          plane_cut_m: 0.02913696841161917
+          normal_cut_deg: 3.057757167018237
+        - iteration: 4
+          input: 12
+          output: 12
+          plane_cut_m: 0.025
+          normal_cut_deg: 2.5
+        plane_median_m: 0.008708308640094309
+        plane_p95_m: 0.01910114931098159
+        normal_median_deg: 0.8289523878537877
+        normal_p95_deg: 2.0129794819184506
+        center_median_m: 0.049872089379829454
+        center_p95_m: 0.08853276754824616
+        plane_normal_singular_values:
+        - 3.339354229294841
+        - 0.9205428147656608
+        - 0.03625268919646417
+        translation_observable: false
+      - raw_count: 22
+        accepted_count: 11
+        discarded_count: 11
+        rejection_history:
+        - iteration: 1
+          input: 22
+          output: 17
+          plane_cut_m: 0.07443251403856221
+          normal_cut_deg: 4.7133016269689
+        - iteration: 2
+          input: 17
+          output: 16
+          plane_cut_m: 0.08064051045265153
+          normal_cut_deg: 3.4839967723819134
+        - iteration: 3
+          input: 16
+          output: 12
+          plane_cut_m: 0.04681141418934054
+          normal_cut_deg: 3.672359648646806
+        - iteration: 4
+          input: 12
+          output: 11
+          plane_cut_m: 0.026918551525758172
+          normal_cut_deg: 3.296572411243623
+        - iteration: 5
+          input: 11
+          output: 11
+          plane_cut_m: 0.025
+          normal_cut_deg: 3.3388886562473044
+        plane_median_m: 0.007161657430999835
+        plane_p95_m: 0.016723756785903765
+        normal_median_deg: 1.1104659354928468
+        normal_p95_deg: 2.1361732767307484
+        center_median_m: 0.04760805517729002
+        center_p95_m: 0.09177525793975796
+        plane_normal_singular_values:
+        - 3.233488421134315
+        - 0.7362016785259664
+        - 0.05059366487868361
+        translation_observable: false
+  fisheye_rear/camera_link:
+    raw_capture_observations: 7
+    unique_board_poses: 7
+    cross_lidar_corroborated: 7
+    difference_from_rough_position_m: 0.09424154363376872
+    difference_from_rough_angle_deg: 1.9243323153546363
+    stability:
+      status: provisional_low_support
+      achieved_tier: unvalidated
+      full_fit:
+        raw_count: 7
+        accepted_count: 6
+        discarded_count: 1
+        rejection_history:
+        - iteration: 1
+          input: 7
+          output: 6
+          plane_cut_m: 0.1
+          normal_cut_deg: 2.7428334260661664
+        - iteration: 2
+          input: 6
+          output: 6
+          plane_cut_m: 0.1
+          normal_cut_deg: 3.751004593260313
+        plane_median_m: 0.030450316853347426
+        plane_p95_m: 0.06854975889248771
+        normal_median_deg: 1.8205290649982668
+        normal_p95_deg: 2.42440308541342
+        center_median_m: 0.032715924331054635
+        center_p95_m: 0.048728195794340276
+        plane_normal_singular_values:
+        - 2.2864315149707104
+        - 0.878569794312576
+        - 0.018602254441393677
+        translation_observable: false
+      bootstrap_count: 0
+rejected:
+  video_front_left/camera_link:
+    raw_capture_observations: 12
+    unique_board_poses: 12
+    error: only 4 observations remain after robust gate
+  video_rear_right/camera_link:
+    raw_capture_observations: 20
+    unique_board_poses: 20
+    error: only 3 observations remain after robust gate
+  fisheye_right/camera_link:
+    raw_capture_observations: 8
+    unique_board_poses: 8
+    error: only 4 observations remain after robust gate
+  traffic_light_front/camera_link:
+    raw_capture_observations: 31
+    unique_board_poses: 31
+    error: only 0 observations remain after robust gate

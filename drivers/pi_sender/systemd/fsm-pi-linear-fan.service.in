@@ -1,0 +1,19 @@
+[Unit]
+Description=FSM-Pi linear PWM fan control (25-60 C)
+After=local-fs.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+ExecStart=/usr/bin/python3 @INSTALL_DIR@/app/fan-control/linear_fan_control.py
+Restart=always
+RestartSec=2
+TimeoutStopSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+
+[Install]
+WantedBy=multi-user.target

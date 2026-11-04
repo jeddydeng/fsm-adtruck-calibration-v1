@@ -1,0 +1,52 @@
+%YAML:1.0
+---
+camera_name: left
+camera_frame: fisheye_left/camera_optical_frame
+vehicle_frame: sensor_kit_base_link
+image_width: 1600
+image_height: 1200
+distortion_model: equidistant
+bev_width: 512
+bev_height: 512
+meters_per_pixel: 0.015
+bev_origin_u_px: 256
+bev_origin_v_px: 256
+bev_axes: "u_right_is_vehicle_minus_y; v_down_is_vehicle_minus_x"
+extrinsic_source: "part12_joint_extrinsics.yaml + quality-gated Part3 ground refinement"
+deployment_allowed: 0
+calibration_status: "review_only_reject_deployment"
+K: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [478.163640281, 0, 832.360494116, 0, 478.427662463, 624.236295617, 0, 0, 1]
+D: !!opencv-matrix
+   rows: 4
+   cols: 1
+   dt: d
+   data: [0.030688493629, -0.00245580364246, -0.00869947436911, 0.00143656637657]
+K_rectified: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [135.012004454, 0, 732.999819327, 0, 135.086552498, 575.106748764, 0, 0, 1]
+H_bev: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [-0.00826791263872, -0.466592444136, 267.181214139, 0.132505381608, -0.279862819122, 47.0874740921, -4.20247618777e-05, -0.00187906245614, 1]
+H_bev_definition: "p_bev ~ H_bev * p_rectified; NOT valid on raw fisheye pixels"
+R_vehicle_camera: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [0.99976864612, -0.0160680137992, -0.0142994126398, 0.00663088372633, -0.402182340585, 0.915535578916, -0.0204618095196, -0.915418583986, -0.401982748915]
+R_vehicle_camera_definition: "p_vehicle = R_vehicle_camera * p_camera_optical + t_vehicle_camera_m"
+t_vehicle_camera_m: !!opencv-matrix
+   rows: 3
+   cols: 1
+   dt: d
+   data: [1.6237245555, 0.5605313475, 1.01333427466]
+calibration_rms: 0.454467773456
+bev_remap_x: "fisheye_left_bev_map_x.npy"
+bev_remap_y: "fisheye_left_bev_map_y.npy"

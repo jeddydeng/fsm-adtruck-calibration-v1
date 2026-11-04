@@ -1,0 +1,252 @@
+schema_version: 1
+reference_frame: velodyne_top_base_link
+method: rigid_aprilgrid_frame_with_gravity_and_multilidar_board_center
+excluded:
+  traffic_light_front: frozen during extrinsic session
+transforms:
+  video_front_mid/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.275498879
+    - 0.046126573
+    - -0.117060049
+    rpy_deg:
+    - -0.74004432
+    - 3.78182333
+    - -1.00824939
+    source: rigid_multilidar_board_frame_consensus
+  video_front_right/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.018943181
+    - -0.510604968
+    - -0.316598136
+    rpy_deg:
+    - -2.30240477
+    - 3.93782909
+    - -54.27090331
+    source: rigid_multilidar_board_frame_consensus
+  video_rear_left/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.020253956
+    - 0.544159293
+    - -0.323435765
+    rpy_deg:
+    - 0.68593098
+    - -1.70762369
+    - 109.03178522
+    source: rigid_multilidar_board_frame_consensus
+  video_rear_right/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - -0.0282209
+    - -0.52265827
+    - -0.346990626
+    rpy_deg:
+    - -1.09304545
+    - 2.60500119
+    - -108.33015321
+    source: rigid_multilidar_board_frame_consensus
+quality:
+  video_front_mid/camera_link:
+    raw_observations: 72
+    unique_board_poses: 66
+    cross_lidar_corroborated: 61
+    pnp_range_scale: 0.9864076466908809
+    difference_from_rough_position_m: 0.291386905218491
+    difference_from_rough_angle_deg: 3.9770074484374796
+    stability:
+      status: bootstrap_consensus
+      achieved_tier: coarse_only
+      dominant_count: 4
+      dominant_fraction: 0.8
+      position_p95_m: 0.04826739720003943
+      angle_p95_deg: 0.5052611406762054
+      pnp_range_scale_p95: 0.003261954598425364
+      full_fit:
+        rotation:
+          raw_count: 66
+          dominant_count: 51
+          dominant_fraction: 0.7727272727272727
+          rotation_median_deg: 4.05897537885542
+          rotation_p95_deg: 9.653969650933174
+          board_axis_choice_counts:
+            quarter_1_normal_flipped_false: 51
+          rough_rotation_difference_median_deg: 4.138122783243086
+        position_and_scale:
+          accepted_count: 36
+          discarded_count: 15
+          center_median_m: 0.048738878730801585
+          center_p95_m: 0.08309635573670109
+          pnp_range_scale: 0.9848851686529143
+          scale_deviation_percent: -1.5114831347085689
+          rejection_history:
+          - iteration: 1
+            input: 51
+            output: 37
+            center_cut_m: 0.1
+          - iteration: 2
+            input: 37
+            output: 36
+            center_cut_m: 0.1
+          - iteration: 3
+            input: 36
+            output: 36
+            center_cut_m: 0.1
+  video_front_right/camera_link:
+    raw_observations: 11
+    unique_board_poses: 11
+    cross_lidar_corroborated: 6
+    pnp_range_scale: 0.981326039061391
+    difference_from_rough_position_m: 0.1974798577987909
+    difference_from_rough_angle_deg: 7.3835807408297045
+    stability:
+      status: bootstrap_consensus
+      achieved_tier: coarse_only
+      dominant_count: 3
+      dominant_fraction: 0.6
+      position_p95_m: 0.02546146851281087
+      angle_p95_deg: 0.25234497375431925
+      pnp_range_scale_p95: 0.0028981593989294892
+      full_fit:
+        rotation:
+          raw_count: 11
+          dominant_count: 9
+          dominant_fraction: 0.8181818181818182
+          rotation_median_deg: 2.8409472890098297
+          rotation_p95_deg: 7.976361019641218
+          board_axis_choice_counts:
+            quarter_1_normal_flipped_false: 9
+          rough_rotation_difference_median_deg: 7.119995055750684
+        position_and_scale:
+          accepted_count: 6
+          discarded_count: 3
+          center_median_m: 0.049774207572489765
+          center_p95_m: 0.06504961951054591
+          pnp_range_scale: 0.9772449296146745
+          scale_deviation_percent: -2.2755070385325538
+          rejection_history:
+          - iteration: 1
+            input: 9
+            output: 6
+            center_cut_m: 0.1
+          - iteration: 2
+            input: 6
+            output: 6
+            center_cut_m: 0.08973066166183652
+  video_rear_left/camera_link:
+    raw_observations: 32
+    unique_board_poses: 31
+    cross_lidar_corroborated: 15
+    pnp_range_scale: 0.9947019549109699
+    difference_from_rough_position_m: 0.19794966564924507
+    difference_from_rough_angle_deg: 11.110967864420115
+    stability:
+      status: bootstrap_consensus
+      achieved_tier: coarse_only
+      dominant_count: 4
+      dominant_fraction: 0.8
+      position_p95_m: 0.028125832780538342
+      angle_p95_deg: 0.6327863322912434
+      pnp_range_scale_p95: 0.00975094774935081
+      full_fit:
+        rotation:
+          raw_count: 31
+          dominant_count: 29
+          dominant_fraction: 0.9354838709677419
+          rotation_median_deg: 3.761251759131199
+          rotation_p95_deg: 9.109853576879267
+          board_axis_choice_counts:
+            quarter_2_normal_flipped_false: 29
+          rough_rotation_difference_median_deg: 11.153049745882118
+        position_and_scale:
+          accepted_count: 11
+          discarded_count: 18
+          center_median_m: 0.009808058524856864
+          center_p95_m: 0.025933026634209416
+          pnp_range_scale: 0.9945585357257253
+          scale_deviation_percent: -0.5441464274274721
+          rejection_history:
+          - iteration: 1
+            input: 29
+            output: 19
+            center_cut_m: 0.1
+          - iteration: 2
+            input: 19
+            output: 16
+            center_cut_m: 0.08768987054773973
+          - iteration: 3
+            input: 16
+            output: 11
+            center_cut_m: 0.0546490248226954
+          - iteration: 4
+            input: 11
+            output: 11
+            center_cut_m: 0.035
+  video_rear_right/camera_link:
+    raw_observations: 15
+    unique_board_poses: 15
+    cross_lidar_corroborated: 4
+    pnp_range_scale: 0.9912591576936498
+    difference_from_rough_position_m: 0.2516322008706331
+    difference_from_rough_angle_deg: 12.02988935299403
+    stability:
+      status: bootstrap_consensus
+      achieved_tier: coarse_only
+      dominant_count: 5
+      dominant_fraction: 1.0
+      position_p95_m: 0.06010019036197633
+      angle_p95_deg: 0.7590038645428573
+      pnp_range_scale_p95: 0.01426115107479864
+      full_fit:
+        rotation:
+          raw_count: 15
+          dominant_count: 12
+          dominant_fraction: 0.8
+          rotation_median_deg: 3.3097397197564034
+          rotation_p95_deg: 6.17607008310882
+          board_axis_choice_counts:
+            quarter_1_normal_flipped_false: 12
+          rough_rotation_difference_median_deg: 12.620482296188573
+        position_and_scale:
+          accepted_count: 8
+          discarded_count: 4
+          center_median_m: 0.04531222689198042
+          center_p95_m: 0.08699599410005619
+          pnp_range_scale: 0.9970363523286234
+          scale_deviation_percent: -0.2963647671376579
+          rejection_history:
+          - iteration: 1
+            input: 12
+            output: 8
+            center_cut_m: 0.1
+          - iteration: 2
+            input: 8
+            output: 8
+            center_cut_m: 0.1
+rejected:
+  video_front_left/camera_link:
+    raw_observations: 9
+    unique_board_poses: 9
+    error: only 2 rigid observations after 10 cm gate
+  video_rear_mid/camera_link:
+    raw_observations: 5
+    unique_board_poses: 5
+    error: only 0 rigid observations after 10 cm gate
+  fisheye_front/camera_link:
+    raw_observations: 12
+    unique_board_poses: 11
+    error: only 0 rigid observations after 10 cm gate
+  fisheye_left/camera_link:
+    raw_observations: 21
+    unique_board_poses: 20
+    error: only 1 rigid observations after 10 cm gate
+  fisheye_right/camera_link:
+    raw_observations: 8
+    unique_board_poses: 8
+    error: only 0 rigid observations after 10 cm gate
+  fisheye_rear/camera_link:
+    raw_observations: 3
+    unique_board_poses: 3
+    error: only 0 rigid observations after 10 cm gate

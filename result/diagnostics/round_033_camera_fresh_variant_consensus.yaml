@@ -1,0 +1,225 @@
+schema_version: 1
+method: three_solver_hyperparameter_consensus
+warning: This measures estimator sensitivity, not independent absolute accuracy.
+input_variants:
+- round_030_camera_nuisance_fresh_pixels.yaml
+- round_031_camera_nuisance_fresh_tight.yaml
+- round_032_camera_nuisance_fresh_wide.yaml
+transforms:
+  fisheye_front/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.373163815
+    - 0.014328562
+    - -1.074859024
+    rpy_deg:
+    - -0.01433272
+    - 19.06483677
+    - -0.22307334
+    source: nuisance_variant_consensus
+  fisheye_left/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - -0.044938541
+    - 0.594097605
+    - -0.715328381
+    rpy_deg:
+    - 1.7762517
+    - 23.41920556
+    - 90.79635029
+    source: nuisance_variant_consensus
+  fisheye_right/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - -0.005145944
+    - -0.58551605
+    - -0.696558495
+    rpy_deg:
+    - -0.4831227
+    - 24.66932109
+    - -90.76473568
+    source: nuisance_variant_consensus
+  traffic_light_front/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.006450265
+    - -0.167150278
+    - -0.167912391
+    rpy_deg:
+    - 0.69139125
+    - 1.94776721
+    - 0.06540842
+    source: nuisance_variant_consensus
+  video_front_mid/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.235133107
+    - -0.048756157
+    - -0.312925485
+    rpy_deg:
+    - -0.73018153
+    - 2.04393492
+    - 0.18106358
+    source: nuisance_variant_consensus
+  video_front_right/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.1631163
+    - -0.49191022
+    - -0.319879259
+    rpy_deg:
+    - -1.51596348
+    - 5.11692503
+    - -57.11114912
+    source: nuisance_variant_consensus
+  video_rear_left/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - -0.003787745
+    - 0.565198182
+    - -0.350079587
+    rpy_deg:
+    - 0.92700969
+    - -1.41795634
+    - 108.69370033
+    source: nuisance_variant_consensus
+  video_rear_right/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.019778495
+    - -0.542287636
+    - -0.323057738
+    rpy_deg:
+    - -1.66549223
+    - 3.99354003
+    - -109.87861912
+    source: nuisance_variant_consensus
+quality:
+  fisheye_front/camera_link:
+    dominant_count: 3
+    dominant_fraction: 1.0
+    position_p95_m: 0.0011780176878162254
+    angle_p95_deg: 0.04870914509454676
+    achieved_tier: fallback_1cm_1deg
+    variant_deltas:
+    - variant: round_030_camera_nuisance_fresh_pixels.yaml
+      position_m: 0.0
+      angle_deg: 0.008246034238900562
+    - variant: round_031_camera_nuisance_fresh_tight.yaml
+      position_m: 0.0012657119998834695
+      angle_deg: 0.049533566357134046
+    - variant: round_032_camera_nuisance_fresh_wide.yaml
+      position_m: 0.00038876887921102923
+      angle_deg: 0.04128935373126121
+  fisheye_left/camera_link:
+    dominant_count: 3
+    dominant_fraction: 1.0
+    position_p95_m: 0.0012638579637406792
+    angle_p95_deg: 0.022243379439429195
+    achieved_tier: fallback_1cm_1deg
+    variant_deltas:
+    - variant: round_030_camera_nuisance_fresh_pixels.yaml
+      position_m: 0.0
+      angle_deg: 0.006624490762187885
+    - variant: round_031_camera_nuisance_fresh_tight.yaml
+      position_m: 0.0013455436017833311
+      angle_deg: 0.02290574715998108
+    - variant: round_032_camera_nuisance_fresh_wide.yaml
+      position_m: 0.0005286872213568136
+      angle_deg: 0.01628206995446224
+  fisheye_right/camera_link:
+    dominant_count: 3
+    dominant_fraction: 1.0
+    position_p95_m: 0.009298054640472642
+    angle_p95_deg: 0.10641137112947505
+    achieved_tier: fallback_1cm_1deg
+    variant_deltas:
+    - variant: round_030_camera_nuisance_fresh_pixels.yaml
+      position_m: 1.1628999999957479e-05
+      angle_deg: 0.02518344207099733
+    - variant: round_031_camera_nuisance_fresh_tight.yaml
+      position_m: 0.009844273545849184
+      angle_deg: 0.10892906675940077
+    - variant: round_032_camera_nuisance_fresh_wide.yaml
+      position_m: 0.004382084492083761
+      angle_deg: 0.08375211046014355
+  traffic_light_front/camera_link:
+    dominant_count: 3
+    dominant_fraction: 1.0
+    position_p95_m: 0.01712617207176785
+    angle_p95_deg: 0.054056141498909784
+    achieved_tier: coarse_only
+    variant_deltas:
+    - variant: round_030_camera_nuisance_fresh_pixels.yaml
+      position_m: 0.007352471000000027
+      angle_deg: 0.05410806890856139
+    - variant: round_031_camera_nuisance_fresh_tight.yaml
+      position_m: 0.018212138857519832
+      angle_deg: 0.042012125614616806
+    - variant: round_032_camera_nuisance_fresh_wide.yaml
+      position_m: 0.006271181919925462
+      angle_deg: 0.05358879481204536
+  video_front_mid/camera_link:
+    dominant_count: 3
+    dominant_fraction: 1.0
+    position_p95_m: 0.03625415367252294
+    angle_p95_deg: 0.10660430071655966
+    achieved_tier: coarse_only
+    variant_deltas:
+    - variant: round_030_camera_nuisance_fresh_pixels.yaml
+      position_m: 0.0
+      angle_deg: 0.052690153695230654
+    - variant: round_031_camera_nuisance_fresh_tight.yaml
+      position_m: 0.04011483917531319
+      angle_deg: 0.11187057396913269
+    - variant: round_032_camera_nuisance_fresh_wide.yaml
+      position_m: 0.0015079841474106986
+      angle_deg: 0.05920784144340234
+  video_front_right/camera_link:
+    dominant_count: 3
+    dominant_fraction: 1.0
+    position_p95_m: 0.005353156086099125
+    angle_p95_deg: 0.04432768070441659
+    achieved_tier: fallback_1cm_1deg
+    variant_deltas:
+    - variant: round_030_camera_nuisance_fresh_pixels.yaml
+      position_m: 0.0
+      angle_deg: 0.01381638707086577
+    - variant: round_031_camera_nuisance_fresh_tight.yaml
+      position_m: 0.005656745972275856
+      angle_deg: 0.045708686744093965
+    - variant: round_032_camera_nuisance_fresh_wide.yaml
+      position_m: 0.0026208471105085476
+      angle_deg: 0.03189862634732018
+  video_rear_left/camera_link:
+    dominant_count: 3
+    dominant_fraction: 1.0
+    position_p95_m: 0.012026724839831983
+    angle_p95_deg: 0.16119552162096493
+    achieved_tier: coarse_only
+    variant_deltas:
+    - variant: round_030_camera_nuisance_fresh_pixels.yaml
+      position_m: 0.0
+      angle_deg: 0.03519776640447287
+    - variant: round_031_camera_nuisance_fresh_tight.yaml
+      position_m: 0.012763555660453615
+      angle_deg: 0.1647151770196838
+    - variant: round_032_camera_nuisance_fresh_wide.yaml
+      position_m: 0.005395247454237301
+      angle_deg: 0.12951862303249512
+  video_rear_right/camera_link:
+    dominant_count: 3
+    dominant_fraction: 1.0
+    position_p95_m: 0.006013485320656403
+    angle_p95_deg: 0.05240982879620554
+    achieved_tier: fallback_1cm_1deg
+    variant_deltas:
+    - variant: round_030_camera_nuisance_fresh_pixels.yaml
+      position_m: 0.0
+      angle_deg: 0.01650481140262262
+    - variant: round_031_camera_nuisance_fresh_tight.yaml
+      position_m: 0.006342552665375512
+      angle_deg: 0.054051398742830124
+    - variant: round_032_camera_nuisance_fresh_wide.yaml
+      position_m: 0.003051879218184427
+      angle_deg: 0.03763569927658427

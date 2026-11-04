@@ -1,0 +1,197 @@
+schema_version: 1
+reference_frame: velodyne_top_base_link
+method: robust_camera_absolute_and_relative_pose_graph
+transforms:
+  fisheye_front/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.350350008
+    - 0.009871027
+    - -1.052929578
+    rpy_deg:
+    - -0.03441089
+    - 19.29987293
+    - -0.20146993
+    source: camera_pose_graph_consensus
+  fisheye_left/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - -0.041814453
+    - 0.595913846
+    - -0.71740619
+    rpy_deg:
+    - 1.77662712
+    - 23.39519301
+    - 90.87677319
+    source: camera_pose_graph_consensus
+  fisheye_right/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.001029841
+    - -0.583885067
+    - -0.697962119
+    rpy_deg:
+    - -0.49285481
+    - 24.62428409
+    - -90.87955655
+    source: camera_pose_graph_consensus
+  traffic_light_front/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - -0.007474259
+    - -0.178886606
+    - -0.168132023
+    rpy_deg:
+    - 0.65868918
+    - 1.97407487
+    - 0.06646957
+    source: camera_pose_graph_consensus
+  video_front_left/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.121981682
+    - 0.506711478
+    - -0.338473479
+    rpy_deg:
+    - 0.65185446
+    - -0.06189668
+    - 56.63267748
+    source: camera_pose_graph_consensus
+  video_front_mid/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.204292846
+    - -0.034349264
+    - -0.302992679
+    rpy_deg:
+    - -0.74059037
+    - 2.01079507
+    - 0.09187281
+    source: camera_pose_graph_consensus
+  video_front_right/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.174131253
+    - -0.499559184
+    - -0.315773192
+    rpy_deg:
+    - -1.44194783
+    - 5.18252098
+    - -57.12201869
+    source: camera_pose_graph_consensus
+  video_rear_left/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.006965156
+    - 0.568831856
+    - -0.350354448
+    rpy_deg:
+    - 0.93600379
+    - -1.41249105
+    - 108.83808027
+    source: camera_pose_graph_consensus
+  video_rear_right/camera_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.05706739
+    - -0.532547856
+    - -0.319505907
+    rpy_deg:
+    - -1.95419965
+    - 3.90741311
+    - -110.03735003
+    source: camera_pose_graph_consensus
+quality:
+  fisheye_front/camera_link:
+    absolute_input_position_p95_m: 0.00950223529356544
+    absolute_input_angle_p95_deg: 0.15564505923432242
+    graph_adjustment_m: 0.031599551809150646
+    graph_adjustment_deg: 0.23609222251659467
+  fisheye_left/camera_link:
+    absolute_input_position_p95_m: 0.006
+    absolute_input_angle_p95_deg: 0.1
+    graph_adjustment_m: 0.003051201071377755
+    graph_adjustment_deg: 0.06239318152671465
+  fisheye_right/camera_link:
+    absolute_input_position_p95_m: 0.009583672566671527
+    absolute_input_angle_p95_deg: 0.12355917473445703
+    graph_adjustment_m: 0.004429210022657271
+    graph_adjustment_deg: 0.046863683739491624
+  traffic_light_front/camera_link:
+    absolute_input_position_p95_m: 0.09904698824954601
+    absolute_input_angle_p95_deg: 0.8274277420142558
+    graph_adjustment_m: 9.739587923773605e-16
+    graph_adjustment_deg: 4.84388910798533e-15
+  video_front_left/camera_link:
+    absolute_input_position_p95_m: 0.00729092545419022
+    absolute_input_angle_p95_deg: 0.1
+    graph_adjustment_m: 0.002278624218159604
+    graph_adjustment_deg: 0.06311651213199507
+  video_front_mid/camera_link:
+    absolute_input_position_p95_m: 0.006
+    absolute_input_angle_p95_deg: 0.1
+    graph_adjustment_m: 0.006176556812399072
+    graph_adjustment_deg: 0.08414340985000912
+  video_front_right/camera_link:
+    absolute_input_position_p95_m: 0.016222047448509375
+    absolute_input_angle_p95_deg: 0.1819055561727339
+    graph_adjustment_m: 0.010203993462759792
+    graph_adjustment_deg: 0.1081586337894083
+  video_rear_left/camera_link:
+    absolute_input_position_p95_m: 0.006
+    absolute_input_angle_p95_deg: 0.1
+    graph_adjustment_m: 0.0018733602177771723
+    graph_adjustment_deg: 0.04279721729597711
+  video_rear_right/camera_link:
+    absolute_input_position_p95_m: 0.036533127020936945
+    absolute_input_angle_p95_deg: 0.4211074955618846
+    graph_adjustment_m: 0.03303126719871063
+    graph_adjustment_deg: 0.2953726395252866
+pair_closure:
+  video_front_left<-video_rear_left:
+    support: five_fold
+    before_position_m: 0.0036337464151443245
+    before_angle_deg: 0.1485572247483328
+    after_position_m: 0.0020514256352947946
+    after_angle_deg: 0.061728342038027705
+    edge_position_p95_m: 0.006921891403708659
+    edge_angle_p95_deg: 0.1
+  video_front_mid<-fisheye_front:
+    support: five_fold
+    before_position_m: 0.04456016746943254
+    before_angle_deg: 0.38468992915022043
+    after_position_m: 0.006181977666729497
+    after_angle_deg: 0.06464657175046375
+    edge_position_p95_m: 0.006
+    edge_angle_p95_deg: 0.1
+  video_front_right<-video_rear_right:
+    support: five_fold
+    before_position_m: 0.031236284970431856
+    before_angle_deg: 0.3692515720132927
+    after_position_m: 0.0013204968939175994
+    after_angle_deg: 0.030160185720364295
+    edge_position_p95_m: 0.006
+    edge_angle_p95_deg: 0.1
+  video_rear_left<-fisheye_left:
+    support: five_fold
+    before_position_m: 0.007720734367804126
+    before_angle_deg: 0.14528873706449702
+    after_position_m: 0.0030945369716375427
+    after_angle_deg: 0.06266874176376445
+    edge_position_p95_m: 0.006
+    edge_angle_p95_deg: 0.1
+  video_rear_right<-fisheye_right:
+    support: five_fold
+    before_position_m: 0.03799695029616766
+    before_angle_deg: 0.367582087642728
+    after_position_m: 0.0044179287351135835
+    after_angle_deg: 0.1361564685908497
+    edge_position_p95_m: 0.00949854852154328
+    edge_angle_p95_deg: 0.20358109264112959
+rejected_pair_edges:
+  video_front_left<-fisheye_front: 'pre-fit independent closure exceeds 0.10 m / 1
+    deg gate: 0.240019 m, 4.034621 deg'
+  video_front_mid<-traffic_light_front: relative edge exceeds 0.5 m / 15 deg rough-geometry
+    gate
+  video_front_right<-fisheye_front: 'pre-fit independent closure exceeds 0.10 m /
+    1 deg gate: 0.227042 m, 3.837629 deg'

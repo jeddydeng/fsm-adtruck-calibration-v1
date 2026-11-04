@@ -1,0 +1,1995 @@
+schema_version: 1
+reference_frame: velodyne_top_base_link
+method: floor_normal_and_height_plus_bootstrap_point_to_plane_garage_pose_graph
+policy:
+  dominant_cluster_min_fraction: 0.6
+  cluster_translation_m: 0.1
+  cluster_rotation_deg: 1.0
+  target_translation_repeatability_m: 0.001
+  target_rotation_repeatability_deg: 0.1
+  fallback_translation_repeatability_m: 0.01
+  fallback_rotation_repeatability_deg: 1.0
+  note: repeatability is not the same as absolute accuracy
+floor_evidence:
+  velodyne_front_left_base_link:
+    roof_normal:
+    - 0.0063716508340455145
+    - -0.0049366543998019385
+    - 0.9999675152268627
+    normal_before:
+    - -0.018701683404524955
+    - 0.0022566686863672394
+    - 0.9998225614999278
+    normal_after:
+    - 0.006371650834045513
+    - -0.0049366543998019385
+    - 0.9999675152268627
+    tilt_correction_deg: 1.4946135188994432
+    translation_z_m: -1.2761300000000002
+    translation_z_max_deviation_m: 0.0005399999999997629
+    physical_height_m: 0.45044
+    floor_plane_rms_m: 0.0076100000000000004
+    sample_count: 6
+  velodyne_front_right_base_link:
+    roof_normal:
+    - 0.0063716508340455145
+    - -0.0049366543998019385
+    - 0.9999675152268627
+    normal_before:
+    - -0.021508395325098913
+    - 0.011613366805524156
+    - 0.9997012146846574
+    normal_after:
+    - 0.00637165083404552
+    - -0.0049366543998019385
+    - 0.9999675152268624
+    tilt_correction_deg: 1.8578002573868186
+    translation_z_m: -1.280495
+    translation_z_max_deviation_m: 0.0003750000000000142
+    physical_height_m: 0.45143500000000003
+    floor_plane_rms_m: 0.00827
+    sample_count: 6
+  velodyne_rear_base_link:
+    roof_normal:
+    - 0.0063716508340455145
+    - -0.0049366543998019385
+    - 0.9999675152268627
+    normal_before:
+    - 0.000846670289335519
+    - -0.003275014012882471
+    - 0.9999942786999517
+    normal_after:
+    - 0.006371650834045516
+    - -0.00493665439980194
+    - 0.9999675152268628
+    tilt_correction_deg: 0.3305686809799722
+    translation_z_m: -1.334865
+    translation_z_max_deviation_m: 0.0006650000000001377
+    physical_height_m: 0.379225
+    floor_plane_rms_m: 0.00799
+    sample_count: 6
+transforms:
+  velodyne_front_left_base_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.24705749
+    - 0.48273783
+    - -1.27613
+    rpy_deg:
+    - -118.9909899
+    - -88.50539316
+    - -16.19379001
+    source: bootstrap_consensus_floor_wall_column
+  velodyne_front_right_base_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.24258633
+    - -0.47422272
+    - -1.280495
+    rpy_deg:
+    - 165.69446999
+    - -88.14220066
+    - -31.23118476
+    source: bootstrap_consensus_floor_wall_column
+  velodyne_rear_base_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - -2.09317011
+    - 0.02850229
+    - -1.334865
+    rpy_deg:
+    - 16.73993028
+    - -89.6694327
+    - -16.86009518
+    source: bootstrap_consensus_floor_wall_column
+quality:
+  velodyne_front_left_base_link:
+    status: fallback_met
+    target_met: false
+    fallback_met: true
+    dominant_bootstrap_indices:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    bootstrap_stability:
+      dominant_count: 5
+      total_count: 5
+      dominant_fraction: 1.0
+      translation_p95_m: 0.0025767804206914715
+      rotation_p95_deg: 0.012582765035411678
+      translation_max_m: 0.0025944560073161986
+      rotation_max_deg: 0.013400630976779548
+    heldout_before:
+      point_count: 5557
+      median_m: 0.29143
+      p75_m: 0.8385
+      p90_m: 1.42893
+      overlap_0_10: 0.2458
+      overlap_0_20: 0.4317
+    heldout_after:
+      point_count: 5556
+      median_m: 0.28543
+      p75_m: 0.83312
+      p90_m: 1.41709
+      overlap_0_10: 0.326
+      overlap_0_20: 0.4372
+  velodyne_front_right_base_link:
+    status: fallback_met
+    target_met: false
+    fallback_met: true
+    dominant_bootstrap_indices:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    bootstrap_stability:
+      dominant_count: 5
+      total_count: 5
+      dominant_fraction: 1.0
+      translation_p95_m: 0.0023134533955104096
+      rotation_p95_deg: 0.03734551419943562
+      translation_max_m: 0.002319077502597094
+      rotation_max_deg: 0.039324672231663305
+    heldout_before:
+      point_count: 5936
+      median_m: 0.3287
+      p75_m: 0.90289
+      p90_m: 1.56302
+      overlap_0_10: 0.2402
+      overlap_0_20: 0.4136
+    heldout_after:
+      point_count: 5934
+      median_m: 0.33038
+      p75_m: 0.90427
+      p90_m: 1.56051
+      overlap_0_10: 0.3165
+      overlap_0_20: 0.4149
+  velodyne_rear_base_link:
+    status: fallback_met
+    target_met: false
+    fallback_met: true
+    dominant_bootstrap_indices:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    bootstrap_stability:
+      dominant_count: 5
+      total_count: 5
+      dominant_fraction: 1.0
+      translation_p95_m: 0.005645037474022556
+      rotation_p95_deg: 0.018652012333332933
+      translation_max_m: 0.00580084731300709
+      rotation_max_deg: 0.01905871736647753
+    heldout_before:
+      point_count: 4276
+      median_m: 1.34263
+      p75_m: 1.71509
+      p90_m: 1.98937
+      overlap_0_10: 0.0879
+      overlap_0_20: 0.1852
+    heldout_after:
+      point_count: 4276
+      median_m: 1.33806
+      p75_m: 1.70435
+      p90_m: 1.98312
+      overlap_0_10: 0.1326
+      overlap_0_20: 0.1838
+bootstraps:
+  lidar_front_left:
+  - group: 1
+    capture_ids:
+    - '20260902_200659_745'
+    - '20260902_202734_992'
+    - '20260902_203217_391'
+    - '20260902_203711_810'
+    - '20260902_204209_685'
+    - '20260902_204718_159'
+    - '20260902_205201_866'
+    - '20260902_205553_287'
+    - '20260902_210226_044'
+    - '20260902_211035_366'
+    - '20260902_211230_428'
+    - '20260902_211736_346'
+    - '20260902_212154_272'
+    - '20260902_212556_733'
+    - '20260902_212804_986'
+    - '20260902_213009_531'
+    - '20260902_213454_516'
+    - '20260902_213824_695'
+    transform:
+      parent: velodyne_top_base_link
+      xyz_m:
+      - 0.24671957
+      - 0.48316485
+      - -1.27613
+      rpy_deg:
+      - -118.9909899
+      - -88.50539316
+      - -16.1844787
+      source: bootstrap_floor_wall_column
+    before:
+      point_count: 5472
+      median_m: 0.31776
+      p75_m: 0.91522
+      p90_m: 1.46109
+      overlap_0_10: 0.2535
+      overlap_0_20: 0.4214
+    after:
+      point_count: 5471
+      median_m: 0.31557
+      p75_m: 0.91108
+      p90_m: 1.45726
+      overlap_0_10: 0.3179
+      overlap_0_20: 0.4248
+    iterations:
+    - threshold_m: 0.55
+      matches: 1125
+      median_euclidean_m: 0.083672
+      step_xy_m: 0.0882564
+      step_yaw_deg: -0.0948353
+    - threshold_m: 0.55
+      matches: 1146
+      median_euclidean_m: 0.05173
+      step_xy_m: 0.0052513
+      step_yaw_deg: -0.0666045
+    - threshold_m: 0.55
+      matches: 1150
+      median_euclidean_m: 0.05101
+      step_xy_m: 0.00046
+      step_yaw_deg: -0.007636
+    - threshold_m: 0.55
+      matches: 1150
+      median_euclidean_m: 0.050967
+      step_xy_m: 6.93e-05
+      step_yaw_deg: -0.0032247
+    - threshold_m: 0.35
+      matches: 1002
+      median_euclidean_m: 0.047152
+      step_xy_m: 0.000763
+      step_yaw_deg: 0.0035042
+    - threshold_m: 0.35
+      matches: 1002
+      median_euclidean_m: 0.047557
+      step_xy_m: 5.73e-05
+      step_yaw_deg: -9.73e-05
+    - threshold_m: 0.35
+      matches: 1002
+      median_euclidean_m: 0.047536
+      step_xy_m: 1.35e-05
+      step_yaw_deg: -0.000177
+    - threshold_m: 0.22
+      matches: 933
+      median_euclidean_m: 0.04589
+      step_xy_m: 0.0001186
+      step_yaw_deg: -0.0093217
+    - threshold_m: 0.22
+      matches: 933
+      median_euclidean_m: 0.045975
+      step_xy_m: 7.41e-05
+      step_yaw_deg: 0.0002456
+    - threshold_m: 0.22
+      matches: 933
+      median_euclidean_m: 0.045984
+      step_xy_m: 2.3e-06
+      step_yaw_deg: -3.0e-06
+    - threshold_m: 0.14
+      matches: 889
+      median_euclidean_m: 0.044877
+      step_xy_m: 0.0001145
+      step_yaw_deg: -0.0017619
+    - threshold_m: 0.14
+      matches: 889
+      median_euclidean_m: 0.044874
+      step_xy_m: 6.01e-05
+      step_yaw_deg: -2.34e-05
+    - threshold_m: 0.14
+      matches: 889
+      median_euclidean_m: 0.044869
+      step_xy_m: 1.0e-07
+      step_yaw_deg: -2.0e-07
+  - group: 2
+    capture_ids:
+    - '20260902_200707_583'
+    - '20260902_202751_239'
+    - '20260902_203227_986'
+    - '20260902_203732_946'
+    - '20260902_204115_816'
+    - '20260902_204626_705'
+    - '20260902_205116_134'
+    - '20260902_205609_002'
+    - '20260902_210236_397'
+    - '20260902_211209_118'
+    - '20260902_211249_587'
+    - '20260902_211748_308'
+    - '20260902_212206_010'
+    - '20260902_212712_885'
+    - '20260902_212836_708'
+    - '20260902_213014_348'
+    - '20260902_213503_469'
+    - '20260902_213841_026'
+    transform:
+      parent: velodyne_top_base_link
+      xyz_m:
+      - 0.24705749
+      - 0.48524391
+      - -1.27613
+      rpy_deg:
+      - -118.9909899
+      - -88.50539316
+      - -16.18978349
+      source: bootstrap_floor_wall_column
+    before:
+      point_count: 5525
+      median_m: 0.31008
+      p75_m: 0.89642
+      p90_m: 1.54444
+      overlap_0_10: 0.257
+      overlap_0_20: 0.425
+    after:
+      point_count: 5524
+      median_m: 0.30667
+      p75_m: 0.89556
+      p90_m: 1.52186
+      overlap_0_10: 0.3166
+      overlap_0_20: 0.4252
+    iterations:
+    - threshold_m: 0.55
+      matches: 1073
+      median_euclidean_m: 0.083918
+      step_xy_m: 0.087035
+      step_yaw_deg: -0.1111932
+    - threshold_m: 0.55
+      matches: 1097
+      median_euclidean_m: 0.053654
+      step_xy_m: 0.0053332
+      step_yaw_deg: -0.0605438
+    - threshold_m: 0.55
+      matches: 1106
+      median_euclidean_m: 0.051867
+      step_xy_m: 0.0004453
+      step_yaw_deg: -0.0079282
+    - threshold_m: 0.55
+      matches: 1106
+      median_euclidean_m: 0.051995
+      step_xy_m: 0.0001997
+      step_yaw_deg: -3.37e-05
+    - threshold_m: 0.35
+      matches: 969
+      median_euclidean_m: 0.048801
+      step_xy_m: 0.0008771
+      step_yaw_deg: 0.0031984
+    - threshold_m: 0.35
+      matches: 968
+      median_euclidean_m: 0.048915
+      step_xy_m: 0.000218
+      step_yaw_deg: 0.0005565
+    - threshold_m: 0.35
+      matches: 968
+      median_euclidean_m: 0.048842
+      step_xy_m: 1.0e-07
+      step_yaw_deg: 1.0e-07
+    - threshold_m: 0.22
+      matches: 897
+      median_euclidean_m: 0.047715
+      step_xy_m: 0.0005741
+      step_yaw_deg: -0.0055872
+    - threshold_m: 0.22
+      matches: 897
+      median_euclidean_m: 0.047588
+      step_xy_m: 6.41e-05
+      step_yaw_deg: 0.000505
+    - threshold_m: 0.22
+      matches: 897
+      median_euclidean_m: 0.047547
+      step_xy_m: 3.0e-06
+      step_yaw_deg: -0.0001725
+    - threshold_m: 0.14
+      matches: 846
+      median_euclidean_m: 0.046552
+      step_xy_m: 9.92e-05
+      step_yaw_deg: -0.0035235
+    - threshold_m: 0.14
+      matches: 846
+      median_euclidean_m: 0.046544
+      step_xy_m: 0.0001003
+      step_yaw_deg: -0.0005177
+    - threshold_m: 0.14
+      matches: 846
+      median_euclidean_m: 0.046515
+      step_xy_m: 0.0
+      step_yaw_deg: -2.0e-07
+  - group: 3
+    capture_ids:
+    - '20260902_200729_761'
+    - '20260902_202805_642'
+    - '20260902_203232_527'
+    - '20260902_203746_741'
+    - '20260902_204129_588'
+    - '20260902_204637_422'
+    - '20260902_205127_995'
+    - '20260902_205627_287'
+    - '20260902_210250_844'
+    - '20260902_210823_376'
+    - '20260902_211310_245'
+    - '20260902_211803_931'
+    - '20260902_212119_456'
+    - '20260902_212525_473'
+    - '20260902_212844_819'
+    - '20260902_213020_985'
+    - '20260902_213354_664'
+    - '20260902_213741_034'
+    transform:
+      parent: velodyne_top_base_link
+      xyz_m:
+      - 0.24742678
+      - 0.48273783
+      - -1.27613
+      rpy_deg:
+      - -118.9909899
+      - -88.50539316
+      - -16.1875402
+      source: bootstrap_floor_wall_column
+    before:
+      point_count: 5568
+      median_m: 0.30545
+      p75_m: 0.88354
+      p90_m: 1.436
+      overlap_0_10: 0.2556
+      overlap_0_20: 0.423
+    after:
+      point_count: 5567
+      median_m: 0.30254
+      p75_m: 0.88601
+      p90_m: 1.41456
+      overlap_0_10: 0.3228
+      overlap_0_20: 0.4268
+    iterations:
+    - threshold_m: 0.55
+      matches: 1074
+      median_euclidean_m: 0.083725
+      step_xy_m: 0.0884015
+      step_yaw_deg: -0.1190731
+    - threshold_m: 0.55
+      matches: 1109
+      median_euclidean_m: 0.051776
+      step_xy_m: 0.0065962
+      step_yaw_deg: -0.0496764
+    - threshold_m: 0.55
+      matches: 1116
+      median_euclidean_m: 0.050669
+      step_xy_m: 0.0003921
+      step_yaw_deg: -0.0077638
+    - threshold_m: 0.55
+      matches: 1116
+      median_euclidean_m: 0.05056
+      step_xy_m: 0.0001507
+      step_yaw_deg: -0.0015744
+    - threshold_m: 0.35
+      matches: 1012
+      median_euclidean_m: 0.047861
+      step_xy_m: 0.0004541
+      step_yaw_deg: 0.0033029
+    - threshold_m: 0.35
+      matches: 1013
+      median_euclidean_m: 0.04809
+      step_xy_m: 8.48e-05
+      step_yaw_deg: 0.0018406
+    - threshold_m: 0.35
+      matches: 1013
+      median_euclidean_m: 0.048047
+      step_xy_m: 2.0e-07
+      step_yaw_deg: 2.3e-06
+    - threshold_m: 0.22
+      matches: 934
+      median_euclidean_m: 0.046247
+      step_xy_m: 0.0003784
+      step_yaw_deg: -0.008597
+    - threshold_m: 0.22
+      matches: 935
+      median_euclidean_m: 0.046387
+      step_xy_m: 0.0001388
+      step_yaw_deg: 0.0002766
+    - threshold_m: 0.22
+      matches: 935
+      median_euclidean_m: 0.046366
+      step_xy_m: 1.0e-07
+      step_yaw_deg: 3.0e-07
+    - threshold_m: 0.14
+      matches: 886
+      median_euclidean_m: 0.044887
+      step_xy_m: 0.0003505
+      step_yaw_deg: -0.0017949
+    - threshold_m: 0.14
+      matches: 886
+      median_euclidean_m: 0.044777
+      step_xy_m: 0.00012
+      step_yaw_deg: 5.61e-05
+    - threshold_m: 0.14
+      matches: 886
+      median_euclidean_m: 0.044733
+      step_xy_m: 1.0e-07
+      step_yaw_deg: 3.9e-06
+  - group: 4
+    capture_ids:
+    - '20260902_200751_543'
+    - '20260902_202818_559'
+    - '20260902_203257_323'
+    - '20260902_203759_901'
+    - '20260902_204143_164'
+    - '20260902_204652_449'
+    - '20260902_205141_993'
+    - '20260902_205643_694'
+    - '20260902_210301_020'
+    - '20260902_210925_071'
+    - '20260902_211326_037'
+    - '20260902_211816_029'
+    - '20260902_212129_642'
+    - '20260902_212534_872'
+    - '20260902_212852_152'
+    - '20260902_213029_644'
+    - '20260902_213434_881'
+    - '20260902_213750_313'
+    transform:
+      parent: velodyne_top_base_link
+      xyz_m:
+      - 0.24628982
+      - 0.48025955
+      - -1.27613
+      rpy_deg:
+      - -118.9909899
+      - -88.50539316
+      - -16.20719064
+      source: bootstrap_floor_wall_column
+    before:
+      point_count: 5504
+      median_m: 0.33794
+      p75_m: 0.94425
+      p90_m: 1.42542
+      overlap_0_10: 0.234
+      overlap_0_20: 0.4135
+    after:
+      point_count: 5503
+      median_m: 0.33844
+      p75_m: 0.93888
+      p90_m: 1.42505
+      overlap_0_10: 0.3067
+      overlap_0_20: 0.4132
+    iterations:
+    - threshold_m: 0.55
+      matches: 972
+      median_euclidean_m: 0.084396
+      step_xy_m: 0.0895746
+      step_yaw_deg: -0.1220486
+    - threshold_m: 0.55
+      matches: 997
+      median_euclidean_m: 0.051144
+      step_xy_m: 0.0067324
+      step_yaw_deg: -0.062559
+    - threshold_m: 0.55
+      matches: 1003
+      median_euclidean_m: 0.050343
+      step_xy_m: 0.0005693
+      step_yaw_deg: -0.0053817
+    - threshold_m: 0.55
+      matches: 1002
+      median_euclidean_m: 0.05036
+      step_xy_m: 0.0001114
+      step_yaw_deg: -0.0005054
+    - threshold_m: 0.35
+      matches: 900
+      median_euclidean_m: 0.047239
+      step_xy_m: 0.0006245
+      step_yaw_deg: -0.0050727
+    - threshold_m: 0.35
+      matches: 900
+      median_euclidean_m: 0.047385
+      step_xy_m: 5.11e-05
+      step_yaw_deg: -0.0005769
+    - threshold_m: 0.35
+      matches: 899
+      median_euclidean_m: 0.047401
+      step_xy_m: 2.24e-05
+      step_yaw_deg: -0.0001393
+    - threshold_m: 0.35
+      matches: 899
+      median_euclidean_m: 0.047384
+      step_xy_m: 0.0
+      step_yaw_deg: -1.0e-07
+    - threshold_m: 0.22
+      matches: 851
+      median_euclidean_m: 0.04599
+      step_xy_m: 0.0001287
+      step_yaw_deg: -0.0039923
+    - threshold_m: 0.22
+      matches: 851
+      median_euclidean_m: 0.045892
+      step_xy_m: 8.72e-05
+      step_yaw_deg: -0.0006279
+    - threshold_m: 0.22
+      matches: 851
+      median_euclidean_m: 0.045894
+      step_xy_m: 2.37e-05
+      step_yaw_deg: -6.63e-05
+    - threshold_m: 0.22
+      matches: 851
+      median_euclidean_m: 0.045889
+      step_xy_m: 0.0
+      step_yaw_deg: 0.0
+    - threshold_m: 0.14
+      matches: 807
+      median_euclidean_m: 0.044991
+      step_xy_m: 0.0006099
+      step_yaw_deg: 0.0019175
+    - threshold_m: 0.14
+      matches: 806
+      median_euclidean_m: 0.044843
+      step_xy_m: 4.19e-05
+      step_yaw_deg: -0.0012669
+    - threshold_m: 0.14
+      matches: 806
+      median_euclidean_m: 0.044833
+      step_xy_m: 0.0001032
+      step_yaw_deg: -0.0028118
+    - threshold_m: 0.14
+      matches: 808
+      median_euclidean_m: 0.044731
+      step_xy_m: 4.19e-05
+      step_yaw_deg: 0.0004838
+    - threshold_m: 0.14
+      matches: 808
+      median_euclidean_m: 0.044748
+      step_xy_m: 1.0e-07
+      step_yaw_deg: 3.0e-07
+  - group: 5
+    capture_ids:
+    - '20260902_200756_436'
+    - '20260902_202829_626'
+    - '20260902_203317_211'
+    - '20260902_203815_126'
+    - '20260902_204153_565'
+    - '20260902_204707_758'
+    - '20260902_205152_540'
+    - '20260902_205659_702'
+    - '20260902_210215_429'
+    - '20260902_210744_972'
+    - '20260902_211340_127'
+    - '20260902_211833_310'
+    - '20260902_212142_093'
+    - '20260902_212545_623'
+    - '20260902_212902_385'
+    - '20260902_213038_638'
+    - '20260902_213445_198'
+    - '20260902_213758_472'
+    transform:
+      parent: velodyne_top_base_link
+      xyz_m:
+      - 0.24847577
+      - 0.48251519
+      - -1.27613
+      rpy_deg:
+      - -118.9909899
+      - -88.50539316
+      - -16.199957
+      source: bootstrap_floor_wall_column
+    before:
+      point_count: 5544
+      median_m: 0.30929
+      p75_m: 0.88133
+      p90_m: 1.39407
+      overlap_0_10: 0.2471
+      overlap_0_20: 0.4242
+    after:
+      point_count: 5544
+      median_m: 0.30355
+      p75_m: 0.88449
+      p90_m: 1.39081
+      overlap_0_10: 0.3173
+      overlap_0_20: 0.4259
+    iterations:
+    - threshold_m: 0.55
+      matches: 1158
+      median_euclidean_m: 0.085827
+      step_xy_m: 0.0885233
+      step_yaw_deg: -0.1399768
+    - threshold_m: 0.55
+      matches: 1175
+      median_euclidean_m: 0.051559
+      step_xy_m: 0.0060497
+      step_yaw_deg: -0.03719
+    - threshold_m: 0.55
+      matches: 1181
+      median_euclidean_m: 0.05128
+      step_xy_m: 0.0002311
+      step_yaw_deg: -0.0008713
+    - threshold_m: 0.55
+      matches: 1181
+      median_euclidean_m: 0.05127
+      step_xy_m: 2.1e-05
+      step_yaw_deg: 0.0001694
+    - threshold_m: 0.35
+      matches: 1023
+      median_euclidean_m: 0.048237
+      step_xy_m: 0.0012893
+      step_yaw_deg: -0.0074613
+    - threshold_m: 0.35
+      matches: 1024
+      median_euclidean_m: 0.048036
+      step_xy_m: 9.52e-05
+      step_yaw_deg: 0.0014943
+    - threshold_m: 0.35
+      matches: 1024
+      median_euclidean_m: 0.047967
+      step_xy_m: 6.5e-06
+      step_yaw_deg: 0.0001696
+    - threshold_m: 0.22
+      matches: 951
+      median_euclidean_m: 0.046749
+      step_xy_m: 0.0004545
+      step_yaw_deg: -0.0120404
+    - threshold_m: 0.22
+      matches: 952
+      median_euclidean_m: 0.046487
+      step_xy_m: 8.72e-05
+      step_yaw_deg: -0.0010419
+    - threshold_m: 0.22
+      matches: 953
+      median_euclidean_m: 0.04661
+      step_xy_m: 3.6e-06
+      step_yaw_deg: 0.000476
+    - threshold_m: 0.14
+      matches: 894
+      median_euclidean_m: 0.045415
+      step_xy_m: 0.0002733
+      step_yaw_deg: 0.0008223
+    - threshold_m: 0.14
+      matches: 895
+      median_euclidean_m: 0.04548
+      step_xy_m: 1.84e-05
+      step_yaw_deg: 3.66e-05
+  lidar_front_right:
+  - group: 1
+    capture_ids:
+    - '20260902_200659_745'
+    - '20260902_202734_992'
+    - '20260902_203217_391'
+    - '20260902_203711_810'
+    - '20260902_204209_685'
+    - '20260902_204718_159'
+    - '20260902_205201_866'
+    - '20260902_205553_287'
+    - '20260902_210226_044'
+    - '20260902_211035_366'
+    - '20260902_211230_428'
+    - '20260902_211736_346'
+    - '20260902_212154_272'
+    - '20260902_212556_733'
+    - '20260902_212804_986'
+    - '20260902_213009_531'
+    - '20260902_213454_516'
+    - '20260902_213824_695'
+    transform:
+      parent: velodyne_top_base_link
+      xyz_m:
+      - 0.24167978
+      - -0.47632668
+      - -1.280495
+      rpy_deg:
+      - 165.69446999
+      - -88.14220066
+      - -31.19186009
+      source: bootstrap_floor_wall_column
+    before:
+      point_count: 6055
+      median_m: 0.31711
+      p75_m: 0.87608
+      p90_m: 1.42986
+      overlap_0_10: 0.2459
+      overlap_0_20: 0.4185
+    after:
+      point_count: 6053
+      median_m: 0.31965
+      p75_m: 0.8787
+      p90_m: 1.42829
+      overlap_0_10: 0.3212
+      overlap_0_20: 0.4178
+    iterations:
+    - threshold_m: 0.55
+      matches: 1246
+      median_euclidean_m: 0.087053
+      step_xy_m: 0.0866671
+      step_yaw_deg: -0.4542287
+    - threshold_m: 0.55
+      matches: 1249
+      median_euclidean_m: 0.053077
+      step_xy_m: 0.0077729
+      step_yaw_deg: -0.0448376
+    - threshold_m: 0.55
+      matches: 1250
+      median_euclidean_m: 0.052671
+      step_xy_m: 0.0009049
+      step_yaw_deg: -0.0057278
+    - threshold_m: 0.55
+      matches: 1250
+      median_euclidean_m: 0.052674
+      step_xy_m: 4.1e-06
+      step_yaw_deg: 0.0001012
+    - threshold_m: 0.35
+      matches: 1053
+      median_euclidean_m: 0.048113
+      step_xy_m: 0.0003309
+      step_yaw_deg: 0.0077074
+    - threshold_m: 0.35
+      matches: 1053
+      median_euclidean_m: 0.047993
+      step_xy_m: 4.82e-05
+      step_yaw_deg: 0.0025437
+    - threshold_m: 0.35
+      matches: 1054
+      median_euclidean_m: 0.048116
+      step_xy_m: 1.89e-05
+      step_yaw_deg: 0.0001357
+    - threshold_m: 0.22
+      matches: 971
+      median_euclidean_m: 0.046457
+      step_xy_m: 0.0005896
+      step_yaw_deg: 0.0003335
+    - threshold_m: 0.22
+      matches: 970
+      median_euclidean_m: 0.046338
+      step_xy_m: 4.38e-05
+      step_yaw_deg: -0.001612
+    - threshold_m: 0.22
+      matches: 970
+      median_euclidean_m: 0.046311
+      step_xy_m: 2.61e-05
+      step_yaw_deg: -0.0005495
+    - threshold_m: 0.22
+      matches: 970
+      median_euclidean_m: 0.046301
+      step_xy_m: 6.01e-05
+      step_yaw_deg: 5.29e-05
+    - threshold_m: 0.22
+      matches: 970
+      median_euclidean_m: 0.046297
+      step_xy_m: 0.0
+      step_yaw_deg: 0.0
+    - threshold_m: 0.14
+      matches: 931
+      median_euclidean_m: 0.045368
+      step_xy_m: 0.0002059
+      step_yaw_deg: -0.0020329
+    - threshold_m: 0.14
+      matches: 931
+      median_euclidean_m: 0.04541
+      step_xy_m: 7.03e-05
+      step_yaw_deg: -0.0010244
+    - threshold_m: 0.14
+      matches: 931
+      median_euclidean_m: 0.0453
+      step_xy_m: 2.04e-05
+      step_yaw_deg: -9.59e-05
+    - threshold_m: 0.14
+      matches: 931
+      median_euclidean_m: 0.045309
+      step_xy_m: 0.0
+      step_yaw_deg: -1.0e-07
+  - group: 2
+    capture_ids:
+    - '20260902_200707_583'
+    - '20260902_202751_239'
+    - '20260902_203227_986'
+    - '20260902_203732_946'
+    - '20260902_204115_816'
+    - '20260902_204626_705'
+    - '20260902_205116_134'
+    - '20260902_205609_002'
+    - '20260902_210236_397'
+    - '20260902_211209_118'
+    - '20260902_211249_587'
+    - '20260902_211748_308'
+    - '20260902_212206_010'
+    - '20260902_212712_885'
+    - '20260902_212836_708'
+    - '20260902_213014_348'
+    - '20260902_213503_469'
+    - '20260902_213841_026'
+    transform:
+      parent: velodyne_top_base_link
+      xyz_m:
+      - 0.2427843
+      - -0.47379244
+      - -1.280495
+      rpy_deg:
+      - 165.69446999
+      - -88.14220066
+      - -31.23401674
+      source: bootstrap_floor_wall_column
+    before:
+      point_count: 5988
+      median_m: 0.32786
+      p75_m: 0.89761
+      p90_m: 1.60399
+      overlap_0_10: 0.2396
+      overlap_0_20: 0.4152
+    after:
+      point_count: 5986
+      median_m: 0.32541
+      p75_m: 0.9031
+      p90_m: 1.60076
+      overlap_0_10: 0.3147
+      overlap_0_20: 0.4158
+    iterations:
+    - threshold_m: 0.55
+      matches: 1173
+      median_euclidean_m: 0.086485
+      step_xy_m: 0.0894398
+      step_yaw_deg: -0.5051704
+    - threshold_m: 0.55
+      matches: 1176
+      median_euclidean_m: 0.051768
+      step_xy_m: 0.0077275
+      step_yaw_deg: -0.0269823
+    - threshold_m: 0.55
+      matches: 1174
+      median_euclidean_m: 0.052118
+      step_xy_m: 0.0005589
+      step_yaw_deg: -0.0043283
+    - threshold_m: 0.55
+      matches: 1174
+      median_euclidean_m: 0.05211
+      step_xy_m: 2.39e-05
+      step_yaw_deg: -5.5e-05
+    - threshold_m: 0.35
+      matches: 999
+      median_euclidean_m: 0.047895
+      step_xy_m: 0.0008593
+      step_yaw_deg: -0.001308
+    - threshold_m: 0.35
+      matches: 999
+      median_euclidean_m: 0.047658
+      step_xy_m: 6.17e-05
+      step_yaw_deg: -0.0008608
+    - threshold_m: 0.35
+      matches: 999
+      median_euclidean_m: 0.047594
+      step_xy_m: 0.0
+      step_yaw_deg: -3.0e-07
+    - threshold_m: 0.22
+      matches: 913
+      median_euclidean_m: 0.045195
+      step_xy_m: 0.0005441
+      step_yaw_deg: 0.0028093
+    - threshold_m: 0.22
+      matches: 914
+      median_euclidean_m: 0.045456
+      step_xy_m: 1.35e-05
+      step_yaw_deg: 0.0001504
+    - threshold_m: 0.14
+      matches: 878
+      median_euclidean_m: 0.044488
+      step_xy_m: 0.0002715
+      step_yaw_deg: -0.0021848
+    - threshold_m: 0.14
+      matches: 878
+      median_euclidean_m: 0.04453
+      step_xy_m: 0.0001267
+      step_yaw_deg: -0.0024414
+    - threshold_m: 0.14
+      matches: 878
+      median_euclidean_m: 0.044748
+      step_xy_m: 1.34e-05
+      step_yaw_deg: -0.0010196
+  - group: 3
+    capture_ids:
+    - '20260902_200729_761'
+    - '20260902_202805_642'
+    - '20260902_203232_527'
+    - '20260902_203746_741'
+    - '20260902_204129_588'
+    - '20260902_204637_422'
+    - '20260902_205127_995'
+    - '20260902_205627_287'
+    - '20260902_210250_844'
+    - '20260902_210823_376'
+    - '20260902_211310_245'
+    - '20260902_211803_931'
+    - '20260902_212119_456'
+    - '20260902_212525_473'
+    - '20260902_212844_819'
+    - '20260902_213020_985'
+    - '20260902_213354_664'
+    - '20260902_213741_034'
+    transform:
+      parent: velodyne_top_base_link
+      xyz_m:
+      - 0.24258633
+      - -0.47422272
+      - -1.280495
+      rpy_deg:
+      - 165.69446999
+      - -88.14220066
+      - -31.21766817
+      source: bootstrap_floor_wall_column
+    before:
+      point_count: 6004
+      median_m: 0.3336
+      p75_m: 0.87603
+      p90_m: 1.45389
+      overlap_0_10: 0.235
+      overlap_0_20: 0.4076
+    after:
+      point_count: 6002
+      median_m: 0.33274
+      p75_m: 0.87964
+      p90_m: 1.42949
+      overlap_0_10: 0.3112
+      overlap_0_20: 0.4085
+    iterations:
+    - threshold_m: 0.55
+      matches: 1231
+      median_euclidean_m: 0.087615
+      step_xy_m: 0.0883815
+      step_yaw_deg: -0.4829435
+    - threshold_m: 0.55
+      matches: 1244
+      median_euclidean_m: 0.052557
+      step_xy_m: 0.0088931
+      step_yaw_deg: -0.0351099
+    - threshold_m: 0.55
+      matches: 1242
+      median_euclidean_m: 0.052103
+      step_xy_m: 0.0006468
+      step_yaw_deg: -0.0051098
+    - threshold_m: 0.55
+      matches: 1243
+      median_euclidean_m: 0.0521
+      step_xy_m: 3.21e-05
+      step_yaw_deg: -0.0001773
+    - threshold_m: 0.35
+      matches: 1055
+      median_euclidean_m: 0.047783
+      step_xy_m: 0.0011655
+      step_yaw_deg: -0.0013691
+    - threshold_m: 0.35
+      matches: 1055
+      median_euclidean_m: 0.047761
+      step_xy_m: 0.0002316
+      step_yaw_deg: 0.0025827
+    - threshold_m: 0.35
+      matches: 1055
+      median_euclidean_m: 0.047882
+      step_xy_m: 2.0e-07
+      step_yaw_deg: 1.1e-06
+    - threshold_m: 0.22
+      matches: 959
+      median_euclidean_m: 0.045586
+      step_xy_m: 0.0004552
+      step_yaw_deg: 0.0002089
+    - threshold_m: 0.22
+      matches: 959
+      median_euclidean_m: 0.045713
+      step_xy_m: 4.63e-05
+      step_yaw_deg: -0.0010474
+    - threshold_m: 0.22
+      matches: 959
+      median_euclidean_m: 0.045743
+      step_xy_m: 4.11e-05
+      step_yaw_deg: 0.0010078
+    - threshold_m: 0.22
+      matches: 959
+      median_euclidean_m: 0.045719
+      step_xy_m: 4.11e-05
+      step_yaw_deg: -0.0010078
+    - threshold_m: 0.22
+      matches: 959
+      median_euclidean_m: 0.045743
+      step_xy_m: 4.11e-05
+      step_yaw_deg: 0.0010078
+    - threshold_m: 0.22
+      matches: 959
+      median_euclidean_m: 0.045719
+      step_xy_m: 4.11e-05
+      step_yaw_deg: -0.0010078
+    - threshold_m: 0.14
+      matches: 913
+      median_euclidean_m: 0.04472
+      step_xy_m: 0.0003472
+      step_yaw_deg: -0.0025217
+    - threshold_m: 0.14
+      matches: 913
+      median_euclidean_m: 0.044694
+      step_xy_m: 2.3e-05
+      step_yaw_deg: 0.0004435
+    - threshold_m: 0.14
+      matches: 913
+      median_euclidean_m: 0.044691
+      step_xy_m: 4.44e-05
+      step_yaw_deg: -0.0006326
+    - threshold_m: 0.14
+      matches: 913
+      median_euclidean_m: 0.044682
+      step_xy_m: 4.44e-05
+      step_yaw_deg: 0.0006325
+    - threshold_m: 0.14
+      matches: 913
+      median_euclidean_m: 0.044691
+      step_xy_m: 4.44e-05
+      step_yaw_deg: -0.0006325
+    - threshold_m: 0.14
+      matches: 913
+      median_euclidean_m: 0.044682
+      step_xy_m: 4.44e-05
+      step_yaw_deg: 0.0006325
+    - threshold_m: 0.14
+      matches: 913
+      median_euclidean_m: 0.044691
+      step_xy_m: 4.44e-05
+      step_yaw_deg: -0.0006325
+    - threshold_m: 0.14
+      matches: 913
+      median_euclidean_m: 0.044682
+      step_xy_m: 4.44e-05
+      step_yaw_deg: 0.0006325
+  - group: 4
+    capture_ids:
+    - '20260902_200751_543'
+    - '20260902_202818_559'
+    - '20260902_203257_323'
+    - '20260902_203759_901'
+    - '20260902_204143_164'
+    - '20260902_204652_449'
+    - '20260902_205141_993'
+    - '20260902_205643_694'
+    - '20260902_210301_020'
+    - '20260902_210925_071'
+    - '20260902_211326_037'
+    - '20260902_211816_029'
+    - '20260902_212129_642'
+    - '20260902_212534_872'
+    - '20260902_212852_152'
+    - '20260902_213029_644'
+    - '20260902_213434_881'
+    - '20260902_213750_313'
+    transform:
+      parent: velodyne_top_base_link
+      xyz_m:
+      - 0.24278979
+      - -0.47653286
+      - -1.280495
+      rpy_deg:
+      - 165.69446999
+      - -88.14220066
+      - -31.26061364
+      source: bootstrap_floor_wall_column
+    before:
+      point_count: 5938
+      median_m: 0.35005
+      p75_m: 0.97216
+      p90_m: 1.59971
+      overlap_0_10: 0.2386
+      overlap_0_20: 0.408
+    after:
+      point_count: 5936
+      median_m: 0.34525
+      p75_m: 0.97233
+      p90_m: 1.57044
+      overlap_0_10: 0.3101
+      overlap_0_20: 0.406
+    iterations:
+    - threshold_m: 0.55
+      matches: 1218
+      median_euclidean_m: 0.087496
+      step_xy_m: 0.0872801
+      step_yaw_deg: -0.5243597
+    - threshold_m: 0.55
+      matches: 1220
+      median_euclidean_m: 0.053395
+      step_xy_m: 0.0063554
+      step_yaw_deg: -0.0262022
+    - threshold_m: 0.55
+      matches: 1226
+      median_euclidean_m: 0.053209
+      step_xy_m: 0.0005259
+      step_yaw_deg: 0.0025536
+    - threshold_m: 0.55
+      matches: 1225
+      median_euclidean_m: 0.053323
+      step_xy_m: 6.65e-05
+      step_yaw_deg: -0.0022303
+    - threshold_m: 0.35
+      matches: 1043
+      median_euclidean_m: 0.048854
+      step_xy_m: 0.0008226
+      step_yaw_deg: -0.00911
+    - threshold_m: 0.35
+      matches: 1045
+      median_euclidean_m: 0.049069
+      step_xy_m: 3.57e-05
+      step_yaw_deg: -0.0006303
+    - threshold_m: 0.35
+      matches: 1045
+      median_euclidean_m: 0.049057
+      step_xy_m: 0.0001182
+      step_yaw_deg: -0.0020913
+    - threshold_m: 0.35
+      matches: 1046
+      median_euclidean_m: 0.049131
+      step_xy_m: 2.8e-06
+      step_yaw_deg: 0.0001766
+    - threshold_m: 0.22
+      matches: 957
+      median_euclidean_m: 0.047494
+      step_xy_m: 0.0006705
+      step_yaw_deg: -0.0089297
+    - threshold_m: 0.22
+      matches: 958
+      median_euclidean_m: 0.047382
+      step_xy_m: 6.64e-05
+      step_yaw_deg: 0.0017776
+    - threshold_m: 0.22
+      matches: 958
+      median_euclidean_m: 0.04738
+      step_xy_m: 1.12e-05
+      step_yaw_deg: 1.97e-05
+    - threshold_m: 0.14
+      matches: 912
+      median_euclidean_m: 0.046049
+      step_xy_m: 0.0002838
+      step_yaw_deg: 0.0006429
+    - threshold_m: 0.14
+      matches: 912
+      median_euclidean_m: 0.046083
+      step_xy_m: 1.3e-05
+      step_yaw_deg: 0.000395
+  - group: 5
+    capture_ids:
+    - '20260902_200756_436'
+    - '20260902_202829_626'
+    - '20260902_203317_211'
+    - '20260902_203815_126'
+    - '20260902_204153_565'
+    - '20260902_204707_758'
+    - '20260902_205152_540'
+    - '20260902_205659_702'
+    - '20260902_210215_429'
+    - '20260902_210744_972'
+    - '20260902_211340_127'
+    - '20260902_211833_310'
+    - '20260902_212142_093'
+    - '20260902_212545_623'
+    - '20260902_212902_385'
+    - '20260902_213038_638'
+    - '20260902_213445_198'
+    - '20260902_213758_472'
+    transform:
+      parent: velodyne_top_base_link
+      xyz_m:
+      - 0.24233084
+      - -0.47374361
+      - -1.280495
+      rpy_deg:
+      - 165.69446999
+      - -88.14220066
+      - -31.25176515
+      source: bootstrap_floor_wall_column
+    before:
+      point_count: 5914
+      median_m: 0.33517
+      p75_m: 0.92587
+      p90_m: 1.46618
+      overlap_0_10: 0.2445
+      overlap_0_20: 0.4138
+    after:
+      point_count: 5912
+      median_m: 0.33475
+      p75_m: 0.92667
+      p90_m: 1.46438
+      overlap_0_10: 0.3187
+      overlap_0_20: 0.4156
+    iterations:
+    - threshold_m: 0.55
+      matches: 1183
+      median_euclidean_m: 0.086561
+      step_xy_m: 0.0875847
+      step_yaw_deg: -0.5219926
+    - threshold_m: 0.55
+      matches: 1198
+      median_euclidean_m: 0.052788
+      step_xy_m: 0.0082786
+      step_yaw_deg: -0.0188644
+    - threshold_m: 0.55
+      matches: 1196
+      median_euclidean_m: 0.052085
+      step_xy_m: 0.0008299
+      step_yaw_deg: -0.003506
+    - threshold_m: 0.55
+      matches: 1196
+      median_euclidean_m: 0.052132
+      step_xy_m: 8.51e-05
+      step_yaw_deg: -0.0009491
+    - threshold_m: 0.35
+      matches: 1028
+      median_euclidean_m: 0.048499
+      step_xy_m: 0.0006043
+      step_yaw_deg: -0.0011849
+    - threshold_m: 0.35
+      matches: 1028
+      median_euclidean_m: 0.048519
+      step_xy_m: 6.1e-06
+      step_yaw_deg: 0.0002358
+    - threshold_m: 0.22
+      matches: 955
+      median_euclidean_m: 0.046652
+      step_xy_m: 0.000411
+      step_yaw_deg: -0.0077161
+    - threshold_m: 0.22
+      matches: 956
+      median_euclidean_m: 0.04651
+      step_xy_m: 0.0002024
+      step_yaw_deg: -0.003513
+    - threshold_m: 0.22
+      matches: 956
+      median_euclidean_m: 0.046652
+      step_xy_m: 2.09e-05
+      step_yaw_deg: 0.0003891
+    - threshold_m: 0.22
+      matches: 956
+      median_euclidean_m: 0.046613
+      step_xy_m: 0.0
+      step_yaw_deg: 1.0e-07
+    - threshold_m: 0.14
+      matches: 908
+      median_euclidean_m: 0.045527
+      step_xy_m: 0.0002136
+      step_yaw_deg: -0.0033551
+    - threshold_m: 0.14
+      matches: 908
+      median_euclidean_m: 0.045572
+      step_xy_m: 9.1e-06
+      step_yaw_deg: 0.0013167
+  lidar_rear:
+  - group: 1
+    capture_ids:
+    - '20260902_200659_745'
+    - '20260902_202734_992'
+    - '20260902_203217_391'
+    - '20260902_203711_810'
+    - '20260902_204209_685'
+    - '20260902_204718_159'
+    - '20260902_205201_866'
+    - '20260902_205553_287'
+    - '20260902_210226_044'
+    - '20260902_211035_366'
+    - '20260902_211230_428'
+    - '20260902_211736_346'
+    - '20260902_212154_272'
+    - '20260902_212556_733'
+    - '20260902_212804_986'
+    - '20260902_213009_531'
+    - '20260902_213454_516'
+    - '20260902_213824_695'
+    transform:
+      parent: velodyne_top_base_link
+      xyz_m:
+      - -2.09207977
+      - 0.02850229
+      - -1.334865
+      rpy_deg:
+      - 16.73993028
+      - -89.6694327
+      - -16.84690093
+      source: bootstrap_floor_wall_column
+    before:
+      point_count: 4230
+      median_m: 1.27318
+      p75_m: 1.71844
+      p90_m: 2.06853
+      overlap_0_10: 0.1019
+      overlap_0_20: 0.1998
+    after:
+      point_count: 4230
+      median_m: 1.27207
+      p75_m: 1.71831
+      p90_m: 2.06408
+      overlap_0_10: 0.1461
+      overlap_0_20: 0.1974
+    iterations:
+    - threshold_m: 0.55
+      matches: 460
+      median_euclidean_m: 0.094555
+      step_xy_m: 0.0979239
+      step_yaw_deg: -0.0907057
+    - threshold_m: 0.55
+      matches: 453
+      median_euclidean_m: 0.052212
+      step_xy_m: 0.0048372
+      step_yaw_deg: -0.0056245
+    - threshold_m: 0.55
+      matches: 453
+      median_euclidean_m: 0.052674
+      step_xy_m: 0.0002034
+      step_yaw_deg: 0.0018953
+    - threshold_m: 0.55
+      matches: 453
+      median_euclidean_m: 0.052561
+      step_xy_m: 2.0e-07
+      step_yaw_deg: 1.0e-07
+    - threshold_m: 0.35
+      matches: 392
+      median_euclidean_m: 0.049425
+      step_xy_m: 0.0016759
+      step_yaw_deg: 0.0044199
+    - threshold_m: 0.35
+      matches: 390
+      median_euclidean_m: 0.049161
+      step_xy_m: 0.0001031
+      step_yaw_deg: 0.0017207
+    - threshold_m: 0.35
+      matches: 390
+      median_euclidean_m: 0.049094
+      step_xy_m: 1.0e-07
+      step_yaw_deg: 1.6e-06
+    - threshold_m: 0.22
+      matches: 347
+      median_euclidean_m: 0.046076
+      step_xy_m: 0.0010624
+      step_yaw_deg: -0.0114498
+    - threshold_m: 0.22
+      matches: 347
+      median_euclidean_m: 0.046021
+      step_xy_m: 7.82e-05
+      step_yaw_deg: -0.005266
+    - threshold_m: 0.22
+      matches: 347
+      median_euclidean_m: 0.045964
+      step_xy_m: 0.0001589
+      step_yaw_deg: -0.0021891
+    - threshold_m: 0.22
+      matches: 347
+      median_euclidean_m: 0.046159
+      step_xy_m: 0.0001788
+      step_yaw_deg: -0.0035623
+    - threshold_m: 0.22
+      matches: 347
+      median_euclidean_m: 0.046308
+      step_xy_m: 6.18e-05
+      step_yaw_deg: -0.000962
+    - threshold_m: 0.22
+      matches: 347
+      median_euclidean_m: 0.04619
+      step_xy_m: 2.8e-05
+      step_yaw_deg: 0.0017455
+    - threshold_m: 0.14
+      matches: 324
+      median_euclidean_m: 0.044729
+      step_xy_m: 0.0003571
+      step_yaw_deg: 0.0006694
+    - threshold_m: 0.14
+      matches: 324
+      median_euclidean_m: 0.044743
+      step_xy_m: 0.0001067
+      step_yaw_deg: 0.0013797
+    - threshold_m: 0.14
+      matches: 324
+      median_euclidean_m: 0.044767
+      step_xy_m: 0.0001495
+      step_yaw_deg: -0.0009895
+    - threshold_m: 0.14
+      matches: 324
+      median_euclidean_m: 0.044777
+      step_xy_m: 0.0001495
+      step_yaw_deg: 0.0009898
+    - threshold_m: 0.14
+      matches: 324
+      median_euclidean_m: 0.044768
+      step_xy_m: 0.0001495
+      step_yaw_deg: -0.0009898
+    - threshold_m: 0.14
+      matches: 324
+      median_euclidean_m: 0.044777
+      step_xy_m: 0.0001495
+      step_yaw_deg: 0.0009898
+    - threshold_m: 0.14
+      matches: 324
+      median_euclidean_m: 0.044768
+      step_xy_m: 0.0001495
+      step_yaw_deg: -0.0009898
+    - threshold_m: 0.14
+      matches: 324
+      median_euclidean_m: 0.044777
+      step_xy_m: 0.0001495
+      step_yaw_deg: 0.0009898
+  - group: 2
+    capture_ids:
+    - '20260902_200707_583'
+    - '20260902_202751_239'
+    - '20260902_203227_986'
+    - '20260902_203732_946'
+    - '20260902_204115_816'
+    - '20260902_204626_705'
+    - '20260902_205116_134'
+    - '20260902_205609_002'
+    - '20260902_210236_397'
+    - '20260902_211209_118'
+    - '20260902_211249_587'
+    - '20260902_211748_308'
+    - '20260902_212206_010'
+    - '20260902_212712_885'
+    - '20260902_212836_708'
+    - '20260902_213014_348'
+    - '20260902_213503_469'
+    - '20260902_213841_026'
+    transform:
+      parent: velodyne_top_base_link
+      xyz_m:
+      - -2.09285643
+      - 0.03044331
+      - -1.334865
+      rpy_deg:
+      - 16.73993028
+      - -89.6694327
+      - -16.86479241
+      source: bootstrap_floor_wall_column
+    before:
+      point_count: 4273
+      median_m: 1.263
+      p75_m: 1.70331
+      p90_m: 2.05408
+      overlap_0_10: 0.1053
+      overlap_0_20: 0.1989
+    after:
+      point_count: 4273
+      median_m: 1.26179
+      p75_m: 1.70146
+      p90_m: 2.0416
+      overlap_0_10: 0.1451
+      overlap_0_20: 0.1987
+    iterations:
+    - threshold_m: 0.55
+      matches: 462
+      median_euclidean_m: 0.08834
+      step_xy_m: 0.096808
+      step_yaw_deg: -0.1189386
+    - threshold_m: 0.55
+      matches: 467
+      median_euclidean_m: 0.053428
+      step_xy_m: 0.0070026
+      step_yaw_deg: 0.0042823
+    - threshold_m: 0.55
+      matches: 467
+      median_euclidean_m: 0.053964
+      step_xy_m: 0.0002493
+      step_yaw_deg: -0.0021498
+    - threshold_m: 0.55
+      matches: 467
+      median_euclidean_m: 0.053844
+      step_xy_m: 2.0e-07
+      step_yaw_deg: -1.5e-06
+    - threshold_m: 0.35
+      matches: 396
+      median_euclidean_m: 0.04889
+      step_xy_m: 0.000902
+      step_yaw_deg: 0.0021787
+    - threshold_m: 0.35
+      matches: 396
+      median_euclidean_m: 0.048905
+      step_xy_m: 0.0004361
+      step_yaw_deg: 0.0011591
+    - threshold_m: 0.35
+      matches: 396
+      median_euclidean_m: 0.048856
+      step_xy_m: 3.0e-05
+      step_yaw_deg: -0.000478
+    - threshold_m: 0.35
+      matches: 396
+      median_euclidean_m: 0.048852
+      step_xy_m: 0.0
+      step_yaw_deg: -3.0e-07
+    - threshold_m: 0.22
+      matches: 352
+      median_euclidean_m: 0.046639
+      step_xy_m: 0.0005033
+      step_yaw_deg: -0.0100998
+    - threshold_m: 0.22
+      matches: 352
+      median_euclidean_m: 0.047025
+      step_xy_m: 7.15e-05
+      step_yaw_deg: 0.0004699
+    - threshold_m: 0.22
+      matches: 352
+      median_euclidean_m: 0.046995
+      step_xy_m: 1.0e-07
+      step_yaw_deg: 3.0e-07
+    - threshold_m: 0.14
+      matches: 329
+      median_euclidean_m: 0.045062
+      step_xy_m: 0.0003161
+      step_yaw_deg: -0.0026468
+    - threshold_m: 0.14
+      matches: 329
+      median_euclidean_m: 0.044976
+      step_xy_m: 0.0001054
+      step_yaw_deg: 0.0004056
+    - threshold_m: 0.14
+      matches: 329
+      median_euclidean_m: 0.044998
+      step_xy_m: 1.0e-07
+      step_yaw_deg: 8.0e-07
+  - group: 3
+    capture_ids:
+    - '20260902_200729_761'
+    - '20260902_202805_642'
+    - '20260902_203232_527'
+    - '20260902_203746_741'
+    - '20260902_204129_588'
+    - '20260902_204637_422'
+    - '20260902_205127_995'
+    - '20260902_205627_287'
+    - '20260902_210250_844'
+    - '20260902_210823_376'
+    - '20260902_211310_245'
+    - '20260902_211803_931'
+    - '20260902_212119_456'
+    - '20260902_212525_473'
+    - '20260902_212844_819'
+    - '20260902_213020_985'
+    - '20260902_213354_664'
+    - '20260902_213741_034'
+    transform:
+      parent: velodyne_top_base_link
+      xyz_m:
+      - -2.09437284
+      - 0.02949525
+      - -1.334865
+      rpy_deg:
+      - 16.73993028
+      - -89.6694327
+      - -16.87712037
+      source: bootstrap_floor_wall_column
+    before:
+      point_count: 4429
+      median_m: 1.26314
+      p75_m: 1.64182
+      p90_m: 1.97623
+      overlap_0_10: 0.0996
+      overlap_0_20: 0.1964
+    after:
+      point_count: 4429
+      median_m: 1.26114
+      p75_m: 1.63485
+      p90_m: 1.95607
+      overlap_0_10: 0.1404
+      overlap_0_20: 0.1967
+    iterations:
+    - threshold_m: 0.55
+      matches: 505
+      median_euclidean_m: 0.097967
+      step_xy_m: 0.0985039
+      step_yaw_deg: -0.0931511
+    - threshold_m: 0.55
+      matches: 502
+      median_euclidean_m: 0.055303
+      step_xy_m: 0.0031822
+      step_yaw_deg: -0.0215462
+    - threshold_m: 0.55
+      matches: 501
+      median_euclidean_m: 0.055569
+      step_xy_m: 1.89e-05
+      step_yaw_deg: -0.0016132
+    - threshold_m: 0.35
+      matches: 413
+      median_euclidean_m: 0.049588
+      step_xy_m: 0.0016926
+      step_yaw_deg: 0.0066352
+    - threshold_m: 0.35
+      matches: 413
+      median_euclidean_m: 0.04944
+      step_xy_m: 7.38e-05
+      step_yaw_deg: -0.0002055
+    - threshold_m: 0.35
+      matches: 413
+      median_euclidean_m: 0.04943
+      step_xy_m: 1.0e-07
+      step_yaw_deg: -2.0e-07
+    - threshold_m: 0.22
+      matches: 352
+      median_euclidean_m: 0.045604
+      step_xy_m: 0.0012028
+      step_yaw_deg: -0.0136262
+    - threshold_m: 0.22
+      matches: 352
+      median_euclidean_m: 0.045657
+      step_xy_m: 0.0001607
+      step_yaw_deg: -0.0032504
+    - threshold_m: 0.22
+      matches: 352
+      median_euclidean_m: 0.04559
+      step_xy_m: 2.0e-07
+      step_yaw_deg: -1.0e-06
+    - threshold_m: 0.14
+      matches: 327
+      median_euclidean_m: 0.043967
+      step_xy_m: 0.000415
+      step_yaw_deg: -0.0085967
+    - threshold_m: 0.14
+      matches: 328
+      median_euclidean_m: 0.044084
+      step_xy_m: 8.58e-05
+      step_yaw_deg: -0.0004302
+    - threshold_m: 0.14
+      matches: 328
+      median_euclidean_m: 0.044098
+      step_xy_m: 9.66e-05
+      step_yaw_deg: -0.0033787
+    - threshold_m: 0.14
+      matches: 328
+      median_euclidean_m: 0.044132
+      step_xy_m: 4.95e-05
+      step_yaw_deg: 0.0010178
+    - threshold_m: 0.14
+      matches: 328
+      median_euclidean_m: 0.044151
+      step_xy_m: 7.0e-05
+      step_yaw_deg: -0.0012142
+    - threshold_m: 0.14
+      matches: 328
+      median_euclidean_m: 0.044129
+      step_xy_m: 7.0e-05
+      step_yaw_deg: 0.0012142
+    - threshold_m: 0.14
+      matches: 328
+      median_euclidean_m: 0.044151
+      step_xy_m: 7.0e-05
+      step_yaw_deg: -0.0012142
+    - threshold_m: 0.14
+      matches: 328
+      median_euclidean_m: 0.044129
+      step_xy_m: 7.0e-05
+      step_yaw_deg: 0.0012142
+  - group: 4
+    capture_ids:
+    - '20260902_200751_543'
+    - '20260902_202818_559'
+    - '20260902_203257_323'
+    - '20260902_203759_901'
+    - '20260902_204143_164'
+    - '20260902_204652_449'
+    - '20260902_205141_993'
+    - '20260902_205643_694'
+    - '20260902_210301_020'
+    - '20260902_210925_071'
+    - '20260902_211326_037'
+    - '20260902_211816_029'
+    - '20260902_212129_642'
+    - '20260902_212534_872'
+    - '20260902_212852_152'
+    - '20260902_213029_644'
+    - '20260902_213434_881'
+    - '20260902_213750_313'
+    transform:
+      parent: velodyne_top_base_link
+      xyz_m:
+      - -2.09410465
+      - 0.02277721
+      - -1.334865
+      rpy_deg:
+      - 16.73993028
+      - -89.6694327
+      - -16.84103646
+      source: bootstrap_floor_wall_column
+    before:
+      point_count: 4499
+      median_m: 1.22793
+      p75_m: 1.63392
+      p90_m: 2.01302
+      overlap_0_10: 0.0994
+      overlap_0_20: 0.1985
+    after:
+      point_count: 4499
+      median_m: 1.22128
+      p75_m: 1.62132
+      p90_m: 1.99749
+      overlap_0_10: 0.1429
+      overlap_0_20: 0.1974
+    iterations:
+    - threshold_m: 0.55
+      matches: 541
+      median_euclidean_m: 0.097138
+      step_xy_m: 0.0961416
+      step_yaw_deg: -0.0834456
+    - threshold_m: 0.55
+      matches: 549
+      median_euclidean_m: 0.056171
+      step_xy_m: 0.0035183
+      step_yaw_deg: -0.0047292
+    - threshold_m: 0.55
+      matches: 549
+      median_euclidean_m: 0.056225
+      step_xy_m: 0.0003586
+      step_yaw_deg: -0.0002241
+    - threshold_m: 0.55
+      matches: 549
+      median_euclidean_m: 0.056266
+      step_xy_m: 3.68e-05
+      step_yaw_deg: 0.0003378
+    - threshold_m: 0.35
+      matches: 448
+      median_euclidean_m: 0.049465
+      step_xy_m: 0.00264
+      step_yaw_deg: -0.0077551
+    - threshold_m: 0.35
+      matches: 448
+      median_euclidean_m: 0.049302
+      step_xy_m: 0.0003169
+      step_yaw_deg: 0.0063332
+    - threshold_m: 0.35
+      matches: 448
+      median_euclidean_m: 0.049065
+      step_xy_m: 0.0001276
+      step_yaw_deg: -0.0005207
+    - threshold_m: 0.35
+      matches: 448
+      median_euclidean_m: 0.049089
+      step_xy_m: 2.0e-07
+      step_yaw_deg: -7.0e-07
+    - threshold_m: 0.22
+      matches: 389
+      median_euclidean_m: 0.045086
+      step_xy_m: 0.0012341
+      step_yaw_deg: -0.0055679
+    - threshold_m: 0.22
+      matches: 389
+      median_euclidean_m: 0.045077
+      step_xy_m: 4.76e-05
+      step_yaw_deg: 0.0008396
+    - threshold_m: 0.22
+      matches: 389
+      median_euclidean_m: 0.0451
+      step_xy_m: 1.0e-07
+      step_yaw_deg: 1.0e-07
+    - threshold_m: 0.14
+      matches: 351
+      median_euclidean_m: 0.042181
+      step_xy_m: 0.0004865
+      step_yaw_deg: -0.0073205
+    - threshold_m: 0.14
+      matches: 351
+      median_euclidean_m: 0.042187
+      step_xy_m: 1.2e-06
+      step_yaw_deg: -9.2e-06
+  - group: 5
+    capture_ids:
+    - '20260902_200756_436'
+    - '20260902_202829_626'
+    - '20260902_203317_211'
+    - '20260902_203815_126'
+    - '20260902_204153_565'
+    - '20260902_204707_758'
+    - '20260902_205152_540'
+    - '20260902_205659_702'
+    - '20260902_210215_429'
+    - '20260902_210744_972'
+    - '20260902_211340_127'
+    - '20260902_211833_310'
+    - '20260902_212142_093'
+    - '20260902_212545_623'
+    - '20260902_212902_385'
+    - '20260902_213038_638'
+    - '20260902_213445_198'
+    - '20260902_213758_472'
+    transform:
+      parent: velodyne_top_base_link
+      xyz_m:
+      - -2.09317011
+      - 0.02348049
+      - -1.334865
+      rpy_deg:
+      - 16.73993028
+      - -89.6694327
+      - -16.87062571
+      source: bootstrap_floor_wall_column
+    before:
+      point_count: 4464
+      median_m: 1.2673
+      p75_m: 1.62778
+      p90_m: 1.98677
+      overlap_0_10: 0.0943
+      overlap_0_20: 0.1879
+    after:
+      point_count: 4464
+      median_m: 1.25967
+      p75_m: 1.61994
+      p90_m: 1.97077
+      overlap_0_10: 0.1355
+      overlap_0_20: 0.1873
+    iterations:
+    - threshold_m: 0.55
+      matches: 476
+      median_euclidean_m: 0.097467
+      step_xy_m: 0.0981097
+      step_yaw_deg: -0.1158345
+    - threshold_m: 0.55
+      matches: 474
+      median_euclidean_m: 0.053734
+      step_xy_m: 0.0046665
+      step_yaw_deg: 0.0108726
+    - threshold_m: 0.55
+      matches: 474
+      median_euclidean_m: 0.053908
+      step_xy_m: 0.0004222
+      step_yaw_deg: 0.0005299
+    - threshold_m: 0.55
+      matches: 474
+      median_euclidean_m: 0.054086
+      step_xy_m: 0.0002026
+      step_yaw_deg: 0.0019606
+    - threshold_m: 0.35
+      matches: 397
+      median_euclidean_m: 0.048569
+      step_xy_m: 0.0020482
+      step_yaw_deg: -0.0038296
+    - threshold_m: 0.35
+      matches: 398
+      median_euclidean_m: 0.049184
+      step_xy_m: 0.0004398
+      step_yaw_deg: -0.0038348
+    - threshold_m: 0.35
+      matches: 398
+      median_euclidean_m: 0.049216
+      step_xy_m: 0.0003493
+      step_yaw_deg: -0.0040053
+    - threshold_m: 0.35
+      matches: 398
+      median_euclidean_m: 0.049368
+      step_xy_m: 1.55e-05
+      step_yaw_deg: 0.000168
+    - threshold_m: 0.22
+      matches: 342
+      median_euclidean_m: 0.044394
+      step_xy_m: 0.0006189
+      step_yaw_deg: -0.0098541
+    - threshold_m: 0.22
+      matches: 342
+      median_euclidean_m: 0.044582
+      step_xy_m: 1.6e-06
+      step_yaw_deg: -1.34e-05
+    - threshold_m: 0.14
+      matches: 307
+      median_euclidean_m: 0.042288
+      step_xy_m: 0.000216
+      step_yaw_deg: -0.0085322
+    - threshold_m: 0.14
+      matches: 307
+      median_euclidean_m: 0.042341
+      step_xy_m: 0.0003564
+      step_yaw_deg: 0.0008145
+    - threshold_m: 0.14
+      matches: 307
+      median_euclidean_m: 0.042298
+      step_xy_m: 1.61e-05
+      step_yaw_deg: -9.33e-05

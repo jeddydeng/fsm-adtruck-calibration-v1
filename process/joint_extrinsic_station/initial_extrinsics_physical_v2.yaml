@@ -1,0 +1,93 @@
+schema_version: 1
+coordinate_convention:
+  parent_frame: sensor_kit_base_link
+  axes: x_forward_y_left_z_up
+  rpy_order: fixed_xyz
+  note: Positive pitch rotates the forward x-axis downward in this convention.
+
+# Version 2 corrects three camera heights that were inconsistent with the
+# user's mechanical description.  These are measurement priors, not final
+# calibration results.  All camera values remain optimizer seeds.
+transforms:
+  velodyne_top_base_link:
+    parent: sensor_kit_base_link
+    xyz_m: [1.665, 0.000, 1.742]
+    rpy_deg: [0.0, 0.0, 0.0]
+    source: existing_vehicle_config
+  velodyne_front_left_base_link:
+    parent: velodyne_top_base_link
+    xyz_m: [0.277045895, 0.498121656, -1.276130]
+    rpy_deg: [-89.05892347, -88.43891974, -45.96411975]
+    source: round_006_phase_balanced_candidate
+  velodyne_front_right_base_link:
+    parent: velodyne_top_base_link
+    xyz_m: [0.268923852, -0.489387052, -1.280495]
+    rpy_deg: [136.76318635, -88.81305644, -2.32020272]
+    source: round_006_phase_balanced_candidate
+  velodyne_rear_base_link:
+    parent: velodyne_top_base_link
+    xyz_m: [-2.103010584, 0.025176212, -1.334865]
+    rpy_deg: [-18.20750225, -89.73316261, 18.02706390]
+    source: round_006_phase_balanced_candidate
+
+  video_front_mid/camera_link:
+    parent: sensor_kit_base_link
+    xyz_m: [1.665, 0.000, 1.542]
+    rpy_deg: [0.0, 0.0, 0.0]
+    source: user_measurement_rough
+  traffic_light_front/camera_link:
+    parent: sensor_kit_base_link
+    xyz_m: [1.665, 0.000, 1.542]
+    rpy_deg: [0.0, 0.0, 0.0]
+    source: user_measurement_rough
+  video_front_left/camera_link:
+    parent: sensor_kit_base_link
+    xyz_m: [1.840, 0.543, 1.542]
+    rpy_deg: [0.0, 0.0, 60.0]
+    source: user_measurement_rough
+  video_rear_left/camera_link:
+    parent: sensor_kit_base_link
+    xyz_m: [1.840, 0.543, 1.542]
+    rpy_deg: [0.0, 0.0, 120.0]
+    source: user_measurement_rough
+  video_front_right/camera_link:
+    parent: sensor_kit_base_link
+    xyz_m: [1.840, -0.543, 1.542]
+    rpy_deg: [0.0, 0.0, -60.0]
+    source: user_measurement_rough
+  video_rear_right/camera_link:
+    parent: sensor_kit_base_link
+    xyz_m: [1.840, -0.543, 1.542]
+    rpy_deg: [0.0, 0.0, -120.0]
+    source: user_measurement_rough
+  video_rear_mid/camera_link:
+    parent: sensor_kit_base_link
+    # Rear BPearl candidate plus the measured approximately 150 mm vertical
+    # separation; x/y inherit the jointly refined rear-lidar location.
+    xyz_m: [-0.438010584, 0.025176212, 0.557135]
+    rpy_deg: [0.0, 0.0, 180.0]
+    source: user_measurement_150mm_above_rear_lidar_round_006_anchor
+
+  fisheye_rear/camera_link:
+    parent: sensor_kit_base_link
+    # Rear BPearl plus approximately 400 mm left and 400 mm up.
+    xyz_m: [-0.438010584, 0.425176212, 0.807135]
+    rpy_deg: [0.0, 10.0, 180.0]
+    source: user_measurement_400mm_left_up_from_rear_lidar_round_006_anchor
+  fisheye_front/camera_link:
+    parent: sensor_kit_base_link
+    # Same measured height as rear fisheye, approximately 200 mm ahead of the
+    # roof lidar and pitched down approximately 20 degrees.
+    xyz_m: [1.865, 0.000, 0.807135]
+    rpy_deg: [0.0, 20.0, 0.0]
+    source: user_measurement_same_height_as_rear_fisheye
+  fisheye_left/camera_link:
+    parent: sensor_kit_base_link
+    xyz_m: [1.604668987, 0.572341534, 1.057]
+    rpy_deg: [1.66695335, 23.94661570, 90.58772141]
+    source: round_019_consensus_seed
+  fisheye_right/camera_link:
+    parent: sensor_kit_base_link
+    xyz_m: [1.655406041, -0.560021322, 1.063357033]
+    rpy_deg: [-0.45422900, 24.90225856, -90.97004187]
+    source: round_019_consensus_seed
