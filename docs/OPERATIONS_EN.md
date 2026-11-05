@@ -4,6 +4,12 @@ This is the authoritative runbook for the repackaged repository. Module README f
 and reports under result/ describe historical acquisitions; their old absolute paths
 and deployment decisions are not current installation instructions.
 
+Use `white_truck` for ongoing vehicle development, configuration and documentation.
+The `main` branch retains the original published file tree of `0b253a5`. Do not merge
+vehicle-specific changes back into `main` without an explicit owner request. Existing
+clones with a clean working tree can use `git fetch origin` followed by
+`git switch white_truck`. New clones should use the branch option below.
+
 ## 1. Scope and installation
 
 The three workflows are (A) camera intrinsics, (B) multi-lidar/camera extrinsics,
@@ -17,7 +23,7 @@ Offline solvers support Python 3.10–3.12 on Linux/macOS. The camera GUI requir
 desktop display. Live capture requires Linux /dev and ROS; macOS is not a driver target.
 
 ```bash
-git clone https://github.com/jeddydeng/fsm-adtruck-calibration-v1.git
+git clone --branch white_truck https://github.com/jeddydeng/fsm-adtruck-calibration-v1.git
 cd fsm-adtruck-calibration-v1
 ./install.sh                 # native apt + venv + ROS source build + checks
 ./install.sh --check         # repeat software checks only

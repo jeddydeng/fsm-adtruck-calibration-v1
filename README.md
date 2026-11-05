@@ -1,13 +1,15 @@
 # fsm-adtruck-calibration-v1
 
 小白车三项标定工具的独立源码仓库：**相机内参、四激光雷达/相机联合外参、四鱼眼外参与 BEV 拼接**。
+当前车辆开发分支为 `white_truck`，后续程序、参数和文档修改均在此分支维护；
+`main` 保留初始发布版的文件内容。
 无需安装 Autoware 即可采集与计算。生产目标为 Ubuntu 24.04 / ROS 2 Jazzy / Python 3.12；
 Ubuntu 22.04 / Humble / Python 3.10 用于兼容验证。Mac 可运行离线计算。
 
 ## 安装
 
 ```bash
-git clone https://github.com/jeddydeng/fsm-adtruck-calibration-v1.git
+git clone --branch white_truck https://github.com/jeddydeng/fsm-adtruck-calibration-v1.git
 cd fsm-adtruck-calibration-v1
 ./install.sh
 ```
