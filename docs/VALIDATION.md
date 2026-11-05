@@ -11,6 +11,16 @@
 | Same Linux workstation | Seven extrinsic/BEV solver CLI entry points | All --help commands exited successfully |
 | macOS, Python 3.11.15 | Offline dependency installation and pytest | 15 passed; 7 Linux/ROS-only tests explicitly skipped |
 | Both | Syntax, fatal lint and configuration audit | 84 Python sources, 28 shell scripts, 11 camera presets, 4 lidar mappings, 8 BEV maps checked |
+| GitHub-hosted Ubuntu 24.04 runner | ./install.sh --full (Jazzy dependencies, source build, verification) | Passed for commit 0b253a5 |
+| Same Jazzy runner | ./scripts/smoke_station.sh | Passed for commit 0b253a5 |
+| GitHub-hosted Ubuntu 24.04 / Python 3.12 | Offline installation and checks | Passed for commit 0b253a5 |
+
+Cloud evidence: [Software checks run 41946023120](https://github.com/jeddydeng/fsm-adtruck-calibration-v1/actions/runs/41946023120).
+Both jobs concluded success. Jazzy full installation ran November 5, 09:05–09:40
+(UTC+08:00), followed by the successful isolated ROS smoke test. This is a clean
+GitHub-hosted runner acceptance, not a claim of vehicle hardware acceptance or an
+installation from a bare Ubuntu ISO. Subsequent parameter/documentation commits
+have separate CI runs; this evidence is explicitly tied to 0b253a5.
 
 The 22 tests include ChArUco geometry and synthetic detection, AprilGrid pose,
 lidar-target geometry, transform direction, BEV map/render/status checks, PID
@@ -52,11 +62,11 @@ disabled in the isolated smoke test; message delivery nevertheless passed.
 
 ## Pending acceptance / limits
 
-1. Vehicle source comparison: vehicle computer was unavailable during packaging.
-   Start with scripts/compare_vehicle_snapshot.sh after power-on; also compare live
-   calibration and Pi sources before accepting any newer differences.
-2. Native Ubuntu 24.04 / Jazzy fresh-machine installation and build. A GitHub Actions
-   workflow is supplied, but an unobserved or not-yet-run workflow is not a pass.
+1. Vehicle source comparison was completed on November 5; see
+   VEHICLE_SOURCE_AUDIT_20261105.md. The approved vehicle IMU configuration was
+   synchronized to the repository, without writing anything to the vehicle.
+2. Ubuntu 24.04 / Jazzy full installation/build passed on GitHub's hosted runner.
+   A new physical IPC and actual sensor access still require site acceptance.
 3. Live hardware: correct physical camera/lidar mapping; 15 fresh streams; Pi sender
    build/deployment; full capture; unplug/replug; timestamp validity; long-run behavior.
 4. New calibration quality: independent held-out images and geometric measurements.

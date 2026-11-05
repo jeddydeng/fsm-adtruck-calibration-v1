@@ -7,7 +7,7 @@ Ubuntu 22.04 / Humble / Python 3.10 用于兼容验证。Mac 可运行离线计�
 ## 安装
 
 ```bash
-git clone git@github.com:jeddydeng/fsm-adtruck-calibration-v1.git
+git clone https://github.com/jeddydeng/fsm-adtruck-calibration-v1.git
 cd fsm-adtruck-calibration-v1
 ./install.sh
 ```
@@ -49,9 +49,12 @@ ChArUco：12×8 格，格长 70 mm，内部标记 50 mm，DICT_5X5_100。
 三套默认入口不启动底盘控制；可选 CAN 入口固定为只接收。
 BEV 的相对地面拼接可用性与绝对车辆外参精度分开记录，历史候选不能自动视为精标真值。
 
-**本版来源：本机 2026-09-02～04 备份。车载工控机当次离线，尚未完成最新源码一致性复核。**
+**本版基于 2026-09-02～04 备份，已于 2026-11-05 只读核对实车源码，并同步车上最新 IMU 零偏参数。**
+详细一致项、保留的修复及范围见 [源码核对报告](docs/VEHICLE_SOURCE_AUDIT_20261105.md)。
 验证范围及未完成项见 [VALIDATION.md](docs/VALIDATION.md)。
 本次已完成 Humble 下 12 个 ROS 包源码编译、22 项测试及模拟 ROS 采集闭环；
-Jazzy 全新环境和实车 15 路传感器验收仍待进行。
+Ubuntu 24.04/Jazzy 的 GitHub 云端完整安装、编译及模拟采集检查也已通过；
+实车 15 路传感器运行验收仍待进行。公开仓库保留各组件原许可声明，
+`Proprietary` 组件未因公开而改为开源许可，使用或再分发前请核实相应授权。
 代码采用清晰分层、单一职责、显式异常、受控资源生命周期等规约，详见
 [代码规范](docs/CODING_STANDARD.md)；不声称取得阿里巴巴认证。
