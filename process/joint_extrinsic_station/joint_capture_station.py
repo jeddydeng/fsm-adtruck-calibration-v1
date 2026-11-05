@@ -1376,7 +1376,7 @@ class CaptureWriter:
 HTML = r"""<!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>小白车 联合外参采集站</title>
+<title>车辆 联合外参采集站</title>
 <style>
 :root{color-scheme:dark;--ok:#25f58b;--bad:#ff354d;--muted:#9eabba;--card:#151e29;--panel:#0d141d}
 *{box-sizing:border-box}html,body{height:100%;overflow:hidden}
@@ -1401,7 +1401,7 @@ main{min-height:0;padding:7px 10px 9px;overflow:auto}#content{height:100%;displa
 .preview{display:block;width:100%;height:100%;min-height:0;object-fit:contain;background:#05090d;border-radius:5px}.placeholder{display:grid;place-items:center;height:100%;min-height:0;border-radius:5px;background:#090e14;color:#748292;font-size:12px}
 @media(max-width:1500px){html,body{overflow:auto}body{display:block}.topbar{grid-template-columns:1fr}.actions{grid-template-columns:minmax(260px,330px) 1fr}main{overflow:visible}#content{height:auto;display:block}.group{margin-bottom:10px}.grid,.group.lidars .grid,.group.usb .grid,.group.network .grid{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}.card{height:255px}}
 @media(max-height:850px){.card{grid-template-rows:24px 18px 22px minmax(0,1fr)}button{height:54px}header{padding-top:7px;padding-bottom:6px}}
-</style></head><body><header><div class="topbar"><div><h1>小白车 · 激光雷达 + 摄像头联合外参采集站</h1>
+</style></head><body><header><div class="topbar"><div><h1>车辆 · 激光雷达 + 摄像头联合外参采集站</h1>
 <div class="summary"><span id="ready">正在连接…</span><span id="clock" class="muted"></span><span id="scale" class="muted"></span></div></div>
 <div class="actions"><button id="capture">采集并保存当前数据</button><span id="result" aria-live="polite"></span></div></div>
 <div id="reasons" title=""></div></header><main><div id="content"></div></main>

@@ -1,4 +1,4 @@
-# 小白车 Autoware 上车就绪性验收报告
+# 车辆 Autoware 上车就绪性验收报告
 
 审计日期：2026-09-03  
 审计方式：Mac 标定结果检查 + 工控机只读 SSH 检查  
@@ -98,7 +98,7 @@ fix 和 orientation 均明确报告 `No messages will be sent`。当前健康监
 
 ### 5. 补齐本车纵向、制动和转向标定
 
-`white_ws` 中未发现小白车专用 accel/brake/steering map、死区、延迟或滞回
+`white_ws` 中未发现车辆专用 accel/brake/steering map、死区、延迟或滞回
 拟合表。Autoware 源码里的 default、simulator 和 calibrator 示例不能当作本车
 真值。当前车辆接口仍主要使用固定线性换算系数。
 
