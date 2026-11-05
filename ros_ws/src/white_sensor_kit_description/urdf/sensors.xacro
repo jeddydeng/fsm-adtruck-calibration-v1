@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<robot name="white_sensor_kit" xmlns:xacro="http://ros.org/wiki/xacro">
-  <xacro:arg name="config_dir" default="$(find white_sensor_kit_description)/config"/>
-  <xacro:property name="base_cal" value="${xacro.load_yaml('$(arg config_dir)/sensors_calibration.yaml')}"/>
-  <xacro:property name="sensor_cal" value="${xacro.load_yaml('$(arg config_dir)/sensor_kit_calibration.yaml')}"/>
-  <xacro:include filename="$(find white_sensor_kit_description)/urdf/sensor_tree.xacro"/>
-  <xacro:white_sensor_tree base_cal="${base_cal}" sensor_cal="${sensor_cal}"/>
-</robot>

@@ -428,6 +428,9 @@ def main() -> int:
     parser.add_argument("--validate-only", action="store_true")
     args = parser.parse_args()
     config = yaml.safe_load(args.config.read_text(encoding="utf-8"))
+    repository = Path(__file__).resolve().parents[2]
+    intrinsic_root = Path(config["intrinsics_dir"]).expanduser()
+    config["intrinsics_dir"] = str(intrinsic_root if intrinsic_root.is_absolute() else repository / intrinsic_root)
     initial = yaml.safe_load(args.initial.read_text(encoding="utf-8"))
     root = args.data_root or Path(config["station"]["data_root"])
     captures = load_captures(root)
@@ -479,9 +482,8 @@ def main() -> int:
     reports: dict[str, Any] = {}
 
     for frame, sensor_name in (
-        ("velodyne_front_left_base_link", "lidar_front_left"),
-        ("velodyne_front_right_base_link", "lidar_front_right"),
-        ("velodyne_rear_base_link", "lidar_rear"),
+        (item["frame_id"], item["name"]) for item in config["lidars"]["sensors"]
+        if item["frame_id"] != "velodyne_top_base_link"
     ):
         initial_top = top_from_sensor @ absolute[frame]
         observations = lidar_observations(captures, sensor_name, initial_top)
@@ -500,9 +502,13 @@ def main() -> int:
 
     camera_names = [item["name"] for item in config["usb_capture"]["cameras"]]
     camera_names += list(config["fisheye"]["sources"].values())
-    camera_names += [config["traffic_camera"]["name"]]
+    if config["traffic_camera"].get("enabled", True):
+        camera_names += [config["traffic_camera"]["name"]]
     for camera_name in camera_names:
         frame = f"{camera_name}/camera_link"
+        if frame not in absolute or not ((Path(config["intrinsics_dir"]) / f"{camera_name}.yaml").exists() or any((directory / "intrinsics" / f"{camera_name}.yaml").exists() for directory, _ in captures)):
+            reports[frame] = {"success": False, "error": "Black vehicle camera initial pose or intrinsics unavailable; calibrate before solving."}
+            continue
         initial_top_link = top_from_sensor @ absolute[frame]
         initial_top_optical = initial_top_link @ CAMERA_OPTICAL_TO_LINK
         observations = camera_observations(
@@ -531,6 +537,7 @@ def main() -> int:
         "transforms": results,
         "quality": reports,
     }
+    args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(
         yaml.safe_dump(output, allow_unicode=True, sort_keys=False), encoding="utf-8"
     )

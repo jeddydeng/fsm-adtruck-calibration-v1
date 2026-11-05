@@ -306,6 +306,7 @@ def direct_bev_maps(
     height: int,
     mpp: float,
     origin: tuple[float, float],
+    image_size: tuple[int, int] = (1600, 1200),
 ) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     u, v = np.meshgrid(np.arange(width, dtype=np.float64), np.arange(height, dtype=np.float64))
     ground = np.stack(
@@ -318,7 +319,7 @@ def direct_bev_maps(
     projected = projected.reshape(height, width, 2)
     map_x = projected[:, :, 0].astype(np.float32)
     map_y = projected[:, :, 1].astype(np.float32)
-    image_width, image_height = 1600, 1200
+    image_width, image_height = image_size
     valid = (
         (xyz[:, 2] > 0.02).reshape(height, width)
         & (map_x >= 1)
@@ -402,8 +403,8 @@ def write_opencv_yaml(
 camera_name: {camera.removeprefix("fisheye_")}
 camera_frame: {camera}/camera_optical_frame
 vehicle_frame: sensor_kit_base_link
-image_width: 1600
-image_height: 1200
+image_width: {intrinsics["size"][0]}
+image_height: {intrinsics["size"][1]}
 distortion_model: equidistant
 bev_width: {bev["width"]}
 bev_height: {bev["height"]}
@@ -510,6 +511,7 @@ def main() -> None:
             args.bev_height,
             args.meters_per_pixel,
             bev["origin"],
+            item["size"],
         )
         np.save(args.output / f"{camera}_bev_map_x.npy", map_x)
         np.save(args.output / f"{camera}_bev_map_y.npy", map_y)
@@ -526,6 +528,7 @@ def main() -> None:
             input_deployment_allowed,
         )
         configurations[camera] = {
+            "image_size": list(item["size"]),
             "K": K.tolist(),
             "D": D.reshape(-1).tolist(),
             "K_rectified": K_rect.tolist(),
@@ -540,7 +543,7 @@ def main() -> None:
             shutil.copy2(files[0], selected_dir / files[0].name)
             bird = cv2.remap(image, map_x, map_y, cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT)
             remapped[camera] = bird
-            margin = np.minimum.reduce([map_x, 1599 - map_x, map_y, 1199 - map_y])
+            margin = np.minimum.reduce([map_x, item["size"][0]-1-map_x, map_y, item["size"][1]-1-map_y])
             weight = np.clip(margin / 140.0, 0.0, 1.0) * valid
             weights[camera] = weight.astype(np.float32)
             cv2.imwrite(str(args.output / f"{camera}_bev_preview.png"), bird)

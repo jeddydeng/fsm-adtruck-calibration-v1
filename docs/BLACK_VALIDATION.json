@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-05",
+  "platform": "Ubuntu 22.04 / ROS 2 Humble / Python 3.10",
+  "ros_packages_built": [
+    "rslidar_msg",
+    "rslidar_sdk",
+    "camera_usb_pkg"
+  ],
+  "regression_tests_passed": 26,
+  "synthetic_validation": {
+    "kind": "SYNTHETIC_SOFTWARE_VALIDATION_ONLY",
+    "hardware_calibration": false,
+    "phase": "all",
+    "results": {
+      "intrinsics": {
+        "gmsl_video0": {
+          "focal_relative_error": 0.0008430493826086683,
+          "image_size": [
+            1920,
+            1080
+          ],
+          "source": "synthetic_rendered_Charuco"
+        },
+        "fisheye_front": {
+          "focal_relative_error": 0.001172196259744459,
+          "image_size": [
+            800,
+            600
+          ],
+          "source": "synthetic_rendered_Charuco"
+        }
+      },
+      "joint": {
+        "velodyne_left_base_link": {
+          "translation_error_m": 0.00019352504282392686,
+          "rotation_error_deg": 0.009083150360901932
+        },
+        "velodyne_right_base_link": {
+          "translation_error_m": 7.922745357512277e-05,
+          "rotation_error_deg": 0.003786003269642834
+        },
+        "velodyne_rear_base_link": {
+          "translation_error_m": 0.00019088728637604182,
+          "rotation_error_deg": 0.0031792143965357665
+        },
+        "gmsl_video0/camera_link": {
+          "translation_error_m": 0.0005492764719155555,
+          "rotation_error_deg": 0.0041765108942865645
+        },
+        "gmsl_video3/camera_link": {
+          "translation_error_m": 0.0005507211655638452,
+          "rotation_error_deg": 0.0020854227167784183
+        },
+        "gmsl_video4/camera_link": {
+          "translation_error_m": 0.0005606381468469641,
+          "rotation_error_deg": 0.0034677540527126307
+        },
+        "gmsl_video5/camera_link": {
+          "translation_error_m": 0.0005620361108505391,
+          "rotation_error_deg": 0.006241154682260648
+        },
+        "gmsl_video6/camera_link": {
+          "translation_error_m": 0.0005851542089056525,
+          "rotation_error_deg": 0.014251043428813795
+        },
+        "gmsl_video7/camera_link": {
+          "translation_error_m": 0.0005561877361107484,
+          "rotation_error_deg": 0.012906262839808474
+        },
+        "fisheye_front/camera_link": {
+          "translation_error_m": 0.0007696090216467084,
+          "rotation_error_deg": 0.02373110174620357
+        },
+        "fisheye_right/camera_link": {
+          "translation_error_m": 0.0010231222876078898,
+          "rotation_error_deg": 0.03775127404599597
+        },
+        "fisheye_rear/camera_link": {
+          "translation_error_m": 0.0005925185780209769,
+          "rotation_error_deg": 0.015487729825710448
+        },
+        "fisheye_left/camera_link": {
+          "translation_error_m": 0.0006388645062922173,
+          "rotation_error_deg": 0.04144175425240264
+        }
+      },
+      "bev": {
+        "source_size": [
+          800,
+          600
+        ],
+        "self_checks": {
+          "exactly_14_selected_captures": true,
+          "all_four_cycle_overlaps_have_at_least_50_retained_matches": true,
+          "all_four_cycle_overlaps_span_at_least_3_capture_groups": true,
+          "all_retained_overlap_medians_le_3px": true,
+          "all_retained_overlap_p95_le_5px": true,
+          "all_overlap_retention_ge_50pct": true,
+          "combined_annulus_coverage_ge_95pct": true,
+          "overlap_annulus_coverage_ge_50pct": true,
+          "metric_scale_preserved": true,
+          "part3_board_motion_median_error_le_60mm": true,
+          "part3_board_motion_max_error_le_60mm": true,
+          "maps_shape_dtype_and_finite": true,
+          "homographies_finite_and_invertible": true,
+          "all_generated_previews_readable": true
+        },
+        "synthetic_analytic_ground_observations": true
+      }
+    },
+    "passed": true
+  },
+  "hardware_saved": {
+    "traffic_slot": 4,
+    "all_sensors": 14
+  },
+  "optional_missing_sensor": "traffic_light_front",
+  "fisheye_resolution": [
+    800,
+    600
+  ],
+  "gmsl_resolution": [
+    1920,
+    1080
+  ],
+  "approved_gmsl_module_sha256": "e9843ad35f891c6cf406f5b5ea075e12435bb9d5a67ef1c65462a37edcc5c95d",
+  "real_calibration_completed": false
+}

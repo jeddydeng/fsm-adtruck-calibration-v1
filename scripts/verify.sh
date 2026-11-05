@@ -9,6 +9,7 @@ cd "${CALIBRATION_ROOT}"
 "${CALIBRATION_PYTHON}" -m ruff check scripts tests process ros_ws/src --output-format concise
 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 "${CALIBRATION_PYTHON}" -m pytest
 if "${CALIBRATION_PYTHON}" -c 'import rclpy' 2>/dev/null; then
-  "${CALIBRATION_PYTHON}" process/joint_extrinsic_station/joint_capture_station.py --check
+  "${CALIBRATION_PYTHON}" process/joint_extrinsic_station/joint_capture_station.py --check \
+    --config "${CALIBRATION_STATION_CONFIG}" --initial-extrinsics "${CALIBRATION_INITIAL_EXTRINSICS}"
 fi
 echo "Repository verification passed. Hardware acceptance remains a separate step."

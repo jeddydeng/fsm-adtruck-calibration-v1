@@ -41,7 +41,7 @@ def main() -> None:
     assert report["all_self_checks_passed"] is True
     assert all(report["self_checks"].values())
     assert report["selected_capture_count"] == 14
-    assert report["selected_source_image_count"] == 56
+    assert report["selected_source_image_count"] == 4 * report["selected_capture_count"]
 
     for camera in CAMERAS:
         long_name = f"fisheye_{camera}"
@@ -67,7 +67,7 @@ def main() -> None:
         baseline_file.release()
 
     source_lines = (args.package / "raw_image_sha256.txt").read_text().splitlines()
-    assert len(source_lines) == 56
+    assert len(source_lines) == report["selected_source_image_count"]
     for line in source_lines:
         expected, relative = line.split(maxsplit=1)
         assert digest(args.data_root / relative) == expected

@@ -27,6 +27,11 @@ case "${selection}" in
   -) camera_name="traffic_light_front" ;;
 esac
 
+if [[ "${selection}" =~ ^[1-6]$ && -n "${CALIBRATION_CAMERA_CONFIG:-}" ]]; then
+  camera_config="${CALIBRATION_ROOT}/${CALIBRATION_CAMERA_CONFIG}"
+  camera_name="$("${CALIBRATION_PYTHON}" -c 'import sys,yaml; c=yaml.safe_load(open(sys.argv[1])); print(next(x["camera_name"] for x in c["cameras"] if x["index"]==int(sys.argv[2])-1))' "$camera_config" "$selection")"
+fi
+
 if [[ -z "${model}" ]]; then
   case "${selection}" in
     0|7|8|9) model="fisheye" ;;
@@ -47,14 +52,14 @@ if [[ ! -d "${image_dir}" ]]; then
   exit 1
 fi
 
-result_dir="${CALIBRATION_ROOT}/output/intrinsics"
+result_dir="${CALIBRATION_OUTPUT_ROOT:-${CALIBRATION_ROOT}/output}/intrinsics"
 # All four 1600x1200, approximately 180-degree cameras use the validated
 # robust equidistant pipeline, including the left camera.
 if [[ "${model}" == fisheye ]]; then
   exec "${CALIBRATION_PYTHON}" "${CALIBRATION_ROOT}/process/robust_fisheye_intrinsics.py" \
     --input-dir "${image_dir}" \
     --output-dir "${result_dir}/${camera_name}_$(date +%Y%m%d_%H%M%S)" \
-    --camera-name "${camera_name}"
+    --camera-name "${camera_name}" --seed-attempts "${CAMERA_FISHEYE_SEED_ATTEMPTS:-36}"
 fi
 # Nanoseconds prevent concurrent validation runs for one camera from
 # overwriting each other when they start within the same second.
@@ -94,7 +99,7 @@ if [[ "${CAMERA_FISHEYE_DISABLE_CONDITION_CHECK:-0}" == "1" ]]; then
   extra_args+=(--disable-fisheye-condition-check)
 fi
 
-python3 "${calibrator}" \
+"${CALIBRATION_PYTHON}" "${calibrator}" \
   --input-dir "${image_dir}" \
   --output "${output}" \
   --camera-name "${camera_name}" \

@@ -72,8 +72,8 @@ def load_intrinsics(path: Path) -> tuple[np.ndarray, np.ndarray, tuple[int, int]
     if data.get("distortion_model") != "equidistant":
         raise ValueError(f"{path}: expected equidistant distortion model")
     size = (int(data["image_width"]), int(data["image_height"]))
-    if size != (1600, 1200):
-        raise ValueError(f"{path}: expected 1600x1200, got {size}")
+    if min(size) <= 0:
+        raise ValueError(f"{path}: invalid image dimensions {size}")
     K = np.asarray(data["camera_matrix"]["data"], np.float64).reshape(3, 3)
     D = np.asarray(data["distortion_coefficients"]["data"], np.float64).reshape(4, 1)
     return K, D, size

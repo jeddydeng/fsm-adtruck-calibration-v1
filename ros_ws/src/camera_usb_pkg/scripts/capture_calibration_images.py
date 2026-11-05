@@ -42,6 +42,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--minimum-corners", type=int, default=20)
     parser.add_argument("--width", type=int, default=640)
     parser.add_argument("--height", type=int, default=480)
+    parser.add_argument("--pixel-format", choices=("MJPG", "UYVY", "YUYV"), default="MJPG")
     parser.add_argument("--fps", type=float, default=10.0)
     parser.add_argument("--minimum-blur-score", type=float, default=60.0)
     parser.add_argument("--minimum-interval-sec", type=float, default=0.75)
@@ -170,7 +171,7 @@ def open_capture(
             return None
         return capture
 
-    capture.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*"MJPG"))
+    capture.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*getattr(args, "pixel_format", "MJPG")))
     capture.set(cv2.CAP_PROP_FRAME_WIDTH, args.width)
     capture.set(cv2.CAP_PROP_FRAME_HEIGHT, args.height)
     capture.set(cv2.CAP_PROP_FPS, args.fps)

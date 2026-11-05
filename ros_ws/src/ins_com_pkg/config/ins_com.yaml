@@ -1,9 +1,0 @@
-/**:
-  ros__parameters:
-    baudrate: 230400
-    device: /dev/serial/by-path/pci-0000:00:14.0-usb-0:14.2:1.0-port0
-    frame_id: gnss_link
-    fix_topic: /sensing/gnss/ublox/nav_sat_fix
-    legacy_fix_topic: /Sensor_msgs/INS/NavSatFix_BYINS_gnss
-    reconnect_period_ms: 1000
-    data_timeout_ms: 2000

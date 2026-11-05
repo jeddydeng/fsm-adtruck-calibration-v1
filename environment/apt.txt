@@ -24,3 +24,6 @@ python3-opencv
 python3-scipy
 python3-psutil
 shellcheck
+acl
+psmisc
+kmod

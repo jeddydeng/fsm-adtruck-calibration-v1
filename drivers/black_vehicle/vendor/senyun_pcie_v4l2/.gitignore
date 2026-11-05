@@ -1,0 +1,8 @@
+bash/init_card.log
+bash/output
+*.o
+*.cmd
+*.mod
+*.mod.c
+modules.order
+Module.symvers

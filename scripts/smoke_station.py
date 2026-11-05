@@ -13,6 +13,7 @@ from urllib.request import Request, urlopen
 import cv2
 import numpy as np
 import rclpy
+import yaml
 from rclpy.qos import qos_profile_sensor_data
 from sensor_msgs.msg import CompressedImage, PointCloud2, PointField
 
@@ -40,10 +41,9 @@ def main() -> int:
     )
     rclpy.init()
     node = rclpy.create_node("calibration_synthetic_fixture")
-    topics = [
-        f"/sensing/lidar/{name}/pointcloud_raw"
-        for name in ("top", "front_left", "front_right", "rear")
-    ]
+    profile = ROOT / os.environ.get("CALIBRATION_STATION_CONFIG", "process/joint_extrinsic_station/config.yaml")
+    config = yaml.safe_load(profile.read_text())
+    topics = [item["topic"] for item in config["lidars"]["sensors"]]
     publishers = [
         node.create_publisher(PointCloud2, topic, qos_profile_sensor_data) for topic in topics
     ]

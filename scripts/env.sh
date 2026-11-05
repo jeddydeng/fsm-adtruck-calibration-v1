@@ -3,6 +3,11 @@
 CALIBRATION_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 export CALIBRATION_ROOT
 export PYTHONNOUSERSITE=1
+if [[ -r "${CALIBRATION_ROOT}/config/vehicle.env" ]]; then
+  set -a
+  source "${CALIBRATION_ROOT}/config/vehicle.env"
+  set +a
+fi
 if [[ -r "${CALIBRATION_ROOT}/config/local.env" ]]; then
   set -a
   source "${CALIBRATION_ROOT}/config/local.env"

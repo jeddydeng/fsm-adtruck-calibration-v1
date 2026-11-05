@@ -30,8 +30,8 @@ def main() -> int:
     for path in (ROOT / "ros_ws/src").rglob("package.xml"):
         ET.parse(path)
         assert not (path.parent / "COLCON_IGNORE").exists(), f"Hidden package: {path.parent}"
-    config = yaml.safe_load((ROOT / "process/joint_extrinsic_station/config.yaml").read_text())
-    driver = yaml.safe_load((ROOT / "ros_ws/src/rslidar_sdk/config/config.yaml").read_text())
+    config = yaml.safe_load((ROOT / "config/black_vehicle/station.yaml").read_text())
+    driver = yaml.safe_load((ROOT / "config/black_vehicle/rslidar.yaml").read_text())
     station_map = {
         x["topic"]: (x["msop_port"], x["difop_port"]) for x in config["lidars"]["sensors"]
     }

@@ -1,0 +1,196 @@
+schema_version: 1
+station:
+  bind_host: 127.0.0.1
+  port: 8765
+  data_root: data/raw_extrinsic_data
+  status_hz: 2.0
+  camera_detection_hz: 0.5
+  lidar_detection_hz: 0.25
+  log_warning_period_sec: 5.0
+tag_board:
+  dictionary: DICT_APRILTAG_16h5
+  outer_width_m: 0.9
+  outer_height_m: 0.9
+  layout: aprilgrid
+  active_width_m: 0.8
+  active_height_m: 0.8
+  margin_m: 0.05
+  columns: 6
+  rows: 5
+  id_order: row_major
+  id_origin: bottom_left
+  first_id: 0
+  tag_corner_rotation_quarters: 2
+  minimum_tags_for_pose: 5
+  tag_size_m: 0.108
+  horizontal_gap_m: 0.0304
+  vertical_gap_m: 0.065
+usb_capture:
+  width: 1920
+  height: 1080
+  fps: 10
+  pixel_format: UYVY
+  online_timeout_sec: 2.0
+  reconnect_delay_sec: 1.0
+  cameras:
+  - name: gmsl_video0
+    device: /dev/video0
+    identity_globs: []
+    expected_pci_address: '0000:04:00.0'
+    physical_role: pending_user_review
+  - name: gmsl_video3
+    device: /dev/video3
+    identity_globs: []
+    expected_pci_address: '0000:04:00.0'
+    physical_role: pending_user_review
+  - name: gmsl_video4
+    device: /dev/video4
+    identity_globs: []
+    expected_pci_address: '0000:04:00.0'
+    physical_role: pending_user_review
+  - name: gmsl_video5
+    device: /dev/video5
+    identity_globs: []
+    expected_pci_address: '0000:04:00.0'
+    physical_role: pending_user_review
+  - name: gmsl_video6
+    device: /dev/video6
+    identity_globs: []
+    expected_pci_address: '0000:04:00.0'
+    physical_role: pending_user_review
+  - name: gmsl_video7
+    device: /dev/video7
+    identity_globs: []
+    expected_pci_address: '0000:04:00.0'
+    physical_role: pending_user_review
+  sensor_kind: gmsl_camera
+fisheye:
+  sdk_path: drivers/pi_capture
+  base_url: http://127.0.0.1:8086
+  fps: 10
+  online_timeout_sec: 3.0
+  reconnect_delay_sec: 2.0
+  sources:
+    front: fisheye_front
+    rear: fisheye_rear
+    left: fisheye_left
+    right: fisheye_right
+  gateway_ip: 192.168.1.187
+traffic_camera:
+  name: traffic_light_front
+  topic: /sensing/camera/traffic_light_front/image_raw/compressed
+  online_timeout_sec: 2.0
+  enabled: true
+  installed: false
+  required: false
+lidars:
+  auto_start: true
+  online_timeout_sec: 2.0
+  sensors:
+  - name: lidar_top
+    topic: /sensing/lidar/top/pointcloud_raw
+    frame_id: velodyne_top_base_link
+    msop_port: 6700
+    difop_port: 7789
+    required_directions:
+    - front
+    - rear
+    - left
+    - right
+  - name: lidar_front_left
+    topic: /sensing/lidar/left/pointcloud_raw_all
+    frame_id: velodyne_left_base_link
+    msop_port: 6701
+    difop_port: 7790
+    minimum_targets: 2
+    required_directions:
+    - front
+    - left
+    expected_directions:
+    - front
+    - left
+  - name: lidar_front_right
+    topic: /sensing/lidar/right/pointcloud_raw_all
+    frame_id: velodyne_right_base_link
+    msop_port: 6702
+    difop_port: 7791
+    minimum_targets: 2
+    required_directions:
+    - front
+    - right
+    expected_directions:
+    - front
+    - right
+  - name: lidar_rear
+    topic: /sensing/lidar/rear/pointcloud_raw_all
+    frame_id: velodyne_rear_base_link
+    msop_port: 6699
+    difop_port: 7788
+    minimum_targets: 1
+    required_directions:
+    - rear
+    expected_directions:
+    - rear
+  launch_command:
+  - bash
+  - drivers/black_vehicle/start_lidars.sh
+lidar_target_detection:
+  range_min_m: 0.6
+  range_max_m: 12.0
+  z_min_m: -3.0
+  z_max_m: 3.5
+  ground_z_top_m: -2.5
+  ground_clearance_m: 0.02
+  voxel_m: 0.055
+  cluster_radius_m: 0.18
+  min_cluster_points: 14
+  max_input_points: 24000
+  max_points: 7000
+  plane_rms_max_m: 0.06
+  vertical_normal_abs_z_max: 0.72
+  view_normal_cos_min: 0.35
+  target_center_z_min_m: -2.4
+  target_center_z_max_m: 0.75
+  target_horizontal_extent_min_m: 0.7
+  target_horizontal_extent_max_m: 1.16
+  target_vertical_extent_min_m: 0.14
+  target_vertical_extent_max_m: 1.25
+  target_nominal_m: 0.9
+  direction_center_z_m:
+    front:
+    - -1.65
+    - -0.4
+    left:
+    - -1.65
+    - -0.4
+    right:
+    - -1.65
+    - -0.4
+    rear:
+    - -1.2
+    - 0.75
+  stability_history_frames: 3
+  stability_min_hits: 2
+  stability_center_tolerance_m: 0.45
+  side_match_plane_tolerance_m: 0.07
+  side_match_border_margin_m: 0.08
+  side_match_min_points: 12
+  side_match_min_span_m: 0.2
+  side_match_ground_clearance_m: 0.015
+camera_gate:
+  required_single:
+  - gmsl_video0
+  - gmsl_video3
+  - gmsl_video4
+  - gmsl_video5
+  - gmsl_video6
+  - gmsl_video7
+  required_any_groups: {}
+  display_only:
+  - fisheye_front
+  - fisheye_rear
+  - fisheye_left
+  - fisheye_right
+intrinsics_dir: config/black_vehicle/intrinsics
+vehicle: black_vehicle
+expected_sensor_count: 15

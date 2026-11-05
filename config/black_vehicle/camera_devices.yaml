@@ -1,0 +1,43 @@
+transport: gmsl_pcie_v4l2
+pixel_format: UYVY
+width: 1920
+height: 1080
+fps: 10
+calibration_status: not_calibrated_for_black_vehicle
+cameras:
+- index: 0
+  camera_name: gmsl_video0
+  physical_device: /dev/video0
+  frame_id: gmsl_video0/camera_optical_link
+  role: pending_user_review
+  identity_globs: []
+- index: 1
+  camera_name: gmsl_video3
+  physical_device: /dev/video3
+  frame_id: gmsl_video3/camera_optical_link
+  role: pending_user_review
+  identity_globs: []
+- index: 2
+  camera_name: gmsl_video4
+  physical_device: /dev/video4
+  frame_id: gmsl_video4/camera_optical_link
+  role: pending_user_review
+  identity_globs: []
+- index: 3
+  camera_name: gmsl_video5
+  physical_device: /dev/video5
+  frame_id: gmsl_video5/camera_optical_link
+  role: pending_user_review
+  identity_globs: []
+- index: 4
+  camera_name: gmsl_video6
+  physical_device: /dev/video6
+  frame_id: gmsl_video6/camera_optical_link
+  role: pending_user_review
+  identity_globs: []
+- index: 5
+  camera_name: gmsl_video7
+  physical_device: /dev/video7
+  frame_id: gmsl_video7/camera_optical_link
+  role: pending_user_review
+  identity_globs: []

@@ -1,57 +1,63 @@
-# fsm-adtruck-calibration-v1
+# fsm-adtruck-calibration-v1 · 对坐黑车
 
-小白车三项标定工具的独立源码仓库：**相机内参、四激光雷达/相机联合外参、四鱼眼外参与 BEV 拼接**。
-无需安装 Autoware 即可采集与计算。生产目标为 Ubuntu 24.04 / ROS 2 Jazzy / Python 3.12；
-Ubuntu 22.04 / Humble / Python 3.10 用于兼容验证。Mac 可运行离线计算。
+`black_vehicle` 是**对坐黑车**的传感器驱动和三组标定工具分支：相机内参、四雷达/相机联合外参、四鱼眼外参与 BEV 拼接。使用 Ubuntu 22.04、ROS 2 Humble、Python 3.10；驱动和算法独立于完整 Autoware 运行。
 
-## 安装
+## 部署位置与传感器
+
+黑车工控机：`cityu02@100.93.32.20`。当前项目位于 `~/projects/fsm-adtruck-calibration-v1`。2 TB NVMe 当前未在线，项目使用系统盘独立目录。
+
+| 设备 | 黑车配置 |
+|---|---|
+| 四颗雷达 | top RSHELIOS_16P；left/right RSHELIOS；rear RSE1；端口、初始外参见 `config/black_vehicle/` |
+| 六颗 GMSL | `/dev/video0,3,4,5,6,7`，UYVY 1920×1080，10 Hz；video1/2 为未接相机的空通道 |
+| 四颗鱼眼 | Pi `192.168.1.187`，MJPEG **800×600**，原图传输 10 Hz；保持原生分辨率，不拉伸为 1600×1200 |
+| 红绿灯相机 | **未安装，保留第 15 个逻辑槽、采集入口和求解流程**；缺席不阻塞其他 14 路采集 |
+
+GMSL 暂按通道编号命名，不猜测其物理方位。鱼眼网关复用工控机已有 `http://127.0.0.1:8086` 服务。现场鱼眼方位：front=ID03、rear=ID02、left=ID01、right=ID04。
+
+## 环境与一键初始化
 
 ```bash
-git clone git@github.com:jeddydeng/fsm-adtruck-calibration-v1.git
-cd fsm-adtruck-calibration-v1
-./install.sh
+cd ~/projects/fsm-adtruck-calibration-v1
+./install.sh --python-only    # 已有 ROS 的机器：仅建立项目隔离 Python 环境
+./scripts/build.sh           # 编译当前分支所需的三个 ROS 包
+./install.sh --check
 ```
 
-安装器配置系统依赖、ROS、独立 Python 环境并编译驱动；不会启动传感器或车辆。
-仅离线计算：`./install.sh --python-only`。详细环境见 `requirement.txt` 和 `environment/apt.txt`。
-新电脑先按英文手册核对 USB 物理端口、雷达网口和树莓派地址。
+全新专用 Ubuntu 可使用 `./install.sh --full`。共享工控机复用已有 ROS，不修改其 APT 源或其他工作空间。
 
-## 三项工作怎么启动
+```bash
+~/fsm-adtruck/Autoware_sh/gmsl_camera_init.sh
+```
 
-| 工作 | 采集 / 运行 | 计算 |
+初始化脚本进入现场 SDK 的 `bash` 目录，顺序运行 `load_modules.sh`、`pcie_init_card0.sh`；包含内核匹配、并发/占用检查和当前用户访问权限设置。设备存在不代表相机在线，已按逐路读帧确认六个有效通道。
+
+正常 Autoware 仍使用 `~/fsm-adtruck/Autoware_sh/start.sh`。标定时不必启动完整 Autoware；程序复用已存在的雷达发布者，未启动时使用本项目编译的雷达驱动。标定入口不启动底盘控制。
+
+## 三组标定
+
+| 工作 | 采集入口 | 求解入口 |
 |---|---|---|
-| 相机内参 | `./start_intrinsics.sh` | `./solve_intrinsics.sh 7 /绝对路径/采集目录` |
-| 雷达/相机联合外参 | `./start_joint.sh`，网页 `http://127.0.0.1:8765` | `./solve_joint.sh fixed-boards --help` |
-| 鱼眼外参 / BEV | 同一联合采集网页，四角地面板采集 | `./solve_bev.sh detect --help`、`absolute`、`relative` |
+| 相机内参 | `./start_intrinsics.sh` | `./solve_intrinsics.sh 1 /绝对路径/采集目录` |
+| 雷达/相机联合外参 | `./start_joint.sh`，浏览器 `http://127.0.0.1:8765` | `./solve_joint.sh fixed-boards --data-root /绝对路径/数据目录 --initial /绝对路径/初始外参.yaml` |
+| 四鱼眼外参与 BEV | 同一联合采集页面，布置四角地面板 | `./solve_bev.sh detect --help`、`absolute --help`、`relative --help`、`verify --help` |
 
-内参按键：`1`左后、`2`左前、`3`右前、`4`右后、`5`正后、`6`正前、
-`7`前鱼眼、`8`后鱼眼、`9`左鱼眼、`0`右鱼眼、`-`交通灯。
-预览窗口中按 q/w/e/a/s/d/z/x/c 任一个结束，最长 20 分钟。
-仅交通灯外参采集：`./traffic_cam_start.sh`；后台采集统一用 `./stop.sh` 停止。
-内参采集在前台运行，使用上述按键或 Ctrl+C 结束。
+内参按键 1～6 对应 GMSL 通道 **0、3、4、5、6、7**；7/8/9/0 对应前/后/左/右鱼眼；`-` 保留红绿灯相机入口，未安装时明确跳过。内参预览按 q/w/e/a/s/d/z/x/c 或 Ctrl+C 结束。`./stop.sh` 停止本项目后台采集并恢复原鱼眼图传模式。
 
-三套完整、可复制的计算命令和数据组织方式见 **[英文操作手册](docs/OPERATIONS_EN.md)**。
-算法步骤与矩阵方向见 [算法说明](docs/ALGORITHMS_EN.md)。
+独立 GMSL ROS 图像发布：`./drivers/black_vehicle/start_gmsl_ros.sh`，与直接 V4L2 标定采集互斥。不要让两者同时占用相机。
 
-## 数据与目录
+详细操作、输入输出和红绿灯相机后续接入见 [黑车使用说明](docs/BLACK_VEHICLE.md)。模拟闭环：`./scripts/validate_black_workflows.sh`；模拟结果带显式标记，不会覆盖现场标定文件。
 
-- `ros_ws/src/`：四雷达、USB 相机、IMU、GNSS、超声波、CAN 驱动及消息、TF。
-- `drivers/`：树莓派五相机发送端、工控机接收端、鱼眼 SDK。
-- `process/`：三套算法和既有数据校验工具；`scripts/`：统一运行与安装管理。
-- `config/`：11 颗相机内参、标定板和环境配置；`result/`：历史参数及质量报告。
-- `data/`：采集输入，默认不入 Git；`output/`：新计算结果，默认不入 Git。
+## 配置与数据
 
-ChArUco：12×8 格，格长 70 mm，内部标记 50 mm，DICT_5X5_100。
-联合外参板：900×900 mm，Tag16h5、6×5 个 Tag，精确间距见 `config/boards.yaml`。
-四鱼眼统一使用 1600×1200、equidistant 模型。
+- `config/vehicle.env`：黑车默认环境；`config/local.env`：本机覆盖项。
+- `config/black_vehicle/`：真实设备、雷达端口、现有 Autoware 初始外参、独立相机内参目录。
+- `drivers/black_vehicle/`：GMSL 初始化/ROS 发布、本项目雷达启动。
+- `drivers/pi_capture/`、`drivers/pi_gateway/`、`drivers/pi_sender/`：鱼眼协议、SDK 与配套树莓派源代码。Pi sender 不在工控机启动。
+- `ros_ws/src/`：仅保留 rslidar_sdk、rslidar_msg、相机采集/未来红绿灯桥接包；未使用的辅助车辆驱动已移除。
+- `data/`：新采集；`output/`：新求解及模拟报告。二者不提交 Git。
+- `result/`：历史算法回归参考；**不是黑车标定结果，不会安装为黑车参数**。
 
-离线或检测失败不阻止其他传感器保存。网页绿/红框为质量提示，原始 PCD 保留全部点。
-三套默认入口不启动底盘控制；可选 CAN 入口固定为只接收。
-BEV 的相对地面拼接可用性与绝对车辆外参精度分开记录，历史候选不能自动视为精标真值。
+ChArUco：12×8，格长 70 mm、标记 50 mm，DICT_5X5_100。联合/BEV 靶板：900×900 mm、Tag16h5，详见 `config/boards.yaml`。
 
-**本版来源：本机 2026-09-02～04 备份。车载工控机当次离线，尚未完成最新源码一致性复核。**
-验证范围及未完成项见 [VALIDATION.md](docs/VALIDATION.md)。
-本次已完成 Humble 下 12 个 ROS 包源码编译、22 项测试及模拟 ROS 采集闭环；
-Jazzy 全新环境和实车 15 路传感器验收仍待进行。
-代码采用清晰分层、单一职责、显式异常、受控资源生命周期等规约，详见
-[代码规范](docs/CODING_STANDARD.md)；不声称取得阿里巴巴认证。
+相机内参、初始外参必须来自本车相同分辨率的测量。当前四雷达位姿是现有 Autoware 初值；黑车尚无实拍标定板数据。模拟数据只验证软件可执行性和数值正确性，不能替代实车标定精度验收。

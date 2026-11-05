@@ -31,6 +31,7 @@ CAMERAS = ("fisheye_front", "fisheye_right", "fisheye_rear", "fisheye_left")
 SHORT = {camera: camera.removeprefix("fisheye_") for camera in CAMERAS}
 PAIRS = tuple(zip(CAMERAS, CAMERAS[1:] + CAMERAS[:1]))
 BEV_SIZE = (512, 512)
+SOURCE_SIZE = (1600, 1200)
 ORIGIN = np.asarray([256.0, 256.0], np.float64)
 METERS_PER_PIXEL = 0.015
 
@@ -101,13 +102,13 @@ def load_maps(baseline: Path) -> tuple[dict[str, np.ndarray], dict[str, np.ndarr
 
 
 def valid_mask(map_x: np.ndarray, map_y: np.ndarray) -> np.ndarray:
-    return (map_x >= 0.0) & (map_x < 1600.0) & (map_y >= 0.0) & (map_y < 1200.0)
+    return (map_x >= 0.0) & (map_x < SOURCE_SIZE[0]) & (map_y >= 0.0) & (map_y < SOURCE_SIZE[1])
 
 
 def ground_feature_mask(map_x: np.ndarray, map_y: np.ndarray) -> np.ndarray:
     yy, xx = np.mgrid[: BEV_SIZE[0], : BEV_SIZE[1]]
     radius_m = np.hypot(xx - ORIGIN[0], yy - ORIGIN[1]) * METERS_PER_PIXEL
-    mask = valid_mask(map_x, map_y) & (map_y > 650.0) & (radius_m >= 0.70) & (radius_m <= 3.60)
+    mask = valid_mask(map_x, map_y) & (map_y > SOURCE_SIZE[1] * (650.0 / 1200.0)) & (radius_m >= 0.70) & (radius_m <= 3.60)
     # Do not use the vehicle body, whose appearance is camera-specific.
     mask[55:345, 205:307] = False
     return mask.astype(np.uint8) * 255
@@ -115,7 +116,7 @@ def ground_feature_mask(map_x: np.ndarray, map_y: np.ndarray) -> np.ndarray:
 
 def remap_image(path: Path, map_x: np.ndarray, map_y: np.ndarray) -> np.ndarray:
     image = cv2.imread(str(path), cv2.IMREAD_COLOR)
-    if image is None or image.shape[:2] != (1200, 1600):
+    if image is None or image.shape[:2] != (SOURCE_SIZE[1], SOURCE_SIZE[0]):
         raise ValueError(f"unreadable or wrong-size image: {path}")
     return cv2.remap(image, map_x, map_y, cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT)
 
@@ -380,8 +381,8 @@ def write_opencv_yaml(
 camera_name: {short}
 camera_frame: {camera}/camera_optical_frame
 vehicle_frame: sensor_kit_base_link
-image_width: 1600
-image_height: 1200
+image_width: {camera_data.get("image_size", SOURCE_SIZE)[0]}
+image_height: {camera_data.get("image_size", SOURCE_SIZE)[1]}
 distortion_model: equidistant
 bev_width: 512
 bev_height: 512
@@ -394,7 +395,7 @@ deployment_scope: \"BEV_relative_planar_mapping_only\"
 bev_status: \"{"usable" if passed else "failed_self_check"}\"
 absolute_vehicle_extrinsic_deployment_allowed: 0
 absolute_vehicle_extrinsic_status: \"review_only_not_signed\"
-absolute_vehicle_extrinsic_warning: \"rear absolute pose conflicts with cross-session calibration; all R/t below are reference-only\"
+absolute_vehicle_extrinsic_warning: \"absolute vehicle pose requires independent acceptance; all R/t below are reference-only\"
 relative_calibration_source: \"strict final 14 Part3 images; ground-only overlap; scale-preserving SE2 loop optimisation\"
 K: !!opencv-matrix
    rows: 3
@@ -445,11 +446,16 @@ def main() -> None:
         raise FileExistsError(f"output is non-empty; use --force: {args.output}")
     args.output.mkdir(parents=True, exist_ok=True)
     selected = [line.strip() for line in args.selected.read_text().splitlines() if line.strip()]
-    if len(selected) != 14:
-        raise ValueError(f"strict Part3 set must contain exactly 14 captures, got {len(selected)}")
+    if len(selected) != 14 or len(set(selected)) != 14:
+        raise ValueError("Part3 requires exactly 14 distinct captures in the three-stage sequence")
     images = load_image_index(args.data_root, args.raw_index, selected)
     baseline_x, baseline_y = load_maps(args.baseline)
     baseline_json = json.loads((args.baseline / "bev_calibration.json").read_text())
+    global SOURCE_SIZE
+    sizes = {tuple(item.get("image_size", (1600, 1200))) for item in baseline_json["cameras"].values()}
+    if len(sizes) != 1:
+        raise ValueError("All fisheye cameras must use one common source resolution")
+    SOURCE_SIZE = sizes.pop()
 
     match_sets = extract_matches(images, baseline_x, baseline_y)
     pairs = pair_arrays(match_sets)
@@ -570,7 +576,7 @@ def main() -> None:
     move_median = float(np.median(move_errors)) if move_errors else float("inf")
     move_maximum = float(np.max(move_errors)) if move_errors else float("inf")
     self_checks = {
-        "exactly_14_selected_captures": len(selected) == 14,
+        "exactly_14_selected_captures": len(selected) == 14 and len(set(selected)) == 14,
         "all_four_cycle_overlaps_have_at_least_50_retained_matches": all(
             item["retained_correspondences"] >= 50 for item in pair_metrics.values()
         ),
@@ -619,6 +625,7 @@ def main() -> None:
         old_h = np.asarray(old["H_bev_from_rectified"], np.float64)
         final_h = corrections[camera] @ old_h
         cameras_json[camera] = {
+            "image_size": list(SOURCE_SIZE),
             "K": old["K"],
             "D": old["D"],
             "K_rectified": old["K_rectified"],
@@ -673,7 +680,7 @@ def main() -> None:
             "horizontal_gap_m": 0.0304,
             "vertical_gap_m": 0.065,
         },
-        "intrinsics_source": "fisheye_intrinsics_1600x1200_20260903_v2",
+        "intrinsics_source": str(args.baseline),
         "relative_corrections": corrections_json,
         "overlap_validation": pair_metrics,
         "coverage": coverage,
@@ -731,7 +738,7 @@ def main() -> None:
         f"- BEV status: **{'USABLE' if passed else 'FAILED SELF-CHECK'}**",
         f"- BEV deployment_allowed: **{1 if passed else 0}** (relative planar mapping only)",
         "- Absolute vehicle R/t: **review only / not deployable**",
-        "- Data: final 14 Part3 captures only; 56 fresh 1600x1200 fisheye images",
+        f"- Data: {len(selected)} Part3 captures; {len(indexed_paths)} fresh {SOURCE_SIZE[0]}x{SOURCE_SIZE[1]} fisheye images",
         "- Map: 512x512, 0.015 m/px; metric scale held fixed",
         f"- Combined 0.75–3.50 m annulus coverage: {coverage['combined_fraction']:.2%}",
         f"- Two-or-more-camera overlap: {coverage['overlap_two_or_more_fraction']:.2%}",

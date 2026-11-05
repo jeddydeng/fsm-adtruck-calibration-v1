@@ -1,0 +1,51 @@
+schema_version: 1
+status: existing_autoware_initial_poses_not_new_calibration
+coordinate_convention:
+  parent_frame: sensor_kit_base_link
+  axes: x_forward_y_left_z_up
+  rpy_order: fixed_xyz
+transforms:
+  velodyne_top_base_link:
+    parent: sensor_kit_base_link
+    xyz_m:
+    - 0.0
+    - 0.0
+    - 0.0
+    rpy_deg:
+    - 0.0
+    - 0.0
+    - 0.0
+    source: black_vehicle_autoware_individual_params_20261105
+  velodyne_left_base_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.297
+    - 1.007
+    - -1.239
+    rpy_deg:
+    - -0.5156620156177408
+    - 0.3374721413320549
+    - -2.0855663742761967
+    source: black_vehicle_autoware_individual_params_20261105
+  velodyne_right_base_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - 0.3008
+    - -0.803
+    - -1.12
+    rpy_deg:
+    - 4.543555315387428
+    - 3.7471439801555837
+    - 5.706659639502999
+    source: black_vehicle_autoware_individual_params_20261105
+  velodyne_rear_base_link:
+    parent: velodyne_top_base_link
+    xyz_m:
+    - -2.82
+    - -0.2525
+    - -1.34
+    rpy_deg:
+    - 0.2801763618189726
+    - -0.9969465635276323
+    - -179.1639025374084
+    source: black_vehicle_autoware_individual_params_20261105

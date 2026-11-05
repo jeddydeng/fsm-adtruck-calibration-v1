@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 from pathlib import Path
 
 import cv2
@@ -13,12 +14,16 @@ DIRECTIONS = ("front", "rear", "left", "right")
 
 
 def compose(images: dict[str, np.ndarray], package: Path) -> np.ndarray:
+    report_path = package / "bev_calibration.json"
+    report = json.loads(report_path.read_text()) if report_path.exists() else {}
     total = None
     weight_sum = None
     for direction in DIRECTIONS:
         image = images[direction]
-        if image.shape[:2] != (1200, 1600):
-            raise ValueError(f"{direction}: expected uncropped 1600x1200 image")
+        height, width = image.shape[:2]
+        expected = tuple(report.get("cameras", {}).get(f"fisheye_{direction}", {}).get("image_size", (1600,1200)))
+        if (width, height) != expected:
+            raise ValueError(f"{direction}: expected uncropped {expected[0]}x{expected[1]} image")
         map_x = np.load(package / f"fisheye_{direction}_bev_map_x.npy", allow_pickle=False)
         map_y = np.load(package / f"fisheye_{direction}_bev_map_y.npy", allow_pickle=False)
         if (
@@ -27,7 +32,7 @@ def compose(images: dict[str, np.ndarray], package: Path) -> np.ndarray:
             or not np.isfinite(map_y).all()
         ):
             raise ValueError(f"{direction}: invalid remap arrays")
-        valid = ((map_x >= 0) & (map_x < 1599) & (map_y >= 0) & (map_y < 1199)).astype(np.uint8)
+        valid = ((map_x >= 0) & (map_x < width-1) & (map_y >= 0) & (map_y < height-1)).astype(np.uint8)
         weight = cv2.distanceTransform(valid, cv2.DIST_L2, 3)
         weight = np.minimum(weight, 32.0) * valid
         warped = cv2.remap(

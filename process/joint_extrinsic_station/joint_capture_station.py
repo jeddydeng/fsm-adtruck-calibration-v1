@@ -43,6 +43,7 @@ import rclpy
 from rclpy.executors import MultiThreadedExecutor
 from rclpy.node import Node
 from rclpy.qos import qos_profile_sensor_data
+from rclpy.signals import SignalHandlerOptions
 from sensor_msgs.msg import CompressedImage, PointCloud2, PointField
 
 
@@ -143,7 +144,7 @@ class SharedState:
 
     def online_timeout(self, name: str) -> float:
         kind = self.sensor_kinds[name]
-        if kind == "usb_camera":
+        if kind in ("usb_camera", "gmsl_camera"):
             return float(self.config["usb_capture"]["online_timeout_sec"])
         if kind == "fisheye_camera":
             return float(self.config["fisheye"]["online_timeout_sec"])
@@ -166,6 +167,8 @@ class SharedState:
                 detection = self.detections.get(name, {})
                 sensors[name] = {
                     "kind": kind,
+                    "optional": kind == "traffic_camera" and not self.config["traffic_camera"].get("required", True),
+                    "installed": self.config["traffic_camera"].get("installed", True) if kind == "traffic_camera" else True,
                     "online": online,
                     "age_sec": round(age, 3) if age is not None else None,
                     "received_unix_ns": (sample.received_unix_ns if sample is not None else None),
@@ -339,6 +342,11 @@ class UsbCameraWorker:
         path = resolve_device(self.camera)
         expected = str(self.camera.get("expected_usb_id", "")).lower()
         actual = usb_id(path)
+        expected_pci = self.camera.get("expected_pci_address")
+        if expected_pci:
+            sys_device = Path("/sys/class/video4linux") / path.resolve().name / "device"
+            if not sys_device.exists() or str(expected_pci) not in str(sys_device.resolve()):
+                raise RuntimeError(f"{path} does not belong to PCI card {expected_pci}")
         if expected and actual != expected:
             raise RuntimeError(f"USB ID 应为 {expected}，实际为 {actual or 'unknown'}")
         cap = cv2.VideoCapture(str(path), cv2.CAP_V4L2)
@@ -360,7 +368,7 @@ class UsbCameraWorker:
             cap: cv2.VideoCapture | None = None
             try:
                 cap, path = self.open()
-                print(f"{GREEN}[{name}] USB connected: {path.resolve()}{RESET}", flush=True)
+                print(f"{GREEN}[{name}] camera connected: {path.resolve()}{RESET}", flush=True)
                 failures = 0
                 while not self.stop.is_set():
                     ok, frame = cap.read()
@@ -375,7 +383,7 @@ class UsbCameraWorker:
                     self.state.update_sample(
                         Sample(
                             name,
-                            "usb_camera",
+                            str(self.settings.get("sensor_kind", "usb_camera")),
                             frame,
                             mono,
                             unix,
@@ -521,9 +529,10 @@ class RosSensors(Node):
                 qos_profile_sensor_data,
             )
         traffic = config["traffic_camera"]
-        self.create_subscription(
-            CompressedImage, traffic["topic"], self.on_traffic, qos_profile_sensor_data
-        )
+        if traffic.get("enabled", True):
+            self.create_subscription(
+                CompressedImage, traffic["topic"], self.on_traffic, qos_profile_sensor_data
+            )
 
     @staticmethod
     def stamp_ns(msg: Any) -> int | None:
@@ -673,12 +682,9 @@ def load_top_transforms(path: Path) -> dict[str, np.ndarray]:
     data = yaml.safe_load(path.read_text(encoding="utf-8"))
     transforms = data["transforms"]
     result = {"velodyne_top_base_link": np.eye(4)}
-    for frame in (
-        "velodyne_front_left_base_link",
-        "velodyne_front_right_base_link",
-        "velodyne_rear_base_link",
-    ):
-        item = transforms[frame]
+    for frame, item in transforms.items():
+        if not frame.startswith("velodyne_") or frame == "velodyne_top_base_link":
+            continue
         if item["parent"] != "velodyne_top_base_link":
             raise ValueError(f"{frame} must be relative to roof lidar")
         result[frame] = transform_matrix(item["xyz_m"], item["rpy_deg"])
@@ -1204,14 +1210,14 @@ class LidarLaunchManager:
         self.log_dir.mkdir(parents=True, exist_ok=True)
         path = self.log_dir / f"lidars_{datetime.now():%Y%m%d_%H%M%S}.log"
         self.log_stream = path.open("ab", buffering=0)
-        command = [
+        command = self.config["lidars"].get("launch_command") or [
             "ros2",
             "launch",
             self.config["lidars"]["launch_package"],
             self.config["lidars"]["launch_file"],
         ]
         self.process = subprocess.Popen(
-            command, stdout=self.log_stream, stderr=subprocess.STDOUT, start_new_session=True
+            command, cwd=Path(__file__).resolve().parents[2], stdout=self.log_stream, stderr=subprocess.STDOUT, start_new_session=True
         )
         print(f"{GREEN}[lidar] calibration-only driver started, log={path}{RESET}", flush=True)
 
@@ -1252,6 +1258,10 @@ class CaptureWriter:
                 if status["sensors"].get(name, {}).get("online", False)
             }
             missing = sorted(set(self.state.sensor_kinds) - set(samples))
+            optional = {
+                self.config["traffic_camera"]["name"]
+            } if not self.config["traffic_camera"].get("required", True) else set()
+            missing_required = sorted(set(missing) - optional)
             if missing:
                 print(
                     f"{RED}WARNING [capture]: offline sensors skipped: {', '.join(missing)}{RESET}",
@@ -1290,6 +1300,8 @@ class CaptureWriter:
                     },
                     "complete_sensor_set": not missing,
                     "missing_sensors": missing,
+                    "missing_optional_sensors": sorted(set(missing) & optional),
+                    "missing_required_sensors": missing_required,
                     "tag_board": self.config["tag_board"],
                 }
                 receive_times: list[int] = []
@@ -1340,6 +1352,7 @@ class CaptureWriter:
                 manifest["failed_sensors"] = failed
                 manifest["saved_sensor_count"] = len(receive_times)
                 manifest["complete_sensor_set"] = not missing and not failed
+                manifest["complete_required_sensor_set"] = not missing_required and not (set(failed) - optional)
                 manifest["software_receive_spread_ms"] = (
                     round((max(receive_times) - min(receive_times)) / 1e6, 3)
                     if len(receive_times) >= 2
@@ -1361,6 +1374,8 @@ class CaptureWriter:
                 "time": now_iso(),
                 "saved_sensor_count": manifest["saved_sensor_count"],
                 "missing_sensors": missing,
+                "missing_optional_sensors": manifest["missing_optional_sensors"],
+                "complete_required_sensor_set": manifest["complete_required_sensor_set"],
                 "failed_sensors": failed,
                 "requirements_met": status["ready"],
                 "software_receive_spread_ms": manifest["software_receive_spread_ms"],
@@ -1376,7 +1391,7 @@ class CaptureWriter:
 HTML = r"""<!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>小白车 联合外参采集站</title>
+<title>对坐黑车 联合外参采集站</title>
 <style>
 :root{color-scheme:dark;--ok:#25f58b;--bad:#ff354d;--muted:#9eabba;--card:#151e29;--panel:#0d141d}
 *{box-sizing:border-box}html,body{height:100%;overflow:hidden}
@@ -1401,7 +1416,7 @@ main{min-height:0;padding:7px 10px 9px;overflow:auto}#content{height:100%;displa
 .preview{display:block;width:100%;height:100%;min-height:0;object-fit:contain;background:#05090d;border-radius:5px}.placeholder{display:grid;place-items:center;height:100%;min-height:0;border-radius:5px;background:#090e14;color:#748292;font-size:12px}
 @media(max-width:1500px){html,body{overflow:auto}body{display:block}.topbar{grid-template-columns:1fr}.actions{grid-template-columns:minmax(260px,330px) 1fr}main{overflow:visible}#content{height:auto;display:block}.group{margin-bottom:10px}.grid,.group.lidars .grid,.group.usb .grid,.group.network .grid{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}.card{height:255px}}
 @media(max-height:850px){.card{grid-template-rows:24px 18px 22px minmax(0,1fr)}button{height:54px}header{padding-top:7px;padding-bottom:6px}}
-</style></head><body><header><div class="topbar"><div><h1>小白车 · 激光雷达 + 摄像头联合外参采集站</h1>
+</style></head><body><header><div class="topbar"><div><h1>传感器联合外参采集站</h1>
 <div class="summary"><span id="ready">正在连接…</span><span id="clock" class="muted"></span><span id="scale" class="muted"></span></div></div>
 <div class="actions"><button id="capture">采集并保存当前数据</button><span id="result" aria-live="polite"></span></div></div>
 <div id="reasons" title=""></div></header><main><div id="content"></div></main>
@@ -1411,17 +1426,17 @@ const groups=[
 {title:'六颗普通 USB 摄像头',cls:'usb',names:['video_front_mid','video_front_left','video_front_right','video_rear_mid','video_rear_left','video_rear_right']},
 {title:'网络摄像头（四鱼眼 + 交通灯）',cls:'network',names:['fisheye_front','fisheye_rear','fisheye_left','fisheye_right','traffic_light_front']}];let latest=null;
 const lidarRequired={lidar_top:['front','rear','left','right'],lidar_front_left:['front','left'],lidar_front_right:['front','right'],lidar_rear:['rear']};
-function passed(name,s){if(!s.online)return false;const d=s.detection||{};if(s.kind==='lidar'){const found=d.directions||[];return (lidarRequired[name]||[]).every(x=>found.includes(x))}return (d.tag_count||0)>0}
+function passed(name,s){if(!s || !s.online)return false;const d=s.detection||{};if(s.kind==='lidar'){const found=d.directions||[];return (lidarRequired[name]||[]).every(x=>found.includes(x))}return (d.tag_count||0)>0}
 function detText(name,s){const d=s.detection||{};if(s.kind==='lidar'){const required=lidarRequired[name]||[];return `平面靶板 ${d.target_count||0} 个 · 已见 ${(d.directions||[]).join(', ')||'-'} · 应见 ${required.join(', ')||'-'}`}return `tag16h5 ${d.tag_count||0} 个 · ID ${(d.tag_ids||[]).join(', ')||'-'}`}
 function render(x){latest=x;document.getElementById('clock').textContent=x.time;const ready=document.getElementById('ready');ready.textContent=x.ready?'● 建议条件全部通过':'● 部分检测未通过（仍可采集）';ready.className=x.ready?'ok':'bad';
 document.getElementById('capture').disabled=false;const reasonText=x.reasons.length?'提示：'+x.reasons.join('；'):'全部建议条件已满足';const reasons=document.getElementById('reasons');reasons.textContent=reasonText;reasons.title=reasonText;document.getElementById('scale').textContent=x.metric_tag_size_configured?'标定板：900 mm / 有效区800 mm':'标定板尺度配置缺失';
-let html='';for(const group of groups){let count=0;for(const name of group.names)if(passed(name,x.sensors[name]))count++;html+=`<section class="group ${group.cls}"><h2><span>${group.title}</span><span class="group-count">通过 ${count}/${group.names.length}</span></h2><div class="grid">`;
+const groups=[{title:'四颗激光雷达',cls:'lidars',names:Object.keys(x.sensors).filter(n=>x.sensors[n].kind==='lidar')},{title:'本机摄像头',cls:'usb',names:Object.keys(x.sensors).filter(n=>['usb_camera','gmsl_camera'].includes(x.sensors[n].kind))},{title:'网络摄像头',cls:'network',names:Object.keys(x.sensors).filter(n=>['fisheye_camera','traffic_camera'].includes(x.sensors[n].kind))}];let html='';for(const group of groups){let count=0;for(const name of group.names)if(passed(name,x.sensors[name]))count++;html+=`<section class="group ${group.cls}"><h2><span>${group.title}</span><span class="group-count">通过 ${count}/${group.names.length}</span></h2><div class="grid">`;
 for(const name of group.names){const s=x.sensors[name];const pass=passed(name,s);const age=s.age_sec===null?'-':s.age_sec.toFixed(2);const detail=detText(name,s);html+=`<article class="card ${pass?'pass':'fail'} ${s.online?'online':'offline'}"><div class="title"><span class="sensor-name" title="${name}">${name}</span><span class="verdict"><i class="lamp"></i>${pass?'已通过':'未通过'}</span></div>`+
 `<div class="meta"><span class="${s.online?'online-text':'offline-text'}">${s.online?'数据在线':'数据离线'}</span> · ${s.fps.toFixed(1)} Hz · ${age}s</div><div class="det" title="${detail}">${detail}</div>`+
 `${s.preview?`<img class="preview" alt="${name}实时预览" src="/api/preview/${name}?t=${Date.now()}">`:`<div class="placeholder">等待预览数据</div>`}${s.error?`<div class="error" title="${s.error}">${s.error}</div>`:''}</article>`}html+='</div></section>'}document.getElementById('content').innerHTML=html;
-if(x.last_capture)document.getElementById('result').textContent=`最近保存：${x.last_capture.saved_sensor_count}/15 路 · ${x.last_capture.path}`}
+if(x.last_capture)document.getElementById('result').textContent=`最近保存：${x.last_capture.saved_sensor_count}/${Object.keys(x.sensors).length} 路 · ${x.last_capture.path}`}
 async function poll(){try{const response=await fetch('/api/status',{cache:'no-store'});render(await response.json())}catch(e){const ready=document.getElementById('ready');ready.textContent='● 页面与采集后端失去连接';ready.className='bad'}setTimeout(poll,1000)}
-document.getElementById('capture').onclick=async()=>{const button=document.getElementById('capture');button.disabled=true;button.textContent='正在保存，请稍候…';try{const response=await fetch('/api/capture',{method:'POST'});const data=await response.json();if(!response.ok)throw Error(data.error);document.getElementById('result').textContent=`保存完成：${data.saved_sensor_count}/15 路 · ${data.path}`}catch(e){document.getElementById('result').textContent=`保存失败：${e.message}`}finally{button.textContent='采集并保存当前数据';button.disabled=false}};poll();
+document.getElementById('capture').onclick=async()=>{const button=document.getElementById('capture');button.disabled=true;button.textContent='正在保存，请稍候…';try{const response=await fetch('/api/capture',{method:'POST'});const data=await response.json();if(!response.ok)throw Error(data.error);document.getElementById('result').textContent=`保存完成：${data.saved_sensor_count}/${Object.keys(latest.sensors).length} 路 · ${data.path}`}catch(e){document.getElementById('result').textContent=`保存失败：${e.message}`}finally{button.textContent='采集并保存当前数据';button.disabled=false}};poll();
 </script></body></html>"""
 
 
@@ -1558,10 +1573,12 @@ def load_config(path: Path) -> dict[str, Any]:
         result["lidars"]["auto_start"] = False
     names = [item["name"] for item in result["usb_capture"]["cameras"]]
     names += list(result["fisheye"]["sources"].values())
-    names += [result["traffic_camera"]["name"]]
+    if result["traffic_camera"].get("enabled", True):
+        names += [result["traffic_camera"]["name"]]
     names += [item["name"] for item in result["lidars"]["sensors"]]
-    if len(names) != 15 or len(set(names)) != 15:
-        raise ValueError("configuration must contain exactly 15 unique sensors")
+    expected_count = int(result.get("expected_sensor_count", 15))
+    if len(names) != expected_count or len(set(names)) != expected_count:
+        raise ValueError(f"configuration must contain exactly {expected_count} unique sensors")
     lidar_items = result["lidars"]["sensors"]
     for key in ("msop_port", "difop_port"):
         ports = [int(item[key]) for item in lidar_items]
@@ -1589,7 +1606,7 @@ def main() -> int:
     config = load_config(args.config.resolve())
     transforms = load_top_transforms(args.initial_extrinsics.resolve())
     if args.check:
-        print("configuration/import check passed: 4 lidars + 11 cameras")
+        print(f"configuration/import check passed: {config.get('expected_sensor_count', 15)} sensors")
         return 0
 
     stop = threading.Event()
@@ -1599,10 +1616,11 @@ def main() -> int:
     kinds: dict[str, str] = {}
     if not args.traffic_only:
         for camera in config["usb_capture"]["cameras"]:
-            kinds[camera["name"]] = "usb_camera"
+            kinds[camera["name"]] = str(config["usb_capture"].get("sensor_kind", "usb_camera"))
         for name in config["fisheye"]["sources"].values():
             kinds[name] = "fisheye_camera"
-    kinds[config["traffic_camera"]["name"]] = "traffic_camera"
+    if config["traffic_camera"].get("enabled", True):
+        kinds[config["traffic_camera"]["name"]] = "traffic_camera"
     for lidar in config["lidars"]["sensors"]:
         kinds[lidar["name"]] = "lidar"
     mode = "traffic_camera" if args.traffic_only else "joint"
@@ -1612,7 +1630,7 @@ def main() -> int:
         config["station"]["camera_detection_hz"] = 5.0
     state = SharedState(config, kinds, mode=mode)
 
-    rclpy.init(args=None)
+    rclpy.init(args=None, signal_handler_options=SignalHandlerOptions.NO)
     node = RosSensors(config, state, warnings)
     executor = MultiThreadedExecutor(num_threads=3)
     executor.add_node(node)
@@ -1668,7 +1686,8 @@ def main() -> int:
         lidar_manager.close()
         executor.shutdown(timeout_sec=3.0)
         node.destroy_node()
-        rclpy.shutdown()
+        if rclpy.ok():
+            rclpy.shutdown()
         ros_thread.join(timeout=3.0)
     return 0
 

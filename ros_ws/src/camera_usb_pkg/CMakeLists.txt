@@ -12,14 +12,13 @@ install(TARGETS traffic_light_camera_bridge_node
   DESTINATION lib/${PROJECT_NAME}
 )
 
-install(DIRECTORY launch config
+install(DIRECTORY config
   DESTINATION share/${PROJECT_NAME}
   PATTERN "__pycache__" EXCLUDE
   PATTERN "*.pyc" EXCLUDE
 )
 
 install(PROGRAMS
-  scripts/camera_supervisor.py
   scripts/capture_calibration_images.py
   scripts/calibrate_intrinsics.py
   DESTINATION lib/${PROJECT_NAME}

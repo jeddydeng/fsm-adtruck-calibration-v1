@@ -106,6 +106,9 @@ class StationManager:
         gateway = self.root / "drivers/pi_gateway"
         pi_ip = os.environ.get("PI_GATEWAY_IP", "192.168.1.186")
         try:
+            if (not traffic_only and os.environ.get("CALIBRATION_STATION_CONFIG") == "config/black_vehicle/station.yaml"
+                    and os.environ.get("CALIBRATION_AUTO_GMSL_INIT", "1") == "1"):
+                subprocess.run(["bash", str(self.root / "drivers/black_vehicle/gmsl_camera_init.sh")], check=True)
             stream_url = os.environ.get("PI_STREAM_BASE_URL", "http://127.0.0.1:8086")
             if not traffic_only and os.environ.get("CALIBRATION_AUTO_GATEWAY", "1") == "1":
                 if not http_ready(stream_url + "/api/stream/status"):
@@ -155,6 +158,12 @@ class StationManager:
                 self.python,
                 str(self.root / "process/joint_extrinsic_station/joint_capture_station.py"),
             ]
+            for variable, option in (
+                ("CALIBRATION_STATION_CONFIG", "--config"),
+                ("CALIBRATION_INITIAL_EXTRINSICS", "--initial-extrinsics"),
+            ):
+                if os.environ.get(variable):
+                    command += [option, str(self.root / os.environ[variable])]
             if traffic_only:
                 command.append("--traffic-only")
             self.launch("station", command)
