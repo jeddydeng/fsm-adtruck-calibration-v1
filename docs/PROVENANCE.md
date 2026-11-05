@@ -12,12 +12,9 @@ Packaged from the user's Mac backups:
   capture-station-compatible network SDK and protocol.
 - FSM-Pi-master and FSM-Pi-001: September 4 Pi receiver/sender source releases.
 
-The vehicle computer was powered off during initial packaging. A read-only SSH
-comparison was completed on November 5, 2026 after it returned online; see
-VEHICLE_SOURCE_AUDIT_20261105.md. The September 17 vehicle IMU correction configuration
-was adopted with the owner's explicit approval. Original backup directories and all
-vehicle files were left unchanged. This is a portable calibration repository, not a
-byte-identical backup of the entire live white_ws or a deployment to the vehicle.
+The vehicle computer was powered off during packaging. This is not a claim of a
+current byte-identical live-vehicle backup. Compare the live files after power-on.
+Original backup directories were left unchanged.
 
 Packaging changes: repository-relative paths; independent minimal ROS bringup;
 unified entry points; robust equidistant path for all four fisheyes; pinned Python

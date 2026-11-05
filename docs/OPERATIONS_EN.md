@@ -17,7 +17,7 @@ Offline solvers support Python 3.10–3.12 on Linux/macOS. The camera GUI requir
 desktop display. Live capture requires Linux /dev and ROS; macOS is not a driver target.
 
 ```bash
-git clone https://github.com/jeddydeng/fsm-adtruck-calibration-v1.git
+git clone git@github.com:jeddydeng/fsm-adtruck-calibration-v1.git
 cd fsm-adtruck-calibration-v1
 ./install.sh                 # native apt + venv + ROS source build + checks
 ./install.sh --check         # repeat software checks only

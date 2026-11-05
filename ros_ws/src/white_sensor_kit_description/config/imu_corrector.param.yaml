@@ -1,12 +1,8 @@
 /**:
   ros__parameters:
-    # H30 stationary result, 2026-09-12, 452782 samples over 75 min.
-    # imu_corrector subtracts these raw-frame offsets from angular velocity.
-    angular_velocity_offset_x: -0.0027668841826491096
-    angular_velocity_offset_y: -0.0014558748082802262
-    angular_velocity_offset_z: -0.0020824572465917425
-    # Conservative 3-sigma values rounded above the measured stationary noise
-    # (0.000936, 0.000686, 0.000741 rad/s respectively).
-    angular_velocity_stddev_xx: 0.003
-    angular_velocity_stddev_yy: 0.003
-    angular_velocity_stddev_zz: 0.003
+    angular_velocity_offset_x: 0.0
+    angular_velocity_offset_y: 0.0
+    angular_velocity_offset_z: 0.0
+    angular_velocity_stddev_xx: 0.03
+    angular_velocity_stddev_yy: 0.03
+    angular_velocity_stddev_zz: 0.03
